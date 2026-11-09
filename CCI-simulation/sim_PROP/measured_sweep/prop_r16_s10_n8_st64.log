@@ -1,0 +1,219 @@
+SEED: 493
+[Cycle 285760] Bus is finished.
+[Cycle 285760] Simulation is finished. 
+---------------------------------------------
+MST1: 	 Memset & BurstlyWrite 
+---------------------------------------------
+	 Parameters 
+---------------------------------------------
+	 GEN_NUM                  : 32768
+	 IMG_HORIZONTAL_SIZE      : 2048
+	 IMG_VERTICAL_SIZE        : 256
+	 MAX_MO_COUNT				: 16
+	 [0] R channel responses		: 5497
+	 [0] B channel responses		: 0
+	 [1] R channel responses		: 32768
+	 [1] B channel responses		: 32768
+	 [0] Total Read Transactions	: 5515
+	 [0] Total Write Transactions	: 0
+	 [1] Total Read Transactions	: 4096
+	 [1] Total Write Transactions	: 4096
+---------------------------------------------
+--------------------------------------------------------
+	 Name: MST1
+--------------------------------------------------------
+	 Number AR					  : 4096/32768
+	 Number AW					  : 4096/4096
+	 Number R					   : 131072
+	 Number B					   : 4096
+	 Cycle to finish read		   : 285315
+	 Cycle to finish write		  : 285421
+
+	 [MEMCPY-VERIFY] reads done (RLAST)           : 32768
+	 [MEMCPY-VERIFY] writes issued (AW)           : 32768
+	 [MEMCPY-VERIFY] last RLAST cycle             : 285315
+	 [MEMCPY-VERIFY] last AW issue cycle          : 285328
+	 [MEMCPY-VERIFY] gate stall slots             : 8781
+	 [MEMCPY-VERIFY] gate violations (must be 0)  : 0
+	 [MEMCPY-VERIFY] min credit after issue (>=0) : 0
+
+	 Operation AR				   : RASTER_SCAN
+	 Operation AW				   : RASTER_SCAN
+
+	 Utilization R channel		  : 0.46
+	 Utilization W channel		  : 0.11
+
+--------------------------------------------------------
+	 Name : BUS
+--------------------------------------------------------
+	 Number of SI ports         : 2
+
+	 Number of AR SI[0]         : 0
+	 Number of AR SI[1]         : 0
+
+	 Number of AW SI[0]         : 0
+	 Number of AW SI[1]         : 0
+
+	 Number of R SI[0]          : 21988
+	 Number of R SI[1]          : 131072
+
+	 Number of B SI[0]          : 0
+	 Number of B SI[1]          : 0
+
+	 Number of cycles when cpFIFO_Central is full           : 266618
+	 Number of cycles when cpFIFO_AC is full                : 0
+
+	 Number of cycles when both Central and AC are full     : 0
+
+	 Number of cycles when waiting for CR response          : 0
+
+	 Number of snoop requests issued                        : 71035
+	 Number of snoop responses received                     : 71035
+
+
+	 [RANGE-VERIFY] memcpy port                    : 1
+	 [RANGE-VERIFY] lines per AW (nCACHELINE)      : 8
+	 [RANGE-VERIFY] entries allocated (== pages)   : 512
+	 [RANGE-VERIFY] target lines total (==GEN)     : 32768
+	 [RANGE-VERIFY] peak occupancy (single entry)  : 1
+	 [RANGE-VERIFY] page revisit anomalies (==0)   : 0
+	 [RANGE-VERIFY] double-target anomalies (==0)  : 0
+	 [RANGE-VERIFY] snoop latency (write_release)  : 10
+	 [RANGE-VERIFY] MakeInvalid issued (==GEN)     : 32768
+	 [RANGE-VERIFY] INVALIDATING transitions       : 512
+	 [RANGE-VERIFY] TRACKING transitions (==pages) : 512
+	 [RANGE-VERIFY] target-line write B observed   : 32768
+	 [RANGE-VERIFY] I1 violations (write<inval)==0 : 0
+	 [RANGE-VERIFY] done bits set (==GEN)          : 32768
+	 [RANGE-VERIFY] pages reaching DONE (==pages)  : 512
+	 [RANGE-VERIFY] peak live range entries        : 3
+	 [RANGE-VERIFY] live entries at end (==0)       : 0
+	 [RANGE-VERIFY] I2 violations (done!⊆line)==0  : 0
+	 [RANGE-VERIFY] post-DONE extra write (==0)    : 0
+
+	 [RANGE-CHECK] alloc==pages         PASS (got 512 want 512)
+	 [RANGE-CHECK] DONE==pages          PASS (got 512 want 512)
+	 [RANGE-CHECK] trackTrans==pages    PASS (got 512 want 512)
+	 [RANGE-CHECK] doneBits==GEN        PASS (got 32768 want 32768)
+	 [RANGE-CHECK] targetLines==GEN     PASS (got 32768 want 32768)
+	 [RANGE-CHECK] makeInval==GEN       PASS (got 32768 want 32768)
+	 [RANGE-CHECK] liveAtEnd==0         PASS (got 0 want 0)
+	 [RANGE-CHECK] I2==0                PASS (got 0 want 0)
+	 [RANGE-CHECK] I4premature==0       PASS (got 0 want 0)
+	 [RANGE-CHECK] TOTAL FAILURES (==0)          : 0
+
+	 [OTHERMASTER-VERIFY] measurement               : policy-independent (single run)
+	 [OTHERMASTER-VERIFY] reads logged              : 5500
+	 [OTHERMASTER-VERIFY] conflict reads (wait>0)   : 18
+	 [OTHERMASTER-VERIFY] wait total    prop/coarse : 4100 / 12184  (-66.3%)
+	 [OTHERMASTER-VERIFY] wait avg      prop/coarse : 0.75 / 2.22
+	 [OTHERMASTER-VERIFY] wait max      prop/coarse : 706 / 1272
+	 [OTHERMASTER-VERIFY] wait p95      prop/coarse : 0 / 0
+	 [OTHERMASTER-VERIFY] wait p99      prop/coarse : 0 / 0
+
+	 [METRIC] tracker peak  range-entry / line      : 3 / 113  (37.7x)
+	 [METRIC] copy window cycles / bytes            : 285648 / 2097152
+	 [METRIC] effective bandwidth (bytes/cycle)     : 7.34
+
+--------------------------------------------------------
+	 Name: SLV
+--------------------------------------------------------
+	 Number AR                                    : 38267
+	 Number AW                                    : 32768
+	 Number R                                     : 153060
+	 Number B                                     : 32768
+	 Number PTW                                   : 0
+
+	 Percentage PTW                               : 0.000
+	 Direction change cycle                       : 150
+	 Utilization R channel                        : 0.54
+	 Utilization W channel                        : 0.92
+
+	 Number ACT cmd                               : 7600
+	 Number PRE cmd                               : 7584
+	 Number RD  cmd                               : 38265
+	 Number WR  cmd                               : 32768
+	 Number of NOP cmd for AR                     : 0
+	 Bank hit rate                                : 0.90
+
+	 Empty req Q Ax cycles                        : 31
+
+	 Max req Q AR Occupancy                       : 16
+	 Avg req Q AR Occupancy                       : 14.37
+	 Max req Q AW Occupancy                       : 16
+	 Avg req Q AW Occupancy                       : 12.30
+
+	 Max req Q all AR waiting cycles              : 0
+	 Max req Q all AW waiting cycles              : 0
+	 Max req Q scheduled AR waiting cycles        : 502
+	 Max req Q scheduled AW waiting cycles        : 338
+	 Avg req Q scheduled AR waiting cycles        : 107.34
+	 Avg req Q scheduled AW waiting cycles        : 107.23
+	 Avg req Q scheduled Ax waiting cycles        : 107.29
+---------------------------------------------
+	 Q display
+---------------------------------------------
+	 Name         : 	 SLV_Q_AR
+	 eUDType      : 	 EUD_TYPE_AR
+	 nCurNum      : 	 2
+	 nMaxNum      : 	 16
+	 nMaxCycleWait: 	 -1
+---------------------------------------------
+---------------------------------------------
+	 Name		: 	 AR5498_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x179000
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x179000
+	 TransNum	: 	 5498
+	 TileNum	: 	 5497
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x2f
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x2
+	 Col  (Amap)	: 	 0x0
+	 Superpage	: 	 0x2f
+	 Row  (Mmap)	: 	 0x2f
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x2
+	 Col  (Mmap)	: 	 0x0
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 17
+---------------------------------------------
+	 Name		: 	 AR5499_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x17a000
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x17a000
+	 TransNum	: 	 5499
+	 TileNum	: 	 5498
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x2f
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x4
+	 Col  (Amap)	: 	 0x0
+	 Superpage	: 	 0x2f
+	 Row  (Mmap)	: 	 0x2f
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x4
+	 Col  (Mmap)	: 	 0x0
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 1
+---------------------------------------------
+	 Q display
+---------------------------------------------
+	 Name         : 	 SLV_Q_AW
+	 eUDType      : 	 EUD_TYPE_AW
+	 nCurNum      : 	 0
+	 nMaxNum      : 	 16
+	 nMaxCycleWait: 	 -1
+---------------------------------------------
+--------------------------------------------------------

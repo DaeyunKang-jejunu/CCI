@@ -1,0 +1,572 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Jul  1 14:13:07 2026
+# Process ID: 14484
+# Current directory: C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth
+# Command line: vivado.exe -mode batch -source synth_augmented_vivado.tcl -log reports/augmented_vivado.log -nojournal
+# Log file: C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/reports/augmented_vivado.log
+# Journal file: 
+# Running On        :DESKTOP-SOHK4NB
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34067 MB
+# Swap memory       :2727 MB
+# Total Virtual     :36795 MB
+# Available Virtual :7450 MB
+#-----------------------------------------------------------
+source synth_augmented_vivado.tcl
+# set DESIGN augmented
+# set TOP    cci_augmented_system
+# set PART   xczu7ev-ffvc1156-2-e
+# set SCRIPT_DIR [file dirname [file normalize [info script]]]
+# set RTL_DIR    [file normalize "$SCRIPT_DIR/../rtl"]
+# set RPT_DIR    "$SCRIPT_DIR/reports"
+# file mkdir $RPT_DIR
+# read_verilog -sv [list \
+#   $RTL_DIR/cci_memcpy_pkg.sv                \
+#   $RTL_DIR/cci_range_hazard_checker.sv      \
+#   $RTL_DIR/cci_memcpy_req_decoder.sv        \
+#   $RTL_DIR/cci_ac_range_gen.sv              \
+#   $RTL_DIR/cci_range_rim_tracker.sv         \
+#   $RTL_DIR/cci_snoop_response_tracker.sv    \
+#   $RTL_DIR/cci_memcpy_range_unit.sv         \
+#   $RTL_DIR/cci_write_completion_tracker.sv  \
+#   $RTL_DIR/baseline_line_tracker.sv         \
+#   $RTL_DIR/cci_augmented_system.sv          \
+# ]
+read_verilog: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 629.203 ; gain = 200.320
+# read_xdc [file normalize "$SCRIPT_DIR/constraints.xdc"]
+# synth_design \
+#   -top              $TOP                  \
+#   -part             $PART                 \
+#   -flatten_hierarchy rebuilt              \
+#   -directive        AreaOptimized_high
+Command: synth_design -top cci_augmented_system -part xczu7ev-ffvc1156-2-e -flatten_hierarchy rebuilt -directive AreaOptimized_high
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 30128
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2175.164 ; gain = 403.867
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11067] parameter 'ADDR_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:4]
+WARNING: [Synth 8-11067] parameter 'PAGE_SIZE' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:5]
+WARNING: [Synth 8-11067] parameter 'CACHELINE_SIZE' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:6]
+WARNING: [Synth 8-11067] parameter 'PAGE_OFFSET_BITS' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:10]
+WARNING: [Synth 8-11067] parameter 'LINE_OFFSET_BITS' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:11]
+WARNING: [Synth 8-11067] parameter 'LINES_PER_PAGE' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:13]
+WARNING: [Synth 8-11067] parameter 'LINE_MASK_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:14]
+WARNING: [Synth 8-11067] parameter 'LINE_COUNT_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:17]
+WARNING: [Synth 8-11067] parameter 'LINE_INDEX_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:18]
+WARNING: [Synth 8-11067] parameter 'PAGE_ADDR_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:20]
+WARNING: [Synth 8-11067] parameter 'MASTER_ID_WIDTH' declared inside package 'cci_memcpy_pkg' shall be treated as localparam [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_pkg.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'cci_augmented_system' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_augmented_system.sv:19]
+INFO: [Synth 8-6157] synthesizing module 'cci_write_completion_tracker' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:26]
+	Parameter AXI_ID_W bound to: 32'sb00000000000000000000000000000100 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'cci_write_completion_tracker' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'baseline_line_tracker' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/baseline_line_tracker.sv:32]
+	Parameter N_ENTRIES bound to: 32'sb00000000000000000000000000010000 
+INFO: [Synth 8-6155] done synthesizing module 'baseline_line_tracker' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/baseline_line_tracker.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'cci_memcpy_range_unit' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_range_unit.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'cci_memcpy_req_decoder' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_req_decoder.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'cci_memcpy_req_decoder' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_req_decoder.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_rim_tracker' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_range_rim_tracker.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_rim_tracker' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_range_rim_tracker.sv:16]
+INFO: [Synth 8-6157] synthesizing module 'cci_ac_range_gen' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_ac_range_gen.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'cci_ac_range_gen' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_ac_range_gen.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'cci_snoop_response_tracker' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_snoop_response_tracker.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'cci_snoop_response_tracker' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_snoop_response_tracker.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_hazard_checker' [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_range_hazard_checker.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_hazard_checker' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_range_hazard_checker.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'cci_memcpy_range_unit' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_memcpy_range_unit.sv:15]
+INFO: [Synth 8-6155] done synthesizing module 'cci_augmented_system' (0#1) [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_augmented_system.sv:19]
+WARNING: [Synth 8-7137] Register fifo_reg[0][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[0][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[0][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[0][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[1][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[1][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[1][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[1][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[2][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[2][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[2][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[2][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[3][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[3][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[3][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[3][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[4][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[4][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[4][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[4][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[5][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[5][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[5][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[5][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[6][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[6][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[6][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[6][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[7][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[7][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[7][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[7][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[8][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[8][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[8][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[8][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[9][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[9][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[9][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[9][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[10][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[10][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[10][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[10][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[11][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[11][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[11][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[11][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[12][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[12][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[12][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[12][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[13][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[13][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[13][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[13][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[14][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[14][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[14][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[14][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[15][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[15][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[15][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_reg[15][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:115]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[0][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[0][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[0][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[0][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[1][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[1][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[1][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[1][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[2][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[2][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[2][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[2][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[3][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[3][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[3][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[3][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[4][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[4][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[4][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[4][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[5][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[5][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[5][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[5][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[6][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[6][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[6][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[6][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[7][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[7][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[7][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[7][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[8][0] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[8][1] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[8][2] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+WARNING: [Synth 8-7137] Register fifo_track_type_reg[8][3] in module cci_write_completion_tracker has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/rtl/cci_write_completion_tracker.sv:116]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port entry[state][1] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port entry[state][0] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[5] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[4] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[3] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[2] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[1] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[0] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[4] in module cci_snoop_response_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[3] in module cci_snoop_response_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[2] in module cci_snoop_response_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[0] in module cci_snoop_response_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[11] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[10] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[9] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[8] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[7] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[6] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[5] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[4] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[3] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[2] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[1] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[0] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[5] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[4] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[3] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[2] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[1] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[0] in module baseline_line_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[63] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[62] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[61] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[60] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[59] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[58] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[57] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[56] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[55] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[54] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[53] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[52] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[51] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[50] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[49] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[48] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[47] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[46] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[45] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[44] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[43] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[42] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[41] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[40] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[39] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[38] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[37] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[36] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[35] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[34] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[33] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[32] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[31] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[30] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[29] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[28] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[27] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[26] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[25] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[24] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[23] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[22] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[21] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[20] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[19] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[18] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[17] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[16] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[15] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[14] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[13] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[12] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[5] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[4] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[3] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[2] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[1] in module cci_write_completion_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[0] in module cci_write_completion_tracker is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2496.863 ; gain = 725.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2496.863 ; gain = 725.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2496.863 ; gain = 725.566
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.272 . Memory (MB): peak = 2496.863 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/constraints.xdc]
+Finished Parsing XDC File [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2643.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2643.129 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2643.129 ; gain = 871.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2643.129 ; gain = 871.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2643.129 ; gain = 871.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:23 ; elapsed = 00:01:31 . Memory (MB): peak = 2643.129 ; gain = 871.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 68    
+	   2 Input    6 Bit       Adders := 32    
+	   2 Input    5 Bit       Adders := 16    
+	   2 Input    4 Bit       Adders := 8     
+	   2 Input    3 Bit       Adders := 36    
+	   2 Input    2 Bit       Adders := 32    
++---Registers : 
+	               64 Bit    Registers := 3     
+	               58 Bit    Registers := 16    
+	               52 Bit    Registers := 3     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 64    
+	                4 Bit    Registers := 17    
+	                3 Bit    Registers := 16    
+	                2 Bit    Registers := 97    
+	                1 Bit    Registers := 39    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 14    
+	   3 Input   64 Bit        Muxes := 1     
+	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   58 Bit        Muxes := 888   
+	   2 Input   52 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 69    
+	   2 Input   31 Bit        Muxes := 2     
+	   2 Input   30 Bit        Muxes := 2     
+	   2 Input   29 Bit        Muxes := 2     
+	   2 Input   28 Bit        Muxes := 2     
+	   2 Input   27 Bit        Muxes := 2     
+	   2 Input   26 Bit        Muxes := 2     
+	   2 Input   25 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 2     
+	   2 Input   23 Bit        Muxes := 2     
+	   2 Input   22 Bit        Muxes := 2     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   20 Bit        Muxes := 2     
+	   2 Input   19 Bit        Muxes := 2     
+	   2 Input   18 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 6     
+	   2 Input    6 Bit        Muxes := 2     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 890   
+	   2 Input    3 Bit        Muxes := 16    
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 1027  
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Pre Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Iterative Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Post Area Optimization : Time (s): cpu = 00:15:23 ; elapsed = 00:16:37 . Memory (MB): peak = 3420.188 ; gain = 1648.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:15:25 ; elapsed = 00:16:39 . Memory (MB): peak = 3420.188 ; gain = 1648.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:15:33 ; elapsed = 00:16:48 . Memory (MB): peak = 3420.188 ; gain = 1648.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (-110158.0/oG. 388.0ps)
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 01:14:57 ; elapsed = 01:18:21 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 01:15:04 ; elapsed = 01:18:39 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 01:15:08 ; elapsed = 01:18:44 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 01:15:08 ; elapsed = 01:18:44 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 01:15:09 ; elapsed = 01:18:45 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 01:15:09 ; elapsed = 01:18:45 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 01:15:09 ; elapsed = 01:18:45 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 01:15:09 ; elapsed = 01:18:45 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY8 |   231|
+|3     |LUT1   |   120|
+|4     |LUT2   |   699|
+|5     |LUT3   |  1012|
+|6     |LUT4   |   865|
+|7     |LUT5   |  1484|
+|8     |LUT6   |  3412|
+|9     |MUXF7  |    74|
+|10    |MUXF8  |    34|
+|11    |FDCE   |  1325|
+|12    |FDRE   |   698|
+|13    |IBUF   |   229|
+|14    |OBUF   |   102|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 01:15:09 ; elapsed = 01:18:45 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 01:14:57 ; elapsed = 01:18:42 . Memory (MB): peak = 4201.984 ; gain = 2284.422
+Synthesis Optimization Complete : Time (s): cpu = 01:15:10 ; elapsed = 01:18:49 . Memory (MB): peak = 4201.984 ; gain = 2430.688
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 4201.984 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 569 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/constraints.xdc]
+Finished Parsing XDC File [C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4201.984 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 230 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 229 instances
+
+Synth Design complete | Checksum: 7b007061
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 199 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 01:15:18 ; elapsed = 01:19:00 . Memory (MB): peak = 4201.984 ; gain = 3572.781
+# report_utilization \
+#   -hierarchical                           \
+#   -hierarchical_depth 2                   \
+#   -file $RPT_DIR/${DESIGN}_utilization.rpt
+# report_utilization \
+#   -file $RPT_DIR/${DESIGN}_utilization_flat.rpt
+# report_timing_summary \
+#   -datasheet                              \
+#   -file $RPT_DIR/${DESIGN}_timing.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 4725.680 ; gain = 523.695
+# report_power \
+#   -file $RPT_DIR/${DESIGN}_power.rpt
+Command: report_power -file C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/reports/augmented_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+# puts "\n=========================================="
+
+==========================================
+# puts " $DESIGN synthesis complete (top: $TOP)"
+ augmented synthesis complete (top: cci_augmented_system)
+# puts " See $RPT_DIR/${DESIGN}_utilization.rpt"
+ See C:/Users/user/Desktop/sim_CCI_0601/hbm3-performance-simulation/CCI_SV/synth/reports/augmented_utilization.rpt
+# puts "==========================================\n"
+==========================================
+
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  1 15:32:48 2026...

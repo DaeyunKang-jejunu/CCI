@@ -1,0 +1,531 @@
+SEED: 493
+[Cycle 295444] Bus is finished.
+[Cycle 295444] Simulation is finished. 
+---------------------------------------------
+MST1: 	 Memset & BurstlyWrite 
+---------------------------------------------
+	 Parameters 
+---------------------------------------------
+	 GEN_NUM                  : 32768
+	 IMG_HORIZONTAL_SIZE      : 2048
+	 IMG_VERTICAL_SIZE        : 256
+	 MAX_MO_COUNT				: 16
+	 [0] R channel responses		: 7858
+	 [0] B channel responses		: 0
+	 [1] R channel responses		: 32768
+	 [1] B channel responses		: 32768
+	 [0] Total Read Transactions	: 7894
+	 [0] Total Write Transactions	: 0
+	 [1] Total Read Transactions	: 8192
+	 [1] Total Write Transactions	: 8192
+---------------------------------------------
+--------------------------------------------------------
+	 Name: MST1
+--------------------------------------------------------
+	 Number AR					  : 8192/32768
+	 Number AW					  : 8192/8192
+	 Number R					   : 131072
+	 Number B					   : 8192
+	 Cycle to finish read		   : 295051
+	 Cycle to finish write		  : 295161
+
+	 [MEMCPY-VERIFY] reads done (RLAST)           : 32768
+	 [MEMCPY-VERIFY] writes issued (AW)           : 32768
+	 [MEMCPY-VERIFY] last RLAST cycle             : 295051
+	 [MEMCPY-VERIFY] last AW issue cycle          : 295096
+	 [MEMCPY-VERIFY] gate stall slots             : 12049
+	 [MEMCPY-VERIFY] gate violations (must be 0)  : 0
+	 [MEMCPY-VERIFY] min credit after issue (>=0) : 0
+
+	 Operation AR				   : RASTER_SCAN
+	 Operation AW				   : RASTER_SCAN
+
+	 Utilization R channel		  : 0.44
+	 Utilization W channel		  : 0.22
+
+--------------------------------------------------------
+	 Name : BUS
+--------------------------------------------------------
+	 Number of SI ports         : 2
+
+	 Number of AR SI[0]         : 0
+	 Number of AR SI[1]         : 0
+
+	 Number of AW SI[0]         : 0
+	 Number of AW SI[1]         : 0
+
+	 Number of R SI[0]          : 31432
+	 Number of R SI[1]          : 131072
+
+	 Number of B SI[0]          : 0
+	 Number of B SI[1]          : 0
+
+	 Number of cycles when cpFIFO_Central is full           : 267370
+	 Number of cycles when cpFIFO_AC is full                : 0
+
+	 Number of cycles when both Central and AC are full     : 0
+
+	 Number of cycles when waiting for CR response          : 0
+
+	 Number of snoop requests issued                        : 73413
+	 Number of snoop responses received                     : 73412
+
+
+	 [RANGE-VERIFY] memcpy port                    : 1
+	 [RANGE-VERIFY] lines per AW (nCACHELINE)      : 4
+	 [RANGE-VERIFY] entries allocated (== pages)   : 512
+	 [RANGE-VERIFY] target lines total (==GEN)     : 32768
+	 [RANGE-VERIFY] peak occupancy (single entry)  : 1
+	 [RANGE-VERIFY] page revisit anomalies (==0)   : 0
+	 [RANGE-VERIFY] double-target anomalies (==0)  : 0
+	 [RANGE-VERIFY] snoop latency (write_release)  : 20
+	 [RANGE-VERIFY] MakeInvalid issued (==GEN)     : 32768
+	 [RANGE-VERIFY] INVALIDATING transitions       : 512
+	 [RANGE-VERIFY] TRACKING transitions (==pages) : 512
+	 [RANGE-VERIFY] target-line write B observed   : 32768
+	 [RANGE-VERIFY] I1 violations (write<inval)==0 : 0
+	 [RANGE-VERIFY] done bits set (==GEN)          : 32768
+	 [RANGE-VERIFY] pages reaching DONE (==pages)  : 512
+	 [RANGE-VERIFY] peak live range entries        : 2
+	 [RANGE-VERIFY] live entries at end (==0)       : 0
+	 [RANGE-VERIFY] I2 violations (done!⊆line)==0  : 0
+	 [RANGE-VERIFY] post-DONE extra write (==0)    : 0
+
+	 [RANGE-CHECK] alloc==pages         PASS (got 512 want 512)
+	 [RANGE-CHECK] DONE==pages          PASS (got 512 want 512)
+	 [RANGE-CHECK] trackTrans==pages    PASS (got 512 want 512)
+	 [RANGE-CHECK] doneBits==GEN        PASS (got 32768 want 32768)
+	 [RANGE-CHECK] targetLines==GEN     PASS (got 32768 want 32768)
+	 [RANGE-CHECK] makeInval==GEN       PASS (got 32768 want 32768)
+	 [RANGE-CHECK] liveAtEnd==0         PASS (got 0 want 0)
+	 [RANGE-CHECK] I2==0                PASS (got 0 want 0)
+	 [RANGE-CHECK] I4premature==0       PASS (got 0 want 0)
+	 [RANGE-CHECK] TOTAL FAILURES (==0)          : 0
+
+	 [OTHERMASTER-VERIFY] measurement               : policy-independent (single run)
+	 [OTHERMASTER-VERIFY] reads logged              : 7877
+	 [OTHERMASTER-VERIFY] conflict reads (wait>0)   : 30
+	 [OTHERMASTER-VERIFY] wait total    prop/coarse : 5002 / 12150  (-58.8%)
+	 [OTHERMASTER-VERIFY] wait avg      prop/coarse : 0.64 / 1.54
+	 [OTHERMASTER-VERIFY] wait max      prop/coarse : 650 / 832
+	 [OTHERMASTER-VERIFY] wait p95      prop/coarse : 0 / 0
+	 [OTHERMASTER-VERIFY] wait p99      prop/coarse : 0 / 0
+
+	 [METRIC] tracker peak  range-entry / line      : 2 / 75  (37.5x)
+	 [METRIC] copy window cycles / bytes            : 295348 / 2097152
+	 [METRIC] effective bandwidth (bytes/cycle)     : 7.10
+
+--------------------------------------------------------
+	 Name: SLV
+--------------------------------------------------------
+	 Number AR                                    : 40642
+	 Number AW                                    : 32768
+	 Number R                                     : 162504
+	 Number B                                     : 32768
+	 Number PTW                                   : 0
+
+	 Percentage PTW                               : 0.000
+	 Direction change cycle                       : 150
+	 Utilization R channel                        : 0.55
+	 Utilization W channel                        : 0.89
+
+	 Number ACT cmd                               : 3114
+	 Number PRE cmd                               : 3100
+	 Number RD  cmd                               : 40627
+	 Number WR  cmd                               : 32768
+	 Number of NOP cmd for AR                     : 0
+	 Bank hit rate                                : 0.96
+
+	 Empty req Q Ax cycles                        : 33
+
+	 Max req Q AR Occupancy                       : 16
+	 Avg req Q AR Occupancy                       : 13.97
+	 Max req Q AW Occupancy                       : 16
+	 Avg req Q AW Occupancy                       : 11.61
+
+	 Max req Q all AR waiting cycles              : 0
+	 Max req Q all AW waiting cycles              : 0
+	 Max req Q scheduled AR waiting cycles        : 564
+	 Max req Q scheduled AW waiting cycles        : 462
+	 Avg req Q scheduled AR waiting cycles        : 101.51
+	 Avg req Q scheduled AW waiting cycles        : 104.68
+	 Avg req Q scheduled Ax waiting cycles        : 102.92
+---------------------------------------------
+	 Q display
+---------------------------------------------
+	 Name         : 	 SLV_Q_AR
+	 eUDType      : 	 EUD_TYPE_AR
+	 nCurNum      : 	 15
+	 nMaxNum      : 	 16
+	 nMaxCycleWait: 	 -1
+---------------------------------------------
+---------------------------------------------
+	 Name		: 	 AR7860_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb300
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb300
+	 TransNum	: 	 7860
+	 TileNum	: 	 7859
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x6
+	 Col  (Amap)	: 	 0x300
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x6
+	 Col  (Mmap)	: 	 0x300
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 97
+---------------------------------------------
+	 Name		: 	 AR7861_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb400
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb400
+	 TransNum	: 	 7861
+	 TileNum	: 	 7860
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x6
+	 Col  (Amap)	: 	 0x400
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x6
+	 Col  (Mmap)	: 	 0x400
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 95
+---------------------------------------------
+	 Name		: 	 AR7862_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb500
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb500
+	 TransNum	: 	 7862
+	 TileNum	: 	 7861
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x6
+	 Col  (Amap)	: 	 0x500
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x6
+	 Col  (Mmap)	: 	 0x500
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 85
+---------------------------------------------
+	 Name		: 	 AR7863_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb600
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb600
+	 TransNum	: 	 7863
+	 TileNum	: 	 7862
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x6
+	 Col  (Amap)	: 	 0x600
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x6
+	 Col  (Mmap)	: 	 0x600
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 81
+---------------------------------------------
+	 Name		: 	 AR7864_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb700
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb700
+	 TransNum	: 	 7864
+	 TileNum	: 	 7863
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x6
+	 Col  (Amap)	: 	 0x700
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x6
+	 Col  (Mmap)	: 	 0x700
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 75
+---------------------------------------------
+	 Name		: 	 AR7865_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb800
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb800
+	 TransNum	: 	 7865
+	 TileNum	: 	 7864
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x0
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x0
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 73
+---------------------------------------------
+	 Name		: 	 AR7866_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eb900
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eb900
+	 TransNum	: 	 7866
+	 TileNum	: 	 7865
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x100
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x100
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 69
+---------------------------------------------
+	 Name		: 	 AR7867_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1eba00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1eba00
+	 TransNum	: 	 7867
+	 TileNum	: 	 7866
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x200
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x200
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 67
+---------------------------------------------
+	 Name		: 	 AR7868_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ebb00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ebb00
+	 TransNum	: 	 7868
+	 TileNum	: 	 7867
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x300
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x300
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 57
+---------------------------------------------
+	 Name		: 	 AR7869_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ebc00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ebc00
+	 TransNum	: 	 7869
+	 TileNum	: 	 7868
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x400
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x400
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 53
+---------------------------------------------
+	 Name		: 	 AR7870_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ebd00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ebd00
+	 TransNum	: 	 7870
+	 TileNum	: 	 7869
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x500
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x500
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 51
+---------------------------------------------
+	 Name		: 	 AR7871_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ebe00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ebe00
+	 TransNum	: 	 7871
+	 TileNum	: 	 7870
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x600
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x600
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 43
+---------------------------------------------
+	 Name		: 	 AR7872_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ebf00
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ebf00
+	 TransNum	: 	 7872
+	 TileNum	: 	 7871
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x7
+	 Col  (Amap)	: 	 0x700
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x7
+	 Col  (Mmap)	: 	 0x700
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 35
+---------------------------------------------
+	 Name		: 	 AR7873_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ec000
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ec000
+	 TransNum	: 	 7873
+	 TileNum	: 	 7872
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x8
+	 Col  (Amap)	: 	 0x0
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x8
+	 Col  (Mmap)	: 	 0x0
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 27
+---------------------------------------------
+	 Name		: 	 AR7874_MST0
+	 ID		: 	 0x8
+	 Addr		: 	 0x1ec100
+	 Len		: 	 0x3
+	 Dir		: 	 ETRANS_DIR_TYPE_READ
+	 Src		: 	 MST0
+	 Type		: 	 ETRANS_TYPE_NORMAL
+	 VA		: 	 0x1ec100
+	 TransNum	: 	 7874
+	 TileNum	: 	 7873
+	 FinalTrans	: 	 ERESULT_TYPE_NO
+	 Row  (Amap)	: 	 0x3d
+	 MemCh (Amap)	: 	 0x0
+	 Bank (Amap)	: 	 0x8
+	 Col  (Amap)	: 	 0x100
+	 Superpage	: 	 0x3d
+	 Row  (Mmap)	: 	 0x3d
+	 MemCh (Mmap)	: 	 0x0
+	 Bank (Mmap)	: 	 0x8
+	 Col  (Mmap)	: 	 0x100
+	 Cache ch	: 	 0x0
+---------------------------------------------
+	 Waiting cycle : 	 19
+---------------------------------------------
+	 Q display
+---------------------------------------------
+	 Name         : 	 SLV_Q_AW
+	 eUDType      : 	 EUD_TYPE_AW
+	 nCurNum      : 	 0
+	 nMaxNum      : 	 16
+	 nMaxCycleWait: 	 -1
+---------------------------------------------
+--------------------------------------------------------

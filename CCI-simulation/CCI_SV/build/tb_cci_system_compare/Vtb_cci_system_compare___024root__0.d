@@ -1,0 +1,2 @@
+Vtb_cci_system_compare___024root__0.o: \
+ Vtb_cci_system_compare___024root__0.cpp Vtb_cci_system_compare__pch.h
