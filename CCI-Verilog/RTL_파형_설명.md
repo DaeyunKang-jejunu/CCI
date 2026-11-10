@@ -215,7 +215,6 @@ RTL을 수정한 뒤에는 `make waves-rcci` 또는 `python3 scripts/run_ace_wav
 | `rcci-rd-w4` | 4 | 4 | 2465 | 2525 | **2755** |
 | `rcci-rd-w16` | 16 | 16 | 1505 | 1565 | **2755** |
 
-**핵심.** N_fly = 1이면 라인이 하나씩 직렬로 진행해 오래 걸린다. N_fly = 4에서 메모리 상한에 도달하므로 16으로 늘려도 완료 시각은 같다. N_fly = 16은 스눕과 메모리 요청을 더 일찍 끝내지만 R 전달 속도는 같다. `read_tracker_count`의 높이를 비교해서 보면 된다.
 
 ### 5.2 `rcci-wr-w1`, `rcci-wr-w4`, `rcci-wr-w16` — WriteRange
 
