@@ -1,0 +1,917 @@
+{
+  "run_id": "simulation_20260930T055231Z_dd7d123f",
+  "status": "FAIL",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "225c34c8b672217c0eb3be4bdda0238594f8d2ac8683c0cd7b7581eeb0c4aa89",
+    "realistic_axi_master.sv": "396bbb43548c7b9d394fb17ce21d7268a0c79f6309063fb1154387d66af5a45a",
+    "rtl/common/cci_pkg.sv": "5a20be52d953610695e91a5bdc63cf9e154b9c600833a821ad9567c48536dcb8",
+    "rtl/common/coh_write_ingress.sv": "2e5245ba727f5a228ae2e5d675ce56dc6d9aa6cdf65c34d4ab1c10efd185f3b4",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/synth_register_shell.sv": "83897b8367c29ef6cf686359061f876171e304b3783973834df5a0862d2011b6",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_range_rim_tracker.sv": "57e96a34f51e976f0a318918ace0ac7a794505de28005b7082a30c2f57a82a55",
+    "rtl/top/axi_b0_top.sv": "3cfb47cad1c9e2688ce1f4eb76f0b8b0c8b5525cb80f4fe901b6b46a345e4725",
+    "rtl/top/axi_b1_conventional_top.sv": "aa9844512752634f05e095dc0b65c3c4181cd8276ff4d90a61aeba272655904d",
+    "rtl/top/axi_cci_top.sv": "9e6e924d85256ee3280c1e47036cabc211dae09260a93ee3918fe0a6ac730b38",
+    "rtl/top/axi_p_range_top.sv": "4713007acbfd222d23a2967b4b12a3df8bf06b1eaa6cbe3cc96e71d0c8b763e1",
+    "scripts/fixtures/hardware/B0/drc.rpt": "6ac1f7468d175fd7127c9f23ef8197021e1e11d8a12019d946101a9aa001cc1a",
+    "scripts/fixtures/hardware/B0/post_route_hier.rpt": "08504c1fed2de12ade3a978cfb14af4b5aedd4dc4f3e4275bb76b110dbb47d3c",
+    "scripts/fixtures/hardware/B0/post_route_timing_summary.rpt": "38bd576edd675c11911c8099a9a9263266c019509603e2b4e8fc494e7b08baa7",
+    "scripts/fixtures/hardware/B0/post_route_utilization.rpt": "c301d4d99dcfe77c76bfc9b4914d50d85a30af2e6b9b2a994269ac7ce3554ff8",
+    "scripts/fixtures/hardware/B0/route_status.rpt": "9d4d935b66e3ed418aecc72e8c0970b3a8f33110829d3a266b1f372861d5514e",
+    "scripts/fixtures/hardware/B1/drc.rpt": "e9f4e7819fbbb0c787005489b620c123935649238a98e39d53160b8410ffca5f",
+    "scripts/fixtures/hardware/B1/post_route_hier.rpt": "fc33895eb6a0d09128678770c5ffc7550146f66f84c46fde514bcd95181c4337",
+    "scripts/fixtures/hardware/B1/post_route_timing_summary.rpt": "324e9c90f991f66c793658d828e099d1cf837f13fa6d0bbca2405668ba5dc9a6",
+    "scripts/fixtures/hardware/B1/post_route_utilization.rpt": "fd95c4b66b961b6a16affbf40d8b355f91f317500017c6acfe86ee79722ef45d",
+    "scripts/fixtures/hardware/B1/route_status.rpt": "98e20c399647101d71d48d7269d7840e43323cd8a78d2d09d4d491d8f2ecb024",
+    "scripts/fixtures/hardware/P/drc.rpt": "d2e2b50221e6bb581f72d5aa9cc8853e60f6d19ac76d18d3595f388b558409e0",
+    "scripts/fixtures/hardware/P/post_route_hier.rpt": "347b814697bdb7af5f2b60d943ec45d9a4a69bbf3ef26b70b1e632d146b54ec5",
+    "scripts/fixtures/hardware/P/post_route_timing_summary.rpt": "2a4c95f0b436e7ae179b2db160d14cfdee566cd09d543cddcda02b4bfb6f9578",
+    "scripts/fixtures/hardware/P/post_route_utilization.rpt": "4b69806163be3dada42666cdd355765cde2b06780889c3d68c94cd8009e1d493",
+    "scripts/fixtures/hardware/P/route_status.rpt": "c171ef46adc3b60e44911277ca907ed75ba38ff399b1102e9b3a69ab7f3ba09d",
+    "scripts/results_common.py": "3cd0cbbae984e2e3439b89da62feab8f9bcf83255bafd5f771e6a5ed9efa88d6",
+    "scripts/rtl.f": "7f357322edf8a5a8240467c3f829e1405e7dfb9b84396ad1eaa8eb78425f5fb0",
+    "scripts/run_regression.py": "1bab697ff6bc7b8dac5b2ae9559fe17c6317577f24ab29c7f54e2aea54cba350",
+    "scripts/test_results_common.py": "4e46a13ac284b130f551e0041fb67d4f93e6946af3fff0ccea779ffd635c0b32",
+    "simple_axi_master.sv": "483790268d6f25abee5cb7e60cb44339d30fc9e62200c8434897a6b6810a72ab",
+    "simple_axi_slave.sv": "c8ccf220a302e4abcfbdca78a7cb4ed46543875f038b9838d30a3cc06e70066f",
+    "tb/axi_memory_slave.sv": "a87c21b618690329ec15fb5eac452aaf41432286e80d95ad0d35235f9fb141b3",
+    "tb/formal_decoder.sv": "f49b64ac15d347cfac4ab3dde5a5a8299374e8b30a2add67cd7e778a564741e1",
+    "tb/m0_clean_cache_model.sv": "33727bfb70953c60b9120f3bf701ddbd5846b4bc1fdbb466b080ac5f8d9efaa6",
+    "tb/tb_axi_fifo_overlap.sv": "525234c9052def2b2999f581c83d052f0cacbfd1aa8b6d0ac8e60ba8ab5210b8",
+    "tb/tb_axi_grant_lock.sv": "a88e83aa4cad8913ba674da1248bfd34a729e8c8721bdb6f6df30303c43c4565",
+    "tb/tb_cache_collision.sv": "68aec9b176134f34dc98b800682c954b9dbdb6e1fceb63079c3c484a15ea4a6f",
+    "tb/tb_cci_integration.sv": "4d5eb7862ee04f7e086bda806036c4f4073f9e632f611793b7fb1d978cf4ceb9",
+    "tb/tb_cci_memory_cache.sv": "f2b1955c5a142360c6e8d59fa3e9af2261863e2c4c8321468867f4cefc350aba",
+    "tb/tb_decoder.sv": "ca8cc85b88899350182b297d4d14976a940ed43185f5adb5a180ee6edd119f71",
+    "tb/tb_memory_collision.sv": "11b9f1415b7326f2e67540a72268ccf603c72c1aa6dd69823e470cb603df7ff2",
+    "tb/tb_snoop_endpoint.sv": "72a30aeb0c21853235e58067d9e3a89d678b5fee78304cb18e49f66a3c346e6a",
+    "tb_axi_bus_system.sv": "91aea3ae858bb53600261dbae2708116357f3b11540c8f88e8d789b453489d2b"
+  },
+  "cases": [
+    {
+      "name": "b0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "b0.log",
+      "scope": "directed_suite",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=16 write_peak=16 read_peak=16 aw_b_overlap=1 ar_rlast_overlap=2"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d1.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=1 write_peak=1 read_peak=1 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d3.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=3 write_peak=3 read_peak=3 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d5.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=5 write_peak=5 read_peak=5 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_fifo_overlap_d1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d1.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=1 aw_b_overlap=0 ar_rlast_overlap=0 full_hold=41 issued=42"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d1.coverage.dat"
+    },
+    {
+      "name": "axi_fifo_overlap_d3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d3.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=3 aw_b_overlap=40 ar_rlast_overlap=40 full_hold=1 issued=44"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d3.coverage.dat"
+    },
+    {
+      "name": "axi_fifo_overlap_d5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d5.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=5 aw_b_overlap=40 ar_rlast_overlap=40 full_hold=1 issued=46"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d5.coverage.dat"
+    },
+    {
+      "name": "fifo_wr_bad_count",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "FIFO_LIFETIME_COUNT",
+      "args": [],
+      "log": "fifo_wr_bad_count.log",
+      "scope": "fifo_mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "fifo_rd_bad_count",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "FIFO_LIFETIME_COUNT",
+      "args": [],
+      "log": "fifo_rd_bad_count.log",
+      "scope": "fifo_mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "grant_lock",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AW/AR grant locks and 64-bit payload stability",
+      "args": [],
+      "log": "grant_lock.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t4_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t4_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t4_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t4_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t8_f8",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t8_f8.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t8_f8",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t8_f8.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t16_f16",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t16_f16.log",
+      "scope": "directed_suite",
+      "coverage_bins": [],
+      "instrumented_coverage": "b1_d16_t16_f16.coverage.dat"
+    }
+  ],
+  "metrics": [
+    {
+      "mode": "0",
+      "trackers": "4",
+      "fifo": "4",
+      "peak_tracker": "4",
+      "tracker_stall": "40",
+      "ingress_stall": "0",
+      "copy_cycles": "86",
+      "accepted_per_cycle": "0.093023",
+      "peak_ingress": "8",
+      "case": "b1_d16_t4_f4"
+    },
+    {
+      "mode": "1",
+      "trackers": "4",
+      "fifo": "4",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t4_f4"
+    },
+    {
+      "mode": "0",
+      "trackers": "8",
+      "fifo": "8",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t8_f8"
+    },
+    {
+      "mode": "1",
+      "trackers": "8",
+      "fifo": "8",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t8_f8"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t16_f16"
+    }
+  ],
+  "commands": [
+    {
+      "stage": "compile",
+      "name": "b0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b0",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b0/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d1",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d1/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d3",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d3/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d5",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=5"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_outstanding_d5/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d1",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=1",
+        "--coverage-line",
+        "--coverage-toggle"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d1/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d3",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=3",
+        "--coverage-line",
+        "--coverage-toggle"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d3/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d3.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d5",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=5",
+        "--coverage-line",
+        "--coverage-toggle"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d5/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20260930T055231Z_dd7d123f/axi_fifo_overlap_d5.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "fifo_wr_bad_count",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_wr_bad_count",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_wr_bad_count.sv",
+        "tb/tb_axi_fifo_overlap.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "fifo_wr_bad_count",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_wr_bad_count/Vtb_axi_fifo_overlap"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "fifo_rd_bad_count",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_rd_bad_count",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_rd_bad_count.sv",
+        "tb/tb_axi_fifo_overlap.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "fifo_rd_bad_count",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/fifo_rd_bad_count/Vtb_axi_fifo_overlap"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "grant_lock",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_grant_lock",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/grant_lock",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_grant_lock.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "grant_lock",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/grant_lock/Vtb_axi_grant_lock"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t4_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t4_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=4",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t4_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t4_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t4_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t4_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=4",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t4_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t4_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t8_f8",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t8_f8",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=8",
+        "-GCONV_AC_FIFO_DEPTH=8"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t8_f8",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t8_f8/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t8_f8",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t8_f8",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=8",
+        "-GCONV_AC_FIFO_DEPTH=8"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t8_f8",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t8_f8/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t16_f16",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t16_f16",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=16",
+        "--coverage-line",
+        "--coverage-toggle"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t16_f16",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/b1_d16_t16_f16/Vtb_cci_integration",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20260930T055231Z_dd7d123f/b1_d16_t16_f16.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t16_f16",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t16_f16",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=16",
+        "--coverage-line",
+        "--coverage-toggle"
+      ]
+    }
+  ],
+  "coverage": {
+    "PASS AXI FIFO simultaneous retirement and admission depth=1": [
+      "axi_fifo_overlap_d1"
+    ],
+    "PASS AXI FIFO simultaneous retirement and admission depth=3": [
+      "axi_fifo_overlap_d3"
+    ],
+    "PASS AXI FIFO simultaneous retirement and admission depth=5": [
+      "axi_fifo_overlap_d5"
+    ],
+    "PASS AW/AR grant locks and 64-bit payload stability": [
+      "grant_lock"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=4 fifo=4": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4"
+    ],
+    "PASS conventional actual-B lifetime, AR/AW hazards, high-page alias": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16"
+    ],
+    "PASS reset after first W beat and queued writes": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16"
+    ],
+    "PASS reset during stalled W and held B": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16"
+    ],
+    "PASS reset with held R then fresh M1 read": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=4 FIFO=4": [
+      "b1_d16_t4_f4"
+    ],
+    "PASS bounded range hazard acceptance: non_target/other_page/done_target AR+AW limit=8": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS independent range page-alias/membership/duplicate oracle": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS range start-line, duplicate fallback, HOL, B masks, dual hazards, drain": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS one-line/page-end and sparse-mask context reuse": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS 64-line full page and ingress wrap": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS setup drain preserves stalled AW/AR grants": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS reset during stalled invalidation and restart": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS setup source/alignment/zero-count/mask-priority/busy boundaries": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS M1 AR/R pending and locked-read setup drain": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=4 FIFO=4": [
+      "p_d16_t4_f4"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=8 fifo=8": [
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=8 FIFO=8": [
+      "b1_d16_t8_f8"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=8 FIFO=8": [
+      "p_d16_t8_f8"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16": [
+      "b1_d16_t16_f16"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=16 FIFO=16": [
+      "b1_d16_t16_f16"
+    ]
+  },
+  "tools": {
+    "verilator": "Verilator 5.048 2026-04-26 rev v5.048\n",
+    "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 2000-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 1999-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 1998-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n",
+    "yosys": "Yosys 0.9 (git sha1 1979e0b)\n"
+  },
+  "host": {
+    "python": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:31:09) [GCC 11.2.0]",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31"
+  },
+  "config": {
+    "clock_ns": 10,
+    "axi_outstanding": 16,
+    "control_endpoint_depth": 16,
+    "control_endpoint_latency": 12,
+    "slave_latency": 5,
+    "cache_endpoint_latency": 4,
+    "seed_schedule": "time-indexed from case reset",
+    "warning_allowlist": [
+      "PINMISSING",
+      "TIMESCALEMOD",
+      "WIDTHEXPAND",
+      "WIDTHTRUNC"
+    ]
+  },
+  "error": "Command '['verilator', '--binary', '--timing', '--assert', '-Wno-fatal', '-j', '4', '--top-module', 'tb_cci_integration', '--Mdir', '/tmp/cci_axi_v9/simulation_20260930T055231Z_dd7d123f/p_d16_t16_f16', '-f', 'scripts/rtl.f', 'simple_axi_slave.sv', 'tb/tb_cci_integration.sv', '-GUSE_RANGE=1', '-GM1_INGRESS_DEPTH=16', '-GLINE_TRACKER_ENTRIES=16', '-GCONV_AC_FIFO_DEPTH=16', '--coverage-line', '--coverage-toggle']' returned non-zero exit status 2."
+}

@@ -1,0 +1,4429 @@
+{
+  "run_id": "simulation_20261006T023402Z_59e5825e",
+  "status": "PASS",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "225c34c8b672217c0eb3be4bdda0238594f8d2ac8683c0cd7b7581eeb0c4aa89",
+    "realistic_axi_master.sv": "396bbb43548c7b9d394fb17ce21d7268a0c79f6309063fb1154387d66af5a45a",
+    "rtl/common/cci_pkg.sv": "5a20be52d953610695e91a5bdc63cf9e154b9c600833a821ad9567c48536dcb8",
+    "rtl/common/coh_write_ingress.sv": "2e5245ba727f5a228ae2e5d675ce56dc6d9aa6cdf65c34d4ab1c10efd185f3b4",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/synth_register_shell.sv": "83897b8367c29ef6cf686359061f876171e304b3783973834df5a0862d2011b6",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_range_rim_tracker.sv": "57e96a34f51e976f0a318918ace0ac7a794505de28005b7082a30c2f57a82a55",
+    "rtl/top/axi_b0_top.sv": "3cfb47cad1c9e2688ce1f4eb76f0b8b0c8b5525cb80f4fe901b6b46a345e4725",
+    "rtl/top/axi_b1_conventional_top.sv": "aa9844512752634f05e095dc0b65c3c4181cd8276ff4d90a61aeba272655904d",
+    "rtl/top/axi_cci_top.sv": "9e6e924d85256ee3280c1e47036cabc211dae09260a93ee3918fe0a6ac730b38",
+    "rtl/top/axi_p_range_top.sv": "4713007acbfd222d23a2967b4b12a3df8bf06b1eaa6cbe3cc96e71d0c8b763e1",
+    "scripts/fixtures/hardware/B0/drc.rpt": "6ac1f7468d175fd7127c9f23ef8197021e1e11d8a12019d946101a9aa001cc1a",
+    "scripts/fixtures/hardware/B0/post_route_hier.rpt": "08504c1fed2de12ade3a978cfb14af4b5aedd4dc4f3e4275bb76b110dbb47d3c",
+    "scripts/fixtures/hardware/B0/post_route_timing_summary.rpt": "38bd576edd675c11911c8099a9a9263266c019509603e2b4e8fc494e7b08baa7",
+    "scripts/fixtures/hardware/B0/post_route_utilization.rpt": "c301d4d99dcfe77c76bfc9b4914d50d85a30af2e6b9b2a994269ac7ce3554ff8",
+    "scripts/fixtures/hardware/B0/route_status.rpt": "9d4d935b66e3ed418aecc72e8c0970b3a8f33110829d3a266b1f372861d5514e",
+    "scripts/fixtures/hardware/B1/drc.rpt": "e9f4e7819fbbb0c787005489b620c123935649238a98e39d53160b8410ffca5f",
+    "scripts/fixtures/hardware/B1/post_route_hier.rpt": "fc33895eb6a0d09128678770c5ffc7550146f66f84c46fde514bcd95181c4337",
+    "scripts/fixtures/hardware/B1/post_route_timing_summary.rpt": "324e9c90f991f66c793658d828e099d1cf837f13fa6d0bbca2405668ba5dc9a6",
+    "scripts/fixtures/hardware/B1/post_route_utilization.rpt": "fd95c4b66b961b6a16affbf40d8b355f91f317500017c6acfe86ee79722ef45d",
+    "scripts/fixtures/hardware/B1/route_status.rpt": "98e20c399647101d71d48d7269d7840e43323cd8a78d2d09d4d491d8f2ecb024",
+    "scripts/fixtures/hardware/P/drc.rpt": "d2e2b50221e6bb581f72d5aa9cc8853e60f6d19ac76d18d3595f388b558409e0",
+    "scripts/fixtures/hardware/P/post_route_hier.rpt": "347b814697bdb7af5f2b60d943ec45d9a4a69bbf3ef26b70b1e632d146b54ec5",
+    "scripts/fixtures/hardware/P/post_route_timing_summary.rpt": "2a4c95f0b436e7ae179b2db160d14cfdee566cd09d543cddcda02b4bfb6f9578",
+    "scripts/fixtures/hardware/P/post_route_utilization.rpt": "4b69806163be3dada42666cdd355765cde2b06780889c3d68c94cd8009e1d493",
+    "scripts/fixtures/hardware/P/route_status.rpt": "c171ef46adc3b60e44911277ca907ed75ba38ff399b1102e9b3a69ab7f3ba09d",
+    "scripts/results_common.py": "3cd0cbbae984e2e3439b89da62feab8f9bcf83255bafd5f771e6a5ed9efa88d6",
+    "scripts/rtl.f": "7f357322edf8a5a8240467c3f829e1405e7dfb9b84396ad1eaa8eb78425f5fb0",
+    "scripts/run_regression.py": "93db3dde41b7a7a60a9480217237b636a56c572f2368ab3aef18b954bf517ae7",
+    "scripts/test_results_common.py": "4e46a13ac284b130f551e0041fb67d4f93e6946af3fff0ccea779ffd635c0b32",
+    "simple_axi_master.sv": "483790268d6f25abee5cb7e60cb44339d30fc9e62200c8434897a6b6810a72ab",
+    "simple_axi_slave.sv": "c8ccf220a302e4abcfbdca78a7cb4ed46543875f038b9838d30a3cc06e70066f",
+    "tb/axi_memory_slave.sv": "a87c21b618690329ec15fb5eac452aaf41432286e80d95ad0d35235f9fb141b3",
+    "tb/formal_decoder.sv": "f49b64ac15d347cfac4ab3dde5a5a8299374e8b30a2add67cd7e778a564741e1",
+    "tb/m0_clean_cache_model.sv": "33727bfb70953c60b9120f3bf701ddbd5846b4bc1fdbb466b080ac5f8d9efaa6",
+    "tb/tb_ace_manager_transactions.sv": "377270c00d924afba1bf0e784149902b1323a628446c62255111e87d1a0d3e81",
+    "tb/tb_ace_snoop_fabric.sv": "6d6fb88c1dc3f53d375851e19b5a2cde60d7c597d9a7a835acd835b9c2b45f99",
+    "tb/tb_ace_snoop_service.sv": "d116b331236ba5377180da0603896a23fab8df73ae30a96d8db0a57696944672",
+    "tb/tb_axi_fifo_overlap.sv": "9cd603830dd84a62483bf4970c46d7e5daed8d6b214bb197580472e1b8ef252d",
+    "tb/tb_axi_grant_lock.sv": "a88e83aa4cad8913ba674da1248bfd34a729e8c8721bdb6f6df30303c43c4565",
+    "tb/tb_cache_collision.sv": "68aec9b176134f34dc98b800682c954b9dbdb6e1fceb63079c3c484a15ea4a6f",
+    "tb/tb_cci_ace_integration.sv": "02eaa1e845de6c83ac86406360910b5967a9fbb9c651ba180b8981a5f9e3b94a",
+    "tb/tb_cci_integration.sv": "4d5eb7862ee04f7e086bda806036c4f4073f9e632f611793b7fb1d978cf4ceb9",
+    "tb/tb_cci_memory_cache.sv": "f2b1955c5a142360c6e8d59fa3e9af2261863e2c4c8321468867f4cefc350aba",
+    "tb/tb_decoder.sv": "ca8cc85b88899350182b297d4d14976a940ed43185f5adb5a180ee6edd119f71",
+    "tb/tb_memory_collision.sv": "11b9f1415b7326f2e67540a72268ccf603c72c1aa6dd69823e470cb603df7ff2",
+    "tb/tb_snoop_endpoint.sv": "72a30aeb0c21853235e58067d9e3a89d678b5fee78304cb18e49f66a3c346e6a",
+    "tb_axi_bus_system.sv": "91aea3ae858bb53600261dbae2708116357f3b11540c8f88e8d789b453489d2b"
+  },
+  "cases": [
+    {
+      "name": "b0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "b0.log",
+      "scope": "directed_suite",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=16 write_peak=16 read_peak=16 aw_b_overlap=1 ar_rlast_overlap=2"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d1.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=1 write_peak=1 read_peak=1 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d3.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=3 write_peak=3 read_peak=3 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_outstanding_d5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "---- PASS: AXI4 ID + multiple outstanding scenario completed ----",
+      "args": [],
+      "log": "axi_outstanding_d5.log",
+      "scope": "axi_outstanding_parameters",
+      "coverage_bins": [
+        "COVERAGE axi_outstanding depth=5 write_peak=5 read_peak=5 aw_b_overlap=0 ar_rlast_overlap=0"
+      ]
+    },
+    {
+      "name": "axi_fifo_overlap_d1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d1.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=1 aw_b_overlap=0 ar_rlast_overlap=0 full_hold=41 issued=42"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d1.coverage.dat"
+    },
+    {
+      "name": "axi_fifo_overlap_d3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d3.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=3 aw_b_overlap=40 ar_rlast_overlap=40 full_hold=1 issued=44"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d3.coverage.dat"
+    },
+    {
+      "name": "axi_fifo_overlap_d5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AXI FIFO simultaneous retirement",
+      "args": [],
+      "log": "axi_fifo_overlap_d5.log",
+      "scope": "axi_fifo_overlap",
+      "coverage_bins": [
+        "COVERAGE axi_fifo depth=5 aw_b_overlap=40 ar_rlast_overlap=40 full_hold=1 issued=46"
+      ],
+      "instrumented_coverage": "axi_fifo_overlap_d5.coverage.dat"
+    },
+    {
+      "name": "fifo_wr_bad_count",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "FIFO_LIFETIME_COUNT",
+      "args": [],
+      "log": "fifo_wr_bad_count.log",
+      "scope": "fifo_mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "fifo_rd_bad_count",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "FIFO_LIFETIME_COUNT",
+      "args": [],
+      "log": "fifo_rd_bad_count.log",
+      "scope": "fifo_mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "grant_lock",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS AW/AR grant locks and 64-bit payload stability",
+      "args": [],
+      "log": "grant_lock.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t4_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t4_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t4_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t4_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t8_f8",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t8_f8.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t8_f8",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t8_f8.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t16_f16",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t16_f16.log",
+      "scope": "directed_suite",
+      "coverage_bins": [],
+      "instrumented_coverage": "b1_d16_t16_f16.coverage.dat"
+    },
+    {
+      "name": "p_d16_t16_f16",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t16_f16.log",
+      "scope": "directed_suite",
+      "coverage_bins": [],
+      "instrumented_coverage": "p_d16_t16_f16.coverage.dat"
+    },
+    {
+      "name": "b1_d16_t16_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t16_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t16_f4",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t16_f4.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d1_t1_f1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "b1_d1_t1_f1.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d1_t1_f1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "p_d1_t1_f1.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d3_t2_f1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "b1_d3_t2_f1.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d3_t2_f1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "p_d3_t2_f1.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d5_t5_f3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "b1_d5_t5_f3.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d5_t5_f3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS parameter_boundary",
+      "args": [],
+      "log": "p_d5_t5_f3.log",
+      "scope": "parameter_directed",
+      "coverage_bins": []
+    },
+    {
+      "name": "b1_d16_t5_f3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "b1_d16_t5_f3.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "p_d16_t5_f3",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [],
+      "log": "p_d16_t5_f3.log",
+      "scope": "directed_suite",
+      "coverage_bins": []
+    },
+    {
+      "name": "seed_1_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=1"
+      ],
+      "log": "seed_1_mode0.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_1_mode0.coverage.dat"
+    },
+    {
+      "name": "seed_1_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=1"
+      ],
+      "log": "seed_1_mode1.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_1_mode1.coverage.dat"
+    },
+    {
+      "name": "seed_7_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=7"
+      ],
+      "log": "seed_7_mode0.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_7_mode0.coverage.dat"
+    },
+    {
+      "name": "seed_7_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=7"
+      ],
+      "log": "seed_7_mode1.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_7_mode1.coverage.dat"
+    },
+    {
+      "name": "seed_123_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=123"
+      ],
+      "log": "seed_123_mode0.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_123_mode0.coverage.dat"
+    },
+    {
+      "name": "seed_123_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_integration USE_RANGE=",
+      "args": [
+        "+seed=123"
+      ],
+      "log": "seed_123_mode1.log",
+      "scope": "seeded_ready_stalls",
+      "coverage_bins": [],
+      "instrumented_coverage": "seed_123_mode1.coverage.dat"
+    },
+    {
+      "name": "traffic_seed11_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=11",
+        "+seed=11"
+      ],
+      "log": "traffic_seed11_mode0.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=11 mode=0 sparse=12 contiguous=12 setup_overlap=0 m0_read_mix=44 m0_write_mix=43 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed11_mode0.coverage.dat"
+    },
+    {
+      "name": "traffic_seed11_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=11",
+        "+seed=11"
+      ],
+      "log": "traffic_seed11_mode1.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=11 mode=1 sparse=12 contiguous=12 setup_overlap=8 m0_read_mix=49 m0_write_mix=43 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed11_mode1.coverage.dat"
+    },
+    {
+      "name": "traffic_seed29_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=29",
+        "+seed=29"
+      ],
+      "log": "traffic_seed29_mode0.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=29 mode=0 sparse=12 contiguous=12 setup_overlap=0 m0_read_mix=46 m0_write_mix=41 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed29_mode0.coverage.dat"
+    },
+    {
+      "name": "traffic_seed29_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=29",
+        "+seed=29"
+      ],
+      "log": "traffic_seed29_mode1.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=29 mode=1 sparse=12 contiguous=12 setup_overlap=8 m0_read_mix=45 m0_write_mix=52 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed29_mode1.coverage.dat"
+    },
+    {
+      "name": "traffic_seed101_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=101",
+        "+seed=101"
+      ],
+      "log": "traffic_seed101_mode0.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=101 mode=0 sparse=12 contiguous=12 setup_overlap=0 m0_read_mix=47 m0_write_mix=46 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed101_mode0.coverage.dat"
+    },
+    {
+      "name": "traffic_seed101_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=101",
+        "+seed=101"
+      ],
+      "log": "traffic_seed101_mode1.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=101 mode=1 sparse=12 contiguous=12 setup_overlap=8 m0_read_mix=41 m0_write_mix=43 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed101_mode1.coverage.dat"
+    },
+    {
+      "name": "traffic_seed997_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=997",
+        "+seed=997"
+      ],
+      "log": "traffic_seed997_mode0.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=997 mode=0 sparse=12 contiguous=12 setup_overlap=0 m0_read_mix=35 m0_write_mix=46 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed997_mode0.coverage.dat"
+    },
+    {
+      "name": "traffic_seed997_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS constrained traffic",
+      "args": [
+        "+traffic_seed=997",
+        "+seed=997"
+      ],
+      "log": "traffic_seed997_mode1.log",
+      "scope": "constrained_traffic",
+      "coverage_bins": [
+        "COVERAGE traffic seed=997 mode=1 sparse=12 contiguous=12 setup_overlap=8 m0_read_mix=38 m0_write_mix=55 duplicates=24"
+      ],
+      "instrumented_coverage": "traffic_seed997_mode1.coverage.dat"
+    },
+    {
+      "name": "bench_seed1_mode0_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed1_mode0_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed1_mode0_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed1_mode0_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed1_mode0_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed1_mode0_prelude137.coverage.dat"
+    },
+    {
+      "name": "bench_seed1_mode1_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed1_mode1_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed1_mode1_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed1_mode1_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed1_mode1_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed1_mode1_prelude137.coverage.dat"
+    },
+    {
+      "name": "bench_seed7_mode0_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed7_mode0_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed7_mode0_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed7_mode0_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed7_mode0_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed7_mode0_prelude137.coverage.dat"
+    },
+    {
+      "name": "bench_seed7_mode1_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed7_mode1_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed7_mode1_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed7_mode1_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed7_mode1_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed7_mode1_prelude137.coverage.dat"
+    },
+    {
+      "name": "bench_seed123_mode0_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed123_mode0_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed123_mode0_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed123_mode0_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed123_mode0_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed123_mode0_prelude137.coverage.dat"
+    },
+    {
+      "name": "bench_seed123_mode1_prelude0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=0"
+      ],
+      "log": "bench_seed123_mode1_prelude0.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed123_mode1_prelude0.coverage.dat"
+    },
+    {
+      "name": "bench_seed123_mode1_prelude137",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS isolated copy benchmark",
+      "args": [
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=137"
+      ],
+      "log": "bench_seed123_mode1_prelude137.log",
+      "scope": "benchmark_isolation",
+      "coverage_bins": [],
+      "instrumented_coverage": "bench_seed123_mode1_prelude137.coverage.dat"
+    },
+    {
+      "name": "watchdog_negative",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "RANGE_WATCHDOG:",
+      "args": [
+        "+watchdog_negative"
+      ],
+      "log": "watchdog_negative.log",
+      "scope": "negative_assertion",
+      "coverage_bins": []
+    },
+    {
+      "name": "range_cr_error",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "RANGE_CR_ERROR:",
+      "args": [
+        "+range_cr_error"
+      ],
+      "log": "range_cr_error.log",
+      "scope": "negative_assertion",
+      "coverage_bins": []
+    },
+    {
+      "name": "b_error",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "CCI_B_ERROR:",
+      "args": [
+        "+b_error"
+      ],
+      "log": "b_error.log",
+      "scope": "negative_assertion",
+      "coverage_bins": []
+    },
+    {
+      "name": "m0_crossing",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "M0_AR_CROSSES_LINE",
+      "args": [
+        "+m0_crossing"
+      ],
+      "log": "m0_crossing.log",
+      "scope": "negative_assertion",
+      "coverage_bins": []
+    },
+    {
+      "name": "page_mutant",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "independent actual-B/reservation bitmap scoreboard",
+      "args": [],
+      "log": "page_mutant.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_no_page",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_ACCEPT_TIMEOUT:other_page",
+      "args": [],
+      "log": "hazard_no_page.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_no_mask",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_ACCEPT_TIMEOUT:non_target",
+      "args": [],
+      "log": "hazard_no_mask.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_no_done",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_ACCEPT_TIMEOUT:done_target",
+      "args": [],
+      "log": "hazard_no_done.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_zero",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_BLOCK_MISSING:AW",
+      "args": [],
+      "log": "hazard_zero.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_ar_disabled",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_BLOCK_MISSING:AR",
+      "args": [],
+      "log": "hazard_ar_disabled.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_aw_disabled",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_BLOCK_MISSING:AW",
+      "args": [],
+      "log": "hazard_aw_disabled.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_aw_wrong_address",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_BLOCK_MISSING:AW",
+      "args": [],
+      "log": "hazard_aw_wrong_address.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "hazard_ar_wrong_address",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "HAZARD_CROSS_ACCEPT_TIMEOUT:AR",
+      "args": [],
+      "log": "hazard_ar_wrong_address.log",
+      "scope": "mutation",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_mode0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_mode0.log",
+      "scope": "memory_cache",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_mode1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_mode1.log",
+      "scope": "memory_cache",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m0_lines1_axi1_lat0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m0_lines1_axi1_lat0.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m1_lines1_axi1_lat0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m1_lines1_axi1_lat0.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m0_lines2_axi3_lat5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m0_lines2_axi3_lat5.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m1_lines2_axi3_lat5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m1_lines2_axi3_lat5.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m0_lines16_axi5_lat12",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m0_lines16_axi5_lat12.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_cache_m1_lines16_axi5_lat12",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS tb_cci_memory_cache USE_RANGE=",
+      "args": [],
+      "log": "memory_cache_m1_lines16_axi5_lat12.log",
+      "scope": "memory_cache_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "cache_collision_lines1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS cache collision",
+      "args": [],
+      "log": "cache_collision_lines1.log",
+      "scope": "cache_collision",
+      "coverage_bins": [
+        "COVERAGE cache_collision final_match=1 load_match=1 stalled_ar_match=1 final_other_tag=1 resident_other_tag=1 replace_old_tag=1"
+      ]
+    },
+    {
+      "name": "cache_collision_lines2",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS cache collision",
+      "args": [],
+      "log": "cache_collision_lines2.log",
+      "scope": "cache_collision",
+      "coverage_bins": [
+        "COVERAGE cache_collision final_match=1 load_match=1 stalled_ar_match=1 final_other_tag=1 resident_other_tag=1 replace_old_tag=1"
+      ]
+    },
+    {
+      "name": "cache_collision_lines8",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS cache collision",
+      "args": [],
+      "log": "cache_collision_lines8.log",
+      "scope": "cache_collision",
+      "coverage_bins": [
+        "COVERAGE cache_collision final_match=1 load_match=1 stalled_ar_match=1 final_other_tag=1 resident_other_tag=1 replace_old_tag=1"
+      ]
+    },
+    {
+      "name": "cache_collision_lines16",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS cache collision",
+      "args": [],
+      "log": "cache_collision_lines16.log",
+      "scope": "cache_collision",
+      "coverage_bins": [
+        "COVERAGE cache_collision final_match=1 load_match=1 stalled_ar_match=1 final_other_tag=1 resident_other_tag=1 replace_old_tag=1"
+      ]
+    },
+    {
+      "name": "memory_collision_latency0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS memory collision",
+      "args": [],
+      "log": "memory_collision_latency0.log",
+      "scope": "memory_collision",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_collision_latency5",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS memory collision",
+      "args": [],
+      "log": "memory_collision_latency5.log",
+      "scope": "memory_collision",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_collision_latency255",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS memory collision",
+      "args": [],
+      "log": "memory_collision_latency255.log",
+      "scope": "memory_collision",
+      "coverage_bins": []
+    },
+    {
+      "name": "memory_collision_latency256",
+      "status": "EXPECTED_FAILURE_PASS",
+      "returncode": 1,
+      "expected_marker": "SLAVE_LATENCY_RANGE",
+      "args": [],
+      "log": "memory_collision_latency256.log",
+      "scope": "negative_parameter",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d1_l0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d1_l0.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d1_l1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d1_l1.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d3_l0",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d3_l0.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d3_l12",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d3_l12.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d16_l1",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d16_l1.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "endpoint_d16_l12",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS endpoint",
+      "args": [],
+      "log": "endpoint_d16_l12.log",
+      "scope": "endpoint_parameters",
+      "coverage_bins": []
+    },
+    {
+      "name": "decoder_verilator",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS decoder exhaustive",
+      "args": [],
+      "log": "decoder_verilator.log",
+      "scope": "decoder_exhaustive",
+      "coverage_bins": []
+    },
+    {
+      "name": "decoder_iverilog",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "PASS decoder exhaustive",
+      "args": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/decoder_iv"
+      ],
+      "log": "decoder_iverilog.log",
+      "scope": "cross_simulator_decoder",
+      "coverage_bins": []
+    },
+    {
+      "name": "decoder_formal",
+      "status": "PASS",
+      "returncode": 0,
+      "expected_marker": "SAT proof finished - no model found: SUCCESS!",
+      "args": [
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -formal -sv rtl/proposed/cci_range_req_decoder.sv tb/formal_decoder.sv; prep -top formal_decoder -flatten; sat -verify -prove-asserts -show-inputs"
+      ],
+      "log": "decoder_formal.log",
+      "scope": "formal_combinational_decoder",
+      "coverage_bins": []
+    }
+  ],
+  "metrics": [
+    {
+      "mode": "0",
+      "trackers": "4",
+      "fifo": "4",
+      "peak_tracker": "4",
+      "tracker_stall": "40",
+      "ingress_stall": "0",
+      "copy_cycles": "86",
+      "accepted_per_cycle": "0.093023",
+      "peak_ingress": "8",
+      "case": "b1_d16_t4_f4"
+    },
+    {
+      "mode": "1",
+      "trackers": "4",
+      "fifo": "4",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t4_f4"
+    },
+    {
+      "mode": "0",
+      "trackers": "8",
+      "fifo": "8",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t8_f8"
+    },
+    {
+      "mode": "1",
+      "trackers": "8",
+      "fifo": "8",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t8_f8"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t16_f16"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t16_f16"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "4",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t16_f4"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "4",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t16_f4"
+    },
+    {
+      "mode": "0",
+      "trackers": "5",
+      "fifo": "3",
+      "peak_tracker": "5",
+      "tracker_stall": "32",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "b1_d16_t5_f3"
+    },
+    {
+      "mode": "1",
+      "trackers": "5",
+      "fifo": "3",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "p_d16_t5_f3"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "seed_1_mode0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "93",
+      "accepted_per_cycle": "0.086022",
+      "peak_ingress": "8",
+      "case": "seed_1_mode1"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "97",
+      "accepted_per_cycle": "0.082474",
+      "peak_ingress": "8",
+      "case": "seed_7_mode0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "107",
+      "accepted_per_cycle": "0.074766",
+      "peak_ingress": "8",
+      "case": "seed_7_mode1"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "95",
+      "accepted_per_cycle": "0.084211",
+      "peak_ingress": "8",
+      "case": "seed_123_mode0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "103",
+      "accepted_per_cycle": "0.077670",
+      "peak_ingress": "8",
+      "case": "seed_123_mode1"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "bench_seed1_mode0_prelude0"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "83",
+      "accepted_per_cycle": "0.096386",
+      "peak_ingress": "8",
+      "case": "bench_seed1_mode0_prelude137"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "93",
+      "accepted_per_cycle": "0.086022",
+      "peak_ingress": "8",
+      "case": "bench_seed1_mode1_prelude0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "93",
+      "accepted_per_cycle": "0.086022",
+      "peak_ingress": "8",
+      "case": "bench_seed1_mode1_prelude137"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "97",
+      "accepted_per_cycle": "0.082474",
+      "peak_ingress": "8",
+      "case": "bench_seed7_mode0_prelude0"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "97",
+      "accepted_per_cycle": "0.082474",
+      "peak_ingress": "8",
+      "case": "bench_seed7_mode0_prelude137"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "107",
+      "accepted_per_cycle": "0.074766",
+      "peak_ingress": "8",
+      "case": "bench_seed7_mode1_prelude0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "107",
+      "accepted_per_cycle": "0.074766",
+      "peak_ingress": "8",
+      "case": "bench_seed7_mode1_prelude137"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "95",
+      "accepted_per_cycle": "0.084211",
+      "peak_ingress": "8",
+      "case": "bench_seed123_mode0_prelude0"
+    },
+    {
+      "mode": "0",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "8",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "95",
+      "accepted_per_cycle": "0.084211",
+      "peak_ingress": "8",
+      "case": "bench_seed123_mode0_prelude137"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "103",
+      "accepted_per_cycle": "0.077670",
+      "peak_ingress": "8",
+      "case": "bench_seed123_mode1_prelude0"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "103",
+      "accepted_per_cycle": "0.077670",
+      "peak_ingress": "8",
+      "case": "bench_seed123_mode1_prelude137"
+    },
+    {
+      "mode": "1",
+      "trackers": "16",
+      "fifo": "16",
+      "peak_tracker": "0",
+      "tracker_stall": "0",
+      "ingress_stall": "0",
+      "copy_cycles": "91",
+      "accepted_per_cycle": "0.087912",
+      "peak_ingress": "8",
+      "case": "watchdog_negative"
+    }
+  ],
+  "commands": [
+    {
+      "stage": "compile",
+      "name": "b0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b0",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b0/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d1",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d1/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d3",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d3/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_outstanding_d5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_bus_system",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d5",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "simple_axi_master.sv",
+        "realistic_axi_master.sv",
+        "simple_axi_slave.sv",
+        "tb_axi_bus_system.sv",
+        "-GMAX_OUTSTANDING_TRANSACTIONS=5"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_outstanding_d5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_outstanding_d5/Vtb_axi_bus_system"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d1",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=1",
+        "--coverage-line",
+        "--coverage-toggle",
+        "--output-split",
+        "0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d1/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d3",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=3",
+        "--coverage-line",
+        "--coverage-toggle",
+        "--output-split",
+        "0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d3/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d3.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "axi_fifo_overlap_d5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d5",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_fifo_overlap.sv",
+        "-GDEPTH=5",
+        "--coverage-line",
+        "--coverage-toggle",
+        "--output-split",
+        "0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "axi_fifo_overlap_d5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d5/Vtb_axi_fifo_overlap",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d5.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "fifo_wr_bad_count",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_wr_bad_count",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_wr_bad_count.sv",
+        "tb/tb_axi_fifo_overlap.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "fifo_wr_bad_count",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_wr_bad_count/Vtb_axi_fifo_overlap"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "fifo_rd_bad_count",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_fifo_overlap",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_rd_bad_count",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_rd_bad_count.sv",
+        "tb/tb_axi_fifo_overlap.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "fifo_rd_bad_count",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/fifo_rd_bad_count/Vtb_axi_fifo_overlap"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "grant_lock",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_axi_grant_lock",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/grant_lock",
+        "axi4_simple_2to1_bus_arbiter.sv",
+        "tb/tb_axi_grant_lock.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "grant_lock",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/grant_lock/Vtb_axi_grant_lock"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t4_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t4_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=4",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t4_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t4_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t4_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t4_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=4",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t4_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t4_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t8_f8",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t8_f8",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=8",
+        "-GCONV_AC_FIFO_DEPTH=8"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t8_f8",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t8_f8/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t8_f8",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t8_f8",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=8",
+        "-GCONV_AC_FIFO_DEPTH=8"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t8_f8",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t8_f8/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t16_f16",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=16",
+        "--coverage-line",
+        "--coverage-toggle",
+        "--output-split",
+        "0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t16_f16",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t16_f16",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=16",
+        "--coverage-line",
+        "--coverage-toggle",
+        "--output-split",
+        "0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t16_f16",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16.coverage.dat"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t16_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t16_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t16_f4",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f4",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=16",
+        "-GCONV_AC_FIFO_DEPTH=4"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t16_f4",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f4/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d1_t1_f1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d1_t1_f1",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=1",
+        "-GLINE_TRACKER_ENTRIES=1",
+        "-GCONV_AC_FIFO_DEPTH=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d1_t1_f1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d1_t1_f1/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d1_t1_f1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d1_t1_f1",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=1",
+        "-GLINE_TRACKER_ENTRIES=1",
+        "-GCONV_AC_FIFO_DEPTH=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d1_t1_f1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d1_t1_f1/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d3_t2_f1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d3_t2_f1",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=3",
+        "-GLINE_TRACKER_ENTRIES=2",
+        "-GCONV_AC_FIFO_DEPTH=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d3_t2_f1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d3_t2_f1/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d3_t2_f1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d3_t2_f1",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=3",
+        "-GLINE_TRACKER_ENTRIES=2",
+        "-GCONV_AC_FIFO_DEPTH=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d3_t2_f1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d3_t2_f1/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d5_t5_f3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d5_t5_f3",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=5",
+        "-GLINE_TRACKER_ENTRIES=5",
+        "-GCONV_AC_FIFO_DEPTH=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d5_t5_f3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d5_t5_f3/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d5_t5_f3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d5_t5_f3",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=5",
+        "-GLINE_TRACKER_ENTRIES=5",
+        "-GCONV_AC_FIFO_DEPTH=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d5_t5_f3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d5_t5_f3/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "b1_d16_t5_f3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t5_f3",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=5",
+        "-GCONV_AC_FIFO_DEPTH=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b1_d16_t5_f3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t5_f3/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "p_d16_t5_f3",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t5_f3",
+        "-f",
+        "scripts/rtl.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GM1_INGRESS_DEPTH=16",
+        "-GLINE_TRACKER_ENTRIES=5",
+        "-GCONV_AC_FIFO_DEPTH=3"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "p_d16_t5_f3",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t5_f3/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_1_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_1_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_1_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_1_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_7_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_7_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_7_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_7_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_123_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_123_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "seed_123_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_123_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed11_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=11",
+        "+seed=11",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed11_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed11_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=11",
+        "+seed=11",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed11_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed29_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=29",
+        "+seed=29",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed29_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed29_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=29",
+        "+seed=29",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed29_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed101_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=101",
+        "+seed=101",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed101_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed101_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=101",
+        "+seed=101",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed101_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed997_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=997",
+        "+seed=997",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed997_mode0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "traffic_seed997_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+traffic_seed=997",
+        "+seed=997",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed997_mode1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed1_mode0_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode0_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed1_mode0_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode0_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed1_mode1_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode1_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed1_mode1_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=1",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode1_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed7_mode0_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode0_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed7_mode0_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode0_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed7_mode1_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode1_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed7_mode1_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=7",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode1_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed123_mode0_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode0_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed123_mode0_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode0_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed123_mode1_prelude0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=0",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode1_prelude0.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "bench_seed123_mode1_prelude137",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+seed=123",
+        "+bench_only",
+        "+bench_delay=137",
+        "+verilator+coverage+file+/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode1_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "watchdog_negative",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+watchdog_negative"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "range_cr_error",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+range_cr_error"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "b_error",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+b_error"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "m0_crossing",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16/Vtb_cci_integration",
+        "+m0_crossing"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "page_mutant",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/page_mutant",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/mutant.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "page_mutant",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/page_mutant/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_no_page",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_page",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_page.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_no_page",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_page/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_no_mask",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_mask",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_mask.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_no_mask",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_mask/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_no_done",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_done",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_done.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_no_done",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_no_done/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_zero",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_zero",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_zero.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_zero",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_zero/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_ar_disabled",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_disabled",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_disabled.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_ar_disabled",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_disabled/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_aw_disabled",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_disabled",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_disabled.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_aw_disabled",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_disabled/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_aw_wrong_address",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_wrong_address",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_wrong_address.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_aw_wrong_address",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_aw_wrong_address/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "hazard_ar_wrong_address",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_integration",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_wrong_address",
+        "-f",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_wrong_address.f",
+        "simple_axi_slave.sv",
+        "tb/tb_cci_integration.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "hazard_ar_wrong_address",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/hazard_ar_wrong_address/Vtb_cci_integration"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_mode0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_mode0",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_mode0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_mode0/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_mode1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_mode1",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_mode1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_mode1/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m0_lines1_axi1_lat0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines1_axi1_lat0",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=0",
+        "-GCACHE_LINES=1",
+        "-GAXI_DEPTH=1",
+        "-GMEMORY_LATENCY=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m0_lines1_axi1_lat0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines1_axi1_lat0/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m1_lines1_axi1_lat0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines1_axi1_lat0",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=1",
+        "-GCACHE_LINES=1",
+        "-GAXI_DEPTH=1",
+        "-GMEMORY_LATENCY=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m1_lines1_axi1_lat0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines1_axi1_lat0/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m0_lines2_axi3_lat5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines2_axi3_lat5",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=0",
+        "-GCACHE_LINES=2",
+        "-GAXI_DEPTH=3",
+        "-GMEMORY_LATENCY=5"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m0_lines2_axi3_lat5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines2_axi3_lat5/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m1_lines2_axi3_lat5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines2_axi3_lat5",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=1",
+        "-GCACHE_LINES=2",
+        "-GAXI_DEPTH=3",
+        "-GMEMORY_LATENCY=5"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m1_lines2_axi3_lat5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines2_axi3_lat5/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m0_lines16_axi5_lat12",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines16_axi5_lat12",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=0",
+        "-GCACHE_LINES=16",
+        "-GAXI_DEPTH=5",
+        "-GMEMORY_LATENCY=12"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m0_lines16_axi5_lat12",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m0_lines16_axi5_lat12/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_cache_m1_lines16_axi5_lat12",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_memory_cache",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines16_axi5_lat12",
+        "-f",
+        "scripts/rtl.f",
+        "tb/axi_memory_slave.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cci_memory_cache.sv",
+        "-GUSE_RANGE=1",
+        "-GCACHE_LINES=16",
+        "-GAXI_DEPTH=5",
+        "-GMEMORY_LATENCY=12"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_cache_m1_lines16_axi5_lat12",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_cache_m1_lines16_axi5_lat12/Vtb_cci_memory_cache"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "cache_collision_lines1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cache_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines1",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cache_collision.sv",
+        "-GLINES=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "cache_collision_lines1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines1/Vtb_cache_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "cache_collision_lines2",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cache_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines2",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cache_collision.sv",
+        "-GLINES=2"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "cache_collision_lines2",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines2/Vtb_cache_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "cache_collision_lines8",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cache_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines8",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cache_collision.sv",
+        "-GLINES=8"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "cache_collision_lines8",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines8/Vtb_cache_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "cache_collision_lines16",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cache_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines16",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/m0_clean_cache_model.sv",
+        "tb/tb_cache_collision.sv",
+        "-GLINES=16"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "cache_collision_lines16",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/cache_collision_lines16/Vtb_cache_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_collision_latency0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_memory_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency0",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_memory_collision.sv",
+        "-GLATENCY=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_collision_latency0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency0/Vtb_memory_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_collision_latency5",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_memory_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency5",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_memory_collision.sv",
+        "-GLATENCY=5"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_collision_latency5",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency5/Vtb_memory_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_collision_latency255",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_memory_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency255",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_memory_collision.sv",
+        "-GLATENCY=255"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_collision_latency255",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency255/Vtb_memory_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "memory_collision_latency256",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_memory_collision",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency256",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_memory_collision.sv",
+        "-GLATENCY=256"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "memory_collision_latency256",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/memory_collision_latency256/Vtb_memory_collision"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d1_l0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d1_l0",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=1",
+        "-GLATENCY=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d1_l0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d1_l0/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d1_l1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d1_l1",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=1",
+        "-GLATENCY=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d1_l1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d1_l1/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d3_l0",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d3_l0",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=3",
+        "-GLATENCY=0"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d3_l0",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d3_l0/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d3_l12",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d3_l12",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=3",
+        "-GLATENCY=12"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d3_l12",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d3_l12/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d16_l1",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d16_l1",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=16",
+        "-GLATENCY=1"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d16_l1",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d16_l1/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "endpoint_d16_l12",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_snoop_endpoint",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d16_l12",
+        "rtl/common/m0_snoop_endpoint.sv",
+        "tb/tb_snoop_endpoint.sv",
+        "-GDEPTH=16",
+        "-GLATENCY=12"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "endpoint_d16_l12",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/endpoint_d16_l12/Vtb_snoop_endpoint"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "decoder_verilator",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_decoder",
+        "--Mdir",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/decoder_verilator",
+        "rtl/proposed/cci_range_req_decoder.sv",
+        "tb/tb_decoder.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "decoder_verilator",
+      "argv": [
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/decoder_verilator/Vtb_decoder"
+      ]
+    },
+    {
+      "stage": "compile",
+      "name": "decoder_iverilog",
+      "argv": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "tb_decoder",
+        "-o",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/decoder_iv",
+        "rtl/proposed/cci_range_req_decoder.sv",
+        "tb/tb_decoder.sv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "decoder_iverilog",
+      "argv": [
+        "vvp",
+        "/tmp/cci_axi_v9/simulation_20261006T023402Z_59e5825e/decoder_iv"
+      ]
+    },
+    {
+      "stage": "execute",
+      "name": "decoder_formal",
+      "argv": [
+        "yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -formal -sv rtl/proposed/cci_range_req_decoder.sv tb/formal_decoder.sv; prep -top formal_decoder -flatten; sat -verify -prove-asserts -show-inputs"
+      ]
+    },
+    {
+      "stage": "coverage",
+      "name": "axi_fifo_overlap_d1",
+      "argv": [
+        "verilator_coverage",
+        "--write",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d1.merged.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d1.coverage.dat"
+      ]
+    },
+    {
+      "stage": "coverage",
+      "name": "axi_fifo_overlap_d3",
+      "argv": [
+        "verilator_coverage",
+        "--write",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d3.merged.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d3.coverage.dat"
+      ]
+    },
+    {
+      "stage": "coverage",
+      "name": "axi_fifo_overlap_d5",
+      "argv": [
+        "verilator_coverage",
+        "--write",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d5.merged.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/axi_fifo_overlap_d5.coverage.dat"
+      ]
+    },
+    {
+      "stage": "coverage",
+      "name": "b1_d16_t16_f16",
+      "argv": [
+        "verilator_coverage",
+        "--write",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16.merged.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/b1_d16_t16_f16.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_1_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_7_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_123_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed11_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed29_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed101_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed997_mode0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode0_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode0_prelude137.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode0_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode0_prelude137.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode0_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode0_prelude137.coverage.dat"
+      ]
+    },
+    {
+      "stage": "coverage",
+      "name": "p_d16_t16_f16",
+      "argv": [
+        "verilator_coverage",
+        "--write",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16.merged.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/p_d16_t16_f16.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_1_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_7_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/seed_123_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed11_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed29_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed101_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/traffic_seed997_mode1.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode1_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed1_mode1_prelude137.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode1_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed7_mode1_prelude137.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode1_prelude0.coverage.dat",
+        "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/simulation_20261006T023402Z_59e5825e/bench_seed123_mode1_prelude137.coverage.dat"
+      ]
+    }
+  ],
+  "coverage": {
+    "PASS AXI FIFO simultaneous retirement and admission depth=1": [
+      "axi_fifo_overlap_d1"
+    ],
+    "PASS AXI FIFO simultaneous retirement and admission depth=3": [
+      "axi_fifo_overlap_d3"
+    ],
+    "PASS AXI FIFO simultaneous retirement and admission depth=5": [
+      "axi_fifo_overlap_d5"
+    ],
+    "PASS AW/AR grant locks and 64-bit payload stability": [
+      "grant_lock"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=4 fifo=4": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4"
+    ],
+    "PASS conventional actual-B lifetime, AR/AW hazards, high-page alias": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16",
+      "p_d16_t16_f16",
+      "b1_d16_t16_f4",
+      "p_d16_t16_f4",
+      "b1_d16_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode0",
+      "seed_1_mode1",
+      "seed_7_mode0",
+      "seed_7_mode1",
+      "seed_123_mode0",
+      "seed_123_mode1"
+    ],
+    "PASS reset after first W beat and queued writes": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16",
+      "p_d16_t16_f16",
+      "b1_d16_t16_f4",
+      "p_d16_t16_f4",
+      "b1_d1_t1_f1",
+      "p_d1_t1_f1",
+      "b1_d3_t2_f1",
+      "p_d3_t2_f1",
+      "b1_d5_t5_f3",
+      "p_d5_t5_f3",
+      "b1_d16_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode0",
+      "seed_1_mode1",
+      "seed_7_mode0",
+      "seed_7_mode1",
+      "seed_123_mode0",
+      "seed_123_mode1"
+    ],
+    "PASS reset during stalled W and held B": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16",
+      "p_d16_t16_f16",
+      "b1_d16_t16_f4",
+      "p_d16_t16_f4",
+      "b1_d16_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode0",
+      "seed_1_mode1",
+      "seed_7_mode0",
+      "seed_7_mode1",
+      "seed_123_mode0",
+      "seed_123_mode1"
+    ],
+    "PASS reset with held R then fresh M1 read": [
+      "b1_d16_t4_f4",
+      "p_d16_t4_f4",
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8",
+      "b1_d16_t16_f16",
+      "p_d16_t16_f16",
+      "b1_d16_t16_f4",
+      "p_d16_t16_f4",
+      "b1_d16_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode0",
+      "seed_1_mode1",
+      "seed_7_mode0",
+      "seed_7_mode1",
+      "seed_123_mode0",
+      "seed_123_mode1"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=4 FIFO=4": [
+      "b1_d16_t4_f4"
+    ],
+    "PASS bounded range hazard acceptance: non_target/other_page/done_target AR+AW limit=8": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS independent range page-alias/membership/duplicate oracle": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS range start-line, duplicate fallback, HOL, B masks, dual hazards, drain": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS one-line/page-end and sparse-mask context reuse": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS 64-line full page and ingress wrap": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS setup drain preserves stalled AW/AR grants": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS reset during stalled invalidation and restart": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS setup source/alignment/zero-count/mask-priority/busy boundaries": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d1_t1_f1",
+      "p_d3_t2_f1",
+      "p_d5_t5_f3",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS M1 AR/R pending and locked-read setup drain": [
+      "p_d16_t4_f4",
+      "p_d16_t8_f8",
+      "p_d16_t16_f16",
+      "p_d16_t16_f4",
+      "p_d16_t5_f3",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=4 FIFO=4": [
+      "p_d16_t4_f4"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=8 fifo=8": [
+      "b1_d16_t8_f8",
+      "p_d16_t8_f8"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=8 FIFO=8": [
+      "b1_d16_t8_f8"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=8 FIFO=8": [
+      "p_d16_t8_f8"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16": [
+      "b1_d16_t16_f16",
+      "p_d16_t16_f16",
+      "seed_1_mode0",
+      "seed_1_mode1",
+      "seed_7_mode0",
+      "seed_7_mode1",
+      "seed_123_mode0",
+      "seed_123_mode1"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=16 FIFO=16": [
+      "b1_d16_t16_f16",
+      "seed_1_mode0",
+      "seed_7_mode0",
+      "seed_123_mode0"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=16 FIFO=16": [
+      "p_d16_t16_f16",
+      "seed_1_mode1",
+      "seed_7_mode1",
+      "seed_123_mode1"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=4": [
+      "b1_d16_t16_f4",
+      "p_d16_t16_f4"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=16 FIFO=4": [
+      "b1_d16_t16_f4"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=16 FIFO=4": [
+      "p_d16_t16_f4"
+    ],
+    "PASS parameter directed hazards/duplicate/drain/reset; queued HOL requires depth>=3": [
+      "b1_d1_t1_f1",
+      "p_d1_t1_f1",
+      "b1_d3_t2_f1",
+      "p_d3_t2_f1",
+      "b1_d5_t5_f3",
+      "p_d5_t5_f3"
+    ],
+    "PASS parameter_boundary depth=1 trackers=1 fifo=1": [
+      "b1_d1_t1_f1",
+      "p_d1_t1_f1"
+    ],
+    "PASS parameter_boundary depth=3 trackers=2 fifo=1": [
+      "b1_d3_t2_f1",
+      "p_d3_t2_f1"
+    ],
+    "PASS parameter_boundary depth=5 trackers=5 fifo=3": [
+      "b1_d5_t5_f3",
+      "p_d5_t5_f3"
+    ],
+    "PASS ordered allocation/multiple AC/FIFO: trackers=5 fifo=3": [
+      "b1_d16_t5_f3",
+      "p_d16_t5_f3"
+    ],
+    "PASS tb_cci_integration USE_RANGE=0 TRACKERS=5 FIFO=3": [
+      "b1_d16_t5_f3"
+    ],
+    "PASS tb_cci_integration USE_RANGE=1 TRACKERS=5 FIFO=3": [
+      "p_d16_t5_f3"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=11 mode=0": [
+      "traffic_seed11_mode0"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=11 mode=1": [
+      "traffic_seed11_mode1"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=29 mode=0": [
+      "traffic_seed29_mode0"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=29 mode=1": [
+      "traffic_seed29_mode1"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=101 mode=0": [
+      "traffic_seed101_mode0"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=101 mode=1": [
+      "traffic_seed101_mode1"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=997 mode=0": [
+      "traffic_seed997_mode0"
+    ],
+    "PASS constrained traffic addresses/masks/setup-overlap/order/mixed-M0-M1 seed=997 mode=1": [
+      "traffic_seed997_mode1"
+    ],
+    "PASS isolated copy benchmark": [
+      "bench_seed1_mode0_prelude0",
+      "bench_seed1_mode0_prelude137",
+      "bench_seed1_mode1_prelude0",
+      "bench_seed1_mode1_prelude137",
+      "bench_seed7_mode0_prelude0",
+      "bench_seed7_mode0_prelude137",
+      "bench_seed7_mode1_prelude0",
+      "bench_seed7_mode1_prelude137",
+      "bench_seed123_mode0_prelude0",
+      "bench_seed123_mode0_prelude137",
+      "bench_seed123_mode1_prelude0",
+      "bench_seed123_mode1_prelude137"
+    ],
+    "PASS memory-backed byte copy and cached destination invalidation mode=0": [
+      "memory_cache_mode0",
+      "memory_cache_m0_lines1_axi1_lat0",
+      "memory_cache_m0_lines2_axi3_lat5",
+      "memory_cache_m0_lines16_axi5_lat12"
+    ],
+    "PASS pending refill poisoned; subsequent cached-master load sees new bytes": [
+      "memory_cache_mode0",
+      "memory_cache_mode1",
+      "memory_cache_m0_lines1_axi1_lat0",
+      "memory_cache_m1_lines1_axi1_lat0",
+      "memory_cache_m0_lines2_axi3_lat5",
+      "memory_cache_m1_lines2_axi3_lat5",
+      "memory_cache_m0_lines16_axi5_lat12",
+      "memory_cache_m1_lines16_axi5_lat12"
+    ],
+    "PASS tb_cci_memory_cache USE_RANGE=0": [
+      "memory_cache_mode0",
+      "memory_cache_m0_lines1_axi1_lat0",
+      "memory_cache_m0_lines2_axi3_lat5",
+      "memory_cache_m0_lines16_axi5_lat12"
+    ],
+    "PASS memory-backed byte copy and cached destination invalidation mode=1": [
+      "memory_cache_mode1",
+      "memory_cache_m1_lines1_axi1_lat0",
+      "memory_cache_m1_lines2_axi3_lat5",
+      "memory_cache_m1_lines16_axi5_lat12"
+    ],
+    "PASS tb_cci_memory_cache USE_RANGE=1": [
+      "memory_cache_mode1",
+      "memory_cache_m1_lines1_axi1_lat0",
+      "memory_cache_m1_lines2_axi3_lat5",
+      "memory_cache_m1_lines16_axi5_lat12"
+    ],
+    "PASS cache final-beat matching AC prevents installation": [
+      "cache_collision_lines1",
+      "cache_collision_lines2",
+      "cache_collision_lines8",
+      "cache_collision_lines16"
+    ],
+    "PASS cache same-edge load AC invalidates hit": [
+      "cache_collision_lines1",
+      "cache_collision_lines2",
+      "cache_collision_lines8",
+      "cache_collision_lines16"
+    ],
+    "PASS cache stalled AR AC poisons refill": [
+      "cache_collision_lines1",
+      "cache_collision_lines2",
+      "cache_collision_lines8",
+      "cache_collision_lines16"
+    ],
+    "PASS cache different-tag same-index AC preserves line": [
+      "cache_collision_lines1",
+      "cache_collision_lines2",
+      "cache_collision_lines8",
+      "cache_collision_lines16"
+    ],
+    "PASS cache collision LINES=1": [
+      "cache_collision_lines1"
+    ],
+    "PASS cache collision LINES=2": [
+      "cache_collision_lines2"
+    ],
+    "PASS cache collision LINES=8": [
+      "cache_collision_lines8"
+    ],
+    "PASS cache collision LINES=16": [
+      "cache_collision_lines16"
+    ],
+    "PASS memory collision read-first, different-address, held R, post-write read latency=0": [
+      "memory_collision_latency0"
+    ],
+    "PASS memory collision read-first, different-address, held R, post-write read latency=5": [
+      "memory_collision_latency5"
+    ],
+    "PASS memory collision read-first, different-address, held R, post-write read latency=255": [
+      "memory_collision_latency255"
+    ],
+    "PASS endpoint depth=1 latency=0 simultaneous=0": [
+      "endpoint_d1_l0"
+    ],
+    "PASS endpoint depth=1 latency=1 simultaneous=0": [
+      "endpoint_d1_l1"
+    ],
+    "PASS endpoint depth=3 latency=0 simultaneous=26": [
+      "endpoint_d3_l0"
+    ],
+    "PASS endpoint depth=3 latency=12 simultaneous=13": [
+      "endpoint_d3_l12"
+    ],
+    "PASS endpoint depth=16 latency=1 simultaneous=23": [
+      "endpoint_d16_l1"
+    ],
+    "PASS endpoint depth=16 latency=12 simultaneous=18": [
+      "endpoint_d16_l12"
+    ],
+    "PASS decoder exhaustive start/count/alignment/mask classes checks=49152": [
+      "decoder_verilator",
+      "decoder_iverilog"
+    ]
+  },
+  "tools": {
+    "verilator": "Verilator 5.048 2026-04-26 rev v5.048\n",
+    "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 2000-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 1999-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 1998-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0-dirty)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n",
+    "yosys": "Yosys 0.9 (git sha1 1979e0b)\n"
+  },
+  "host": {
+    "python": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:31:09) [GCC 11.2.0]",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31"
+  },
+  "config": {
+    "clock_ns": 10,
+    "axi_outstanding": 16,
+    "control_endpoint_depth": 16,
+    "control_endpoint_latency": 12,
+    "slave_latency": 5,
+    "cache_endpoint_latency": 4,
+    "seed_schedule": "time-indexed from case reset",
+    "warning_allowlist": [
+      "PINMISSING",
+      "TIMESCALEMOD",
+      "WIDTHEXPAND",
+      "WIDTHTRUNC"
+    ]
+  },
+  "instrumented_coverage": {
+    "axi_fifo_overlap_d1": {
+      "points": {
+        "toggle": {
+          "hit": 733,
+          "total": 2798
+        },
+        "line": {
+          "hit": 23,
+          "total": 32
+        },
+        "branch": {
+          "hit": 63,
+          "total": 90
+        }
+      },
+      "runs": 1,
+      "native": "axi_fifo_overlap_d1.merged.dat",
+      "uncovered": "axi_fifo_overlap_d1.uncovered.json"
+    },
+    "axi_fifo_overlap_d3": {
+      "points": {
+        "toggle": {
+          "hit": 813,
+          "total": 2934
+        },
+        "line": {
+          "hit": 23,
+          "total": 32
+        },
+        "branch": {
+          "hit": 64,
+          "total": 90
+        }
+      },
+      "runs": 1,
+      "native": "axi_fifo_overlap_d3.merged.dat",
+      "uncovered": "axi_fifo_overlap_d3.uncovered.json"
+    },
+    "axi_fifo_overlap_d5": {
+      "points": {
+        "toggle": {
+          "hit": 883,
+          "total": 3070
+        },
+        "line": {
+          "hit": 23,
+          "total": 32
+        },
+        "branch": {
+          "hit": 64,
+          "total": 90
+        }
+      },
+      "runs": 1,
+      "native": "axi_fifo_overlap_d5.merged.dat",
+      "uncovered": "axi_fifo_overlap_d5.uncovered.json"
+    },
+    "b1_d16_t16_f16": {
+      "points": {
+        "toggle": {
+          "hit": 4851,
+          "total": 10448
+        },
+        "line": {
+          "hit": 61,
+          "total": 69
+        },
+        "branch": {
+          "hit": 127,
+          "total": 150
+        }
+      },
+      "runs": 14,
+      "native": "b1_d16_t16_f16.merged.dat",
+      "uncovered": "b1_d16_t16_f16.uncovered.json"
+    },
+    "p_d16_t16_f16": {
+      "points": {
+        "toggle": {
+          "hit": 9682,
+          "total": 13492
+        },
+        "line": {
+          "hit": 77,
+          "total": 85
+        },
+        "branch": {
+          "hit": 167,
+          "total": 184
+        }
+      },
+      "runs": 14,
+      "native": "p_d16_t16_f16.merged.dat",
+      "uncovered": "p_d16_t16_f16.uncovered.json"
+    }
+  },
+  "artifacts": {
+    "axi_fifo_overlap_d1.coverage.dat": "9fd5b424be8251e44f9c020c52a16db21a65300559dfe655b950b897ae03e674",
+    "axi_fifo_overlap_d1.log": "00e8a4be6a35e48290950bb9b0ece342731f8c8b84d9b496690693a8fc03a750",
+    "axi_fifo_overlap_d1.merged.dat": "9fd5b424be8251e44f9c020c52a16db21a65300559dfe655b950b897ae03e674",
+    "axi_fifo_overlap_d1.uncovered.json": "00a70710bf7a260619728129eab929444b2acfee5a2ca65a7a80e9b758f959ca",
+    "axi_fifo_overlap_d1_build.log": "fdfcd144082f1913d01e012570b78604348cc598a0578992365f08963ba3193a",
+    "axi_fifo_overlap_d3.coverage.dat": "f5e50f1aa945f3e765cfba8b9aa8dddc224d4d4a0a9de9c8db2b3ad198dbe342",
+    "axi_fifo_overlap_d3.log": "85c4c1e47f0d9ec73882a0cffb07478153d6e0e5fc1a8b03f58d39cfac7058c5",
+    "axi_fifo_overlap_d3.merged.dat": "f5e50f1aa945f3e765cfba8b9aa8dddc224d4d4a0a9de9c8db2b3ad198dbe342",
+    "axi_fifo_overlap_d3.uncovered.json": "b2b6e7c2dac82f4460b7bc3ac4a634d26d29eb2a5233645ab39d8cafafab3ba3",
+    "axi_fifo_overlap_d3_build.log": "2dae4463777e64fb2f0ca771ed5f75ac06ed1cc6ef88633c910bf98facbac40d",
+    "axi_fifo_overlap_d5.coverage.dat": "aa0c706805838867babb9d37ccbe9dbd9811885fe4c0b0e933432c51755c5adb",
+    "axi_fifo_overlap_d5.log": "4135a4bbef33861cddb2220e50126bfcc28c98c5775cbf409b65642f3208e703",
+    "axi_fifo_overlap_d5.merged.dat": "aa0c706805838867babb9d37ccbe9dbd9811885fe4c0b0e933432c51755c5adb",
+    "axi_fifo_overlap_d5.uncovered.json": "47267b71411b58edd23c57bf6ffb330dea94cc5f077f4d80aab25db0dcef1553",
+    "axi_fifo_overlap_d5_build.log": "3aa37fee7deae8d40fe07fa23dc3583b39619c324f0eca2783f2c1e8eef49503",
+    "axi_outstanding_d1.log": "0d80aafdc8ff2a623c4a88422e672529f60e47049c1e8a7212cb9a7ebaafb3bb",
+    "axi_outstanding_d1_build.log": "2574128daf30917c36cb31827654e4b559bbf47e5e6831316807b25450b9c532",
+    "axi_outstanding_d3.log": "51b75c73d32102b7ef9e0a890889ffeb1a2942c6fdd3d76de39cf18475fb9f9f",
+    "axi_outstanding_d3_build.log": "96d9500ec2fc700b82e5e14fdd47283347190f37d184ae450d2b575398fc9383",
+    "axi_outstanding_d5.log": "74091e51551bc522b49eb50fe43fb53d3e53db1243be83870f10acedf0242e84",
+    "axi_outstanding_d5_build.log": "ab8bca1a585e85bb427443d763be9feb7793c23cb0160d97250d14e407ed18b8",
+    "b0.log": "4a4e65fe3794a1116bddd22a15f5420af7a4d33e469a1d8ca396f6637c33650d",
+    "b0_build.log": "77ade3a88b213204f11014b57b9baf1fb9a0d227521033031b59b9eaceea9937",
+    "b1_d16_t16_f16.coverage.dat": "656980293d49a181c9d21d5414ff6ad1fcd987a06b6f651bf92902c31a474cbc",
+    "b1_d16_t16_f16.log": "1e02b265b8e5378de5609ebb6f8ae938254d14333a2d1086e3073f3d5ce669eb",
+    "b1_d16_t16_f16.merged.dat": "6e492c86cb10c2e87bcba34eedf23084230f649ad86c82da2844ba50570c57c0",
+    "b1_d16_t16_f16.uncovered.json": "81bb6bc11db430091c2fd33286cfa64e3f592a179f5d7f341549af789e2c4420",
+    "b1_d16_t16_f16_build.log": "0aee521f4d3c540b9aae076203b9ead0f2eafa2f9df7a6cbf8e365e6c10ff42c",
+    "b1_d16_t16_f4.log": "7025524b9f2da47f239b43958bb1686be3ff8633704316f98dfcc0f9dc45fdaf",
+    "b1_d16_t16_f4_build.log": "bb9437f9d60efbc457c161273a29da6a077420aed8f8f72ac4995de7e5ffe478",
+    "b1_d16_t4_f4.log": "26cf2436a46731d51029473cbf451cee66816d0d66565ab9378b251a4872a2fd",
+    "b1_d16_t4_f4_build.log": "227bb793a868a508b505a47532888a30dcde1fcf356c28eee758262dc79e110e",
+    "b1_d16_t5_f3.log": "3631963cb5882565fd6afd3f11fd3d554c622e2a7a0aacdc90c2ef48f6ba3ee0",
+    "b1_d16_t5_f3_build.log": "bea22f68937868f64a0976b6b8ca96f4d7345480831aaa6ff0f662a0a503818d",
+    "b1_d16_t8_f8.log": "87b12564d12b6753e4a85209f097efca505f46a236e299b2f30146a195ca1d65",
+    "b1_d16_t8_f8_build.log": "9ddcb1b65ffc64c72ff624ed6cc7912c00a3e631e33b5c3a09e49d350b3fb452",
+    "b1_d1_t1_f1.log": "98887aa3452cfabb15efb0a62bb55dbb05d2c8fdf583a325679ba6b17641f1ef",
+    "b1_d1_t1_f1_build.log": "de1bb65b8619e7181c99d02e55b5f916199c93d54e8bea9cb8761ecd464a3f67",
+    "b1_d3_t2_f1.log": "4447f4e6aedcd3b7c259d27c44fa28252143c55b73345843518383061589e544",
+    "b1_d3_t2_f1_build.log": "b18e1ccb4ed7fc57a2cfead2e7c2f9d1bf6f824a4339c492ae9c9ea9ebe7ef53",
+    "b1_d5_t5_f3.log": "4c82447bfeed8665f3ab0cf5f4e8a862ee918e0fb487f55314528c6e2994cece",
+    "b1_d5_t5_f3_build.log": "b939d1f414498e27f3ec28fc2a3dbf5fe3163c949cd93aaa3bb3d4cbb4d8a7af",
+    "bench_seed123_mode0_prelude0.coverage.dat": "36e72c49e430e517e9aea5ba9f3f13b8957ec5b661e048a5a8895dc7cbda862e",
+    "bench_seed123_mode0_prelude0.log": "6f46a1c30e6b3dd6cffb13da9eea788afb4642786449877b3cb3715d106c69b9",
+    "bench_seed123_mode0_prelude137.coverage.dat": "a43f79fa47a95297a40ef436a08684824c42404d1cee6a7dae764f01ae44b69d",
+    "bench_seed123_mode0_prelude137.log": "3ebd374b270241c806c637e9fa305f8324b6b769a4933bb16ffc0fdd4a46bebc",
+    "bench_seed123_mode1_prelude0.coverage.dat": "be4eebb682c9b64f982fb4e589d6571d30714c23778039d38ed42b9db3ac4b9b",
+    "bench_seed123_mode1_prelude0.log": "7bc4c5ddc1164c8d745b7e73cd35f20f4a6b93f15752329c24831c5b0b88d297",
+    "bench_seed123_mode1_prelude137.coverage.dat": "9f475c604f28a10f2c9e9b1a4f7977f90a94bb9cac8a49729984338c274653b9",
+    "bench_seed123_mode1_prelude137.log": "ac3093401b61db3741078945d8b9cd3a0166097c9b1a2f1c0f2b0e7f9faaf504",
+    "bench_seed1_mode0_prelude0.coverage.dat": "760ef33f7480dac26c72683c6ad5c5a029595318d015fd14a2d062270af3bcea",
+    "bench_seed1_mode0_prelude0.log": "aac3dafc18ad4462b6156f660b6323cb713f90e973a19b3ffd62651c68a994df",
+    "bench_seed1_mode0_prelude137.coverage.dat": "3063fcaa48e12d55662bcca98a10d93ff38b6a8332b59043a21c884e223e54ac",
+    "bench_seed1_mode0_prelude137.log": "3f0d8ba79f82187412dd9fa902b738b474cc32e8a1697349ac2b58bfa6ed9ef6",
+    "bench_seed1_mode1_prelude0.coverage.dat": "da9d14163ced8895dbdb4997aee753a86d67537aa6f7265522367f47a763f1f0",
+    "bench_seed1_mode1_prelude0.log": "8e172a783b89f99df63f1812dc33152859ceea31b1fca98f2e7d4f59c13c041a",
+    "bench_seed1_mode1_prelude137.coverage.dat": "2528a520cccd66887a3ae75bb3b90a225cb4b0db032c450661f4225b46d2d3da",
+    "bench_seed1_mode1_prelude137.log": "465ec3c1692d3685d3fec61bcf29ca6b357a222246aa55ba35e0fc02c9fec35e",
+    "bench_seed7_mode0_prelude0.coverage.dat": "d5a0f635d165a82c4e610f115bfddf2e972bd07b8659c9c798ade4b6a8b7201b",
+    "bench_seed7_mode0_prelude0.log": "66fbd91ad103b92b46b689bece9013e2b47ee3a4f64bc221779cbcf8fb4a1137",
+    "bench_seed7_mode0_prelude137.coverage.dat": "cf130829a2ec64e26008ef9e0395af2ee30da97015a9767c622d2f2c8faf3d93",
+    "bench_seed7_mode0_prelude137.log": "28d8950188c89ff562fa1321355354daa5b05a3bcabc983b49bcae4597e68f7d",
+    "bench_seed7_mode1_prelude0.coverage.dat": "9e75d1d675dda5e889401d9a0ed98886d365f5018a2e55406fcbc761763e797b",
+    "bench_seed7_mode1_prelude0.log": "0c6d8cf21954bf8af16fe45ff54033b582555ed1c13eaf48e2c0cc376e6dd378",
+    "bench_seed7_mode1_prelude137.coverage.dat": "7e39900eb0327940e9953d3c4c476c58d23b616fdee4c7972d3cf701428ec83f",
+    "bench_seed7_mode1_prelude137.log": "810b00721089161ff20add00799b6082fc283b71297441eb9a4ebbb17221fc32",
+    "b_error.log": "b6157bdef95ed422856a49a76af73180d0758614f4599d36b41996c5600b85e7",
+    "cache_collision_lines1.log": "1ef735c5283e2710d242d9a15c19403c2d3d25a2d45d522188e496137d64a853",
+    "cache_collision_lines16.log": "b6a1a40aad39fd3c0e2470c5ca084446d25238f10ca9c66215aa3ad717d55e40",
+    "cache_collision_lines16_build.log": "610a9857158e16ca665a08092de6182a61af4f88b3440c8bd9a5a67442ea601c",
+    "cache_collision_lines1_build.log": "114dfe16b619bd92ac6b58db301f73e529118005206afc568f8846c6a535b70f",
+    "cache_collision_lines2.log": "853f2f953261257201145ae7d61a7145acc48876d855b1e4d219e29abb9de1bd",
+    "cache_collision_lines2_build.log": "0497a6bd45fba55474872ce4c46988245311651778bbda7487deef286783690f",
+    "cache_collision_lines8.log": "603180cacdfbf7c2ce7b0628b8e7caab5e22b2ad364806f7e280c048cd420e77",
+    "cache_collision_lines8_build.log": "0b93bcaa6aa6af16d866858d0ba50d52e386a2ac5ae1ea8b8912e0fe0ef2df62",
+    "decoder_formal.log": "0686f8e71250eb28553fd6e1476a41ca7810e4abd6d7b5721c5758b4e882e1f0",
+    "decoder_iverilog.log": "597084ab86e879fe75bdcfe5631b2305372f7d07e5f5bb06ff349a02ece13c91",
+    "decoder_iverilog_build.log": "f98e47d144e21f5722bacc2a3b5a10e0562b4afcd43478b504ec6f0fbbfc7b4b",
+    "decoder_verilator.log": "6158b9b06a0f3c2e20f6a9a208114ca0029f454302481230108ad95b7f2e3d31",
+    "decoder_verilator_build.log": "7d1b2ebdd33bd71304cde8982783a034d9b67a466545cd92265016976ae97f84",
+    "endpoint_d16_l1.log": "7f5c78f405c48c18e0a8a468c4497f19b88cf44e79300976b59d5ce6f133888d",
+    "endpoint_d16_l12.log": "b98440fc580036afb535a605df7223cbb0e197f8f35b46e86789fa5858c256ed",
+    "endpoint_d16_l12_build.log": "36dda6ea0b5fbc97f19040296f9295d116b4fb6d7e287c3e5ad5162c147370c3",
+    "endpoint_d16_l1_build.log": "626cc72be7ed4a2002d20c6b56ae7e36ad6f913882741db9b34e68845d385ff4",
+    "endpoint_d1_l0.log": "9ec9d9d021233a2b7143b742538be3dfbf82b6f98164f4bebe088dcc2477ab43",
+    "endpoint_d1_l0_build.log": "5cd0fa118e3141aa767e0b9f4b818fbde49433d48b859aa8c22f3bc68a1a51f9",
+    "endpoint_d1_l1.log": "45592b1ccdac3b627e957d98065b4b0b6a6fe96fe7cf41a389627f40243fd5da",
+    "endpoint_d1_l1_build.log": "7a06542aa316b757b134e7be8f6d1e8770834416b3798038cb2cea81d840ee55",
+    "endpoint_d3_l0.log": "318c8517f4f095fe3654e7364e11e5923bd405abd303a955c6ef539ab8612d92",
+    "endpoint_d3_l0_build.log": "439543edfb89d2d79e47824ee01fe35f0293b9f361d0ea938c8a1939f8552cb3",
+    "endpoint_d3_l12.log": "e0b86269cb3e2a0f86267d319928ba77330dd30c44db55f5f7a61ebab7c3e329",
+    "endpoint_d3_l12_build.log": "464c3e81fb440073e802650bf12b73b2e8e4fa869deab9a907bdd54fdedd2e4d",
+    "fifo_rd_bad_count.log": "c51985d2e5b35fc9fa1b7e35eb8ab152419ad3f9fe12b220bc83dd8055a86c98",
+    "fifo_rd_bad_count_build.log": "bff6c7408fee247c4502c0a98761351a952f73dc0c0e304f3ca60f0cd2b722a1",
+    "fifo_wr_bad_count.log": "c51985d2e5b35fc9fa1b7e35eb8ab152419ad3f9fe12b220bc83dd8055a86c98",
+    "fifo_wr_bad_count_build.log": "139a17eb15d47ca0d4e3e606726f7ca44541f6ac06190500cd174e5db2691670",
+    "grant_lock.log": "da4569c9176b09f0a75d54cb22a2af4a7ad3d412c1c2aa89f67ed96bcb54145f",
+    "grant_lock_build.log": "7a1812f50f64275feae7416ac955f2073ac284d0fa77e726de5a1a3e217f9143",
+    "hazard_ar_disabled.log": "cd885025be109c2fe59c6f322ae804d9f8ae40a59ac56d2310b11518e0d223fc",
+    "hazard_ar_disabled_build.log": "97f756e2cebc25722bff53d5dc1bbc0e041ccbf4941ca1242232fa6ae8b51872",
+    "hazard_ar_wrong_address.log": "893385ef5fbb8cb347d2d6070a4cce276376f4d99cf1a5d1cecc88c195f7b0ca",
+    "hazard_ar_wrong_address_build.log": "42843438597da27e90c2d3af6a93d98e577719da3fdfedddfbd9724f6340ca68",
+    "hazard_aw_disabled.log": "b52741f3076a9cfa334d38806d23dc201b465f1cc5d3ddb5924cd5bca25f843a",
+    "hazard_aw_disabled_build.log": "66841e9368513e4745d85c661f18147e72c83d87eb6d8d4112f25fe4b4ea3d89",
+    "hazard_aw_wrong_address.log": "b52741f3076a9cfa334d38806d23dc201b465f1cc5d3ddb5924cd5bca25f843a",
+    "hazard_aw_wrong_address_build.log": "4b19b5b556d6ded8ec0a6a3355148f11768b8985a3de4ad98806e91e7f73f94b",
+    "hazard_no_done.log": "8f426922b5d4cb61740073d4665780d9ea3a62e6442673ccb16e50d11785f1c0",
+    "hazard_no_done_build.log": "e79e6f67913b1aadf2e05232d00f23ecaeed22899125bc5502be6a56cefd10c7",
+    "hazard_no_mask.log": "6749f372adce3f59f8c841b5bc6d4d11608ab4b3aab6bce57832e5adb3445297",
+    "hazard_no_mask_build.log": "25891d895731a782a191d2b3952b1fc50e9ce3741feb79b0765070021b22b189",
+    "hazard_no_page.log": "cc0d3cd7b22ffa93d5a2c33f0d1de71dc27a402d0fe3a76bc358c6360d2cb890",
+    "hazard_no_page_build.log": "01d8913d22585ecb6f593ee3c39ce94fddbd7ec66cd2fdc873170b46025f95b1",
+    "hazard_zero.log": "b52741f3076a9cfa334d38806d23dc201b465f1cc5d3ddb5924cd5bca25f843a",
+    "hazard_zero_build.log": "fb3a7e22d853d2847187c87e1f091969a436d2375231bb2752c94f1fd7fe8acc",
+    "instrumented_coverage.json": "7a0ec7f62ae6fc8d150b114141ec25fb2251fd67caec31b44064e5ee4af1fb59",
+    "lint_mode0.log": "75dca137aa86cd81dd6afc2bfcac9dd4319d30d21825a0df1fad05d75ff8f2e5",
+    "lint_mode1.log": "5c334aafa0bcc1b638ff058db04c9c0bb0acf6262ee6e7926204556847986e09",
+    "lint_mode2.log": "2b66a73f181fd3b5ae5abf5f902f25bec8ce4c1049dbd731029c157ca668a71e",
+    "m0_crossing.log": "d63ad64a347e40f4d1c2fecbd58d047bba9bf2a04af30081e69eb3aaedfc30c1",
+    "memory_cache_m0_lines16_axi5_lat12.log": "a6554ea7e34a3461a19c0e0c14947ee2e307ad247415d408b3b4385a679de3bc",
+    "memory_cache_m0_lines16_axi5_lat12_build.log": "fed70294f3e18bbfa3f7f597b495d2c7466d78709ad85f47e0a7468facef2b67",
+    "memory_cache_m0_lines1_axi1_lat0.log": "e40585d2e550c4fcf0bbfe15bb011f94d707473c1a5ed039994e1f52538a1881",
+    "memory_cache_m0_lines1_axi1_lat0_build.log": "ab6e86df90109e1de06aaba82318501b8711d3ebea0f9999914b13f2c7d0c970",
+    "memory_cache_m0_lines2_axi3_lat5.log": "3bb20223da73dd9175badc8666a231ac178b95a0bdd36dcf9660e4044cf6774d",
+    "memory_cache_m0_lines2_axi3_lat5_build.log": "fccb92be34719f8849bab4e006439187d28375849a226d883b14587360e01a34",
+    "memory_cache_m1_lines16_axi5_lat12.log": "9a0713798ec4b0e06dd3bedc880634f8e603f8024cb233334c55c26b176a8ac1",
+    "memory_cache_m1_lines16_axi5_lat12_build.log": "1a6f1db5af7f9a0e54bd6233017708d551508402af1f8a6ebfb4d3fc047870f2",
+    "memory_cache_m1_lines1_axi1_lat0.log": "75b3db0b9821985dcc78400b8dd10e5ac3a55651514919ee06a72987735e52ea",
+    "memory_cache_m1_lines1_axi1_lat0_build.log": "87c2317778252e4c562d0fabf338782b5f27752cc791b3d8dd45f04fc8cadb23",
+    "memory_cache_m1_lines2_axi3_lat5.log": "64802056d7ae82f3ecb8f95686dbffa9526a4521140bf23b98b7d58b2f2f829a",
+    "memory_cache_m1_lines2_axi3_lat5_build.log": "896fe2afeebdd888b309aac889f28bb54aa9a7d84a4b6e70c0ca4ed53dc359af",
+    "memory_cache_mode0.log": "556b5ecccd01f4afe70f2c3d56931e06bf6f3fc91af4055391e58c16f6714ff7",
+    "memory_cache_mode0_build.log": "d4f63748215714ca7441877d13f428be4097f03d49f9cdf3c7ffe10afa21df00",
+    "memory_cache_mode1.log": "13fc8e4ecbe531e6c4d6bf89d54ffc489a61316a5a41f22a34f3003362c3db78",
+    "memory_cache_mode1_build.log": "60e7c56513bc1e826043425e00bcbeec82622f7d4e0d3de95a18cdfbce821181",
+    "memory_collision_latency0.log": "b37cc2ac0952843c5871be7734d75906a58a2c4994f703bc070f097cc8566cde",
+    "memory_collision_latency0_build.log": "d38aa430ce9c53c8a6d0f1d4fa3f38d3778c93f09f1ed878d2d5f9aacf7f5ef6",
+    "memory_collision_latency255.log": "fe5f5e280e0759e8b7753f74ddff630abfec7fc3178c64f5644e6920370b76af",
+    "memory_collision_latency255_build.log": "6bb869cd0db0c9e11ce200f535e5cb6959e48fd56fe0c9971d12f03080cfa139",
+    "memory_collision_latency256.log": "b3ee82ade93cd6c2a57d9c4e8dc02ca0d96815aedfb6b34162a7bd1394a6f1bb",
+    "memory_collision_latency256_build.log": "e6e58170d81964481a44ba056d7c8a2cb3b3a2ba87a58d1cae7c7e208e7a9742",
+    "memory_collision_latency5.log": "43da4230d4ed436f025e8e17eec3b5ccf389728ceac78af49d04a55ca4a76b23",
+    "memory_collision_latency5_build.log": "f9b76b92a4fab880d61e9d982de7d32b29936bfd651eadc7fe81ab092e7e8326",
+    "page_mutant.log": "04fa78aaad3eb949b7c93e6a2696ec0414aef99203c9ddc99deb4080b80a46f4",
+    "page_mutant_build.log": "23143300473cc9dd9463ca421ae34ace7f28e5de87d84a744110462da4cc2505",
+    "p_d16_t16_f16.coverage.dat": "3c0c5e2a02ee96c465eb4e186c309013a7ca4d2276b1500d80286602665194c5",
+    "p_d16_t16_f16.log": "c12c7f3988d3f373b8106e0eebee894c2b6c718b87500ac4101ba23dbd904725",
+    "p_d16_t16_f16.merged.dat": "908367157ed8407dfce2d68f138d771a3bb30f4342eccd424079339a74d3c16b",
+    "p_d16_t16_f16.uncovered.json": "efa7ef7d7fafc25978abf8c44e52a5c79cace8bce795b530c1f662e7e40e0cf1",
+    "p_d16_t16_f16_build.log": "ee6b1ce1f80094835261baacdb066c05ffdaedd48a2a102cc3baacb1de2369be",
+    "p_d16_t16_f4.log": "9addab4ee7bc5d21cccf160cb957c89ff83be918194984925203499d4cbd8b63",
+    "p_d16_t16_f4_build.log": "9dcc6f8d8bc1b9f9644421c0701550276275c59d1d08bb04737d65fcbd770bb6",
+    "p_d16_t4_f4.log": "c819f73cac25b4fc6b6f1d1d41dfadb12d74367bb288302048c728ce2c9e3f4f",
+    "p_d16_t4_f4_build.log": "a128051722839ecdd4f63ecdb8212474f8185d2eae153379ec21f4bf53f6c256",
+    "p_d16_t5_f3.log": "44fcc97dd5ecf2370234d87b145a39c382311208d7ca119faab7ddc10197a8e6",
+    "p_d16_t5_f3_build.log": "a3824d264a93165f6f1fa4fdcf4e0e186f5cbf400943f48fca004f2480450310",
+    "p_d16_t8_f8.log": "00e17a9d0b06a9184bec9e712b345a8145fecf5d40115fdebd42cbcc2b4d1a06",
+    "p_d16_t8_f8_build.log": "12f503c11c5232aa2e6c078741a0d3f25946fb6e8918161fa62f4394aebd48db",
+    "p_d1_t1_f1.log": "42098da994c9291a46337f5e3f3bfcd5e482bddde720eba4c3d1706bc64a6b31",
+    "p_d1_t1_f1_build.log": "43b53c308e73642afdcbcb621161cd124ccf97496a926de79803b1a61f4154e2",
+    "p_d3_t2_f1.log": "fea2b7d72442b3eb4b97e799307503ed72442845da345d365026da4e6f9c83ad",
+    "p_d3_t2_f1_build.log": "8e9718e2f34d5b0003e4ee1f566c34e90d4621c584e009a38b06c987a5a7ff41",
+    "p_d5_t5_f3.log": "40eb829155a9ec89977b83b8bb1e8842eb8bd991185c0d6748f1f5a77b6624e6",
+    "p_d5_t5_f3_build.log": "f681263e870caf40d6dd8c4e86a9c883844feb9ee1a750c8cc246aa7c70f1445",
+    "range_cr_error.log": "fd9706f855987fb0bf979392426ab0c80451f166cb031cb55c56d27a83dfa567",
+    "result_gate_tests.log": "123e8da3256b43d28c7fb081a5405bff01f3a956ca07ca4d447bbdbf9e7106c5",
+    "scenario_coverage.json": "a22d0bbc47f5b4747cb2c54a57d9e71ef34078d0f20e504b0744fd7d5a9b4f2b",
+    "seed_123_mode0.coverage.dat": "0ca629059828545d1d6cd50ab2a75ae4f79e119c6d1b3d12518d07a4f47a362d",
+    "seed_123_mode0.log": "a09dcbbeed64b63270bd4261143ead07d67919114457ae4d15448749e628786d",
+    "seed_123_mode1.coverage.dat": "73c5fb1a5a89a0e20d227e3f5c85754d3ac06ceeef181502a002a5f1762d34ac",
+    "seed_123_mode1.log": "dfec9ce2cfa2c20191b4dcb08eeeade1ddd3cce150537172a9f7066f3fb03df4",
+    "seed_1_mode0.coverage.dat": "b8b0f652012598dbef5e15f2acae7fe22b31290549745a78dbdccb81c0be2ac5",
+    "seed_1_mode0.log": "7a411da9472cc3dffd829864f2456b0c0dcefe8d4e4ba0f5d6effa2230f6117f",
+    "seed_1_mode1.coverage.dat": "d39c86c568de2b958ee10296ababd6653e859ed0d14efa48107953497367dd38",
+    "seed_1_mode1.log": "17cd5cbfcaa616594317ae06a75aad443e533e9ef9498ec7a5c8592bbfb5cfcd",
+    "seed_7_mode0.coverage.dat": "ad1297c0079a96cfb57c0afbb35d0f3f33145dae889ed66eb7070657ec79a1fc",
+    "seed_7_mode0.log": "542be66bae814f1a042ede1474a42244ac862d21d2064f6227bc6e4a089f313f",
+    "seed_7_mode1.coverage.dat": "f9aeaab39d56cee68c7fcef9de53382f7e3c7c16deaa1fe3f601ea5d7f68adaa",
+    "seed_7_mode1.log": "51b3d9ad3ccd958c55ed97270b425d883abb0d43f3ac4abac842d78158509485",
+    "tracker_sensitivity.csv": "cd0dece84aa72621d50f59bb87cb6304f24f54b07e1264cd3d938db4a59a2dbf",
+    "traffic_seed101_mode0.coverage.dat": "049f7f49575ed87c86b080828c7f8bd967457a5804214c542db0c4d633f4f5e5",
+    "traffic_seed101_mode0.log": "e84554fc906fe0988a396e8855e6b7c99f8af385f8dffc1fc50930b7833a38c4",
+    "traffic_seed101_mode1.coverage.dat": "7b2ec92711607deaaca69267ff33c695814d3d57d8dbb1be662726e9908cfb9d",
+    "traffic_seed101_mode1.log": "88eb2774dcef48ff4dcab6d45a5933a48846dc6016311908cdb619a71cd06692",
+    "traffic_seed11_mode0.coverage.dat": "7e123f7cd578bc8709aba56745257319db1dc473a12180b6a22c5ef50c3f6546",
+    "traffic_seed11_mode0.log": "8b3ca3b995c79bb4e7cbfd480a12d4cd8add075dcb3a912c413feb62ec6b2dbb",
+    "traffic_seed11_mode1.coverage.dat": "aab7e228f0de0ef9b9a44f76fda949b360ce534f1ed07992451dbbd916b279c1",
+    "traffic_seed11_mode1.log": "43f89879ec055ebbc5ec2aa394b59e5ca4e3091f1d68cc76e7e431d8ca9e5524",
+    "traffic_seed29_mode0.coverage.dat": "e6b19421c75cd61a77f4b8115c1afa3a3ef76bdb6a1fa43f8a8dd2ee14bb7717",
+    "traffic_seed29_mode0.log": "eb075a56ab8a96fa415ecb5204c99281e13540c2c55d4a1c9ab6b0fc36cdea78",
+    "traffic_seed29_mode1.coverage.dat": "06122db053a2acb9225b345d5d618c37ad4806d33f894bbf652fd9c2eedd28e6",
+    "traffic_seed29_mode1.log": "bd9df7eca1e3bf59fa9d78fd4c9f0885f9a1e43e447025960692903aecb471bf",
+    "traffic_seed997_mode0.coverage.dat": "be54fda0369d8db3de1b84bfb1465eb5f3f2548bc4a8decca0503e90201d4c32",
+    "traffic_seed997_mode0.log": "097ea5eabc2b2ccf3e75c60d23321b6de0adc996e28151125c0aa6fe289b3770",
+    "traffic_seed997_mode1.coverage.dat": "47849573c29724afe266887da7e008cc1b51c2f86268be42b49a30872943ff90",
+    "traffic_seed997_mode1.log": "4a666d9070ca6179b665069f4fab44ed5f0878977d14c54b1017c5ecdb5c6aee",
+    "watchdog_negative.log": "f58d01f043589cfb04ce09ccb04c49d4d78f4523f6fd954e250632059dc66b87"
+  }
+}

@@ -1,0 +1,859 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Oct  5 14:15:15 2026
+# Process ID: 24728
+# Current directory: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW
+# Command line: vivado.exe -mode batch -source synth/run_ace.tcl -log reports/runs/ace_synthesis_20261005T051507Z_3d562bd7/vivado.log -journal reports/runs/ace_synthesis_20261005T051507Z_3d562bd7/vivado.jou -tclargs reports/runs/ace_synthesis_20261005T051507Z_3d562bd7
+# Log file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_synthesis_20261005T051507Z_3d562bd7/vivado.log
+# Journal file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW\reports/runs/ace_synthesis_20261005T051507Z_3d562bd7/vivado.jou
+# Running On        :DESKTOP-SOHK4NB
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34067 MB
+# Swap memory       :3788 MB
+# Total Virtual     :37856 MB
+# Available Virtual :7379 MB
+#-----------------------------------------------------------
+source synth/run_ace.tcl
+# set out [file normalize [lindex $argv 0]]
+# file mkdir $out
+# foreach top {ace_cache_snoop_endpoint ace_snoop_controller axi_cci_ace_top} {
+#     create_project -in_memory -part xczu7ev-ffvc1156-2-e
+#     set_property include_dirs [list rtl/common] [current_fileset]
+#     foreach listfile {scripts/rtl.f scripts/ace.f} {
+#         set fd [open $listfile r]
+#         foreach src [split [read $fd] "\n"] {
+#             set src [string trim $src]
+#             if {$src ne "" && ![string match "+*" $src]} {read_verilog -sv $src}
+#         }
+#         close $fd
+#     }
+#     synth_design -top $top -part xczu7ev-ffvc1156-2-e -mode out_of_context
+#     report_utilization -file $out/${top}_utilization.rpt
+#     puts "ACE_SYNTH_PASS: $top"
+#     close_project
+# }
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 628.934 ; gain = 200.203
+Command: synth_design -top ace_cache_snoop_endpoint -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28548
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1087.730 ; gain = 454.875
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ace_cache_snoop_endpoint' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:3]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:94]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:95]
+INFO: [Synth 8-6155] done synthesizing module 'ace_cache_snoop_endpoint' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1210.938 ; gain = 578.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1210.938 ; gain = 578.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1210.938 ; gain = 578.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1210.938 ; gain = 578.082
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	              512 Bit    Registers := 10    
+	               58 Bit    Registers := 8     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 75    
+	   7 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 8     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 78    
+	   4 Input    1 Bit        Muxes := 25    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2255.121 ; gain = 1622.266
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 2256.938 ; gain = 1624.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 2256.938 ; gain = 1624.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |     9|
+|2     |LUT1   |     1|
+|3     |LUT2   |    22|
+|4     |LUT3   |    22|
+|5     |LUT4   |   540|
+|6     |LUT5   |    13|
+|7     |LUT6   |  2601|
+|8     |MUXF7  |   624|
+|9     |FDCE   |  5624|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  9456|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2256.957 ; gain = 1624.102
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 2270.449 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 633 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'ace_cache_snoop_endpoint' is not ideal for floorplanning, since the cellview 'ace_cache_snoop_endpoint' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2291.305 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 8ca2ffab
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 2291.305 ; gain = 1662.371
+ACE_SYNTH_PASS: ace_cache_snoop_endpoint
+Command: synth_design -top ace_snoop_controller -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2291.305 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ace_snoop_controller' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:70]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:71]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:72]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:73]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:31]
+INFO: [Synth 8-6155] done synthesizing module 'ace_snoop_controller' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[7] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[6] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[5] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[4] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[3] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[2] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[1] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[0] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[2] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[1] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[0] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_burst[1] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_burst[0] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[15] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[14] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[13] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[12] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[11] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[10] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[9] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[8] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[7] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[6] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[5] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[4] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[3] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[2] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[1] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[0] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2332.422 ; gain = 41.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2351.340 ; gain = 60.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2351.355 ; gain = 60.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2351.523 ; gain = 60.219
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	              512 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   8 Input  512 Bit        Muxes := 2     
+	   2 Input  512 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 2     
+	   8 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   8 Input    2 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[7] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[6] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[5] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[4] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[3] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[2] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[1] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_len[0] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[2] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[1] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_size[0] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_burst[1] driven by constant 0
+WARNING: [Synth 8-3917] design ace_snoop_controller has port aw_burst[0] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[15] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[14] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[13] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[12] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[11] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[10] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[9] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[8] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[7] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[6] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[5] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[4] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[3] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[2] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[1] driven by constant 1
+WARNING: [Synth 8-3917] design ace_snoop_controller has port w_strb[0] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |    13|
+|3     |LUT3 |    13|
+|4     |LUT4 |   524|
+|5     |LUT5 |     9|
+|6     |LUT6 |   147|
+|7     |FDCE |   607|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 63 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.516 ; gain = 78.211
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2369.516 ; gain = 0.000
+WARNING: [Netlist 29-101] Netlist 'ace_snoop_controller' is not ideal for floorplanning, since the cellview 'ace_snoop_controller' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2395.469 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 4db84e87
+INFO: [Common 17-83] Releasing license: Synthesis
+11 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2395.469 ; gain = 104.164
+ACE_SYNTH_PASS: ace_snoop_controller
+Command: synth_design -top axi_cci_ace_top -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2395.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axi_cci_ace_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'axi_cci_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter M1_INGRESS_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter LINE_TRACKER_ENTRIES bound to: 32'sb00000000000000000000000000010000 
+	Parameter CONV_AC_FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+	Parameter COHERENT bound to: 1'b1 
+	Parameter USE_RANGE bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'coh_write_ingress' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+	Parameter USE_RANGE bound to: 1'b0 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter TRACKERS bound to: 32'sb00000000000000000000000000010000 
+	Parameter AC_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+INFO: [Synth 8-6155] done synthesizing module 'coh_write_ingress' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'axi4_simple_2to1_bus_arbiter' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter INGRESS_IDX_WIDTH bound to: 32'sb00000000000000000000000000000100 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:460]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:463]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:463]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:492]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:500]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:507]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:564]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:567]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:570]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:570]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:596]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_simple_2to1_bus_arbiter' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cci_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'cci_ace_snoop_service' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'ace_snoop_controller' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:70]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:71]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:72]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:73]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:31]
+INFO: [Synth 8-6155] done synthesizing module 'ace_snoop_controller' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'cci_ace_snoop_service' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cci_ace_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element rr_state_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:545]
+WARNING: [Synth 8-7129] Port m0_araddr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_valid in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[63] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[62] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[61] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[60] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[59] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[58] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[57] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[56] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[55] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[54] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[53] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[52] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[51] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[50] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[49] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[48] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[47] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[46] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[45] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[44] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[43] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[42] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[41] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[40] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[39] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[38] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[37] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[36] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[35] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[34] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[33] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[32] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[31] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[30] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[29] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[28] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[27] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[26] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[25] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[24] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[23] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[22] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[21] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[20] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[19] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[18] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[17] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[16] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[15] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[14] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[13] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[12] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[11] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[10] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[9] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[8] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[7] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[6] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[63] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[62] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[61] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[60] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[59] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[58] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[57] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[56] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[55] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[54] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[53] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[52] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[51] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[50] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[49] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[48] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[47] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[46] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[45] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[44] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[43] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[42] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[41] in module coh_write_ingress is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2396.145 ; gain = 0.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2420.039 ; gain = 24.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2420.039 ; gain = 24.570
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "coh_write_ingress:/ac_fifo_reg" of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2420.211 ; gain = 24.742
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 8     
+	   2 Input    4 Bit       Adders := 10    
+	   9 Input    4 Bit       Adders := 1     
+	   5 Input    3 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 2     
+	   3 Input    2 Bit       Adders := 1     
++---Registers : 
+	              512 Bit    Registers := 1     
+	               64 Bit    Registers := 18    
+	                8 Bit    Registers := 50    
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 106   
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 145   
++---RAMs : 
+	               64 Bit	(16 X 4 bit)          RAMs := 1     
++---Muxes : 
+	   8 Input  512 Bit        Muxes := 2     
+	   2 Input  512 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 7     
+	   2 Input    8 Bit        Muxes := 6     
+	   2 Input    5 Bit        Muxes := 4     
+	   8 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 120   
+	   2 Input    3 Bit        Muxes := 8     
+	   8 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 7     
+	   2 Input    2 Bit        Muxes := 5     
+	   8 Input    2 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 542   
+	   8 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-6904] The RAM "\core/coherent.control/ac_fifo_reg " of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\core/coherent.control/ac_fifo_reg " of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------------------+-------------+-----------+----------------------+---------------+
+|Module Name             | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++------------------------+-------------+-----------+----------------------+---------------+
+|\core/coherent.control  | ac_fifo_reg | Implied   | 16 x 4               | RAM32M16 x 1  | 
++------------------------+-------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------------------+-------------+-----------+----------------------+---------------+
+|Module Name             | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++------------------------+-------------+-----------+----------------------+---------------+
+|\core/coherent.control  | ac_fifo_reg | Implied   | 16 x 4               | RAM32M16 x 1  | 
++------------------------+-------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |    96|
+|2     |LUT1   |    25|
+|3     |LUT2   |   120|
+|4     |LUT3   |   173|
+|5     |LUT4   |   782|
+|6     |LUT5   |   451|
+|7     |LUT6   |  1949|
+|8     |MUXF7  |   350|
+|9     |MUXF8  |   153|
+|10    |RAM32M |     1|
+|11    |FDCE   |  2222|
+|12    |FDPE   |     2|
+|13    |FDRE   |   480|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 322 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2443.875 ; gain = 48.406
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2443.875 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 600 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2468.887 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+
+Synth Design complete | Checksum: 2eaed60
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2468.887 ; gain = 73.418
+ACE_SYNTH_PASS: axi_cci_ace_top
+# puts "ACE_SYNTH_COMPLETE"
+ACE_SYNTH_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 14:17:09 2026...

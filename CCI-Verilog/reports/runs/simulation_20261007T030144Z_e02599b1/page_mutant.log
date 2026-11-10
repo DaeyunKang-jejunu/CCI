@@ -1,0 +1,12 @@
+PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16
+PASS conventional actual-B lifetime, AR/AW hazards, high-page alias
+PASS bounded range hazard acceptance: non_target/other_page/done_target AR+AW limit=8
+PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe
+PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe
+[13415000] %Fatal: tb_cci_integration.sv:207: Assertion failed in tb_cci_integration: independent actual-B/reservation bitmap scoreboard
+%Error: tb/tb_cci_integration.sv:207: Verilog $stop
+Aborting...

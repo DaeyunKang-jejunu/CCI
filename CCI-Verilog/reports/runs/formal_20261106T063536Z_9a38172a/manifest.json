@@ -1,0 +1,46 @@
+{
+  "run_id": "formal_20261106T063536Z_9a38172a",
+  "status": "FAIL",
+  "sources": {
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/coh_write_ingress.sv": "ff54c535380642d075fa954f76bb82e8517292eae39b5837904c2833f110ec28",
+    "formal/endpoint_invariants.vh": "d4c3b817bd2386e1deaa6b0ceac2c37cdc2b70f2dac28738ea2a56905ba14470",
+    "formal/formal_endpoint.sv": "27860fd3eee49029503267caf52a1656bbeee6aaacd4b4940a64b3865ee93671",
+    "formal/formal_ingress.sv": "a3ecbd3be560c30bc97c1bd6899816b0286140a19b9c997c730f72f61346a19c",
+    "scripts/run_formal.py": "992e4d16f919f5f39e407bca680bb309421a4899ca0fbf72232f17ae5a2eb00c",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521"
+  },
+  "tools": {
+    "sv2v": "sv2v v0.0.11-0-g6082cae",
+    "yosys": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)"
+  },
+  "commands": [
+    {
+      "stage": "sv2v",
+      "name": "endpoint",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261106T063536Z_9a38172a/src/endpoint/m0_snoop_endpoint.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261106T063536Z_9a38172a/src/ingress/coh_write_ingress.sv"
+      ]
+    }
+  ],
+  "cases": [],
+  "config": {
+    "bmc_depth": 20
+  },
+  "error": "ingress: unstripped $fatal"
+}

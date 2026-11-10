@@ -1,0 +1,653 @@
+
+-- Running command `read_verilog -formal -sv rtl/proposed/cci_range_req_decoder.sv tb/formal_decoder.sv; prep -top formal_decoder -flatten; sat -verify -prove-asserts -show-inputs' --
+
+1. Executing Verilog-2005 frontend: rtl/proposed/cci_range_req_decoder.sv
+Parsing formal SystemVerilog input from `rtl/proposed/cci_range_req_decoder.sv' to AST representation.
+Generating RTLIL representation for module `\cci_range_req_decoder'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: tb/formal_decoder.sv
+Parsing formal SystemVerilog input from `tb/formal_decoder.sv' to AST representation.
+Generating RTLIL representation for module `\formal_decoder'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \formal_decoder
+Used module:     \cci_range_req_decoder
+
+3.1.2. Analyzing design hierarchy..
+Top module:  \formal_decoder
+Used module:     \cci_range_req_decoder
+Removed 0 unused modules.
+Module formal_decoder directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 65 switch rules as full_case in process $proc$rtl/proposed/cci_range_req_decoder.sv:11$65 in module cci_range_req_decoder.
+Removed a total of 0 dead cases.
+
+3.2.3. Executing PROC_INIT pass (extract init attributes).
+
+3.2.4. Executing PROC_ARST pass (detect async resets in processes).
+
+3.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+     1/6: $0$formal$tb/formal_decoder.sv:13$333_EN[0:0]$345
+     2/6: $0$formal$tb/formal_decoder.sv:13$333_CHECK[0:0]$344
+     3/6: $0$formal$tb/formal_decoder.sv:12$332_EN[0:0]$343
+     4/6: $0$formal$tb/formal_decoder.sv:12$332_CHECK[0:0]$342
+     5/6: $0$formal$tb/formal_decoder.sv:11$331_EN[0:0]$340
+     6/6: $0$formal$tb/formal_decoder.sv:11$331_CHECK[0:0]$341
+Creating decoders for process `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+     1/133: $1\d_line_mask[63:0] [63]
+     2/133: $64\d_line_mask[62:62]
+     3/133: $63\d_line_mask[61:61]
+     4/133: $62\d_line_mask[60:60]
+     5/133: $61\d_line_mask[59:59]
+     6/133: $60\d_line_mask[58:58]
+     7/133: $59\d_line_mask[57:57]
+     8/133: $58\d_line_mask[56:56]
+     9/133: $57\d_line_mask[55:55]
+    10/133: $56\d_line_mask[54:54]
+    11/133: $55\d_line_mask[53:53]
+    12/133: $54\d_line_mask[52:52]
+    13/133: $53\d_line_mask[51:51]
+    14/133: $52\d_line_mask[50:50]
+    15/133: $51\d_line_mask[49:49]
+    16/133: $50\d_line_mask[48:48]
+    17/133: $49\d_line_mask[47:47]
+    18/133: $48\d_line_mask[46:46]
+    19/133: $47\d_line_mask[45:45]
+    20/133: $46\d_line_mask[44:44]
+    21/133: $45\d_line_mask[43:43]
+    22/133: $44\d_line_mask[42:42]
+    23/133: $43\d_line_mask[41:41]
+    24/133: $42\d_line_mask[40:40]
+    25/133: $41\d_line_mask[39:39]
+    26/133: $40\d_line_mask[38:38]
+    27/133: $39\d_line_mask[37:37]
+    28/133: $38\d_line_mask[36:36]
+    29/133: $37\d_line_mask[35:35]
+    30/133: $36\d_line_mask[34:34]
+    31/133: $35\d_line_mask[33:33]
+    32/133: $34\d_line_mask[32:32]
+    33/133: $33\d_line_mask[31:31]
+    34/133: $32\d_line_mask[30:30]
+    35/133: $31\d_line_mask[29:29]
+    36/133: $30\d_line_mask[28:28]
+    37/133: $29\d_line_mask[27:27]
+    38/133: $28\d_line_mask[26:26]
+    39/133: $27\d_line_mask[25:25]
+    40/133: $26\d_line_mask[24:24]
+    41/133: $25\d_line_mask[23:23]
+    42/133: $24\d_line_mask[22:22]
+    43/133: $23\d_line_mask[21:21]
+    44/133: $22\d_line_mask[20:20]
+    45/133: $21\d_line_mask[19:19]
+    46/133: $20\d_line_mask[18:18]
+    47/133: $19\d_line_mask[17:17]
+    48/133: $18\d_line_mask[16:16]
+    49/133: $17\d_line_mask[15:15]
+    50/133: $16\d_line_mask[14:14]
+    51/133: $15\d_line_mask[13:13]
+    52/133: $14\d_line_mask[12:12]
+    53/133: $13\d_line_mask[11:11]
+    54/133: $12\d_line_mask[10:10]
+    55/133: $11\d_line_mask[9:9]
+    56/133: $10\d_line_mask[8:8]
+    57/133: $9\d_line_mask[7:7]
+    58/133: $8\d_line_mask[6:6]
+    59/133: $7\d_line_mask[5:5]
+    60/133: $6\d_line_mask[4:4]
+    61/133: $5\d_line_mask[3:3]
+    62/133: $4\d_line_mask[2:2]
+    63/133: $3\d_line_mask[1:1]
+    64/133: $2\d_line_mask[0:0]
+    65/133: $1\i[31:0]
+    66/133: $1\d_line_mask[63:0] [62]
+    67/133: $1\d_line_mask[63:0] [61]
+    68/133: $1\d_line_mask[63:0] [60]
+    69/133: $1\d_line_mask[63:0] [59]
+    70/133: $1\d_line_mask[63:0] [58]
+    71/133: $1\d_line_mask[63:0] [57]
+    72/133: $1\d_line_mask[63:0] [56]
+    73/133: $1\d_line_mask[63:0] [55]
+    74/133: $1\d_line_mask[63:0] [54]
+    75/133: $1\d_line_mask[63:0] [53]
+    76/133: $1\d_line_mask[63:0] [52]
+    77/133: $1\d_line_mask[63:0] [51]
+    78/133: $1\d_line_mask[63:0] [50]
+    79/133: $1\d_line_mask[63:0] [49]
+    80/133: $1\d_line_mask[63:0] [48]
+    81/133: $1\d_line_mask[63:0] [47]
+    82/133: $1\d_line_mask[63:0] [46]
+    83/133: $1\d_line_mask[63:0] [45]
+    84/133: $1\d_line_mask[63:0] [44]
+    85/133: $1\d_line_mask[63:0] [43]
+    86/133: $1\d_line_mask[63:0] [42]
+    87/133: $1\d_line_mask[63:0] [41]
+    88/133: $1\d_line_mask[63:0] [40]
+    89/133: $1\d_line_mask[63:0] [39]
+    90/133: $1\d_line_mask[63:0] [38]
+    91/133: $1\d_line_mask[63:0] [37]
+    92/133: $1\d_line_mask[63:0] [36]
+    93/133: $1\d_line_mask[63:0] [35]
+    94/133: $1\d_line_mask[63:0] [34]
+    95/133: $1\d_line_mask[63:0] [33]
+    96/133: $1\d_line_mask[63:0] [32]
+    97/133: $1\d_line_mask[63:0] [31]
+    98/133: $1\d_line_mask[63:0] [30]
+    99/133: $1\d_line_mask[63:0] [29]
+   100/133: $1\d_line_mask[63:0] [28]
+   101/133: $1\d_line_mask[63:0] [27]
+   102/133: $1\d_line_mask[63:0] [26]
+   103/133: $1\d_line_mask[63:0] [25]
+   104/133: $1\d_line_mask[63:0] [24]
+   105/133: $1\d_line_mask[63:0] [23]
+   106/133: $1\d_line_mask[63:0] [22]
+   107/133: $1\d_line_mask[63:0] [21]
+   108/133: $1\d_line_mask[63:0] [20]
+   109/133: $1\d_line_mask[63:0] [19]
+   110/133: $1\d_line_mask[63:0] [18]
+   111/133: $1\d_line_mask[63:0] [17]
+   112/133: $1\d_line_mask[63:0] [16]
+   113/133: $1\d_line_mask[63:0] [15]
+   114/133: $1\d_line_mask[63:0] [14]
+   115/133: $1\d_line_mask[63:0] [13]
+   116/133: $1\d_line_mask[63:0] [12]
+   117/133: $1\d_line_mask[63:0] [11]
+   118/133: $1\d_line_mask[63:0] [10]
+   119/133: $1\d_line_mask[63:0] [9]
+   120/133: $1\d_line_mask[63:0] [8]
+   121/133: $1\d_line_mask[63:0] [7]
+   122/133: $1\d_line_mask[63:0] [6]
+   123/133: $1\d_line_mask[63:0] [5]
+   124/133: $1\d_line_mask[63:0] [4]
+   125/133: $1\d_line_mask[63:0] [3]
+   126/133: $1\d_line_mask[63:0] [2]
+   127/133: $1\d_line_mask[63:0] [1]
+   128/133: $1\d_line_mask[63:0] [0]
+   129/133: $65\d_line_mask[63:63]
+   130/133: $0\valid[0:0]
+   131/133: $0\d_line_mask[63:0]
+   132/133: $0\i[31:0]
+   133/133: $0\d_base_page[51:0]
+
+3.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:11$331_EN' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:11$331_CHECK' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:12$332_CHECK' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:12$332_EN' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:13$333_CHECK' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\formal_decoder.$formal$tb/formal_decoder.sv:13$333_EN' from process `\formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+No latch inferred for signal `\cci_range_req_decoder.\d_line_mask' from process `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+No latch inferred for signal `\cci_range_req_decoder.\valid' from process `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+No latch inferred for signal `\cci_range_req_decoder.\d_base_page' from process `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+Latch inferred for signal `\cci_range_req_decoder.\i' from process `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65': $auto$proc_dlatch.cc:409:proc_dlatch$949
+
+3.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `formal_decoder.$proc$tb/formal_decoder.sv:10$339'.
+Found and cleaned up 65 empty switches in `\cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+Removing empty process `cci_range_req_decoder.$proc$rtl/proposed/cci_range_req_decoder.sv:11$65'.
+Cleaned up 65 empty switches.
+
+3.3. Executing FLATTEN pass (flatten design).
+Using template cci_range_req_decoder for cells of type cci_range_req_decoder.
+<suppressed ~1 debug messages>
+No more expansions possible.
+Deleting now unused module cci_range_req_decoder.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_decoder.
+<suppressed ~12 debug messages>
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_decoder..
+Removed 2 unused cells and 349 unused wires.
+<suppressed ~4 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+checking module formal_decoder..
+found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_decoder.
+<suppressed ~1 debug messages>
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_decoder'.
+<suppressed ~201 debug messages>
+Removed a total of 67 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_decoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $techmap\dut.$procmux$367.
+    dead port 2/2 on $mux $techmap\dut.$procmux$373.
+    dead port 2/2 on $mux $techmap\dut.$procmux$379.
+    dead port 2/2 on $mux $techmap\dut.$procmux$385.
+    dead port 2/2 on $mux $techmap\dut.$procmux$391.
+    dead port 2/2 on $mux $techmap\dut.$procmux$397.
+    dead port 2/2 on $mux $techmap\dut.$procmux$403.
+    dead port 2/2 on $mux $techmap\dut.$procmux$409.
+    dead port 2/2 on $mux $techmap\dut.$procmux$415.
+    dead port 2/2 on $mux $techmap\dut.$procmux$421.
+    dead port 2/2 on $mux $techmap\dut.$procmux$427.
+    dead port 2/2 on $mux $techmap\dut.$procmux$433.
+    dead port 2/2 on $mux $techmap\dut.$procmux$439.
+    dead port 2/2 on $mux $techmap\dut.$procmux$445.
+    dead port 2/2 on $mux $techmap\dut.$procmux$451.
+    dead port 2/2 on $mux $techmap\dut.$procmux$457.
+    dead port 2/2 on $mux $techmap\dut.$procmux$463.
+    dead port 2/2 on $mux $techmap\dut.$procmux$469.
+    dead port 2/2 on $mux $techmap\dut.$procmux$475.
+    dead port 2/2 on $mux $techmap\dut.$procmux$481.
+    dead port 2/2 on $mux $techmap\dut.$procmux$487.
+    dead port 2/2 on $mux $techmap\dut.$procmux$493.
+    dead port 2/2 on $mux $techmap\dut.$procmux$499.
+    dead port 2/2 on $mux $techmap\dut.$procmux$505.
+    dead port 2/2 on $mux $techmap\dut.$procmux$511.
+    dead port 2/2 on $mux $techmap\dut.$procmux$517.
+    dead port 2/2 on $mux $techmap\dut.$procmux$523.
+    dead port 2/2 on $mux $techmap\dut.$procmux$529.
+    dead port 2/2 on $mux $techmap\dut.$procmux$535.
+    dead port 2/2 on $mux $techmap\dut.$procmux$541.
+    dead port 2/2 on $mux $techmap\dut.$procmux$547.
+    dead port 2/2 on $mux $techmap\dut.$procmux$553.
+    dead port 2/2 on $mux $techmap\dut.$procmux$559.
+    dead port 2/2 on $mux $techmap\dut.$procmux$565.
+    dead port 2/2 on $mux $techmap\dut.$procmux$571.
+    dead port 2/2 on $mux $techmap\dut.$procmux$577.
+    dead port 2/2 on $mux $techmap\dut.$procmux$583.
+    dead port 2/2 on $mux $techmap\dut.$procmux$589.
+    dead port 2/2 on $mux $techmap\dut.$procmux$595.
+    dead port 2/2 on $mux $techmap\dut.$procmux$601.
+    dead port 2/2 on $mux $techmap\dut.$procmux$607.
+    dead port 2/2 on $mux $techmap\dut.$procmux$613.
+    dead port 2/2 on $mux $techmap\dut.$procmux$619.
+    dead port 2/2 on $mux $techmap\dut.$procmux$625.
+    dead port 2/2 on $mux $techmap\dut.$procmux$631.
+    dead port 2/2 on $mux $techmap\dut.$procmux$637.
+    dead port 2/2 on $mux $techmap\dut.$procmux$643.
+    dead port 2/2 on $mux $techmap\dut.$procmux$649.
+    dead port 2/2 on $mux $techmap\dut.$procmux$655.
+    dead port 2/2 on $mux $techmap\dut.$procmux$661.
+    dead port 2/2 on $mux $techmap\dut.$procmux$667.
+    dead port 2/2 on $mux $techmap\dut.$procmux$673.
+    dead port 2/2 on $mux $techmap\dut.$procmux$679.
+    dead port 2/2 on $mux $techmap\dut.$procmux$685.
+    dead port 2/2 on $mux $techmap\dut.$procmux$691.
+    dead port 2/2 on $mux $techmap\dut.$procmux$697.
+    dead port 2/2 on $mux $techmap\dut.$procmux$703.
+    dead port 2/2 on $mux $techmap\dut.$procmux$709.
+    dead port 2/2 on $mux $techmap\dut.$procmux$715.
+    dead port 2/2 on $mux $techmap\dut.$procmux$721.
+    dead port 2/2 on $mux $techmap\dut.$procmux$727.
+    dead port 2/2 on $mux $techmap\dut.$procmux$733.
+    dead port 2/2 on $mux $techmap\dut.$procmux$739.
+    dead port 2/2 on $mux $techmap\dut.$procmux$937.
+Removed 64 multiplexer ports.
+<suppressed ~65 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_decoder.
+Performed a total of 0 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_decoder'.
+Removed a total of 0 cells.
+
+3.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+3.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_decoder..
+Removed 0 unused cells and 132 unused wires.
+<suppressed ~1 debug messages>
+
+3.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_decoder.
+
+3.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_decoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~65 debug messages>
+
+3.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_decoder.
+Performed a total of 0 changes.
+
+3.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_decoder'.
+Removed a total of 0 cells.
+
+3.7.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+3.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_decoder..
+
+3.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_decoder.
+
+3.7.16. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 64 bits (of 65) from port A of cell formal_decoder.$shl$tb/formal_decoder.sv:6$334 ($shl).
+Removed top 64 bits (of 65) from port B of cell formal_decoder.$sub$tb/formal_decoder.sv:6$335 ($sub).
+Removed top 1 bits (of 65) from port Y of cell formal_decoder.$sub$tb/formal_decoder.sv:6$335 ($sub).
+Removed top 1 bits (of 65) from port A of cell formal_decoder.$sub$tb/formal_decoder.sv:6$335 ($sub).
+Removed top 31 bits (of 32) from port B of cell formal_decoder.$gt$tb/formal_decoder.sv:12$349 ($gt).
+Removed top 2 bits (of 8) from port A of cell formal_decoder.$add$tb/formal_decoder.sv:12$350 ($add).
+Removed top 1 bits (of 8) from port B of cell formal_decoder.$add$tb/formal_decoder.sv:12$350 ($add).
+Removed top 1 bits (of 8) from port B of cell formal_decoder.$le$tb/formal_decoder.sv:12$351 ($le).
+Removed top 25 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$le$rtl/proposed/cci_range_req_decoder.sv:23$327 ($le).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$321 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$319 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$319 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$317 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$315 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$315 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$313 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$311 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$311 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$309 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$307 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$307 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$305 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$303 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$303 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$301 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$299 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$299 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$297 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$295 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$295 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$293 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$291 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$291 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$289 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$287 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$287 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$285 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$283 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$283 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$281 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$279 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$279 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$277 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$275 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$275 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$273 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$271 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$271 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$269 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$267 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$267 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$265 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$263 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$263 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$261 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$259 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$259 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$257 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$255 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$255 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$253 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$251 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$251 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$249 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$247 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$247 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$245 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$243 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$243 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$241 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$239 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$239 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$237 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$235 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$235 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$233 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$231 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$231 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$229 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$227 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$227 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$225 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$223 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$223 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$221 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$219 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$219 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$217 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$215 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$215 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$213 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$211 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$211 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$209 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$207 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$207 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$205 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$203 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$203 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$201 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$199 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$199 ($ge).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$197 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$195 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$195 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$193 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$191 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$191 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$189 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$187 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$187 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$185 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$183 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$183 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$181 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$179 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$179 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$177 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$175 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$175 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$173 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$171 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$171 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$169 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$167 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$167 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$165 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$163 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$163 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$161 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$159 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$159 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$157 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$155 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$155 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$153 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$151 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$151 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$149 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$147 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$147 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$145 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$143 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$143 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$141 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$139 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$139 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$137 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$135 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$135 ($ge).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$133 ($lt).
+Removed top 27 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$131 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$131 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$129 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$127 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$127 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$125 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$123 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$123 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$121 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$119 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$119 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$117 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$115 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$115 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$113 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$111 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$111 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$109 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$107 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$107 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$105 ($lt).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$103 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$103 ($ge).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$101 ($lt).
+Removed top 26 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$add$rtl/proposed/cci_range_req_decoder.sv:18$100 ($add).
+Removed top 25 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$add$rtl/proposed/cci_range_req_decoder.sv:18$100 ($add).
+Removed top 24 bits (of 32) from port Y of cell formal_decoder.$techmap\dut.$add$rtl/proposed/cci_range_req_decoder.sv:18$100 ($add).
+Removed top 28 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$99 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$99 ($ge).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$97 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$97 ($lt).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$95 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$95 ($ge).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$93 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$93 ($lt).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$91 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$91 ($ge).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$89 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$89 ($lt).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$87 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$87 ($ge).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$85 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$85 ($lt).
+Removed top 29 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$83 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$83 ($ge).
+Removed top 30 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$81 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$81 ($lt).
+Removed top 30 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$79 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$79 ($ge).
+Removed top 30 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$77 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$77 ($lt).
+Removed top 30 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$75 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$75 ($ge).
+Removed top 31 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$73 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$73 ($lt).
+Removed top 31 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$71 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$71 ($ge).
+Removed top 31 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$69 ($lt).
+Removed top 24 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$lt$rtl/proposed/cci_range_req_decoder.sv:18$69 ($lt).
+Removed top 31 bits (of 32) from port A of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$67 ($ge).
+Removed top 26 bits (of 32) from port B of cell formal_decoder.$techmap\dut.$ge$rtl/proposed/cci_range_req_decoder.sv:17$67 ($ge).
+Removed top 1 bits (of 65) from port Y of cell formal_decoder.$shl$tb/formal_decoder.sv:6$334 ($shl).
+Removed top 1 bits (of 65) from wire formal_decoder.$shl$tb/formal_decoder.sv:6$334_Y.
+Removed top 24 bits (of 32) from wire formal_decoder.$techmap\dut.$add$rtl/proposed/cci_range_req_decoder.sv:18$100_Y.
+Removed top 1 bits (of 65) from wire formal_decoder.low_ones.
+
+3.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_decoder..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_decoder.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_decoder'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+3.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_decoder..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.5. Finished fast OPT passes.
+
+3.13. Printing statistics.
+
+=== formal_decoder ===
+
+   Number of wires:                287
+   Number of wire bits:           1039
+   Number of public wires:          14
+   Number of public wire bits:     632
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                343
+     $add                            1
+     $assert                         3
+     $eq                             2
+     $ge                            64
+     $gt                             1
+     $le                             2
+     $logic_and                     68
+     $logic_not                      2
+     $logic_or                       2
+     $lt                            64
+     $mux                          129
+     $reduce_bool                    2
+     $shl                            2
+     $sub                            1
+
+3.14. Executing CHECK pass (checking for obvious problems).
+checking module formal_decoder..
+found and reported 0 problems.
+
+4. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up SAT problem:
+Final constraint equation: { } = { }
+Imported 343 cells to SAT database.
+Import proof for assert: 1'1 when 1'1.
+Import proof for assert: $0$formal$tb/formal_decoder.sv:12$332_CHECK[0:0]$342 when 1'1.
+Import proof for assert: $0$formal$tb/formal_decoder.sv:13$333_CHECK[0:0]$344 when 1'1.
+Import show expression: \addr
+Import show expression: \count
+Import show expression: \mask
+
+Solving problem with 5937 variables and 16339 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+

@@ -1,0 +1,105 @@
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Wed Oct  7 14:22:03 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source synth/run_ace.tcl
+# set out [file normalize [lindex $argv 0]]
+# file mkdir $out
+# foreach variant {ace_cache_snoop_endpoint ace_snoop_fabric ace_snoop_controller ace_snoop_controller_bank cci_ace_snoop_service ace_manager_request_controller ace_manager_request_bank axi_cci_ace_top_B1 axi_cci_ace_top_P axi_cci_ace_top_multi_filter} {
+#     set top $variant
+#     if {[string match "axi_cci_ace_top_*" $variant]} {set top axi_cci_ace_top}
+#     create_project -in_memory -part xczu7ev-ffvc1156-2-e
+#     set_property include_dirs [list rtl/common] [current_fileset]
+#     foreach listfile {scripts/rtl.f scripts/ace.f} {
+#         set fd [open $listfile r]
+#         foreach src [split [read $fd] "\n"] {
+#             set src [string trim $src]
+#             if {$src ne "" && ![string match "+*" $src]} {read_verilog -sv $src}
+#         }
+#         close $fd
+#     }
+#     if {$variant eq "axi_cci_ace_top_P"} {
+#         synth_design -top $top -part xczu7ev-ffvc1156-2-e -mode out_of_context -generic USE_RANGE=1
+#     } elseif {$variant eq "axi_cci_ace_top_multi_filter"} {
+#         synth_design -top $top -part xczu7ev-ffvc1156-2-e -mode out_of_context -generic {CACHED_MASTERS=2 USE_SNOOP_FILTER=1}
+#     } else {
+#         synth_design -top $top -part xczu7ev-ffvc1156-2-e -mode out_of_context
+#     }
+#     report_utilization -file $out/${variant}_utilization.rpt
+#     puts "ACE_SYNTH_PASS: $variant"
+#     close_project
+# }
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 629.574 ; gain = 202.363
+Command: synth_design -top ace_cache_snoop_endpoint -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28532
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1086.215 ; gain = 453.652
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ace_cache_snoop_endpoint' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:5]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:130]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:132]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:134]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:95]
+INFO: [Synth 8-6155] done synthesizing module 'ace_cache_snoop_endpoint' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_cache_snoop_endpoint.sv:5]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1214.648 ; gain = 582.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1214.648 ; gain = 582.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1214.648 ; gain = 582.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1214.648 ; gain = 582.086
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 3     
++---Registers : 
+	              512 Bit    Registers := 13    
+	               58 Bit    Registers := 8     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 10    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   4 Input  512 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 76    
+	   7 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 8     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 103   
+	   4 Input    1 Bit        Muxes := 27    
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------

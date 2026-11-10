@@ -1,0 +1,175 @@
+{
+  "schema": "rcci-active-regression-v2",
+  "generated_at_utc": "2026-11-10T01:53:08.116035+00:00",
+  "status": "PASS",
+  "scope": "active ACE/rCCI after 보완 1~5; legacy setup/P-WR is archived separately",
+  "sources": {
+    "CCI-simulation/rcci_model/Makefile": "b60362b19df13596e7b7012f5fd6932fcf44cfb16ef2128da974c29b909872db",
+    "CCI-simulation/rcci_model/rcci_model.cpp": "37961c8a98ca725cc22e5097042fbaf39003ff298474a659d438ad97c103b27d",
+    "CCI-simulation/rcci_model/test_model.py": "9b8f44db3fc6dbf1c02fb11bce4d79c5d641ec900cdedc859fe0f3f8722dd326",
+    "axi4_simple_2to1_bus_arbiter.sv": "6a4dce3e6496acd82ca61cdbee9c0deef9305d045250cc2d304a83b86d98c012",
+    "formal/endpoint_invariants.vh": "d4c3b817bd2386e1deaa6b0ceac2c37cdc2b70f2dac28738ea2a56905ba14470",
+    "formal/formal_endpoint.sv": "27860fd3eee49029503267caf52a1656bbeee6aaacd4b4940a64b3865ee93671",
+    "formal/formal_ingress.sv": "f318c7dd7c0a1d684b7dbbaf76b4ea08f4974aaa436205d921b16edd79f403a1",
+    "formal/formal_ingress_progress.sv": "fe850a5e9eac784e6d4ccd9a55f4683de9d9240c15ab5f54827767aa6a0b5711",
+    "formal/formal_issue_arbiter.sv": "7b843dce9bc6b140cc81dc4ae381ce73e5d4b645cd35194fd1aa64bbcf5a004f",
+    "formal/formal_read_interval.sv": "b5ded80fd48dbe1a3ed2a8f81d150914008f5715eabfbc0f7d1f61e66e08a51b",
+    "rtl/ace/ace_cache_snoop_endpoint.sv": "109d3266a4f1ac3eb3547f6f620300a4835f1cbd9e0ff6183aa8a51fae93dfb6",
+    "rtl/ace/ace_manager_request_bank.sv": "a1703af8e1ed81565cc2c8cad2a849108997083e88d042f7a1bf86bcf42c7b56",
+    "rtl/ace/ace_manager_request_controller.sv": "32daf46e83eb8deb22d26aac8ca9c9049a8f50939aeb4b40365419aba9974d3c",
+    "rtl/ace/ace_snoop_controller.sv": "6f21ad1eda919f97c7c836dbaad041553de8c6cb36bc54f626575c73156683e5",
+    "rtl/ace/ace_snoop_controller_bank.sv": "271a249640b5a1244f41f29b8f199cbad84e419cfb357748a579a3f77f9568ce",
+    "rtl/ace/ace_snoop_controller_tag_bank.sv": "6d3f09a3314cf2e1b594a198d9e1e06ae16b6e570cd5378b63a36d738b461837",
+    "rtl/ace/ace_snoop_fabric.sv": "d6f4b3cb4d12331bb796638656e6b27d43f2e02e8b7f49c7be7e480e6af413d6",
+    "rtl/ace/ace_snoop_pkg.sv": "0ebe228b0533fb3d2fe0f52fbdd7b052d9beaf0b8a9874c8d3c679a0b4bfd660",
+    "rtl/ace/axi_cci_ace_top.sv": "3c5ece7851baefc8f6b6600b0efb1e5e75d0ae145001dc5b95173bb859187a0e",
+    "rtl/ace/cci_ace_snoop_service.sv": "e3bbde41ef5b2640c9b1aeecc997dcf9dcabd52022e762ec60994af4ab49a444",
+    "rtl/ace/cci_ace_tagged_snoop_service.sv": "5f4848f43acf1a3c8ab1af797792daff296480174b762f5e01b58ac96640c6b9",
+    "rtl/ace/cci_service_rsp_adapter.sv": "f41bb48d4f0a55e27fbb3d6638b148c076c8d5df0d7fdee1ec7b53bdf90fb894",
+    "rtl/common/cci_admission_pool.sv": "4c06e2aaa2e3b493b678086117c0e710d0154730835fe878e35f6fc04dda0e87",
+    "rtl/common/coh_read_ingress.sv": "276ece2e4a1c6fd357f65e45675dd0b46807ef335a296c911f726605c11e4f71",
+    "rtl/common/coh_write_ingress.sv": "b1f02ca8580f1b119cba90f899ff855a5fdaad5c50f6bb36a177329ea7ccfa75",
+    "rtl/common/coh_write_range_adapter.sv": "c8141846d44df2fb7132bf24de9a107784810bf6482efb13b0869d23699e81ff",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/rcci_m1_issue_arbiter.sv": "a6d86e7ac0742d6aa580b161e9a363c9de233a64ee22cf846f8f9e76d6c39341",
+    "rtl/top/axi_b0_top.sv": "51eeb88a90dac2db808131ae549a260558bc8b85bbd79225c082a0ea3cf4b715",
+    "rtl/top/axi_cci_top.sv": "2b3ae62155c522a0bac2bf8abacc134a5034ae343546c21f1eb895be99b44c24",
+    "scripts/ace.f": "7ef196cf1e9b844ca5e87b7f6d7ec6bd6a0fc7c25b42e2393153d2f237a4d966",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521",
+    "scripts/rtl.f": "d82e18dba82d157e149afc1c1982d4a59679c8c28b5cd86d46d1a7d88015704a",
+    "scripts/run_ace.py": "25fbad9728c5d00cc2f3c791f9f1a12a5a76b2cfc58d96a8dedc63b9673b5fd5",
+    "scripts/run_formal.py": "10aaec622c1c5c1a26c3aa8f58b547663ef7cfe7e0062ae0b4b765e23c831581",
+    "scripts/run_rcci_fix.py": "c9b4ab00f851c09e4b2492e4944e0e8139c128e025b81456534a649131718755",
+    "scripts/run_rcci_stage2.py": "7a21493632391646d5c62a582b6e3c61701fc5f78f251b5ff738e96ebf671b4f",
+    "scripts/run_rcci_stage3.py": "088fa0a4d217e8b0ba45fb9002f00acf37608f8e42eb42a1048754d629364cb4",
+    "scripts/run_rcci_stage5.py": "d71c05729aa338f43c60d59b62379a44bfdb56096c72bc061c52bf2fab963a1d",
+    "scripts/run_rcci_stage6.py": "4c956dcb520c1155e9b8a8ec633a83de2df6d5d9de7c0186dffe7c9f6dfa8692",
+    "scripts/run_rcci_stage8.py": "4392b95583cf27afdb1a0dbc890f7d9071c84a512e5ecaeadfe34284342fa2a8",
+    "scripts/run_rcci_stress.py": "d19f271bb3be6a94cad3cce794edaa7678ddd96aeec513aa0294eafad9244dd3",
+    "scripts/run_regression.py": "4370a4367ee0fb5dc338283c92c229084fca5ca59ab6577bde1bd7aaabe5056c",
+    "synth/refresh_clock_reports.tcl": "0aa18717d2cd2ab987ce75f9db4b7dad81e5562f893ffe3ebe6a1e9bfdf2f64c",
+    "synth/run_ace.tcl": "575e2ab998865f39fffee60fc4175f7baa9f5a63299d7ca62b41405017586863",
+    "synth/run_ace_impl.tcl": "8c4bd201a4d41477fb6e50060d667640ad8906348242ed56991813433b02a622",
+    "synth/run_rcci_cost.tcl": "ae9a3a52220289942b3ae734489851002872c6389c9d2ac774eb33f3a0c6e990",
+    "tb/axi_memory_slave.sv": "df23fa6f00962d9e0438e5358f7f579bd7577895f3af8cc57433ebeb1321cfbb",
+    "tb/m0_clean_cache_model.sv": "33727bfb70953c60b9120f3bf701ddbd5846b4bc1fdbb466b080ac5f8d9efaa6",
+    "tb/tb_ace_fabric_review10.sv": "20cba793f2d28f6b0b7dffd7a0f9c0ec402c4f637f73a2e76a360b7446a556fa",
+    "tb/tb_ace_manager_outstanding.sv": "ee68ba1280db8096a44b9aed17be308f4dbe3bc9a2825b8643a421b1253e7207",
+    "tb/tb_ace_manager_review10.sv": "a3024d475c78b43358dd26e64d75050a7cee5331de9e50c7749a181bf0ca0175",
+    "tb/tb_ace_manager_transactions.sv": "4c9cbec1730a61a9cb9a725a4fccc09fb71078379405a680c8a528b68d5f1278",
+    "tb/tb_ace_snoop_bank_review10.sv": "8d31fd8f3968d1ef937810d18027fed6f333b715ffe2d2071b742bdae8cd43e2",
+    "tb/tb_ace_snoop_fabric.sv": "e72b48dbd69e3932f6f6ff6ff403a626229774b1f9583dc0b0f69219dbadcca1",
+    "tb/tb_ace_snoop_outstanding.sv": "0a906d47db67f4a5f76fae36c06f33eb77c613846780aff1e421ddd4821d6f63",
+    "tb/tb_ace_snoop_pipeline.sv": "12b7715c18050a6e986917538cc568001f11714089debabd4ad466e5b41dd4b1",
+    "tb/tb_ace_snoop_service.sv": "cebd5f0dcf7a213a836f9bac75b447885b28608ad903e01c51ed2a1424a2f39b",
+    "tb/tb_ace_snoop_service_outstanding.sv": "c1a3953398d964497796eff689ec0c93242787e7cb4d7592fdad7516069b715a",
+    "tb/tb_ace_tagged_service.sv": "5c9b75cbe9d46154939e7dbdbf20ca590aa846132319968ad21781e24f3d1495",
+    "tb/tb_axi_fifo_overlap.sv": "51006dbf879ef29fd7a83fc14385aa78c4d00dc4bca55dbf754a8a8d404ffbf0",
+    "tb/tb_axi_grant_lock.sv": "13918396bf49b38614fe2a71e3ae332709a23374e80310a5a375614e2bcaae2c",
+    "tb/tb_axi_memory_wstrb.sv": "3dd780f030d45afb49faed1f9b669b3fda51f362c0139a88a6eb473de0d3361c",
+    "tb/tb_axi_protocol_errors.sv": "d9620bd9f20973f23881f693dfce259c9e6cf541f2d6f08b6fb36e385051ff84",
+    "tb/tb_cache_collision.sv": "68aec9b176134f34dc98b800682c954b9dbdb6e1fceb63079c3c484a15ea4a6f",
+    "tb/tb_cci_ace_integration.sv": "93832122e14e4868a576edce89bcca5428392942a93175ec46f7430d9c9c9a84",
+    "tb/tb_cci_admission_pool.sv": "705a76ac0148ded0a7028b53316a7856dd2bd147f0307bf81b1c69b358c04942",
+    "tb/tb_coh_read_ingress.sv": "3310b8c3f1ca9f0e73d4daecbc45a3d25c643cb3b1ce6afbc3a06b8d389354d2",
+    "tb/tb_coh_read_ingress_range.sv": "5226dcaf557a6b394fc9af67ec1c3da80bbfd64a7128e05f2f4aff9fe7785a0a",
+    "tb/tb_coh_write_range_adapter.sv": "f8f8ca07a0b22e8241e494cfd292e75eb12f3109cd1ba89bf663da5dcb53a250",
+    "tb/tb_memory_collision.sv": "4116227a827d3fe53a2b89e69f18fb1558d2e31ed3f8799da9582d91ef31761c",
+    "tb/tb_rcci_stage1_latency.sv": "881c9ba67322c86272fef226ffc2203c7a583c9fad600f94e422b44598f1a4f8",
+    "tb/tb_rcci_stage8_hazards.sv": "88436e423d6ddf97e37611802e958d283ee654b5fe0405ec93e0c71808426d3c",
+    "tb/tb_snoop_endpoint.sv": "72a30aeb0c21853235e58067d9e3a89d678b5fee78304cb18e49f66a3c346e6a"
+  },
+  "results": [
+    {
+      "name": "stage2_attributes_wstrb",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage2.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage2_attributes_wstrb.log"
+    },
+    {
+      "name": "stage3_tagged_service_admission",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage3.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage3_tagged_service_admission.log"
+    },
+    {
+      "name": "stage5_read_range",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage5.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage5_read_range.log"
+    },
+    {
+      "name": "stage6_write_range",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage6.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage6_write_range.log"
+    },
+    {
+      "name": "stage8_hazard_error_formal",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage8.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage8_hazard_error_formal.log"
+    },
+    {
+      "name": "rcci_fix_ownership_interval_matrix",
+      "command": [
+        "python3",
+        "scripts/run_rcci_fix.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "rcci_fix_ownership_interval_matrix.log"
+    },
+    {
+      "name": "rcci_stress_quick",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stress.py",
+        "--quick"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "rcci_stress_quick.log"
+    },
+    {
+      "name": "ace_full",
+      "command": [
+        "python3",
+        "scripts/run_ace.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "ace_full.log"
+    },
+    {
+      "name": "formal",
+      "command": [
+        "python3",
+        "scripts/run_formal.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "formal.log"
+    }
+  ]
+}

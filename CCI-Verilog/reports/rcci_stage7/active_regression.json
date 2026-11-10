@@ -1,0 +1,87 @@
+{
+  "schema": "rcci-stage7-active-regression-v1",
+  "generated_at_utc": "2026-11-06T07:06:53.811685+00:00",
+  "status": "PASS",
+  "scope": "active ACE/rCCI only; legacy setup/P-WR is archived separately",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "6a4dce3e6496acd82ca61cdbee9c0deef9305d045250cc2d304a83b86d98c012",
+    "rtl/ace/ace_cache_snoop_endpoint.sv": "109d3266a4f1ac3eb3547f6f620300a4835f1cbd9e0ff6183aa8a51fae93dfb6",
+    "rtl/ace/ace_manager_request_bank.sv": "4fb524b6b76f5c44e1878c2c28375c965dad6e8626685c8a92c4b37640b865b4",
+    "rtl/ace/ace_manager_request_controller.sv": "a6aa67478ad6780a734dfd8b14b8fbf5d47b19c0a9156a04e4d6d50e0029cb69",
+    "rtl/ace/ace_snoop_controller.sv": "a0a5e0a900160d131428d1e542b524e82ca58d0f96eb17b240f0877766d96bd7",
+    "rtl/ace/ace_snoop_controller_bank.sv": "271a249640b5a1244f41f29b8f199cbad84e419cfb357748a579a3f77f9568ce",
+    "rtl/ace/ace_snoop_controller_tag_bank.sv": "6d3f09a3314cf2e1b594a198d9e1e06ae16b6e570cd5378b63a36d738b461837",
+    "rtl/ace/ace_snoop_fabric.sv": "d6f4b3cb4d12331bb796638656e6b27d43f2e02e8b7f49c7be7e480e6af413d6",
+    "rtl/ace/ace_snoop_pkg.sv": "3f3f0d67311720b8b7ba63cf23d4b15c6386fdee280eefe1100195c520e7350a",
+    "rtl/ace/axi_cci_ace_top.sv": "ef452e7fd7055db356e7d90a1dcefa3bcf73c7522785633f71d7a16d534e07be",
+    "rtl/ace/cci_ace_snoop_service.sv": "e3bbde41ef5b2640c9b1aeecc997dcf9dcabd52022e762ec60994af4ab49a444",
+    "rtl/ace/cci_ace_tagged_snoop_service.sv": "5f4848f43acf1a3c8ab1af797792daff296480174b762f5e01b58ac96640c6b9",
+    "rtl/ace/cci_service_rsp_adapter.sv": "f41bb48d4f0a55e27fbb3d6638b148c076c8d5df0d7fdee1ec7b53bdf90fb894",
+    "rtl/common/cci_admission_pool.sv": "4c06e2aaa2e3b493b678086117c0e710d0154730835fe878e35f6fc04dda0e87",
+    "rtl/common/coh_read_ingress.sv": "d0e12369a7166ea4d7581365a1eb4a6aa3ff6689511477c15dbd9fbea141149f",
+    "rtl/common/coh_write_ingress.sv": "ff54c535380642d075fa954f76bb82e8517292eae39b5837904c2833f110ec28",
+    "rtl/common/coh_write_range_adapter.sv": "77733bf153e9a715888862f3b1ae99cc2e8e1f5dd25340c3da6a9573a051205c",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/top/axi_cci_top.sv": "412eb998760badd2f6d75fe0e6b80c44686116abcb029a6a5ad65fe5c0910c0c",
+    "scripts/ace.f": "ab25a9027863cb9b0fc4b369771e1c9db48b0d6f393cb313ea7bf4a42d044f16",
+    "scripts/rtl.f": "d82e18dba82d157e149afc1c1982d4a59679c8c28b5cd86d46d1a7d88015704a",
+    "scripts/run_ace.py": "11dd579b57a383beff9e43acd87fc846ee30a772b4624d104c4ff1eaa9ed5409",
+    "scripts/run_formal.py": "38ac2904decc2a6fc75f81f47c41fc4bee3ddbd4a7d46c92b120196fc2f541a5",
+    "scripts/run_rcci_stage2.py": "7a21493632391646d5c62a582b6e3c61701fc5f78f251b5ff738e96ebf671b4f",
+    "scripts/run_rcci_stage5.py": "4865a195c832bf641231ebefc1c86eda8f724f8d75fc68ac40b77b86793e0c19",
+    "scripts/run_rcci_stage6.py": "88cbf64aa878fcdb7ab95ee82be581252a7627e9345cc5c36624b2681ae02623",
+    "scripts/run_regression.py": "59c6fb056f426bb7de6f7c8decd17fd1230b6a31bb44f924e997e5da17ca6f58"
+  },
+  "results": [
+    {
+      "name": "stage2_attributes_wstrb",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage2.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage2_attributes_wstrb.log"
+    },
+    {
+      "name": "stage5_read_range",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage5.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage5_read_range.log"
+    },
+    {
+      "name": "stage6_write_range",
+      "command": [
+        "python3",
+        "scripts/run_rcci_stage6.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "stage6_write_range.log"
+    },
+    {
+      "name": "ace_full",
+      "command": [
+        "python3",
+        "scripts/run_ace.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "ace_full.log"
+    },
+    {
+      "name": "formal",
+      "command": [
+        "python3",
+        "scripts/run_formal.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "log": "formal.log"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "run_id": "formal_20261102T074709Z_efea361e",
+  "status": "FAIL",
+  "sources": {
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/cci_pkg.sv": "083a05eca725e96a4cc8a92d2e2f9d9b6bf60d6641621cd281da344c999e1e86",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_rim_tracker.sv": "48dab4c38c2be4b3cd38ec1580ffd5915fc0447091b22d1d4a1066689f84d2f8",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/common/coh_write_ingress.sv": "1a924acf755c83d006f146e5f63be1f1e2a48ed2ce83cd57e4c6dd4b101a5b9c",
+    "formal/endpoint_invariants.vh": "d4c3b817bd2386e1deaa6b0ceac2c37cdc2b70f2dac28738ea2a56905ba14470",
+    "formal/formal_endpoint.sv": "27860fd3eee49029503267caf52a1656bbeee6aaacd4b4940a64b3865ee93671",
+    "formal/formal_ingress.sv": "0fe2f4c6fb36edcf70340d02289bc90d37c7e6969c8d2e9fddb6cb579f061c0c",
+    "scripts/run_formal.py": "9582e479f663495334beb89147c6accbb95cfa98135e01c1aa1f92c0432a77fb",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521"
+  },
+  "tools": {
+    "sv2v": "sv2v v0.0.11-0-g6082cae",
+    "yosys": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)"
+  },
+  "commands": [
+    {
+      "stage": "sv2v",
+      "name": "endpoint",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/endpoint/m0_snoop_endpoint.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/cci_pkg.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/cci_range_req_decoder.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/cci_ac_range_gen.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/cci_range_rim_tracker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/cci_range_hazard_checker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress/coh_write_ingress.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "endpoint_endpoint_ready_off_by_one",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/endpoint_endpoint_ready_off_by_one/m0_snoop_endpoint.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "endpoint_endpoint_no_head_advance",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/endpoint_endpoint_no_head_advance/m0_snoop_endpoint.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress_ingress_no_retire_advance",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/cci_pkg.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/cci_range_req_decoder.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/cci_ac_range_gen.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/cci_range_rim_tracker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/cci_range_hazard_checker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_retire_advance/coh_write_ingress.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress_ingress_no_issue_mark",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/cci_pkg.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/cci_range_req_decoder.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/cci_ac_range_gen.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/cci_range_rim_tracker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/cci_range_hazard_checker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_issue_mark/coh_write_ingress.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress_ingress_no_tracker_free",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/cci_pkg.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/cci_range_req_decoder.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/cci_ac_range_gen.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/cci_range_rim_tracker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/cci_range_hazard_checker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/src/ingress_ingress_no_tracker_free/coh_write_ingress.sv"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "endpoint_d2_l0_induction",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/endpoint.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_endpoint.sv; chparam -set DEPTH 2 formal_endpoint; chparam -set LATENCY 0 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "endpoint_d3_l2_induction",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/endpoint.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_endpoint.sv; chparam -set DEPTH 3 formal_endpoint; chparam -set LATENCY 2 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "endpoint_d4_l3_induction",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/endpoint.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_endpoint.sv; chparam -set DEPTH 4 formal_endpoint; chparam -set LATENCY 3 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "ingress_b1_bmc",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "ingress_p_bmc",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 1 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_b_fire",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; chparam -set WITNESS 1 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_tracker_full_stall",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; chparam -set WITNESS 2 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_cr_fire",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; chparam -set WITNESS 3 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_setup_accept",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 1 formal_ingress; chparam -set WITNESS 4 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_range_b_release",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 1 formal_ingress; chparam -set WITNESS 5 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "witness_m0_hazard",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 1 formal_ingress; chparam -set WITNESS 6 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 20 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "mutant_endpoint_ready_off_by_one",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/endpoint_endpoint_ready_off_by_one.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_endpoint.sv; chparam -set DEPTH 3 formal_endpoint; chparam -set LATENCY 2 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "mutant_endpoint_no_head_advance",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/endpoint_endpoint_no_head_advance.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_endpoint.sv; chparam -set DEPTH 3 formal_endpoint; chparam -set LATENCY 2 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "mutant_ingress_no_retire_advance",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress_ingress_no_retire_advance.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 12 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "mutant_ingress_no_issue_mark",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress_ingress_no_issue_mark.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 12 -prove-asserts -set-assumes"
+      ]
+    },
+    {
+      "stage": "sat",
+      "name": "mutant_ingress_no_tracker_free",
+      "argv": [
+        "/root/miniconda3/bin/yowasp-yosys",
+        "-p",
+        "read_verilog -sv -formal /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074709Z_efea361e/ingress_ingress_no_tracker_free.v /mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/formal/formal_ingress.sv; chparam -set USE_RANGE 0 formal_ingress; prep -top formal_ingress; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 12 -prove-asserts -set-assumes"
+      ]
+    }
+  ],
+  "cases": [],
+  "config": {
+    "bmc_depth": 20
+  },
+  "error": "KeyboardInterrupt"
+}

@@ -1,0 +1,1845 @@
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Oct  8 10:25:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source synth/run_ace_impl.tcl
+# set variant [expr {$argc>0 ? [lindex $argv 0] : "P"}]
+# set period [expr {$argc>1 ? [lindex $argv 1] : 5.0}]
+# set part [expr {$argc>2 ? [lindex $argv 2] : "xczu7ev-ffvc1156-2-e"}]
+# if {$variant ni {B1 P MULTI_FILTER}} {error "variant must be B1, P or MULTI_FILTER"}
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set out [expr {$argc>3 ? [file normalize [lindex $argv 3]] : [file join $root reports standalone [clock format [clock seconds] -format %Y%m%d_%H%M%S] ACE_$variant]}]
+# file mkdir $out
+# foreach listfile {scripts/rtl.f scripts/ace.f} {
+#     set fd [open [file join $root $listfile] r]
+#     foreach line [split [read $fd] \n] {
+#         set line [string trim $line]
+#         if {$line ne "" && ![string match "+*" $line]} {read_verilog -sv [file join $root $line]}
+#     }
+#     close $fd
+# }
+read_verilog: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 628.266 ; gain = 198.262
+# set generics [list USE_RANGE=0 CACHED_MASTERS=1 USE_SNOOP_FILTER=0]
+# if {$variant eq "P"} {set generics [list USE_RANGE=1 CACHED_MASTERS=1 USE_SNOOP_FILTER=0]}
+# if {$variant eq "MULTI_FILTER"} {set generics [list USE_RANGE=0 CACHED_MASTERS=2 USE_SNOOP_FILTER=1]}
+# synth_design -top axi_cci_ace_top -part $part -mode out_of_context \
+#     -include_dirs [list [file join $root rtl common]] -generic $generics
+Command: synth_design -top axi_cci_ace_top -part xczu7ev-ffvc1156-2-e -mode out_of_context -include_dirs C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common -generic {USE_RANGE=1 CACHED_MASTERS=1 USE_SNOOP_FILTER=0}
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26856
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1084.949 ; gain = 452.703
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axi_cci_ace_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:3]
+	Parameter USE_RANGE bound to: 1'b1 
+	Parameter CACHED_MASTERS bound to: 32'sb00000000000000000000000000000001 
+	Parameter USE_SNOOP_FILTER bound to: 1'b0 
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:511]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:513]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:516]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:519]
+INFO: [Synth 8-6157] synthesizing module 'axi_cci_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter M1_INGRESS_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter LINE_TRACKER_ENTRIES bound to: 32'sb00000000000000000000000000010000 
+	Parameter CONV_AC_FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+	Parameter COHERENT bound to: 1'b1 
+	Parameter USE_RANGE bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'coh_write_ingress' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+	Parameter USE_RANGE bound to: 1'b1 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter TRACKERS bound to: 32'sb00000000000000000000000000010000 
+	Parameter AC_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+INFO: [Synth 8-6157] synthesizing module 'cci_range_req_decoder' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_req_decoder.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_req_decoder' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_req_decoder.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_rim_tracker' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_rim_tracker.sv:2]
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+INFO: [Synth 8-6157] synthesizing module 'cci_ac_range_gen' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_ac_range_gen.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_ac_range_gen' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_ac_range_gen.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_rim_tracker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_rim_tracker.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_hazard_checker' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_hazard_checker.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_hazard_checker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/proposed/cci_range_hazard_checker.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'coh_write_ingress' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'axi4_simple_2to1_bus_arbiter' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter INGRESS_IDX_WIDTH bound to: 32'sb00000000000000000000000000000100 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:460]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:463]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:463]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:492]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:500]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:507]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:564]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:567]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:570]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:570]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:596]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_simple_2to1_bus_arbiter' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cci_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:401]
+INFO: [Synth 8-6157] synthesizing module 'cci_ace_snoop_service' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:4]
+	Parameter OUTSTANDING bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:56]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:61]
+INFO: [Synth 8-6157] synthesizing module 'ace_snoop_controller_bank' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:6]
+	Parameter OUTSTANDING bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6157] synthesizing module 'ace_snoop_controller' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:70]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:71]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:72]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:73]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:31]
+INFO: [Synth 8-6155] done synthesizing module 'ace_snoop_controller' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller.sv:3]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:159]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:161]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:163]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:165]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:115]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:127]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:135]
+INFO: [Synth 8-6155] done synthesizing module 'ace_snoop_controller_bank' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_snoop_controller_bank.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'cci_ace_snoop_service' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/cci_ace_snoop_service.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'ace_manager_request_bank' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:8]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter CONTEXTS bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6157] synthesizing module 'ace_manager_request_controller' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:8]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter LINE_BYTES bound to: 32'sb00000000000000000000000001000000 
+	Parameter EXTERNAL_MONITOR bound to: 1'b1 
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:433]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:435]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:437]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:439]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:441]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:443]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:445]
+INFO: [Synth 8-6155] done synthesizing module 'ace_manager_request_controller' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:8]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:318]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:320]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:322]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:324]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:327]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:330]
+WARNING: [Synth 8-2898] ignoring concurrent assertion [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:334]
+INFO: [Synth 8-6155] done synthesizing module 'ace_manager_request_bank' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_bank.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cci_ace_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/axi_cci_ace_top.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element rr_state_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:545]
+WARNING: [Synth 8-7137] Register req_order_reg in module ace_snoop_controller_bank has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register ac_order_reg in module ace_snoop_controller_bank has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'req_order_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "req_order_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'ac_order_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "ac_order_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register owner_q_reg in module cci_ace_snoop_service has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'owner_q_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "owner_q_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element exclusive_valid_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:246]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[0] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[1] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[2] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[3] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[4] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[5] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[6] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[7] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[8] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[9] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[10] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[11] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[12] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[13] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[14] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element exclusive_line_reg[15] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/ace/ace_manager_request_controller.sv:256]
+WARNING: [Synth 8-7137] Register wq_slot_reg in module ace_manager_request_bank has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register wq_len_reg in module ace_manager_request_bank has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'wq_slot_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "wq_slot_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'wq_len_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "wq_len_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register service_owner_q_reg in module axi_cci_ace_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'service_owner_q_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "service_owner_q_reg" dissolved into registers
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1VALID driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[63] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[62] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[61] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[60] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[59] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[58] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[57] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[56] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[55] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[54] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[53] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[52] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[51] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[50] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[49] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[48] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[47] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[46] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[45] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[44] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[43] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[42] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[41] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[40] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[39] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[38] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[37] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[36] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[35] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[34] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[33] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[32] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[31] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[30] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[29] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[28] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[27] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[26] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[25] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[24] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[23] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[22] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[21] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[20] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[19] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[18] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[17] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[16] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[15] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[14] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[13] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[12] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[11] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[10] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[9] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[8] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[7] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[6] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[5] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[4] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[3] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[2] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[1] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[0] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1SNOOP[3] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1SNOOP[2] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1SNOOP[1] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1SNOOP[0] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port CR1READY driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port CD1READY driven by constant 0
+WARNING: [Synth 8-7129] Port reservation_kill_valid[1] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_valid[0] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][63] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][62] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][61] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][60] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][59] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][58] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][57] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][56] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][55] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][54] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][53] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][52] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][51] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][50] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][49] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][48] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][47] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][46] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][45] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][44] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][43] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][42] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][41] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][40] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][39] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][38] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][37] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][36] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][35] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][34] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][33] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][32] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][31] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][30] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][29] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][28] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][27] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][26] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][25] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][24] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][23] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][22] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][21] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][20] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][19] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][18] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][17] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][16] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][15] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][14] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][13] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][12] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][11] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][10] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][9] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][8] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][7] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][6] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][5] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][4] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][3] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][2] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][1] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[1][0] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][63] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][62] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][61] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][60] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][59] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][58] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][57] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][56] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][55] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][54] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][53] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][52] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][51] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][50] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][49] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][48] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][47] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][46] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][45] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][44] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][43] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][42] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][41] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][40] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][39] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][38] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][37] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][36] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][35] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][34] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][33] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][32] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][31] in module ace_manager_request_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reservation_kill_addr[0][30] in module ace_manager_request_controller is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1311.602 ; gain = 679.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.602 ; gain = 679.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.602 ; gain = 679.355
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6904] The RAM "coh_write_ingress:/ac_fifo_reg" of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2161.527 ; gain = 1529.281
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 8     
+	   2 Input    7 Bit       Adders := 2     
+	   6 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 10    
+	   9 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 19    
+	   5 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 17    
+	   3 Input    2 Bit       Adders := 2     
++---Registers : 
+	              512 Bit    Registers := 9     
+	               64 Bit    Registers := 30    
+	               58 Bit    Registers := 16    
+	               52 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 63    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 17    
+	                4 Bit    Registers := 131   
+	                3 Bit    Registers := 19    
+	                2 Bit    Registers := 50    
+	                1 Bit    Registers := 254   
++---RAMs : 
+	               64 Bit	(16 X 4 bit)          RAMs := 1     
++---Muxes : 
+	   8 Input  512 Bit        Muxes := 8     
+	   2 Input  512 Bit        Muxes := 14    
+	   4 Input  512 Bit        Muxes := 1     
+	   4 Input  128 Bit        Muxes := 3     
+	   2 Input  128 Bit        Muxes := 26    
+	   4 Input   64 Bit        Muxes := 5     
+	   2 Input   64 Bit        Muxes := 30    
+	   2 Input   58 Bit        Muxes := 48    
+	   4 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 4     
+	   4 Input    8 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 15    
+	  19 Input    8 Bit        Muxes := 4     
+	   2 Input    7 Bit        Muxes := 2     
+	   8 Input    5 Bit        Muxes := 8     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 21    
+	   4 Input    4 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 155   
+	   3 Input    4 Bit        Muxes := 8     
+	   8 Input    3 Bit        Muxes := 8     
+	   5 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 15    
+	   4 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 28    
+	   8 Input    2 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 133   
+	   4 Input    2 Bit        Muxes := 8     
+	   3 Input    2 Bit        Muxes := 6     
+	   8 Input    1 Bit        Muxes := 28    
+	   2 Input    1 Bit        Muxes := 845   
+	   3 Input    1 Bit        Muxes := 32    
+	   4 Input    1 Bit        Muxes := 5     
+	  19 Input    1 Bit        Muxes := 40    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1VALID driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[63] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[62] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[61] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[60] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[59] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[58] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[57] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[56] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[55] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[54] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[53] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[52] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[51] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[50] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[49] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[48] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[47] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[46] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[45] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[44] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[43] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[42] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[41] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[40] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[39] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[38] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[37] driven by constant 0
+WARNING: [Synth 8-3917] design axi_cci_ace_top has port AC1ADDR[36] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6904] The RAM "core/\coherent.control /ac_fifo_reg" of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6904] The RAM "\core/coherent.control/ac_fifo_reg " of size (depth=16 x width=4) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/proposed.pending_source_reg[3]' (FDCE) to 'core/coherent.control/proposed.pending_source_reg[1]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/proposed.pending_source_reg[1]' (FDCE) to 'core/coherent.control/proposed.pending_source_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\core/coherent.control /\proposed.pending_source_reg[2] )
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/ac_payload_reg[0]' (FDCE) to 'core/coherent.control/ac_payload_reg[1]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/ac_payload_reg[1]' (FDCE) to 'core/coherent.control/ac_payload_reg[2]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/ac_payload_reg[2]' (FDCE) to 'core/coherent.control/ac_payload_reg[3]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/ac_payload_reg[3]' (FDCE) to 'core/coherent.control/ac_payload_reg[4]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/ac_payload_reg[4]' (FDCE) to 'core/coherent.control/ac_payload_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\core/coherent.control /\ac_payload_reg[5] )
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/proposed.rim/ctx_reg[source_id][3]' (FDCE) to 'core/coherent.control/proposed.rim/ctx_reg[source_id][1]'
+INFO: [Synth 8-3886] merging instance 'core/coherent.control/proposed.rim/ctx_reg[source_id][1]' (FDCE) to 'core/coherent.control/proposed.rim/ctx_reg[source_id][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\core/coherent.control /\proposed.rim /\ctx_reg[source_id][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\core/bus/protocol_error_outstanding_overflow_reg )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:01:06 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------------------+-------------+-----------+----------------------+---------------+
+|Module Name             | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++------------------------+-------------+-----------+----------------------+---------------+
+|\core/coherent.control  | ac_fifo_reg | Implied   | 16 x 4               | RAM32M16 x 1  | 
++------------------------+-------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:01:08 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------------------+-------------+-----------+----------------------+---------------+
+|Module Name             | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++------------------------+-------------+-----------+----------------------+---------------+
+|\core/coherent.control  | ac_fifo_reg | Implied   | 16 x 4               | RAM32M16 x 1  | 
++------------------------+-------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:01:10 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:01:14 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:01:14 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:01:15 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:16 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:16 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |   643|
+|2     |LUT1   |    60|
+|3     |LUT2   |   689|
+|4     |LUT3   |  2627|
+|5     |LUT4   |  4332|
+|6     |LUT5   |   724|
+|7     |LUT6   | 12432|
+|8     |MUXF7  |  1467|
+|9     |MUXF8  |   632|
+|10    |RAM32M |     1|
+|11    |FDCE   |  8639|
+|12    |FDPE   |     6|
+|13    |FDRE   |   544|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------------+---------------------------------+------+
+|      |Instance                       |Module                           |Cells |
++------+-------------------------------+---------------------------------+------+
+|1     |top                            |                                 | 32796|
+|2     |  core                         |axi_cci_top                      |  6951|
+|3     |    bus                        |axi4_simple_2to1_bus_arbiter     |  1304|
+|4     |    \coherent.control          |coh_write_ingress                |  5647|
+|5     |      \proposed.rim            |cci_range_rim_tracker            |  1377|
+|6     |        gen                    |cci_ac_range_gen                 |   347|
+|7     |  manager                      |ace_manager_request_bank         | 15065|
+|8     |    \G_CONTEXT[0].u_context    |ace_manager_request_controller   |  2532|
+|9     |    \G_CONTEXT[1].u_context    |ace_manager_request_controller_3 |  3213|
+|10    |    \G_CONTEXT[2].u_context    |ace_manager_request_controller_4 |  2517|
+|11    |    \G_CONTEXT[3].u_context    |ace_manager_request_controller_5 |  3391|
+|12    |  service                      |cci_ace_snoop_service            | 10741|
+|13    |    controller                 |ace_snoop_controller_bank        | 10209|
+|14    |      \G_CTRL[0].u_controller  |ace_snoop_controller             |  1452|
+|15    |      \G_CTRL[1].u_controller  |ace_snoop_controller_0           |  5342|
+|16    |      \G_CTRL[2].u_controller  |ace_snoop_controller_1           |  1507|
+|17    |      \G_CTRL[3].u_controller  |ace_snoop_controller_2           |  1794|
++------+-------------------------------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:16 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 943 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:01:17 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:01:17 . Memory (MB): peak = 2283.000 ; gain = 1650.754
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.207 . Memory (MB): peak = 2283.000 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2743 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2340.516 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+
+Synth Design complete | Checksum: 359cd8c8
+INFO: [Common 17-83] Releasing license: Synthesis
+72 Infos, 260 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:24 . Memory (MB): peak = 2340.516 ; gain = 1712.250
+# create_clock -name ACLK -period $period [get_ports ACLK]
+# set clock_site [lindex [lsort -dictionary [get_sites -filter {SITE_TYPE == BUFGCE}]] 0]
+# if {$clock_site eq ""} {error "No BUFGCE clock source site found"}
+# set_property HD.CLK_SRC $clock_site [get_ports ACLK]
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port ACLK. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC. 
+# set_false_path -from [get_ports ARESETn]
+# set_false_path -from [get_ports -filter {DIRECTION == IN && NAME != ACLK && NAME != ARESETn}]
+# set_false_path -to [get_ports -filter {DIRECTION == OUT}]
+# write_checkpoint -force [file join $out post_synth.dcp]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.172 . Memory (MB): peak = 2943.215 ; gain = 12.812
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/P/post_synth.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2945.398 ; gain = 604.883
+# report_utilization -file [file join $out post_synth_utilization.rpt]
+# report_utilization -hierarchical -file [file join $out post_synth_hier.rpt]
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2969.285 ; gain = 23.887
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 2969.285 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.443 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.510 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1d3edc844
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.512 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 15 inverters resulting in an inversion of 65 pins
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 8645 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 27e4999a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Retarget | Checksum: 27e4999a7
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 16 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 27e4999a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Constant propagation | Checksum: 27e4999a7
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 20cc564f1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Sweep | Checksum: 20cc564f1
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 20cc564f1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+BUFG optimization | Checksum: 20cc564f1
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 20cc564f1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Shift Register Optimization | Checksum: 20cc564f1
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 20cc564f1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Post Processing Netlist | Checksum: 20cc564f1
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Phase 9 Finalization | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              16  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1d21e81df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 3330.859 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3330.859 ; gain = 385.461
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 13d80d0f3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 3330.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3330.859 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 127f08bd1
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 3904.191 ; gain = 573.332
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 15c6b378e
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3904.191 ; gain = 573.332
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 15c6b378e
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 3904.191 ; gain = 573.332
+Phase 1 Placer Initialization | Checksum: 15c6b378e
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 3904.191 ; gain = 573.332
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 227ddf6fd
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 3904.191 ; gain = 573.332
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 18bbccf68
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 3904.191 ; gain = 573.332
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 18bbccf68
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 4010.836 ; gain = 679.977
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 18f335e14
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 18f335e14
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+Phase 2.1.1 Partition Driven Placement | Checksum: 18f335e14
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+Phase 2.1 Floorplanning | Checksum: 1620d1a44
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1620d1a44
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 141b5d41c
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 4014.676 ; gain = 683.816
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 1bfa59e31
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:01:43 . Memory (MB): peak = 4200.207 ; gain = 869.348
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 146 LUTNM shape to break, 140 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 89, two critical 57, total 146, new lutff created 6
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 197 nets or LUTs. Breaked 146 LUTs, combined 51 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 44 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 22 nets.  Re-placed 108 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 22 nets or cells. Created 0 new cell, deleted 1 existing cell and moved 108 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 4200.207 ; gain = 0.000
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 4200.207 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |          146  |             51  |                   197  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              1  |                    22  |           0  |           1  |  00:00:03  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |          146  |             52  |                   219  |           0  |          10  |  00:00:03  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 22c69794a
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:47 . Memory (MB): peak = 4200.207 ; gain = 869.348
+Phase 2.4 Global Placement Core | Checksum: 24011deb1
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:59 . Memory (MB): peak = 4200.207 ; gain = 869.348
+Phase 2 Global Placement | Checksum: 24011deb1
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:59 . Memory (MB): peak = 4200.207 ; gain = 869.348
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1c13c3d16
+
+Time (s): cpu = 00:03:20 ; elapsed = 00:02:05 . Memory (MB): peak = 4200.207 ; gain = 869.348
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 29ba02d1c
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:02:06 . Memory (MB): peak = 4200.207 ; gain = 869.348
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 1f533cf93
+
+Time (s): cpu = 00:03:45 ; elapsed = 00:02:21 . Memory (MB): peak = 4205.781 ; gain = 874.922
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 1dab8aa37
+
+Time (s): cpu = 00:03:56 ; elapsed = 00:02:28 . Memory (MB): peak = 4214.535 ; gain = 883.676
+Phase 3.3.2 Slice Area Swap | Checksum: 1dab8aa37
+
+Time (s): cpu = 00:03:57 ; elapsed = 00:02:28 . Memory (MB): peak = 4217.176 ; gain = 886.316
+Phase 3.3 Small Shape DP | Checksum: 25ae78685
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:40 . Memory (MB): peak = 4221.457 ; gain = 890.598
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 1c25bd5e7
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:41 . Memory (MB): peak = 4221.457 ; gain = 890.598
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 21d845d96
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:02:41 . Memory (MB): peak = 4221.457 ; gain = 890.598
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 2f382dabc
+
+Time (s): cpu = 00:04:30 ; elapsed = 00:02:50 . Memory (MB): peak = 4221.457 ; gain = 890.598
+Phase 3 Detail Placement | Checksum: 2f382dabc
+
+Time (s): cpu = 00:04:30 ; elapsed = 00:02:50 . Memory (MB): peak = 4221.457 ; gain = 890.598
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 2c3e6b3e9
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.667 | TNS=-497.690 |
+Phase 1 Physical Synthesis Initialization | Checksum: 124e7706d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.256 . Memory (MB): peak = 4280.625 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 272a94a56
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.387 . Memory (MB): peak = 4280.625 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 2c3e6b3e9
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:02:59 . Memory (MB): peak = 4280.625 ; gain = 949.766
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.080. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1bd272187
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:03:50 . Memory (MB): peak = 4306.082 ; gain = 975.223
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:03:50 . Memory (MB): peak = 4306.082 ; gain = 975.223
+Phase 4.1 Post Commit Optimization | Checksum: 1bd272187
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:03:50 . Memory (MB): peak = 4306.082 ; gain = 975.223
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 4382.930 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 16820be90
+
+Time (s): cpu = 00:05:52 ; elapsed = 00:04:00 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                8x8|                8x8|                8x8|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                8x8|
+|___________|___________________|___________________|___________________|
+|       West|                4x4|                1x1|                8x8|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 16820be90
+
+Time (s): cpu = 00:05:52 ; elapsed = 00:04:00 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+Phase 4.3 Placer Reporting | Checksum: 16820be90
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:04:00 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 4382.930 ; gain = 0.000
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:04:00 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 16be8dba4
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:04:00 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+Ending Placer Task | Checksum: 1445a71c2
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:04:01 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+41 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:05:58 ; elapsed = 00:04:04 . Memory (MB): peak = 4382.930 ; gain = 1052.070
+# phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 4382.930 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.088 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 622b4b71 ConstDB: 0 ShapeSum: 3ab61bc6 RouteDB: a7790a8b
+Nodegraph reading from file.  Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 4382.930 ; gain = 0.000
+WARNING: [Route 35-198] Port "ARESETn" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ARESETn". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[81]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[81]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[80]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[80]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[83]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[83]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[82]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[82]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[73]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[73]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[72]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[72]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[96]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[96]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[77]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[77]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[71]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[71]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[97]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[97]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[79]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[79]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[70]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[70]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[66]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[66]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[78]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[78]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[74]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[74]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[112]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[112]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[38]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[38]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[59]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[59]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[58]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[58]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[102]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[102]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[39]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[39]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[51]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[51]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[116]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[116]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[86]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[86]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[87]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[87]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[50]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[50]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[91]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[91]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[57]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[57]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[56]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[56]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[103]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[103]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[115]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[115]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[114]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[114]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[90]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[90]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[119]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[119]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[49]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[49]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[48]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[48]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[88]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[88]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[89]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[89]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[125]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[125]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[124]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[124]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[65]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[65]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[99]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[99]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[64]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[64]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[98]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[98]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[72]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[72]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[74]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[74]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[101]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[101]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[105]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[105]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[104]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[104]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[62]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[62]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[106]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[106]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[107]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[107]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[100]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[100]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[121]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[121]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[85]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[85]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[93]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[93]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[92]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[92]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[63]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[63]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[53]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[53]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[77]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[77]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[66]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[66]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[56]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[56]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[57]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[57]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[58]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[58]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[59]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[59]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[102]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[102]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[116]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[116]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[125]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[125]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[122]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[122]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Post Restoration Checksum: NetGraph: 99a654b7 | NumContArr: a78f5699 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2c687a08a
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 4382.930 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2c687a08a
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 4382.930 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2c687a08a
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 4382.930 ; gain = 0.000
+
+Phase 2.3 Global Clock Net Routing
+Phase 2.3 Global Clock Net Routing | Checksum: 2c687a08a
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4506.695 ; gain = 123.766
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 212b24586
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 4506.695 ; gain = 123.766
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.535  | TNS=0.000  | WHS=-0.024 | THS=-0.198 |
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 17609
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 12468
+  Number of Partially Routed Nets     = 5141
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 252beff42
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 4524.578 ; gain = 141.648
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 252beff42
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 4524.578 ; gain = 141.648
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 22e40957a
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:18 . Memory (MB): peak = 4524.578 ; gain = 141.648
+Phase 4 Initial Routing | Checksum: 2ae64bee9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:18 . Memory (MB): peak = 4524.578 ; gain = 141.648
+
+INFO: [Route 35-449] Initial Estimated Congestion
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+|           |___________________|___________________|___________________|
+| Direction | Size   | % Tiles  | Size   | % Tiles  | Size   | % Tiles  |
+|___________|________|__________|________|__________|________|__________|
+|      NORTH|   32x32|      1.31|   32x32|      1.28|   32x32|      1.25|
+|___________|________|__________|________|__________|________|__________|
+|      SOUTH|     1x1|      0.01|     1x1|      0.00|     4x4|      0.13|
+|___________|________|__________|________|__________|________|__________|
+|       EAST|     1x1|      0.00|     1x1|      0.00|     4x4|      0.26|
+|___________|________|__________|________|__________|________|__________|
+|       WEST|   16x16|      0.75|   16x16|      0.73|   16x16|      1.12|
+|___________|________|__________|________|__________|________|__________|
+Congestion Report
+GLOBAL Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X17Y270->INT_X32Y301 (CLEM_X17Y270->CLEL_R_X32Y301)
+	INT_X16Y280->INT_X31Y295 (CLEL_L_X16Y280->DSP_X31Y295)
+	INT_X16Y279->INT_X31Y294 (CLEL_L_X16Y279->DSP_X31Y290)
+	INT_X16Y278->INT_X31Y293 (CLEL_L_X16Y278->DSP_X31Y290)
+	INT_X16Y277->INT_X31Y292 (CLEL_L_X16Y277->DSP_X31Y290)
+WEST
+	INT_X28Y268->INT_X35Y299 (CLEM_X28Y268->CLEL_R_X35Y299)
+	INT_X28Y296->INT_X31Y299 (CLEM_X28Y296->DSP_X31Y295)
+	INT_X32Y296->INT_X35Y299 (CLEM_X32Y296->CLEL_R_X35Y299)
+	INT_X28Y292->INT_X31Y295 (CLEM_X28Y292->DSP_X31Y295)
+	INT_X32Y292->INT_X35Y295 (CLEM_X32Y292->CLEL_R_X35Y295)
+LONG Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X16Y269->INT_X31Y300 (CLEL_L_X16Y269->DSP_X31Y300)
+	INT_X16Y280->INT_X31Y295 (CLEL_L_X16Y280->DSP_X31Y295)
+	INT_X16Y279->INT_X31Y294 (CLEL_L_X16Y279->DSP_X31Y290)
+	INT_X16Y278->INT_X31Y293 (CLEL_L_X16Y278->DSP_X31Y290)
+	INT_X16Y277->INT_X31Y292 (CLEL_L_X16Y277->DSP_X31Y290)
+WEST
+	INT_X28Y264->INT_X35Y295 (CLEM_X28Y264->CLEL_R_X35Y295)
+	INT_X28Y288->INT_X31Y291 (CLEM_X28Y288->DSP_X31Y290)
+	INT_X32Y288->INT_X35Y291 (CLEM_X32Y288->CLEL_R_X35Y291)
+	INT_X28Y284->INT_X31Y287 (CLEM_X28Y284->DSP_X31Y285)
+	INT_X32Y284->INT_X35Y287 (CLEM_X32Y284->CLEL_R_X35Y287)
+SHORT Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X18Y271->INT_X33Y302 (CLEM_X18Y271->DSP_X33Y300)
+	INT_X16Y279->INT_X31Y294 (CLEL_L_X16Y279->DSP_X31Y290)
+	INT_X17Y280->INT_X32Y295 (CLEM_X17Y280->CLEL_R_X32Y295)
+	INT_X17Y279->INT_X32Y294 (CLEM_X17Y279->CLEL_R_X32Y294)
+	INT_X17Y278->INT_X32Y293 (CLEM_X17Y278->CLEL_R_X32Y293)
+WEST
+	INT_X20Y280->INT_X35Y295 (CLEM_X20Y280->CLEL_R_X35Y295)
+	INT_X20Y283->INT_X35Y298 (CLEM_X20Y283->CLEL_R_X35Y298)
+	INT_X20Y282->INT_X35Y297 (CLEM_X20Y282->CLEL_R_X35Y297)
+	INT_X20Y281->INT_X35Y296 (CLEM_X20Y281->CLEL_R_X35Y296)
+
+INFO: [Route 35-448] Estimated Global/Short routing congestion is level 5 (32x32). Congestion levels of 5 and greater can reduce routability and impact timing closure.
+
+INFO: [Route 35-581] Estimated Timing congestion is level 5 (32x32). Congestion levels of 5 and greater may impact timing closure.
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 21820
+ Number of Nodes with overlaps = 6278
+ Number of Nodes with overlaps = 2317
+ Number of Nodes with overlaps = 1141
+ Number of Nodes with overlaps = 581
+ Number of Nodes with overlaps = 311
+ Number of Nodes with overlaps = 164
+ Number of Nodes with overlaps = 105
+ Number of Nodes with overlaps = 62
+ Number of Nodes with overlaps = 35
+ Number of Nodes with overlaps = 25
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+INFO: [Route 35-443] CLB routing congestion detected. Several CLBs have high routing utilization, which can impact timing closure. Congested CLBs and Nets are dumped in: iter_100_CongestedCLBsAndNets.txt
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+INFO: [Route 35-443] CLB routing congestion detected. Several CLBs have high routing utilization, which can impact timing closure. Congested CLBs and Nets are dumped in: iter_120_CongestedCLBsAndNets.txt
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.002 | TNS=-0.002 | WHS=0.019  | THS=0.000  |
+
+Phase 5.1 Global Iteration 0 | Checksum: 247e22a80
+
+Time (s): cpu = 00:10:06 ; elapsed = 00:05:16 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 247
+ Number of Nodes with overlaps = 98
+ Number of Nodes with overlaps = 36
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.089  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 2e66e681b
+
+Time (s): cpu = 00:10:33 ; elapsed = 00:05:37 . Memory (MB): peak = 4565.887 ; gain = 182.957
+Phase 5 Rip-up And Reroute | Checksum: 2e66e681b
+
+Time (s): cpu = 00:10:33 ; elapsed = 00:05:37 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+Phase 6.1 Delay CleanUp | Checksum: 2e66e681b
+
+Time (s): cpu = 00:10:33 ; elapsed = 00:05:37 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 2e66e681b
+
+Time (s): cpu = 00:10:33 ; elapsed = 00:05:37 . Memory (MB): peak = 4565.887 ; gain = 182.957
+Phase 6 Delay and Skew Optimization | Checksum: 2e66e681b
+
+Time (s): cpu = 00:10:34 ; elapsed = 00:05:37 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.089  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:38 ; elapsed = 00:05:39 . Memory (MB): peak = 4565.887 ; gain = 182.957
+Phase 7 Post Hold Fix | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:38 ; elapsed = 00:05:39 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 3.14033 %
+  Global Horizontal Routing Utilization  = 3.56172 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:39 ; elapsed = 00:05:39 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:39 ; elapsed = 00:05:39 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:40 ; elapsed = 00:05:41 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 11 Resolve XTalk
+Phase 11 Resolve XTalk | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:40 ; elapsed = 00:05:42 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 12 Post Process Routing
+Phase 12 Post Process Routing | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:41 ; elapsed = 00:05:42 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Phase 13 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.089  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 13 Post Router Timing | Checksum: 34efa8945
+
+Time (s): cpu = 00:10:41 ; elapsed = 00:05:42 . Memory (MB): peak = 4565.887 ; gain = 182.957
+Total Elapsed time in route_design: 341.945 secs
+
+Phase 14 Post-Route Event Processing
+Phase 14 Post-Route Event Processing | Checksum: 146c06fcd
+
+Time (s): cpu = 00:10:41 ; elapsed = 00:05:42 . Memory (MB): peak = 4565.887 ; gain = 182.957
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 146c06fcd
+
+Time (s): cpu = 00:10:41 ; elapsed = 00:05:42 . Memory (MB): peak = 4565.887 ; gain = 182.957
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:10:46 ; elapsed = 00:05:45 . Memory (MB): peak = 4565.887 ; gain = 182.957
+# phys_opt_design -hold_fix
+Command: phys_opt_design -hold_fix
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode 
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 4565.887 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2280] Estimated Timing Summary | WNS= 0.105 | TNS= 0.000 | WHS= 0.020 |
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-2291] Design worst hold slack (WHS) is greater than or equal to 0.000 ns. Hold fix optimization will be skipped.
+ 
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 4565.887 ; gain = 0.000
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: f3f3520e ConstDB: 0 ShapeSum: 3ab61bc6 RouteDB: 181701f9
+WARNING: [Route 35-198] Port "ARESETn" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ARESETn". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[81]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[81]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[80]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[80]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[83]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[83]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[82]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[82]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[73]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[73]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[72]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[72]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[96]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[96]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[77]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[77]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[71]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[71]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[97]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[97]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[79]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[79]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[70]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[70]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[66]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[66]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[78]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[78]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[74]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[74]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[112]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[112]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[38]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[38]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[59]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[59]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[58]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[58]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[102]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[102]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[39]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[39]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[51]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[51]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[116]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[116]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[86]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[86]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[87]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[87]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[50]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[50]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[91]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[91]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[57]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[57]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[56]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[56]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[103]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[103]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[115]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[115]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[114]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[114]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[90]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[90]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[119]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[119]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[49]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[49]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[48]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[48]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[88]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[88]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[89]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[89]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[125]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[125]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[124]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[124]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[65]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[65]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[99]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[99]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[64]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[64]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[98]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[98]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[72]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[72]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[74]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[74]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[101]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[101]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[105]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[105]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[104]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[104]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[62]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[62]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[106]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[106]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[107]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[107]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[100]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[100]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[121]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[121]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[85]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[85]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[93]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[93]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[92]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[92]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[63]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[63]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[53]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[53]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[77]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[77]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[66]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[66]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[56]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[56]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[57]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[57]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[58]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[58]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "CDDATA[59]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "CDDATA[59]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[102]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[102]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[116]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[116]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "WB_RDATA[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "WB_RDATA[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[125]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[125]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[122]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[122]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ACE_WSTRB[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ACE_WSTRB[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Post Restoration Checksum: NetGraph: faab85e4 | NumContArr: b9579fc3 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 339551ae1
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 4565.887 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 339551ae1
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 4565.887 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 339551ae1
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 4565.887 ; gain = 0.000
+
+Phase 2.3 Timing Verification
+
+Phase 2.3.1 Update Timing
+Phase 2.3.1 Update Timing | Checksum: 34883513e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 4566.738 ; gain = 0.852
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.089  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+
+Phase 2.3 Timing Verification | Checksum: 34883513e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 4566.738 ; gain = 0.852
+INFO: [Route 35-61] The design met the timing requirement.
+
+Phase 2.4 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 3.14033 %
+  Global Horizontal Routing Utilization  = 3.56172 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2.4 Route finalize | Checksum: 34883513e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 2.5 Verifying routed nets
+
+ Verification completed successfully
+Phase 2.5 Verifying routed nets | Checksum: 34883513e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 2.6 Depositing Routes
+Phase 2.6 Depositing Routes | Checksum: 34883513e
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 4566.738 ; gain = 0.852
+Phase 2 Router Initialization | Checksum: 34883513e
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 3 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 3.14033 %
+  Global Horizontal Routing Utilization  = 3.56172 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 3 Route finalize | Checksum: 34883513e
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 4 Verifying routed nets
+
+ Verification completed successfully
+Phase 4 Verifying routed nets | Checksum: 34883513e
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 5 Depositing Routes
+Phase 5 Depositing Routes | Checksum: 34883513e
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 6 Resolve XTalk
+Phase 6 Resolve XTalk | Checksum: 34883513e
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 7 Post Process Routing
+Phase 7 Post Process Routing | Checksum: 34883513e
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Phase 8 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.089  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 8 Post Router Timing | Checksum: 34883513e
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 4566.738 ; gain = 0.852
+Time taken to check if laguna hold fix is required (in secs): 0
+Skip PhysOpt in Router because non-negative WNS value: 1.04612e-10 .
+Total Elapsed time in route_design: 15.192 secs
+
+Phase 9 Post-Route Event Processing
+Phase 9 Post-Route Event Processing | Checksum: 146c06fcd
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:15 . Memory (MB): peak = 4566.738 ; gain = 0.852
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 146c06fcd
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:15 . Memory (MB): peak = 4566.738 ; gain = 0.852
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:18 . Memory (MB): peak = 4566.738 ; gain = 0.852
+# write_checkpoint -force [file join $out post_route.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.403 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 4566.738 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 4566.738 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/P/post_route.dcp' has been generated.
+# report_utilization -file [file join $out post_route_utilization.rpt]
+# report_utilization -hierarchical -file [file join $out post_route_hier.rpt]
+# report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose \
+#     -file [file join $out post_route_timing_summary.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+# report_timing -max_paths 10 -file [file join $out critical_paths.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+# report_route_status -file [file join $out route_status.rpt]
+# report_drc -file [file join $out drc.rpt]
+Command: report_drc -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/P/drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2024.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/P/drc.rpt.
+report_drc completed successfully
+# set fd [open [file join $out configuration.txt] w]
+# puts $fd "variant=$variant part=$part period_ns=$period generics=$generics"
+# puts $fd "boundary=direct OOC top; external input/output paths excluded; internal register paths timed"
+# puts $fd "ooc_clock_source=$clock_site"
+# puts $fd "Vivado=[version -short]"
+# close $fd
+# puts "ACE_IMPL_COMPLETE: $variant post-route reports in $out"
+ACE_IMPL_COMPLETE: P post-route reports in C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/P
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 10:37:56 2026...

@@ -1,0 +1,815 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date              : Tue Sep 29 10:40:50 2026
+| Host              : DESKTOP-SOHK4NB running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/implementation_20260929T013325Z_e2519507/P/critical_paths.rpt
+| Design            : synth_register_shell
+| Device            : xczu7ev-ffvc1156
+| Speed File        : -2  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.540ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][len][4]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.224ns  (logic 0.855ns (20.241%)  route 3.369ns (79.759%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.187ns = ( 7.187 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.395     6.729    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X70Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][4]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.187     7.187    dut/bus/ACLK
+    SLICE_X70Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][4]/C
+                         clock pessimism              0.192     7.379    
+                         clock uncertainty           -0.035     7.343    
+    SLICE_X70Y326        FDRE (Setup_EFF_SLICEM_C_R)
+                                                     -0.074     7.269    dut/bus/rd_q_reg[0][len][4]
+  -------------------------------------------------------------------
+                         required time                          7.269    
+                         arrival time                          -6.729    
+  -------------------------------------------------------------------
+                         slack                                  0.540    
+
+Slack (MET) :             0.540ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][len][6]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.224ns  (logic 0.855ns (20.241%)  route 3.369ns (79.759%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.187ns = ( 7.187 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.395     6.729    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X70Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][6]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.187     7.187    dut/bus/ACLK
+    SLICE_X70Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][6]/C
+                         clock pessimism              0.192     7.379    
+                         clock uncertainty           -0.035     7.343    
+    SLICE_X70Y326        FDRE (Setup_EFF2_SLICEM_C_R)
+                                                     -0.074     7.269    dut/bus/rd_q_reg[0][len][6]
+  -------------------------------------------------------------------
+                         required time                          7.269    
+                         arrival time                          -6.729    
+  -------------------------------------------------------------------
+                         slack                                  0.540    
+
+Slack (MET) :             0.553ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][len][1]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.216ns  (logic 0.855ns (20.280%)  route 3.361ns (79.720%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.192ns = ( 7.192 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.387     6.721    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X71Y324        FDRE                                         r  dut/bus/rd_q_reg[0][len][1]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.192     7.192    dut/bus/ACLK
+    SLICE_X71Y324        FDRE                                         r  dut/bus/rd_q_reg[0][len][1]/C
+                         clock pessimism              0.192     7.384    
+                         clock uncertainty           -0.035     7.348    
+    SLICE_X71Y324        FDRE (Setup_EFF_SLICEM_C_R)
+                                                     -0.074     7.274    dut/bus/rd_q_reg[0][len][1]
+  -------------------------------------------------------------------
+                         required time                          7.274    
+                         arrival time                          -6.721    
+  -------------------------------------------------------------------
+                         slack                                  0.553    
+
+Slack (MET) :             0.557ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][id][0]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.205ns  (logic 0.855ns (20.333%)  route 3.350ns (79.667%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.128ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.185ns = ( 7.185 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.376     6.710    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X73Y331        FDRE                                         r  dut/bus/rd_q_reg[0][id][0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.185     7.185    dut/bus/ACLK
+    SLICE_X73Y331        FDRE                                         r  dut/bus/rd_q_reg[0][id][0]/C
+                         clock pessimism              0.192     7.377    
+                         clock uncertainty           -0.035     7.341    
+    SLICE_X73Y331        FDRE (Setup_EFF_SLICEM_C_R)
+                                                     -0.074     7.267    dut/bus/rd_q_reg[0][id][0]
+  -------------------------------------------------------------------
+                         required time                          7.267    
+                         arrival time                          -6.710    
+  -------------------------------------------------------------------
+                         slack                                  0.557    
+
+Slack (MET) :             0.557ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][id][2]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.205ns  (logic 0.855ns (20.333%)  route 3.350ns (79.667%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.128ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.185ns = ( 7.185 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.376     6.710    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X73Y331        FDRE                                         r  dut/bus/rd_q_reg[0][id][2]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.185     7.185    dut/bus/ACLK
+    SLICE_X73Y331        FDRE                                         r  dut/bus/rd_q_reg[0][id][2]/C
+                         clock pessimism              0.192     7.377    
+                         clock uncertainty           -0.035     7.341    
+    SLICE_X73Y331        FDRE (Setup_EFF2_SLICEM_C_R)
+                                                     -0.074     7.267    dut/bus/rd_q_reg[0][id][2]
+  -------------------------------------------------------------------
+                         required time                          7.267    
+                         arrival time                          -6.710    
+  -------------------------------------------------------------------
+                         slack                                  0.557    
+
+Slack (MET) :             0.573ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][len][5]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.194ns  (logic 0.855ns (20.386%)  route 3.339ns (79.614%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.123ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.190ns = ( 7.190 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.365     6.699    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X71Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][5]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.190     7.190    dut/bus/ACLK
+    SLICE_X71Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][5]/C
+                         clock pessimism              0.192     7.382    
+                         clock uncertainty           -0.035     7.346    
+    SLICE_X71Y326        FDRE (Setup_EFF_SLICEM_C_R)
+                                                     -0.074     7.272    dut/bus/rd_q_reg[0][len][5]
+  -------------------------------------------------------------------
+                         required time                          7.272    
+                         arrival time                          -6.699    
+  -------------------------------------------------------------------
+                         slack                                  0.573    
+
+Slack (MET) :             0.573ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[0][len][7]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.194ns  (logic 0.855ns (20.386%)  route 3.339ns (79.614%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.123ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.190ns = ( 7.190 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.227     5.950    dut/bus/rd_last_winner_reg_0
+    SLICE_X73Y331        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     6.050 r  dut/bus/rd_q[0][len][7]_i_2/O
+                         net (fo=14, routed)          0.231     6.281    dut/bus/rd_q[0][len][7]_i_2_n_0
+    SLICE_X73Y327        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     6.334 r  dut/bus/rd_q[0][len][7]_i_1/O
+                         net (fo=12, routed)          0.365     6.699    dut/bus/rd_q[0][len][7]_i_1_n_0
+    SLICE_X71Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][7]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.190     7.190    dut/bus/ACLK
+    SLICE_X71Y326        FDRE                                         r  dut/bus/rd_q_reg[0][len][7]/C
+                         clock pessimism              0.192     7.382    
+                         clock uncertainty           -0.035     7.346    
+    SLICE_X71Y326        FDRE (Setup_EFF2_SLICEM_C_R)
+                                                     -0.074     7.272    dut/bus/rd_q_reg[0][len][7]
+  -------------------------------------------------------------------
+                         required time                          7.272    
+                         arrival time                          -6.699    
+  -------------------------------------------------------------------
+                         slack                                  0.573    
+
+Slack (MET) :             0.579ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[6][len][4]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.184ns  (logic 0.772ns (18.449%)  route 3.412ns (81.551%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.186ns = ( 7.186 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.259     5.983    dut/bus/rd_last_winner_reg_0
+    SLICE_X72Y330        LUT6 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.035     6.018 r  dut/bus/rd_q[6][len][7]_i_2/O
+                         net (fo=14, routed)          0.216     6.234    dut/bus/rd_q[6][len][7]_i_2_n_0
+    SLICE_X72Y330        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.035     6.269 r  dut/bus/rd_q[6][len][7]_i_1/O
+                         net (fo=12, routed)          0.421     6.689    dut/bus/rd_q[6][len][7]_i_1_n_0
+    SLICE_X70Y327        FDRE                                         r  dut/bus/rd_q_reg[6][len][4]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.186     7.186    dut/bus/ACLK
+    SLICE_X70Y327        FDRE                                         r  dut/bus/rd_q_reg[6][len][4]/C
+                         clock pessimism              0.192     7.378    
+                         clock uncertainty           -0.035     7.342    
+    SLICE_X70Y327        FDRE (Setup_AFF_SLICEM_C_R)
+                                                     -0.074     7.268    dut/bus/rd_q_reg[6][len][4]
+  -------------------------------------------------------------------
+                         required time                          7.268    
+                         arrival time                          -6.689    
+  -------------------------------------------------------------------
+                         slack                                  0.579    
+
+Slack (MET) :             0.579ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[6][len][6]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.184ns  (logic 0.772ns (18.449%)  route 3.412ns (81.551%))
+  Logic Levels:           11  (CARRY8=3 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.186ns = ( 7.186 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 f  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 f  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/coherent.control/proposed.rim/M0_ARVALID_q_reg
+    SLICE_X76Y331        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     5.550 f  dut/coherent.control/proposed.rim/S_ARVALID_i_3/O
+                         net (fo=2, routed)           0.137     5.688    dut/coherent.control/proposed.rim/M1_ARVALID_q_reg
+    SLICE_X76Y331        LUT3 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.036     5.724 r  dut/coherent.control/proposed.rim/rd_tail[3]_i_3/O
+                         net (fo=26, routed)          0.259     5.983    dut/bus/rd_last_winner_reg_0
+    SLICE_X72Y330        LUT6 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.035     6.018 r  dut/bus/rd_q[6][len][7]_i_2/O
+                         net (fo=14, routed)          0.216     6.234    dut/bus/rd_q[6][len][7]_i_2_n_0
+    SLICE_X72Y330        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.035     6.269 r  dut/bus/rd_q[6][len][7]_i_1/O
+                         net (fo=12, routed)          0.421     6.689    dut/bus/rd_q[6][len][7]_i_1_n_0
+    SLICE_X70Y327        FDRE                                         r  dut/bus/rd_q_reg[6][len][6]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.186     7.186    dut/bus/ACLK
+    SLICE_X70Y327        FDRE                                         r  dut/bus/rd_q_reg[6][len][6]/C
+                         clock pessimism              0.192     7.378    
+                         clock uncertainty           -0.035     7.342    
+    SLICE_X70Y327        FDRE (Setup_AFF2_SLICEM_C_R)
+                                                     -0.074     7.268    dut/bus/rd_q_reg[6][len][6]
+  -------------------------------------------------------------------
+                         required time                          7.268    
+                         arrival time                          -6.689    
+  -------------------------------------------------------------------
+                         slack                                  0.579    
+
+Slack (MET) :             0.587ns  (required time - arrival time)
+  Source:                 M0_ARADDR_q_reg[29]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/rd_q_reg[6][len][2]/D
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.265ns  (logic 0.809ns (18.966%)  route 3.456ns (81.034%))
+  Logic Levels:           10  (CARRY8=3 LUT4=2 LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.176ns = ( 7.176 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.505ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.505     2.505    ACLK
+    SLICE_X81Y317        FDRE                                         r  M0_ARADDR_q_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y317        FDRE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.079     2.584 r  M0_ARADDR_q_reg[29]/Q
+                         net (fo=18, routed)          1.276     3.860    dut/coherent.control/proposed.rim/M0_ARADDR_q[23]
+    SLICE_X89Y323        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     3.911 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_377/O
+                         net (fo=1, routed)           0.022     3.933    dut/coherent.control/proposed.rim/M0_ARREADY_i_377_n_0
+    SLICE_X89Y323        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.092 r  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222/CO[7]
+                         net (fo=1, routed)           0.026     4.118    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_222_n_0
+    SLICE_X89Y324        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.133 r  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97/CO[7]
+                         net (fo=1, routed)           0.026     4.159    dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_97_n_0
+    SLICE_X89Y325        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[1])
+                                                      0.042     4.201 r  dut/coherent.control/proposed.rim/M0_ARREADY_reg_i_35/CO[1]
+                         net (fo=1, routed)           0.471     4.672    dut/coherent.control/proposed.rim/proposed.ar_check/probe_stall5
+    SLICE_X80Y314        LUT5 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     4.769 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_11/O
+                         net (fo=1, routed)           0.134     4.903    dut/coherent.control/proposed.rim/M0_ARREADY_i_11_n_0
+    SLICE_X79Y315        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.037     4.940 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_5/O
+                         net (fo=1, routed)           0.374     5.314    dut/coherent.control/proposed.rim/M0_ARREADY_i_5_n_0
+    SLICE_X76Y331        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     5.403 r  dut/coherent.control/proposed.rim/M0_ARREADY_i_3/O
+                         net (fo=2, routed)           0.050     5.453    dut/bus/M0_ARREADY_reg
+    SLICE_X76Y331        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.051     5.504 f  dut/bus/M0_ARREADY_i_2/O
+                         net (fo=78, routed)          0.056     5.560    dut/bus/M0_ARREADY_i_2_n_0
+    SLICE_X76Y331        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.090     5.650 f  dut/bus/M1_ARREADY_i_3/O
+                         net (fo=96, routed)          0.536     6.187    dut/bus/M1_ARREADY_i_3_n_0
+    SLICE_X69Y325        LUT4 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.099     6.286 r  dut/bus/S_ARLEN[2]_i_1/O
+                         net (fo=17, routed)          0.485     6.770    dut/bus/M1_ARLEN_q_reg[2]
+    SLICE_X72Y330        FDRE                                         r  dut/bus/rd_q_reg[6][len][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.176     7.176    dut/bus/ACLK
+    SLICE_X72Y330        FDRE                                         r  dut/bus/rd_q_reg[6][len][2]/C
+                         clock pessimism              0.192     7.368    
+                         clock uncertainty           -0.035     7.332    
+    SLICE_X72Y330        FDRE (Setup_CFF2_SLICEL_C_D)
+                                                      0.025     7.357    dut/bus/rd_q_reg[6][len][2]
+  -------------------------------------------------------------------
+                         required time                          7.357    
+                         arrival time                          -6.770    
+  -------------------------------------------------------------------
+                         slack                                  0.587    
+
+
+
+

@@ -1,0 +1,11 @@
+PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16
+PASS conventional actual-B lifetime, AR/AW hazards, high-page alias
+PASS range start-line, duplicate fallback, HOL, B masks, dual hazards, drain
+PASS one-line/page-end and sparse-mask context reuse
+PASS 64-line full page and ingress wrap
+PASS setup drain preserves stalled AW/AR grants
+PASS reset during stalled invalidation and restart
+METRIC mode=1 trackers=16 fifo=16 peak_tracker=0 tracker_stall=0 ingress_stall=0 copy_cycles=91 accepted_per_cycle=0.087912 peak_ingress=8
+[36645000] %Fatal: cci_range_rim_tracker.sv:63: Assertion failed in tb_cci_integration.dut.coherent.control.proposed.rim: RANGE_WATCHDOG: registered targets did not complete
+%Error: rtl/proposed/cci_range_rim_tracker.sv:63: Verilog $stop
+Aborting...

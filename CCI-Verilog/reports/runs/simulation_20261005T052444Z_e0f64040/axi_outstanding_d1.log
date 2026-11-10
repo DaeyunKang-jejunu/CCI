@@ -1,0 +1,598 @@
+-Info: tb_axi_bus_system.sv:439: $dumpvar ignored, as Verilated without --trace
+==================================================================
+ AXI4 2x1 bus debug trace
+ Line format:  [time] SRC CH dir txn=M<route>.<W|R><id>  <fields>
+   SRC = M0|M1 (master), ARB (arbiter), SLV (slave)
+   CH  = AW/W/B (write path),  AR/R (read path)
+   dir = >> request (master->slave),  << response (slave->master)
+   txn = M<route>.<W|R><id> : route = originating master,
+         W/R = write or read path, id = local AXI ID. Same key on
+         every hop; write and read keys are distinct, so e.g.
+         grep 'txn=M0.W2' (write) vs grep 'txn=M0.R2' (read).
+==================================================================
+---- Starting AXI4 ID + multiple outstanding scenario ----
+[   55.0 ns] M0  AR >> txn=M0.R0 addr=0x00003000 len=3  (issued 1/16)
+[   55.0 ns] M0  AW >> txn=M0.W0 addr=0x00001000 len=3  (issued 1/16)
+[55.0 ns][ARB][AR] route=0 id=0 addr=0x0000000000003000
+[55.0 ns][ARB][AW] route=M0 id=0 addr=0x0000000000001000 len=3 (wr_q 1/1, both_req=0)
+[   55.0 ns] SLV AW >> txn=M0.W0 addr=0x00001000 len=3  aw_q=1/1
+[   55.0 ns] SLV AR >> txn=M0.R0 addr=0x00003000 len=3  ar_q=1/1
+[   95.0 ns] M0  W  >> txn=M0.W0 beats=4 last_wdata=0x10000000000000000000000000000003
+[95.0 ns][ARB][W DONE] route=M0 id=0 beats=4
+[   95.0 ns] SLV W  >> txn=M0.W0 beats=4 last_wdata=0x10000000000000000000000000000003
+[  145.0 ns] M0  B  << txn=M0.W0 resp=OKAY   exp=M0.W0 (1/16)
+[  145.0 ns] M0  R  << txn=M0.R0 resp=OKAY   beats=4 last_rdata=0x300003 (1/16)
+[145.0 ns][ARB][R DONE] route=0 id=0
+[145.0 ns][ARB][B] route=M0 id=0 resp=OKAY (wr_q 1/1 pending)
+[  145.0 ns] SLV B  << txn=M0.W0 resp=OKAY   b_q=1/1 pending
+[  145.0 ns] SLV R  << txn=M0.R0 resp=OKAY   beats=4 last_rdata=0x300003
+[155.0 ns][ARB][AR] route=1 id=0 addr=0x0000000000012000
+[155.0 ns][ARB][AW] route=M1 id=0 addr=0x0000000000014000 len=3 (wr_q 1/1, both_req=1)
+[  155.0 ns] M1  AR >> txn=M1.R0 addr=0x00012000 len=3  (rq_occ=1/16)
+[  155.0 ns] M1  AW >> txn=M1.W0 addr=0x00014000 len=3  (wq_occ=3/16)
+[  155.0 ns] SLV AW >> txn=M1.W0 addr=0x00014000 len=3  aw_q=1/1
+[  155.0 ns] SLV AR >> txn=M1.R0 addr=0x00012000 len=3  ar_q=1/1
+[  165.0 ns] M1  W  >> txn=M1.W0 beat=0 wdata=0x01000000000000000000000000000000
+[  195.0 ns] M1  W  >> txn=M1.W0 beat=1 wdata=0x01000000000000000000000000000001
+[  205.0 ns] M1  R  << txn=M1.R0 beat=0 resp=OKAY   rdata=0x1200000
+[  225.0 ns] M1  R  << txn=M1.R0 beat=1 resp=OKAY   rdata=0x1200001
+[  235.0 ns] M1  R  << txn=M1.R0 beat=2 resp=OKAY   rdata=0x1200002
+[255.0 ns][ARB][R DONE] route=1 id=0
+[  255.0 ns] M1  R  << txn=M1.R0 beat=3 resp=OKAY   rdata=0x1200003 (RLAST)
+[  255.0 ns] SLV R  << txn=M1.R0 resp=OKAY   beats=4 last_rdata=0x1200003
+[  265.0 ns] M0  AR >> txn=M0.R1 addr=0x00003100 len=3  (issued 2/16)
+[265.0 ns][ARB][AR] route=0 id=1 addr=0x0000000000003100
+[  265.0 ns] SLV AR >> txn=M0.R1 addr=0x00003100 len=3  ar_q=1/1
+[  315.0 ns] M1  W  >> txn=M1.W0 beat=2 wdata=0x01000000000000000000000000000002
+[  355.0 ns] M0  R  << txn=M0.R1 resp=OKAY   beats=4 last_rdata=0x310003 (2/16)
+[355.0 ns][ARB][R DONE] route=0 id=1
+[355.0 ns][ARB][W DONE] route=M1 id=0 beats=4
+[  355.0 ns] M1  W  >> txn=M1.W0 beat=3 wdata=0x01000000000000000000000000000003 (WLAST)
+[  355.0 ns] SLV W  >> txn=M1.W0 beats=4 last_wdata=0x01000000000000000000000000000003
+[  355.0 ns] SLV R  << txn=M0.R1 resp=OKAY   beats=4 last_rdata=0x310003
+[365.0 ns][ARB][AR] route=1 id=1 addr=0x0000000000012100
+[  365.0 ns] M1  AR >> txn=M1.R1 addr=0x00012100 len=3  (rq_occ=3/16)
+[  365.0 ns] SLV AR >> txn=M1.R1 addr=0x00012100 len=3  ar_q=1/1
+[405.0 ns][ARB][B] route=M1 id=0 resp=OKAY (wr_q 1/1 pending)
+[  405.0 ns] M1  B  << txn=M1.W0 resp=OKAY   (1/16)
+[  405.0 ns] SLV B  << txn=M1.W0 resp=OKAY   b_q=1/1 pending
+[  415.0 ns] M0  AW >> txn=M0.W1 addr=0x00001100 len=3  (issued 2/16)
+[415.0 ns][ARB][AW] route=M0 id=1 addr=0x0000000000001100 len=3 (wr_q 1/1, both_req=1)
+[  415.0 ns] SLV AW >> txn=M0.W1 addr=0x00001100 len=3  aw_q=1/1
+[  435.0 ns] M1  R  << txn=M1.R1 beat=0 resp=OKAY   rdata=0x1210000
+[  445.0 ns] M1  R  << txn=M1.R1 beat=1 resp=OKAY   rdata=0x1210001
+[  455.0 ns] M0  W  >> txn=M0.W1 beats=4 last_wdata=0x10000000000000000000000000000103
+[455.0 ns][ARB][W DONE] route=M0 id=1 beats=4
+[  455.0 ns] M1  R  << txn=M1.R1 beat=2 resp=OKAY   rdata=0x1210002
+[  455.0 ns] SLV W  >> txn=M0.W1 beats=4 last_wdata=0x10000000000000000000000000000103
+[465.0 ns][ARB][R DONE] route=1 id=1
+[  465.0 ns] M1  R  << txn=M1.R1 beat=3 resp=OKAY   rdata=0x1210003 (RLAST)
+[  465.0 ns] SLV R  << txn=M1.R1 resp=OKAY   beats=4 last_rdata=0x1210003
+[  475.0 ns] M0  AR >> txn=M0.R2 addr=0x00003200 len=3  (issued 3/16)
+[475.0 ns][ARB][AR] route=0 id=2 addr=0x0000000000003200
+[  475.0 ns] SLV AR >> txn=M0.R2 addr=0x00003200 len=3  ar_q=1/1
+[  505.0 ns] M0  B  << txn=M0.W1 resp=OKAY   exp=M0.W1 (2/16)
+[505.0 ns][ARB][B] route=M0 id=1 resp=OKAY (wr_q 1/1 pending)
+[  505.0 ns] SLV B  << txn=M0.W1 resp=OKAY   b_q=1/1 pending
+[515.0 ns][ARB][AW] route=M1 id=1 addr=0x0000000000014100 len=3 (wr_q 1/1, both_req=1)
+[  515.0 ns] M1  AW >> txn=M1.W1 addr=0x00014100 len=3  (wq_occ=7/16)
+[  515.0 ns] SLV AW >> txn=M1.W1 addr=0x00014100 len=3  aw_q=1/1
+[  525.0 ns] M1  W  >> txn=M1.W1 beat=0 wdata=0x01000000000000000000000000000100
+[  545.0 ns] M1  W  >> txn=M1.W1 beat=1 wdata=0x01000000000000000000000000000101
+[  555.0 ns] M0  R  << txn=M0.R2 resp=OKAY   beats=4 last_rdata=0x320003 (3/16)
+[555.0 ns][ARB][R DONE] route=0 id=2
+[  555.0 ns] SLV R  << txn=M0.R2 resp=OKAY   beats=4 last_rdata=0x320003
+[565.0 ns][ARB][AR] route=1 id=2 addr=0x0000000000012200
+[  565.0 ns] M1  AR >> txn=M1.R2 addr=0x00012200 len=3  (rq_occ=4/16)
+[  565.0 ns] SLV AR >> txn=M1.R2 addr=0x00012200 len=3  ar_q=1/1
+[  585.0 ns] M1  W  >> txn=M1.W1 beat=2 wdata=0x01000000000000000000000000000102
+[  625.0 ns] M1  R  << txn=M1.R2 beat=0 resp=OKAY   rdata=0x1220000
+[  645.0 ns] M1  R  << txn=M1.R2 beat=1 resp=OKAY   rdata=0x1220001
+[  655.0 ns] M1  R  << txn=M1.R2 beat=2 resp=OKAY   rdata=0x1220002
+[665.0 ns][ARB][R DONE] route=1 id=2
+[665.0 ns][ARB][W DONE] route=M1 id=1 beats=4
+[  665.0 ns] M1  R  << txn=M1.R2 beat=3 resp=OKAY   rdata=0x1220003 (RLAST)
+[  665.0 ns] M1  W  >> txn=M1.W1 beat=3 wdata=0x01000000000000000000000000000103 (WLAST)
+[  665.0 ns] SLV W  >> txn=M1.W1 beats=4 last_wdata=0x01000000000000000000000000000103
+[  665.0 ns] SLV R  << txn=M1.R2 resp=OKAY   beats=4 last_rdata=0x1220003
+[  675.0 ns] M0  AR >> txn=M0.R3 addr=0x00003300 len=3  (issued 4/16)
+[675.0 ns][ARB][AR] route=0 id=3 addr=0x0000000000003300
+[  675.0 ns] SLV AR >> txn=M0.R3 addr=0x00003300 len=3  ar_q=1/1
+[715.0 ns][ARB][B] route=M1 id=1 resp=OKAY (wr_q 1/1 pending)
+[  715.0 ns] M1  B  << txn=M1.W1 resp=OKAY   (2/16)
+[  715.0 ns] SLV B  << txn=M1.W1 resp=OKAY   b_q=1/1 pending
+[  725.0 ns] M0  AW >> txn=M0.W2 addr=0x00001200 len=3  (issued 3/16)
+[725.0 ns][ARB][AW] route=M0 id=2 addr=0x0000000000001200 len=3 (wr_q 1/1, both_req=1)
+[  725.0 ns] SLV AW >> txn=M0.W2 addr=0x00001200 len=3  aw_q=1/1
+[  765.0 ns] M0  W  >> txn=M0.W2 beats=4 last_wdata=0x10000000000000000000000000000203
+[  765.0 ns] M0  R  << txn=M0.R3 resp=OKAY   beats=4 last_rdata=0x330003 (4/16)
+[765.0 ns][ARB][R DONE] route=0 id=3
+[765.0 ns][ARB][W DONE] route=M0 id=2 beats=4
+[  765.0 ns] SLV W  >> txn=M0.W2 beats=4 last_wdata=0x10000000000000000000000000000203
+[  765.0 ns] SLV R  << txn=M0.R3 resp=OKAY   beats=4 last_rdata=0x330003
+[775.0 ns][ARB][AR] route=1 id=3 addr=0x0000000000012300
+[  775.0 ns] M1  AR >> txn=M1.R3 addr=0x00012300 len=3  (rq_occ=4/16)
+[  775.0 ns] SLV AR >> txn=M1.R3 addr=0x00012300 len=3  ar_q=1/1
+[  815.0 ns] M0  B  << txn=M0.W2 resp=OKAY   exp=M0.W2 (3/16)
+[815.0 ns][ARB][B] route=M0 id=2 resp=OKAY (wr_q 1/1 pending)
+[  815.0 ns] SLV B  << txn=M0.W2 resp=OKAY   b_q=1/1 pending
+[825.0 ns][ARB][AW] route=M1 id=2 addr=0x0000000000014200 len=3 (wr_q 1/1, both_req=1)
+[  825.0 ns] M1  AW >> txn=M1.W2 addr=0x00014200 len=3  (wq_occ=9/16)
+[  825.0 ns] SLV AW >> txn=M1.W2 addr=0x00014200 len=3  aw_q=1/1
+[  835.0 ns] M1  R  << txn=M1.R3 beat=0 resp=OKAY   rdata=0x1230000
+[  835.0 ns] M1  W  >> txn=M1.W2 beat=0 wdata=0x01000000000000000000000000000200
+[  845.0 ns] M1  R  << txn=M1.R3 beat=1 resp=OKAY   rdata=0x1230001
+[  855.0 ns] M1  R  << txn=M1.R3 beat=2 resp=OKAY   rdata=0x1230002
+[  855.0 ns] M1  W  >> txn=M1.W2 beat=1 wdata=0x01000000000000000000000000000201
+[865.0 ns][ARB][R DONE] route=1 id=3
+[  865.0 ns] M1  R  << txn=M1.R3 beat=3 resp=OKAY   rdata=0x1230003 (RLAST)
+[  865.0 ns] SLV R  << txn=M1.R3 resp=OKAY   beats=4 last_rdata=0x1230003
+[  875.0 ns] M0  AR >> txn=M0.R4 addr=0x00003400 len=3  (issued 5/16)
+[875.0 ns][ARB][AR] route=0 id=4 addr=0x0000000000003400
+[  875.0 ns] M1  W  >> txn=M1.W2 beat=2 wdata=0x01000000000000000000000000000202
+[  875.0 ns] SLV AR >> txn=M0.R4 addr=0x00003400 len=3  ar_q=1/1
+[895.0 ns][ARB][W DONE] route=M1 id=2 beats=4
+[  895.0 ns] M1  W  >> txn=M1.W2 beat=3 wdata=0x01000000000000000000000000000203 (WLAST)
+[  895.0 ns] SLV W  >> txn=M1.W2 beats=4 last_wdata=0x01000000000000000000000000000203
+[945.0 ns][ARB][B] route=M1 id=2 resp=OKAY (wr_q 1/1 pending)
+[  945.0 ns] M1  B  << txn=M1.W2 resp=OKAY   (3/16)
+[  945.0 ns] SLV B  << txn=M1.W2 resp=OKAY   b_q=1/1 pending
+[  955.0 ns] M0  AW >> txn=M0.W3 addr=0x00001300 len=3  (issued 4/16)
+[  955.0 ns] M0  R  << txn=M0.R4 resp=OKAY   beats=4 last_rdata=0x340003 (5/16)
+[955.0 ns][ARB][R DONE] route=0 id=4
+[955.0 ns][ARB][AW] route=M0 id=3 addr=0x0000000000001300 len=3 (wr_q 1/1, both_req=1)
+[  955.0 ns] SLV AW >> txn=M0.W3 addr=0x00001300 len=3  aw_q=1/1
+[  955.0 ns] SLV R  << txn=M0.R4 resp=OKAY   beats=4 last_rdata=0x340003
+[965.0 ns][ARB][AR] route=1 id=4 addr=0x0000000000012400
+[  965.0 ns] M1  AR >> txn=M1.R4 addr=0x00012400 len=3  (rq_occ=6/16)
+[  965.0 ns] SLV AR >> txn=M1.R4 addr=0x00012400 len=3  ar_q=1/1
+[  995.0 ns] M0  W  >> txn=M0.W3 beats=4 last_wdata=0x10000000000000000000000000000303
+[995.0 ns][ARB][W DONE] route=M0 id=3 beats=4
+[  995.0 ns] SLV W  >> txn=M0.W3 beats=4 last_wdata=0x10000000000000000000000000000303
+[ 1015.0 ns] M1  R  << txn=M1.R4 beat=0 resp=OKAY   rdata=0x1240000
+[ 1025.0 ns] M1  R  << txn=M1.R4 beat=1 resp=OKAY   rdata=0x1240001
+[ 1035.0 ns] M1  R  << txn=M1.R4 beat=2 resp=OKAY   rdata=0x1240002
+[ 1045.0 ns] M0  B  << txn=M0.W3 resp=OKAY   exp=M0.W3 (4/16)
+[1045.0 ns][ARB][R DONE] route=1 id=4
+[1045.0 ns][ARB][B] route=M0 id=3 resp=OKAY (wr_q 1/1 pending)
+[ 1045.0 ns] M1  R  << txn=M1.R4 beat=3 resp=OKAY   rdata=0x1240003 (RLAST)
+[ 1045.0 ns] SLV B  << txn=M0.W3 resp=OKAY   b_q=1/1 pending
+[ 1045.0 ns] SLV R  << txn=M1.R4 resp=OKAY   beats=4 last_rdata=0x1240003
+[ 1055.0 ns] M0  AR >> txn=M0.R5 addr=0x00003500 len=3  (issued 6/16)
+[1055.0 ns][ARB][AR] route=0 id=5 addr=0x0000000000003500
+[1055.0 ns][ARB][AW] route=M1 id=3 addr=0x0000000000014300 len=3 (wr_q 1/1, both_req=1)
+[ 1055.0 ns] M1  AW >> txn=M1.W3 addr=0x00014300 len=3  (wq_occ=13/16)
+[ 1055.0 ns] SLV AW >> txn=M1.W3 addr=0x00014300 len=3  aw_q=1/1
+[ 1055.0 ns] SLV AR >> txn=M0.R5 addr=0x00003500 len=3  ar_q=1/1
+[ 1065.0 ns] M1  W  >> txn=M1.W3 beat=0 wdata=0x01000000000000000000000000000300
+[ 1075.0 ns] M1  W  >> txn=M1.W3 beat=1 wdata=0x01000000000000000000000000000301
+[ 1085.0 ns] M1  W  >> txn=M1.W3 beat=2 wdata=0x01000000000000000000000000000302
+[ 1135.0 ns] M0  R  << txn=M0.R5 resp=OKAY   beats=4 last_rdata=0x350003 (6/16)
+[1135.0 ns][ARB][R DONE] route=0 id=5
+[ 1135.0 ns] SLV R  << txn=M0.R5 resp=OKAY   beats=4 last_rdata=0x350003
+[1145.0 ns][ARB][AR] route=1 id=5 addr=0x0000000000012500
+[ 1145.0 ns] M1  AR >> txn=M1.R5 addr=0x00012500 len=3  (rq_occ=8/16)
+[ 1145.0 ns] SLV AR >> txn=M1.R5 addr=0x00012500 len=3  ar_q=1/1
+[1185.0 ns][ARB][W DONE] route=M1 id=3 beats=4
+[ 1185.0 ns] M1  W  >> txn=M1.W3 beat=3 wdata=0x01000000000000000000000000000303 (WLAST)
+[ 1185.0 ns] SLV W  >> txn=M1.W3 beats=4 last_wdata=0x01000000000000000000000000000303
+[ 1195.0 ns] M1  R  << txn=M1.R5 beat=0 resp=OKAY   rdata=0x1250000
+[ 1205.0 ns] M1  R  << txn=M1.R5 beat=1 resp=OKAY   rdata=0x1250001
+[ 1215.0 ns] M1  R  << txn=M1.R5 beat=2 resp=OKAY   rdata=0x1250002
+[1225.0 ns][ARB][R DONE] route=1 id=5
+[ 1225.0 ns] M1  R  << txn=M1.R5 beat=3 resp=OKAY   rdata=0x1250003 (RLAST)
+[ 1225.0 ns] SLV R  << txn=M1.R5 resp=OKAY   beats=4 last_rdata=0x1250003
+[ 1235.0 ns] M0  AR >> txn=M0.R6 addr=0x00003600 len=3  (issued 7/16)
+[1235.0 ns][ARB][AR] route=0 id=6 addr=0x0000000000003600
+[ 1235.0 ns] SLV AR >> txn=M0.R6 addr=0x00003600 len=3  ar_q=1/1
+[1245.0 ns][ARB][B] route=M1 id=3 resp=OKAY (wr_q 1/1 pending)
+[ 1245.0 ns] M1  B  << txn=M1.W3 resp=OKAY   (4/16)
+[ 1245.0 ns] SLV B  << txn=M1.W3 resp=OKAY   b_q=1/1 pending
+[ 1255.0 ns] M0  AW >> txn=M0.W4 addr=0x00001400 len=3  (issued 5/16)
+[1255.0 ns][ARB][AW] route=M0 id=4 addr=0x0000000000001400 len=3 (wr_q 1/1, both_req=1)
+[ 1255.0 ns] SLV AW >> txn=M0.W4 addr=0x00001400 len=3  aw_q=1/1
+[ 1295.0 ns] M0  W  >> txn=M0.W4 beats=4 last_wdata=0x10000000000000000000000000000403
+[1295.0 ns][ARB][W DONE] route=M0 id=4 beats=4
+[ 1295.0 ns] SLV W  >> txn=M0.W4 beats=4 last_wdata=0x10000000000000000000000000000403
+[ 1325.0 ns] M0  R  << txn=M0.R6 resp=OKAY   beats=4 last_rdata=0x360003 (7/16)
+[1325.0 ns][ARB][R DONE] route=0 id=6
+[ 1325.0 ns] SLV R  << txn=M0.R6 resp=OKAY   beats=4 last_rdata=0x360003
+[1335.0 ns][ARB][AR] route=1 id=6 addr=0x0000000000012600
+[ 1335.0 ns] M1  AR >> txn=M1.R6 addr=0x00012600 len=3  (rq_occ=9/16)
+[ 1335.0 ns] SLV AR >> txn=M1.R6 addr=0x00012600 len=3  ar_q=1/1
+[ 1345.0 ns] M0  B  << txn=M0.W4 resp=OKAY   exp=M0.W4 (5/16)
+[1345.0 ns][ARB][B] route=M0 id=4 resp=OKAY (wr_q 1/1 pending)
+[ 1345.0 ns] SLV B  << txn=M0.W4 resp=OKAY   b_q=1/1 pending
+[1355.0 ns][ARB][AW] route=M1 id=4 addr=0x0000000000014400 len=3 (wr_q 1/1, both_req=1)
+[ 1355.0 ns] M1  AW >> txn=M1.W4 addr=0x00014400 len=3  (wq_occ=12/16)
+[ 1355.0 ns] SLV AW >> txn=M1.W4 addr=0x00014400 len=3  aw_q=1/1
+[ 1365.0 ns] M1  W  >> txn=M1.W4 beat=0 wdata=0x01000000000000000000000000000400
+[ 1385.0 ns] M1  R  << txn=M1.R6 beat=0 resp=OKAY   rdata=0x1260000
+[ 1385.0 ns] M1  W  >> txn=M1.W4 beat=1 wdata=0x01000000000000000000000000000401
+[ 1395.0 ns] M1  R  << txn=M1.R6 beat=1 resp=OKAY   rdata=0x1260001
+[ 1395.0 ns] M1  W  >> txn=M1.W4 beat=2 wdata=0x01000000000000000000000000000402
+[ 1405.0 ns] M1  R  << txn=M1.R6 beat=2 resp=OKAY   rdata=0x1260002
+[1415.0 ns][ARB][R DONE] route=1 id=6
+[ 1415.0 ns] M1  R  << txn=M1.R6 beat=3 resp=OKAY   rdata=0x1260003 (RLAST)
+[ 1415.0 ns] SLV R  << txn=M1.R6 resp=OKAY   beats=4 last_rdata=0x1260003
+[ 1425.0 ns] M0  AR >> txn=M0.R7 addr=0x00003700 len=3  (issued 8/16)
+[1425.0 ns][ARB][AR] route=0 id=7 addr=0x0000000000003700
+[ 1425.0 ns] SLV AR >> txn=M0.R7 addr=0x00003700 len=3  ar_q=1/1
+[1445.0 ns][ARB][W DONE] route=M1 id=4 beats=4
+[ 1445.0 ns] M1  W  >> txn=M1.W4 beat=3 wdata=0x01000000000000000000000000000403 (WLAST)
+[ 1445.0 ns] SLV W  >> txn=M1.W4 beats=4 last_wdata=0x01000000000000000000000000000403
+[1495.0 ns][ARB][B] route=M1 id=4 resp=OKAY (wr_q 1/1 pending)
+[ 1495.0 ns] M1  B  << txn=M1.W4 resp=OKAY   (5/16)
+[ 1495.0 ns] SLV B  << txn=M1.W4 resp=OKAY   b_q=1/1 pending
+[ 1505.0 ns] M0  AW >> txn=M0.W5 addr=0x00001500 len=3  (issued 6/16)
+[ 1505.0 ns] M0  R  << txn=M0.R7 resp=OKAY   beats=4 last_rdata=0x370003 (8/16)
+[1505.0 ns][ARB][R DONE] route=0 id=7
+[1505.0 ns][ARB][AW] route=M0 id=5 addr=0x0000000000001500 len=3 (wr_q 1/1, both_req=1)
+[ 1505.0 ns] SLV AW >> txn=M0.W5 addr=0x00001500 len=3  aw_q=1/1
+[ 1505.0 ns] SLV R  << txn=M0.R7 resp=OKAY   beats=4 last_rdata=0x370003
+[1515.0 ns][ARB][AR] route=1 id=7 addr=0x0000000000012700
+[ 1515.0 ns] M1  AR >> txn=M1.R7 addr=0x00012700 len=3  (rq_occ=9/16)
+[ 1515.0 ns] SLV AR >> txn=M1.R7 addr=0x00012700 len=3  ar_q=1/1
+[ 1545.0 ns] M0  W  >> txn=M0.W5 beats=4 last_wdata=0x10000000000000000000000000000503
+[1545.0 ns][ARB][W DONE] route=M0 id=5 beats=4
+[ 1545.0 ns] SLV W  >> txn=M0.W5 beats=4 last_wdata=0x10000000000000000000000000000503
+[ 1575.0 ns] M1  R  << txn=M1.R7 beat=0 resp=OKAY   rdata=0x1270000
+[ 1595.0 ns] M0  B  << txn=M0.W5 resp=OKAY   exp=M0.W5 (6/16)
+[1595.0 ns][ARB][B] route=M0 id=5 resp=OKAY (wr_q 1/1 pending)
+[ 1595.0 ns] SLV B  << txn=M0.W5 resp=OKAY   b_q=1/1 pending
+[1605.0 ns][ARB][AW] route=M1 id=5 addr=0x0000000000014500 len=3 (wr_q 1/1, both_req=1)
+[ 1605.0 ns] M1  AW >> txn=M1.W5 addr=0x00014500 len=3  (wq_occ=11/16)
+[ 1605.0 ns] SLV AW >> txn=M1.W5 addr=0x00014500 len=3  aw_q=1/1
+[ 1615.0 ns] M1  R  << txn=M1.R7 beat=1 resp=OKAY   rdata=0x1270001
+[ 1615.0 ns] M1  W  >> txn=M1.W5 beat=0 wdata=0x01000000000000000000000000000500
+[ 1625.0 ns] M1  R  << txn=M1.R7 beat=2 resp=OKAY   rdata=0x1270002
+[1635.0 ns][ARB][R DONE] route=1 id=7
+[ 1635.0 ns] M1  R  << txn=M1.R7 beat=3 resp=OKAY   rdata=0x1270003 (RLAST)
+[ 1635.0 ns] M1  W  >> txn=M1.W5 beat=1 wdata=0x01000000000000000000000000000501
+[ 1635.0 ns] SLV R  << txn=M1.R7 resp=OKAY   beats=4 last_rdata=0x1270003
+[ 1645.0 ns] M0  AR >> txn=M0.R8 addr=0x00003800 len=3  (issued 9/16)
+[1645.0 ns][ARB][AR] route=0 id=8 addr=0x0000000000003800
+[ 1645.0 ns] M1  W  >> txn=M1.W5 beat=2 wdata=0x01000000000000000000000000000502
+[ 1645.0 ns] SLV AR >> txn=M0.R8 addr=0x00003800 len=3  ar_q=1/1
+[1665.0 ns][ARB][W DONE] route=M1 id=5 beats=4
+[ 1665.0 ns] M1  W  >> txn=M1.W5 beat=3 wdata=0x01000000000000000000000000000503 (WLAST)
+[ 1665.0 ns] SLV W  >> txn=M1.W5 beats=4 last_wdata=0x01000000000000000000000000000503
+[1715.0 ns][ARB][B] route=M1 id=5 resp=OKAY (wr_q 1/1 pending)
+[ 1715.0 ns] M1  B  << txn=M1.W5 resp=OKAY   (6/16)
+[ 1715.0 ns] SLV B  << txn=M1.W5 resp=OKAY   b_q=1/1 pending
+[ 1725.0 ns] M0  AW >> txn=M0.W6 addr=0x00001600 len=3  (issued 7/16)
+[1725.0 ns][ARB][AW] route=M0 id=6 addr=0x0000000000001600 len=3 (wr_q 1/1, both_req=1)
+[ 1725.0 ns] SLV AW >> txn=M0.W6 addr=0x00001600 len=3  aw_q=1/1
+[ 1735.0 ns] M0  R  << txn=M0.R8 resp=OKAY   beats=4 last_rdata=0x380003 (9/16)
+[1735.0 ns][ARB][R DONE] route=0 id=8
+[ 1735.0 ns] SLV R  << txn=M0.R8 resp=OKAY   beats=4 last_rdata=0x380003
+[1745.0 ns][ARB][AR] route=1 id=8 addr=0x0000000000012800
+[ 1745.0 ns] M1  AR >> txn=M1.R8 addr=0x00012800 len=3  (rq_occ=8/16)
+[ 1745.0 ns] SLV AR >> txn=M1.R8 addr=0x00012800 len=3  ar_q=1/1
+[ 1765.0 ns] M0  W  >> txn=M0.W6 beats=4 last_wdata=0x10000000000000000000000000000603
+[1765.0 ns][ARB][W DONE] route=M0 id=6 beats=4
+[ 1765.0 ns] SLV W  >> txn=M0.W6 beats=4 last_wdata=0x10000000000000000000000000000603
+[ 1795.0 ns] M1  R  << txn=M1.R8 beat=0 resp=OKAY   rdata=0x1280000
+[ 1805.0 ns] M1  R  << txn=M1.R8 beat=1 resp=OKAY   rdata=0x1280001
+[ 1815.0 ns] M0  B  << txn=M0.W6 resp=OKAY   exp=M0.W6 (7/16)
+[1815.0 ns][ARB][B] route=M0 id=6 resp=OKAY (wr_q 1/1 pending)
+[ 1815.0 ns] M1  R  << txn=M1.R8 beat=2 resp=OKAY   rdata=0x1280002
+[ 1815.0 ns] SLV B  << txn=M0.W6 resp=OKAY   b_q=1/1 pending
+[1825.0 ns][ARB][R DONE] route=1 id=8
+[1825.0 ns][ARB][AW] route=M1 id=6 addr=0x0000000000014600 len=3 (wr_q 1/1, both_req=1)
+[ 1825.0 ns] M1  R  << txn=M1.R8 beat=3 resp=OKAY   rdata=0x1280003 (RLAST)
+[ 1825.0 ns] M1  AW >> txn=M1.W6 addr=0x00014600 len=3  (wq_occ=10/16)
+[ 1825.0 ns] SLV AW >> txn=M1.W6 addr=0x00014600 len=3  aw_q=1/1
+[ 1825.0 ns] SLV R  << txn=M1.R8 resp=OKAY   beats=4 last_rdata=0x1280003
+[ 1835.0 ns] M0  AR >> txn=M0.R9 addr=0x00003900 len=3  (issued 10/16)
+[1835.0 ns][ARB][AR] route=0 id=9 addr=0x0000000000003900
+[ 1835.0 ns] M1  W  >> txn=M1.W6 beat=0 wdata=0x01000000000000000000000000000600
+[ 1835.0 ns] SLV AR >> txn=M0.R9 addr=0x00003900 len=3  ar_q=1/1
+[ 1845.0 ns] M1  W  >> txn=M1.W6 beat=1 wdata=0x01000000000000000000000000000601
+[ 1865.0 ns] M1  W  >> txn=M1.W6 beat=2 wdata=0x01000000000000000000000000000602
+[ 1915.0 ns] M0  R  << txn=M0.R9 resp=OKAY   beats=4 last_rdata=0x390003 (10/16)
+[1915.0 ns][ARB][R DONE] route=0 id=9
+[ 1915.0 ns] SLV R  << txn=M0.R9 resp=OKAY   beats=4 last_rdata=0x390003
+[1925.0 ns][ARB][AR] route=1 id=9 addr=0x0000000000012900
+[ 1925.0 ns] M1  AR >> txn=M1.R9 addr=0x00012900 len=3  (rq_occ=7/16)
+[ 1925.0 ns] SLV AR >> txn=M1.R9 addr=0x00012900 len=3  ar_q=1/1
+[ 1975.0 ns] M1  R  << txn=M1.R9 beat=0 resp=OKAY   rdata=0x1290000
+[1995.0 ns][ARB][W DONE] route=M1 id=6 beats=4
+[ 1995.0 ns] M1  R  << txn=M1.R9 beat=1 resp=OKAY   rdata=0x1290001
+[ 1995.0 ns] M1  W  >> txn=M1.W6 beat=3 wdata=0x01000000000000000000000000000603 (WLAST)
+[ 1995.0 ns] SLV W  >> txn=M1.W6 beats=4 last_wdata=0x01000000000000000000000000000603
+[ 2015.0 ns] M1  R  << txn=M1.R9 beat=2 resp=OKAY   rdata=0x1290002
+[2025.0 ns][ARB][R DONE] route=1 id=9
+[ 2025.0 ns] M1  R  << txn=M1.R9 beat=3 resp=OKAY   rdata=0x1290003 (RLAST)
+[ 2025.0 ns] SLV R  << txn=M1.R9 resp=OKAY   beats=4 last_rdata=0x1290003
+[ 2035.0 ns] M0  AR >> txn=M0.R10 addr=0x00003a00 len=3  (issued 11/16)
+[2035.0 ns][ARB][AR] route=0 id=10 addr=0x0000000000003a00
+[ 2035.0 ns] SLV AR >> txn=M0.R10 addr=0x00003a00 len=3  ar_q=1/1
+[2075.0 ns][ARB][B] route=M1 id=6 resp=OKAY (wr_q 1/1 pending)
+[ 2075.0 ns] M1  B  << txn=M1.W6 resp=OKAY   (7/16)
+[ 2075.0 ns] SLV B  << txn=M1.W6 resp=OKAY   b_q=1/1 pending
+[ 2085.0 ns] M0  AW >> txn=M0.W7 addr=0x00001700 len=3  (issued 8/16)
+[2085.0 ns][ARB][AW] route=M0 id=7 addr=0x0000000000001700 len=3 (wr_q 1/1, both_req=1)
+[ 2085.0 ns] SLV AW >> txn=M0.W7 addr=0x00001700 len=3  aw_q=1/1
+[ 2125.0 ns] M0  W  >> txn=M0.W7 beats=4 last_wdata=0x10000000000000000000000000000703
+[ 2125.0 ns] M0  R  << txn=M0.R10 resp=OKAY   beats=4 last_rdata=0x3a0003 (11/16)
+[2125.0 ns][ARB][R DONE] route=0 id=10
+[2125.0 ns][ARB][W DONE] route=M0 id=7 beats=4
+[ 2125.0 ns] SLV W  >> txn=M0.W7 beats=4 last_wdata=0x10000000000000000000000000000703
+[ 2125.0 ns] SLV R  << txn=M0.R10 resp=OKAY   beats=4 last_rdata=0x3a0003
+[2135.0 ns][ARB][AR] route=1 id=10 addr=0x0000000000012a00
+[ 2135.0 ns] M1  AR >> txn=M1.R10 addr=0x00012a00 len=3  (rq_occ=6/16)
+[ 2135.0 ns] SLV AR >> txn=M1.R10 addr=0x00012a00 len=3  ar_q=1/1
+[ 2175.0 ns] M0  B  << txn=M0.W7 resp=OKAY   exp=M0.W7 (8/16)
+[2175.0 ns][ARB][B] route=M0 id=7 resp=OKAY (wr_q 1/1 pending)
+[ 2175.0 ns] SLV B  << txn=M0.W7 resp=OKAY   b_q=1/1 pending
+[2185.0 ns][ARB][AW] route=M1 id=7 addr=0x0000000000014700 len=3 (wr_q 1/1, both_req=1)
+[ 2185.0 ns] M1  R  << txn=M1.R10 beat=0 resp=OKAY   rdata=0x12a0000
+[ 2185.0 ns] M1  AW >> txn=M1.W7 addr=0x00014700 len=3  (wq_occ=9/16)
+[ 2185.0 ns] SLV AW >> txn=M1.W7 addr=0x00014700 len=3  aw_q=1/1
+[ 2195.0 ns] M1  R  << txn=M1.R10 beat=1 resp=OKAY   rdata=0x12a0001
+[ 2195.0 ns] M1  W  >> txn=M1.W7 beat=0 wdata=0x01000000000000000000000000000700
+[ 2205.0 ns] M1  R  << txn=M1.R10 beat=2 resp=OKAY   rdata=0x12a0002
+[ 2205.0 ns] M1  W  >> txn=M1.W7 beat=1 wdata=0x01000000000000000000000000000701
+[2215.0 ns][ARB][R DONE] route=1 id=10
+[ 2215.0 ns] M1  R  << txn=M1.R10 beat=3 resp=OKAY   rdata=0x12a0003 (RLAST)
+[ 2215.0 ns] M1  W  >> txn=M1.W7 beat=2 wdata=0x01000000000000000000000000000702
+[ 2215.0 ns] SLV R  << txn=M1.R10 resp=OKAY   beats=4 last_rdata=0x12a0003
+[ 2225.0 ns] M0  AR >> txn=M0.R11 addr=0x00003b00 len=3  (issued 12/16)
+[2225.0 ns][ARB][AR] route=0 id=11 addr=0x0000000000003b00
+[ 2225.0 ns] SLV AR >> txn=M0.R11 addr=0x00003b00 len=3  ar_q=1/1
+[ 2305.0 ns] M0  R  << txn=M0.R11 resp=OKAY   beats=4 last_rdata=0x3b0003 (12/16)
+[2305.0 ns][ARB][R DONE] route=0 id=11
+[ 2305.0 ns] SLV R  << txn=M0.R11 resp=OKAY   beats=4 last_rdata=0x3b0003
+[2315.0 ns][ARB][AR] route=1 id=11 addr=0x0000000000012b00
+[2315.0 ns][ARB][W DONE] route=M1 id=7 beats=4
+[ 2315.0 ns] M1  AR >> txn=M1.R11 addr=0x00012b00 len=3  (rq_occ=5/16)
+[ 2315.0 ns] M1  W  >> txn=M1.W7 beat=3 wdata=0x01000000000000000000000000000703 (WLAST)
+[ 2315.0 ns] SLV W  >> txn=M1.W7 beats=4 last_wdata=0x01000000000000000000000000000703
+[ 2315.0 ns] SLV AR >> txn=M1.R11 addr=0x00012b00 len=3  ar_q=1/1
+[2365.0 ns][ARB][B] route=M1 id=7 resp=OKAY (wr_q 1/1 pending)
+[ 2365.0 ns] M1  R  << txn=M1.R11 beat=0 resp=OKAY   rdata=0x12b0000
+[ 2365.0 ns] M1  B  << txn=M1.W7 resp=OKAY   (8/16)
+[ 2365.0 ns] SLV B  << txn=M1.W7 resp=OKAY   b_q=1/1 pending
+[ 2375.0 ns] M0  AW >> txn=M0.W8 addr=0x00001800 len=3  (issued 9/16)
+[2375.0 ns][ARB][AW] route=M0 id=8 addr=0x0000000000001800 len=3 (wr_q 1/1, both_req=1)
+[ 2375.0 ns] M1  R  << txn=M1.R11 beat=1 resp=OKAY   rdata=0x12b0001
+[ 2375.0 ns] SLV AW >> txn=M0.W8 addr=0x00001800 len=3  aw_q=1/1
+[ 2385.0 ns] M1  R  << txn=M1.R11 beat=2 resp=OKAY   rdata=0x12b0002
+[2395.0 ns][ARB][R DONE] route=1 id=11
+[ 2395.0 ns] M1  R  << txn=M1.R11 beat=3 resp=OKAY   rdata=0x12b0003 (RLAST)
+[ 2395.0 ns] SLV R  << txn=M1.R11 resp=OKAY   beats=4 last_rdata=0x12b0003
+[ 2405.0 ns] M0  AR >> txn=M0.R12 addr=0x00003c00 len=3  (issued 13/16)
+[2405.0 ns][ARB][AR] route=0 id=12 addr=0x0000000000003c00
+[ 2405.0 ns] SLV AR >> txn=M0.R12 addr=0x00003c00 len=3  ar_q=1/1
+[ 2415.0 ns] M0  W  >> txn=M0.W8 beats=4 last_wdata=0x10000000000000000000000000000803
+[2415.0 ns][ARB][W DONE] route=M0 id=8 beats=4
+[ 2415.0 ns] SLV W  >> txn=M0.W8 beats=4 last_wdata=0x10000000000000000000000000000803
+[ 2465.0 ns] M0  B  << txn=M0.W8 resp=OKAY   exp=M0.W8 (9/16)
+[2465.0 ns][ARB][B] route=M0 id=8 resp=OKAY (wr_q 1/1 pending)
+[ 2465.0 ns] SLV B  << txn=M0.W8 resp=OKAY   b_q=1/1 pending
+[2475.0 ns][ARB][AW] route=M1 id=8 addr=0x0000000000014800 len=3 (wr_q 1/1, both_req=1)
+[ 2475.0 ns] M1  AW >> txn=M1.W8 addr=0x00014800 len=3  (wq_occ=8/16)
+[ 2475.0 ns] SLV AW >> txn=M1.W8 addr=0x00014800 len=3  aw_q=1/1
+[ 2485.0 ns] M0  R  << txn=M0.R12 resp=OKAY   beats=4 last_rdata=0x3c0003 (13/16)
+[2485.0 ns][ARB][R DONE] route=0 id=12
+[ 2485.0 ns] M1  W  >> txn=M1.W8 beat=0 wdata=0x01000000000000000000000000000800
+[ 2485.0 ns] SLV R  << txn=M0.R12 resp=OKAY   beats=4 last_rdata=0x3c0003
+[2495.0 ns][ARB][AR] route=1 id=12 addr=0x0000000000012c00
+[ 2495.0 ns] M1  AR >> txn=M1.R12 addr=0x00012c00 len=3  (rq_occ=4/16)
+[ 2495.0 ns] M1  W  >> txn=M1.W8 beat=1 wdata=0x01000000000000000000000000000801
+[ 2495.0 ns] SLV AR >> txn=M1.R12 addr=0x00012c00 len=3  ar_q=1/1
+[ 2545.0 ns] M1  R  << txn=M1.R12 beat=0 resp=OKAY   rdata=0x12c0000
+[ 2555.0 ns] M1  R  << txn=M1.R12 beat=1 resp=OKAY   rdata=0x12c0001
+[ 2555.0 ns] M1  W  >> txn=M1.W8 beat=2 wdata=0x01000000000000000000000000000802
+[ 2575.0 ns] M1  R  << txn=M1.R12 beat=2 resp=OKAY   rdata=0x12c0002
+[2585.0 ns][ARB][R DONE] route=1 id=12
+[ 2585.0 ns] M1  R  << txn=M1.R12 beat=3 resp=OKAY   rdata=0x12c0003 (RLAST)
+[ 2585.0 ns] SLV R  << txn=M1.R12 resp=OKAY   beats=4 last_rdata=0x12c0003
+[ 2595.0 ns] M0  AR >> txn=M0.R13 addr=0x00003d00 len=3  (issued 14/16)
+[2595.0 ns][ARB][AR] route=0 id=13 addr=0x0000000000003d00
+[ 2595.0 ns] SLV AR >> txn=M0.R13 addr=0x00003d00 len=3  ar_q=1/1
+[2605.0 ns][ARB][W DONE] route=M1 id=8 beats=4
+[ 2605.0 ns] M1  W  >> txn=M1.W8 beat=3 wdata=0x01000000000000000000000000000803 (WLAST)
+[ 2605.0 ns] SLV W  >> txn=M1.W8 beats=4 last_wdata=0x01000000000000000000000000000803
+[2655.0 ns][ARB][B] route=M1 id=8 resp=OKAY (wr_q 1/1 pending)
+[ 2655.0 ns] M1  B  << txn=M1.W8 resp=OKAY   (9/16)
+[ 2655.0 ns] SLV B  << txn=M1.W8 resp=OKAY   b_q=1/1 pending
+[ 2665.0 ns] M0  AW >> txn=M0.W9 addr=0x00001900 len=3  (issued 10/16)
+[2665.0 ns][ARB][AW] route=M0 id=9 addr=0x0000000000001900 len=3 (wr_q 1/1, both_req=1)
+[ 2665.0 ns] SLV AW >> txn=M0.W9 addr=0x00001900 len=3  aw_q=1/1
+[ 2685.0 ns] M0  R  << txn=M0.R13 resp=OKAY   beats=4 last_rdata=0x3d0003 (14/16)
+[2685.0 ns][ARB][R DONE] route=0 id=13
+[ 2685.0 ns] SLV R  << txn=M0.R13 resp=OKAY   beats=4 last_rdata=0x3d0003
+[2695.0 ns][ARB][AR] route=1 id=13 addr=0x0000000000012d00
+[ 2695.0 ns] M1  AR >> txn=M1.R13 addr=0x00012d00 len=3  (rq_occ=3/16)
+[ 2695.0 ns] SLV AR >> txn=M1.R13 addr=0x00012d00 len=3  ar_q=1/1
+[ 2705.0 ns] M0  W  >> txn=M0.W9 beats=4 last_wdata=0x10000000000000000000000000000903
+[2705.0 ns][ARB][W DONE] route=M0 id=9 beats=4
+[ 2705.0 ns] SLV W  >> txn=M0.W9 beats=4 last_wdata=0x10000000000000000000000000000903
+[ 2745.0 ns] M1  R  << txn=M1.R13 beat=0 resp=OKAY   rdata=0x12d0000
+[ 2755.0 ns] M0  B  << txn=M0.W9 resp=OKAY   exp=M0.W9 (10/16)
+[2755.0 ns][ARB][B] route=M0 id=9 resp=OKAY (wr_q 1/1 pending)
+[ 2755.0 ns] SLV B  << txn=M0.W9 resp=OKAY   b_q=1/1 pending
+[2765.0 ns][ARB][AW] route=M1 id=9 addr=0x0000000000014900 len=3 (wr_q 1/1, both_req=1)
+[ 2765.0 ns] M1  AW >> txn=M1.W9 addr=0x00014900 len=3  (wq_occ=7/16)
+[ 2765.0 ns] SLV AW >> txn=M1.W9 addr=0x00014900 len=3  aw_q=1/1
+[ 2775.0 ns] M1  W  >> txn=M1.W9 beat=0 wdata=0x01000000000000000000000000000900
+[ 2785.0 ns] M1  R  << txn=M1.R13 beat=1 resp=OKAY   rdata=0x12d0001
+[ 2785.0 ns] M1  W  >> txn=M1.W9 beat=1 wdata=0x01000000000000000000000000000901
+[ 2795.0 ns] M1  R  << txn=M1.R13 beat=2 resp=OKAY   rdata=0x12d0002
+[2805.0 ns][ARB][R DONE] route=1 id=13
+[ 2805.0 ns] M1  R  << txn=M1.R13 beat=3 resp=OKAY   rdata=0x12d0003 (RLAST)
+[ 2805.0 ns] SLV R  << txn=M1.R13 resp=OKAY   beats=4 last_rdata=0x12d0003
+[ 2815.0 ns] M0  AR >> txn=M0.R14 addr=0x00003e00 len=3  (issued 15/16)
+[2815.0 ns][ARB][AR] route=0 id=14 addr=0x0000000000003e00
+[ 2815.0 ns] M1  W  >> txn=M1.W9 beat=2 wdata=0x01000000000000000000000000000902
+[ 2815.0 ns] SLV AR >> txn=M0.R14 addr=0x00003e00 len=3  ar_q=1/1
+[2835.0 ns][ARB][W DONE] route=M1 id=9 beats=4
+[ 2835.0 ns] M1  W  >> txn=M1.W9 beat=3 wdata=0x01000000000000000000000000000903 (WLAST)
+[ 2835.0 ns] SLV W  >> txn=M1.W9 beats=4 last_wdata=0x01000000000000000000000000000903
+[2885.0 ns][ARB][B] route=M1 id=9 resp=OKAY (wr_q 1/1 pending)
+[ 2885.0 ns] M1  B  << txn=M1.W9 resp=OKAY   (10/16)
+[ 2885.0 ns] SLV B  << txn=M1.W9 resp=OKAY   b_q=1/1 pending
+[ 2895.0 ns] M0  AW >> txn=M0.W10 addr=0x00001a00 len=3  (issued 11/16)
+[ 2895.0 ns] M0  R  << txn=M0.R14 resp=OKAY   beats=4 last_rdata=0x3e0003 (15/16)
+[2895.0 ns][ARB][R DONE] route=0 id=14
+[2895.0 ns][ARB][AW] route=M0 id=10 addr=0x0000000000001a00 len=3 (wr_q 1/1, both_req=1)
+[ 2895.0 ns] SLV AW >> txn=M0.W10 addr=0x00001a00 len=3  aw_q=1/1
+[ 2895.0 ns] SLV R  << txn=M0.R14 resp=OKAY   beats=4 last_rdata=0x3e0003
+[2905.0 ns][ARB][AR] route=1 id=14 addr=0x0000000000012e00
+[ 2905.0 ns] M1  AR >> txn=M1.R14 addr=0x00012e00 len=3  (rq_occ=2/16)
+[ 2905.0 ns] SLV AR >> txn=M1.R14 addr=0x00012e00 len=3  ar_q=1/1
+[ 2935.0 ns] M0  W  >> txn=M0.W10 beats=4 last_wdata=0x10000000000000000000000000000a03
+[2935.0 ns][ARB][W DONE] route=M0 id=10 beats=4
+[ 2935.0 ns] SLV W  >> txn=M0.W10 beats=4 last_wdata=0x10000000000000000000000000000a03
+[ 2955.0 ns] M1  R  << txn=M1.R14 beat=0 resp=OKAY   rdata=0x12e0000
+[ 2965.0 ns] M1  R  << txn=M1.R14 beat=1 resp=OKAY   rdata=0x12e0001
+[ 2975.0 ns] M1  R  << txn=M1.R14 beat=2 resp=OKAY   rdata=0x12e0002
+[ 2985.0 ns] M0  B  << txn=M0.W10 resp=OKAY   exp=M0.W10 (11/16)
+[2985.0 ns][ARB][R DONE] route=1 id=14
+[2985.0 ns][ARB][B] route=M0 id=10 resp=OKAY (wr_q 1/1 pending)
+[ 2985.0 ns] M1  R  << txn=M1.R14 beat=3 resp=OKAY   rdata=0x12e0003 (RLAST)
+[ 2985.0 ns] SLV B  << txn=M0.W10 resp=OKAY   b_q=1/1 pending
+[ 2985.0 ns] SLV R  << txn=M1.R14 resp=OKAY   beats=4 last_rdata=0x12e0003
+[ 2995.0 ns] M0  AR >> txn=M0.R15 addr=0x00003f00 len=3  (issued 16/16)
+[2995.0 ns][ARB][AR] route=0 id=15 addr=0x0000000000003f00
+[2995.0 ns][ARB][AW] route=M1 id=10 addr=0x0000000000014a00 len=3 (wr_q 1/1, both_req=1)
+[ 2995.0 ns] M1  AW >> txn=M1.W10 addr=0x00014a00 len=3  (wq_occ=6/16)
+[ 2995.0 ns] SLV AW >> txn=M1.W10 addr=0x00014a00 len=3  aw_q=1/1
+[ 2995.0 ns] SLV AR >> txn=M0.R15 addr=0x00003f00 len=3  ar_q=1/1
+[ 3005.0 ns] M1  W  >> txn=M1.W10 beat=0 wdata=0x01000000000000000000000000000a00
+[ 3025.0 ns] M1  W  >> txn=M1.W10 beat=1 wdata=0x01000000000000000000000000000a01
+[ 3035.0 ns] M1  W  >> txn=M1.W10 beat=2 wdata=0x01000000000000000000000000000a02
+[ 3085.0 ns] M0  R  << txn=M0.R15 resp=OKAY   beats=4 last_rdata=0x3f0003 (16/16)
+[3085.0 ns][ARB][R DONE] route=0 id=15
+[ 3085.0 ns] SLV R  << txn=M0.R15 resp=OKAY   beats=4 last_rdata=0x3f0003
+[3095.0 ns][ARB][AR] route=1 id=15 addr=0x0000000000012f00
+[ 3095.0 ns] M1  AR >> txn=M1.R15 addr=0x00012f00 len=3  (rq_occ=1/16)
+[ 3095.0 ns] SLV AR >> txn=M1.R15 addr=0x00012f00 len=3  ar_q=1/1
+[ 3155.0 ns] M1  R  << txn=M1.R15 beat=0 resp=OKAY   rdata=0x12f0000
+[3165.0 ns][ARB][W DONE] route=M1 id=10 beats=4
+[ 3165.0 ns] M1  R  << txn=M1.R15 beat=1 resp=OKAY   rdata=0x12f0001
+[ 3165.0 ns] M1  W  >> txn=M1.W10 beat=3 wdata=0x01000000000000000000000000000a03 (WLAST)
+[ 3165.0 ns] SLV W  >> txn=M1.W10 beats=4 last_wdata=0x01000000000000000000000000000a03
+[ 3175.0 ns] M1  R  << txn=M1.R15 beat=2 resp=OKAY   rdata=0x12f0002
+[3185.0 ns][ARB][R DONE] route=1 id=15
+[ 3185.0 ns] M1  R  << txn=M1.R15 beat=3 resp=OKAY   rdata=0x12f0003 (RLAST)
+[ 3185.0 ns] SLV R  << txn=M1.R15 resp=OKAY   beats=4 last_rdata=0x12f0003
+[3215.0 ns][ARB][B] route=M1 id=10 resp=OKAY (wr_q 1/1 pending)
+[ 3215.0 ns] M1  B  << txn=M1.W10 resp=OKAY   (11/16)
+[ 3215.0 ns] SLV B  << txn=M1.W10 resp=OKAY   b_q=1/1 pending
+[ 3225.0 ns] M0  AW >> txn=M0.W11 addr=0x00001b00 len=3  (issued 12/16)
+[3225.0 ns][ARB][AW] route=M0 id=11 addr=0x0000000000001b00 len=3 (wr_q 1/1, both_req=1)
+[ 3225.0 ns] SLV AW >> txn=M0.W11 addr=0x00001b00 len=3  aw_q=1/1
+[ 3265.0 ns] M0  W  >> txn=M0.W11 beats=4 last_wdata=0x10000000000000000000000000000b03
+[3265.0 ns][ARB][W DONE] route=M0 id=11 beats=4
+[ 3265.0 ns] SLV W  >> txn=M0.W11 beats=4 last_wdata=0x10000000000000000000000000000b03
+[ 3315.0 ns] M0  B  << txn=M0.W11 resp=OKAY   exp=M0.W11 (12/16)
+[3315.0 ns][ARB][B] route=M0 id=11 resp=OKAY (wr_q 1/1 pending)
+[ 3315.0 ns] SLV B  << txn=M0.W11 resp=OKAY   b_q=1/1 pending
+[3325.0 ns][ARB][AW] route=M1 id=11 addr=0x0000000000014b00 len=3 (wr_q 1/1, both_req=1)
+[ 3325.0 ns] M1  AW >> txn=M1.W11 addr=0x00014b00 len=3  (wq_occ=5/16)
+[ 3325.0 ns] SLV AW >> txn=M1.W11 addr=0x00014b00 len=3  aw_q=1/1
+[ 3335.0 ns] M1  W  >> txn=M1.W11 beat=0 wdata=0x01000000000000000000000000000b00
+[ 3345.0 ns] M1  W  >> txn=M1.W11 beat=1 wdata=0x01000000000000000000000000000b01
+[ 3415.0 ns] M1  W  >> txn=M1.W11 beat=2 wdata=0x01000000000000000000000000000b02
+[3505.0 ns][ARB][W DONE] route=M1 id=11 beats=4
+[ 3505.0 ns] M1  W  >> txn=M1.W11 beat=3 wdata=0x01000000000000000000000000000b03 (WLAST)
+[ 3505.0 ns] SLV W  >> txn=M1.W11 beats=4 last_wdata=0x01000000000000000000000000000b03
+[3555.0 ns][ARB][B] route=M1 id=11 resp=OKAY (wr_q 1/1 pending)
+[ 3555.0 ns] M1  B  << txn=M1.W11 resp=OKAY   (12/16)
+[ 3555.0 ns] SLV B  << txn=M1.W11 resp=OKAY   b_q=1/1 pending
+[ 3565.0 ns] M0  AW >> txn=M0.W12 addr=0x00001c00 len=3  (issued 13/16)
+[3565.0 ns][ARB][AW] route=M0 id=12 addr=0x0000000000001c00 len=3 (wr_q 1/1, both_req=1)
+[ 3565.0 ns] SLV AW >> txn=M0.W12 addr=0x00001c00 len=3  aw_q=1/1
+[ 3605.0 ns] M0  W  >> txn=M0.W12 beats=4 last_wdata=0x10000000000000000000000000000c03
+[3605.0 ns][ARB][W DONE] route=M0 id=12 beats=4
+[ 3605.0 ns] SLV W  >> txn=M0.W12 beats=4 last_wdata=0x10000000000000000000000000000c03
+[ 3655.0 ns] M0  B  << txn=M0.W12 resp=OKAY   exp=M0.W12 (13/16)
+[3655.0 ns][ARB][B] route=M0 id=12 resp=OKAY (wr_q 1/1 pending)
+[ 3655.0 ns] SLV B  << txn=M0.W12 resp=OKAY   b_q=1/1 pending
+[3665.0 ns][ARB][AW] route=M1 id=12 addr=0x0000000000014c00 len=3 (wr_q 1/1, both_req=1)
+[ 3665.0 ns] M1  AW >> txn=M1.W12 addr=0x00014c00 len=3  (wq_occ=4/16)
+[ 3665.0 ns] SLV AW >> txn=M1.W12 addr=0x00014c00 len=3  aw_q=1/1
+[ 3675.0 ns] M1  W  >> txn=M1.W12 beat=0 wdata=0x01000000000000000000000000000c00
+[ 3695.0 ns] M1  W  >> txn=M1.W12 beat=1 wdata=0x01000000000000000000000000000c01
+[ 3755.0 ns] M1  W  >> txn=M1.W12 beat=2 wdata=0x01000000000000000000000000000c02
+[3775.0 ns][ARB][W DONE] route=M1 id=12 beats=4
+[ 3775.0 ns] M1  W  >> txn=M1.W12 beat=3 wdata=0x01000000000000000000000000000c03 (WLAST)
+[ 3775.0 ns] SLV W  >> txn=M1.W12 beats=4 last_wdata=0x01000000000000000000000000000c03
+[3825.0 ns][ARB][B] route=M1 id=12 resp=OKAY (wr_q 1/1 pending)
+[ 3825.0 ns] M1  B  << txn=M1.W12 resp=OKAY   (13/16)
+[ 3825.0 ns] SLV B  << txn=M1.W12 resp=OKAY   b_q=1/1 pending
+[ 3835.0 ns] M0  AW >> txn=M0.W13 addr=0x00001d00 len=3  (issued 14/16)
+[3835.0 ns][ARB][AW] route=M0 id=13 addr=0x0000000000001d00 len=3 (wr_q 1/1, both_req=1)
+[ 3835.0 ns] SLV AW >> txn=M0.W13 addr=0x00001d00 len=3  aw_q=1/1
+[ 3875.0 ns] M0  W  >> txn=M0.W13 beats=4 last_wdata=0x10000000000000000000000000000d03
+[3875.0 ns][ARB][W DONE] route=M0 id=13 beats=4
+[ 3875.0 ns] SLV W  >> txn=M0.W13 beats=4 last_wdata=0x10000000000000000000000000000d03
+[ 3925.0 ns] M0  B  << txn=M0.W13 resp=OKAY   exp=M0.W13 (14/16)
+[3925.0 ns][ARB][B] route=M0 id=13 resp=OKAY (wr_q 1/1 pending)
+[ 3925.0 ns] SLV B  << txn=M0.W13 resp=OKAY   b_q=1/1 pending
+[3935.0 ns][ARB][AW] route=M1 id=13 addr=0x0000000000014d00 len=3 (wr_q 1/1, both_req=1)
+[ 3935.0 ns] M1  AW >> txn=M1.W13 addr=0x00014d00 len=3  (wq_occ=3/16)
+[ 3935.0 ns] SLV AW >> txn=M1.W13 addr=0x00014d00 len=3  aw_q=1/1
+[ 3945.0 ns] M1  W  >> txn=M1.W13 beat=0 wdata=0x01000000000000000000000000000d00
+[ 3955.0 ns] M1  W  >> txn=M1.W13 beat=1 wdata=0x01000000000000000000000000000d01
+[ 4015.0 ns] M1  W  >> txn=M1.W13 beat=2 wdata=0x01000000000000000000000000000d02
+[4095.0 ns][ARB][W DONE] route=M1 id=13 beats=4
+[ 4095.0 ns] M1  W  >> txn=M1.W13 beat=3 wdata=0x01000000000000000000000000000d03 (WLAST)
+[ 4095.0 ns] SLV W  >> txn=M1.W13 beats=4 last_wdata=0x01000000000000000000000000000d03
+[4145.0 ns][ARB][B] route=M1 id=13 resp=OKAY (wr_q 1/1 pending)
+[ 4145.0 ns] M1  B  << txn=M1.W13 resp=OKAY   (14/16)
+[ 4145.0 ns] SLV B  << txn=M1.W13 resp=OKAY   b_q=1/1 pending
+[ 4155.0 ns] M0  AW >> txn=M0.W14 addr=0x00001e00 len=3  (issued 15/16)
+[4155.0 ns][ARB][AW] route=M0 id=14 addr=0x0000000000001e00 len=3 (wr_q 1/1, both_req=1)
+[ 4155.0 ns] SLV AW >> txn=M0.W14 addr=0x00001e00 len=3  aw_q=1/1
+[ 4195.0 ns] M0  W  >> txn=M0.W14 beats=4 last_wdata=0x10000000000000000000000000000e03
+[4195.0 ns][ARB][W DONE] route=M0 id=14 beats=4
+[ 4195.0 ns] SLV W  >> txn=M0.W14 beats=4 last_wdata=0x10000000000000000000000000000e03
+[ 4245.0 ns] M0  B  << txn=M0.W14 resp=OKAY   exp=M0.W14 (15/16)
+[4245.0 ns][ARB][B] route=M0 id=14 resp=OKAY (wr_q 1/1 pending)
+[ 4245.0 ns] SLV B  << txn=M0.W14 resp=OKAY   b_q=1/1 pending
+[4255.0 ns][ARB][AW] route=M1 id=14 addr=0x0000000000014e00 len=3 (wr_q 1/1, both_req=1)
+[ 4255.0 ns] M1  AW >> txn=M1.W14 addr=0x00014e00 len=3  (wq_occ=2/16)
+[ 4255.0 ns] SLV AW >> txn=M1.W14 addr=0x00014e00 len=3  aw_q=1/1
+[ 4265.0 ns] M1  W  >> txn=M1.W14 beat=0 wdata=0x01000000000000000000000000000e00
+[ 4275.0 ns] M1  W  >> txn=M1.W14 beat=1 wdata=0x01000000000000000000000000000e01
+[ 4345.0 ns] M1  W  >> txn=M1.W14 beat=2 wdata=0x01000000000000000000000000000e02
+[4415.0 ns][ARB][W DONE] route=M1 id=14 beats=4
+[ 4415.0 ns] M1  W  >> txn=M1.W14 beat=3 wdata=0x01000000000000000000000000000e03 (WLAST)
+[ 4415.0 ns] SLV W  >> txn=M1.W14 beats=4 last_wdata=0x01000000000000000000000000000e03
+[4465.0 ns][ARB][B] route=M1 id=14 resp=OKAY (wr_q 1/1 pending)
+[ 4465.0 ns] M1  B  << txn=M1.W14 resp=OKAY   (15/16)
+[ 4465.0 ns] SLV B  << txn=M1.W14 resp=OKAY   b_q=1/1 pending
+[ 4475.0 ns] M0  AW >> txn=M0.W15 addr=0x00001f00 len=3  (issued 16/16)
+[4475.0 ns][ARB][AW] route=M0 id=15 addr=0x0000000000001f00 len=3 (wr_q 1/1, both_req=1)
+[ 4475.0 ns] SLV AW >> txn=M0.W15 addr=0x00001f00 len=3  aw_q=1/1
+[ 4515.0 ns] M0  W  >> txn=M0.W15 beats=4 last_wdata=0x10000000000000000000000000000f03
+[4515.0 ns][ARB][W DONE] route=M0 id=15 beats=4
+[ 4515.0 ns] SLV W  >> txn=M0.W15 beats=4 last_wdata=0x10000000000000000000000000000f03
+[ 4565.0 ns] M0  B  << txn=M0.W15 resp=OKAY   exp=M0.W15 (16/16)
+[4565.0 ns][ARB][B] route=M0 id=15 resp=OKAY (wr_q 1/1 pending)
+[ 4565.0 ns] SLV B  << txn=M0.W15 resp=OKAY   b_q=1/1 pending
+[4575.0 ns][ARB][AW] route=M1 id=15 addr=0x0000000000014f00 len=3 (wr_q 1/1, both_req=0)
+[ 4575.0 ns] M1  AW >> txn=M1.W15 addr=0x00014f00 len=3  (wq_occ=1/16)
+[ 4575.0 ns] SLV AW >> txn=M1.W15 addr=0x00014f00 len=3  aw_q=1/1
+[ 4585.0 ns] M1  W  >> txn=M1.W15 beat=0 wdata=0x01000000000000000000000000000f00
+[ 4595.0 ns] M1  W  >> txn=M1.W15 beat=1 wdata=0x01000000000000000000000000000f01
+[ 4615.0 ns] M1  W  >> txn=M1.W15 beat=2 wdata=0x01000000000000000000000000000f02
+[4695.0 ns][ARB][W DONE] route=M1 id=15 beats=4
+[ 4695.0 ns] M1  W  >> txn=M1.W15 beat=3 wdata=0x01000000000000000000000000000f03 (WLAST)
+[ 4695.0 ns] SLV W  >> txn=M1.W15 beats=4 last_wdata=0x01000000000000000000000000000f03
+[4745.0 ns][ARB][B] route=M1 id=15 resp=OKAY (wr_q 1/1 pending)
+[ 4745.0 ns] M1  B  << txn=M1.W15 resp=OKAY   (16/16)
+[ 4745.0 ns] SLV B  << txn=M1.W15 resp=OKAY   b_q=1/1 pending
+COVERAGE axi_outstanding depth=1 write_peak=1 read_peak=1 aw_b_overlap=0 ar_rlast_overlap=0
+---- PASS: AXI4 ID + multiple outstanding scenario completed ----
+M0: B=16, R=64, RLAST=16
+M1: B=16, R=64, RLAST=16
+Slave side: AW=32, W=128, WLAST=32, B=32, AR=32, R=128, RLAST=32
+- tb_axi_bus_system.sv:498: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+- Verilator: $finish at 5us; walltime 0.001 s; speed 4.545 ms/s
+- Verilator: cpu 0.001 s on 1 threads; allocated 6 MB

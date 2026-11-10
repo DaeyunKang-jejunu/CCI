@@ -1,0 +1,56 @@
+{
+  "run_id": "formal_20261102T074628Z_84f4b335",
+  "status": "FAIL",
+  "sources": {
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/cci_pkg.sv": "083a05eca725e96a4cc8a92d2e2f9d9b6bf60d6641621cd281da344c999e1e86",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_rim_tracker.sv": "0e65d7901ed26af06a3739a22bd6cc2b461095ad13ba50d6a1a0cad023843e44",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/common/coh_write_ingress.sv": "1a924acf755c83d006f146e5f63be1f1e2a48ed2ce83cd57e4c6dd4b101a5b9c",
+    "formal/endpoint_invariants.vh": "d4c3b817bd2386e1deaa6b0ceac2c37cdc2b70f2dac28738ea2a56905ba14470",
+    "formal/formal_endpoint.sv": "27860fd3eee49029503267caf52a1656bbeee6aaacd4b4940a64b3865ee93671",
+    "formal/formal_ingress.sv": "0fe2f4c6fb36edcf70340d02289bc90d37c7e6969c8d2e9fddb6cb579f061c0c",
+    "scripts/run_formal.py": "9582e479f663495334beb89147c6accbb95cfa98135e01c1aa1f92c0432a77fb",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521"
+  },
+  "tools": {
+    "sv2v": "sv2v v0.0.11-0-g6082cae",
+    "yosys": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)"
+  },
+  "commands": [
+    {
+      "stage": "sv2v",
+      "name": "endpoint",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/endpoint/m0_snoop_endpoint.sv"
+      ]
+    },
+    {
+      "stage": "sv2v",
+      "name": "ingress",
+      "argv": [
+        "/usr/local/bin/sv2v",
+        "--exclude=Assert",
+        "-I",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/rtl/common",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/cci_pkg.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/cci_range_req_decoder.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/cci_ac_range_gen.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/cci_range_rim_tracker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/cci_range_hazard_checker.sv",
+        "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new/reports/runs/formal_20261102T074628Z_84f4b335/src/ingress/coh_write_ingress.sv"
+      ]
+    }
+  ],
+  "cases": [],
+  "config": {
+    "bmc_depth": 20
+  },
+  "error": "ingress: unstripped $fatal"
+}

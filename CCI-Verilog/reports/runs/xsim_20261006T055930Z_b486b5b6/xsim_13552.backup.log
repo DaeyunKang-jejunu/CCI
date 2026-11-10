@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# xsim v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Oct  6 14:59:58 2026
+# Process ID: 13552
+# Current directory: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/xsim_20261006T055930Z_b486b5b6
+# Command line: xsim.exe -mode tcl -source {xsim.dir/cci_mode1_d1/xsim_script.tcl}
+# Log file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/xsim_20261006T055930Z_b486b5b6/xsim.log
+# Journal file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/xsim_20261006T055930Z_b486b5b6\xsim.jou
+# Running On        :DESKTOP-SOHK4NB
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34067 MB
+# Swap memory       :8724 MB
+# Total Virtual     :42792 MB
+# Available Virtual :3916 MB
+#-----------------------------------------------------------
+source xsim.dir/cci_mode1_d1/xsim_script.tcl
+# xsim {cci_mode1_d1} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS setup source/alignment/zero-count/mask-priority/busy boundaries
+PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe
+PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe
+PASS reset after first W beat and queued writes
+PASS parameter directed hazards/duplicate/drain/reset; queued HOL requires depth>=3
+PASS parameter_boundary depth=1 trackers=1 fifo=1
+$finish called at time : 20500 ns : File "C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/tb/tb_cci_integration.sv" Line 639
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct  6 15:00:00 2026...

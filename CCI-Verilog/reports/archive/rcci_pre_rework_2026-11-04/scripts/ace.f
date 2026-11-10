@@ -1,0 +1,10 @@
+rtl/ace/ace_snoop_pkg.sv
+rtl/ace/ace_cache_snoop_endpoint.sv
+rtl/ace/ace_snoop_fabric.sv
+rtl/ace/ace_snoop_controller.sv
+rtl/ace/ace_snoop_controller_bank.sv
+rtl/ace/cci_ace_snoop_service.sv
+rtl/ace/ace_manager_request_controller.sv
+rtl/ace/ace_manager_request_bank.sv
+rtl/common/coh_read_ingress.sv
+rtl/ace/axi_cci_ace_top.sv

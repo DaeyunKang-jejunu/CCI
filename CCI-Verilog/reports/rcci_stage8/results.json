@@ -1,0 +1,105 @@
+{
+  "schema": "rcci-stage8-v1",
+  "generated_at_utc": "2026-11-10T01:35:03.842016+00:00",
+  "status": "PASS",
+  "progress_contract": {
+    "cr_latency_max": 3,
+    "b_latency_max": 3,
+    "property_bound": 14,
+    "formal_line_count": 1,
+    "directed_range_max_lines": 64
+  },
+  "sources": {
+    "rtl/common/coh_write_ingress.sv": "b1f02ca8580f1b119cba90f899ff855a5fdaad5c50f6bb36a177329ea7ccfa75",
+    "rtl/common/coh_read_ingress.sv": "276ece2e4a1c6fd357f65e45675dd0b46807ef335a296c911f726605c11e4f71",
+    "rtl/ace/ace_snoop_controller.sv": "6f21ad1eda919f97c7c836dbaad041553de8c6cb36bc54f626575c73156683e5",
+    "rtl/top/axi_cci_top.sv": "2b3ae62155c522a0bac2bf8abacc134a5034ae343546c21f1eb895be99b44c24",
+    "rtl/ace/axi_cci_ace_top.sv": "3c5ece7851baefc8f6b6600b0efb1e5e75d0ae145001dc5b95173bb859187a0e",
+    "tb/tb_rcci_stage8_hazards.sv": "88436e423d6ddf97e37611802e958d283ee654b5fe0405ec93e0c71808426d3c",
+    "tb/tb_coh_read_ingress_range.sv": "5226dcaf557a6b394fc9af67ec1c3da80bbfd64a7128e05f2f4aff9fe7785a0a",
+    "tb/tb_cci_ace_integration.sv": "93832122e14e4868a576edce89bcca5428392942a93175ec46f7430d9c9c9a84",
+    "formal/formal_ingress_progress.sv": "fe850a5e9eac784e6d4ccd9a55f4683de9d9240c15ab5f54827767aa6a0b5711",
+    "scripts/run_formal.py": "10aaec622c1c5c1a26c3aa8f58b547663ef7cfe7e0062ae0b4b765e23c831581",
+    "scripts/run_rcci_stage8.py": "4392b95583cf27afdb1a0dbc890f7d9071c84a512e5ecaeadfe34284342fa2a8"
+  },
+  "results": [
+    {
+      "name": "hazards",
+      "status": "PASS",
+      "marker": "PASS stage8 bidirectional hazard window",
+      "returncode": 0
+    },
+    {
+      "name": "read_span",
+      "status": "PASS",
+      "marker": "PASS stage5 ReadRange",
+      "returncode": 0
+    },
+    {
+      "name": "error_concurrency_1",
+      "status": "PASS",
+      "marker": "PASS stage8 error policy/reset case=1",
+      "returncode": 0
+    },
+    {
+      "name": "error_concurrency_2",
+      "status": "PASS",
+      "marker": "PASS stage8 error policy/reset case=2",
+      "returncode": 0
+    },
+    {
+      "name": "error_concurrency_3",
+      "status": "PASS",
+      "marker": "PASS stage8 error policy/reset case=3",
+      "returncode": 0
+    },
+    {
+      "name": "error_concurrency_4",
+      "status": "PASS",
+      "marker": "PASS stage8 error policy/reset case=4",
+      "returncode": 0
+    },
+    {
+      "name": "mut_no_ace_write_hazard",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "STAGE8_WRITE_WINDOW_HAZARD_MISSING",
+      "returncode": 1
+    },
+    {
+      "name": "mut_no_m1_read_span_hazard",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "STAGE8_WRITE_WINDOW_HAZARD_MISSING",
+      "returncode": 1
+    },
+    {
+      "name": "mut_no_error_only_drop",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "STAGE8_ERROR_ONLY_CLASSIFY",
+      "returncode": 1
+    },
+    {
+      "name": "mut_read_span_run",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "RANGE_M1_AW_SPAN_HAZARD_MISSING",
+      "returncode": 1
+    },
+    {
+      "name": "mut_global_drain_run",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "STAGE8_NONCONFLICTING_ACE_BLOCKED",
+      "returncode": 1
+    },
+    {
+      "name": "mut_error_data_wait_run",
+      "status": "EXPECTED_FAILURE_PASS",
+      "marker": "STAGE8_ERROR_DATA_NOT_FATAL",
+      "returncode": 1
+    },
+    {
+      "name": "formal_bounded_progress",
+      "status": "PASS",
+      "marker": "ingress_bounded_progress: PASS",
+      "returncode": 0
+    }
+  ]
+}

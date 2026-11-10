@@ -1,0 +1,163 @@
+{
+  "run_id": "implementation_20261007T093606Z_1bc5647a",
+  "status": "PASS",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "225c34c8b672217c0eb3be4bdda0238594f8d2ac8683c0cd7b7581eeb0c4aa89",
+    "rtl/common/cci_pkg.sv": "5a20be52d953610695e91a5bdc63cf9e154b9c600833a821ad9567c48536dcb8",
+    "rtl/common/coh_write_ingress.sv": "2e5245ba727f5a228ae2e5d675ce56dc6d9aa6cdf65c34d4ab1c10efd185f3b4",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/synth_register_shell.sv": "83897b8367c29ef6cf686359061f876171e304b3783973834df5a0862d2011b6",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_range_rim_tracker.sv": "57e96a34f51e976f0a318918ace0ac7a794505de28005b7082a30c2f57a82a55",
+    "rtl/top/axi_b0_top.sv": "3cfb47cad1c9e2688ce1f4eb76f0b8b0c8b5525cb80f4fe901b6b46a345e4725",
+    "rtl/top/axi_b1_conventional_top.sv": "aa9844512752634f05e095dc0b65c3c4181cd8276ff4d90a61aeba272655904d",
+    "rtl/top/axi_cci_top.sv": "9e6e924d85256ee3280c1e47036cabc211dae09260a93ee3918fe0a6ac730b38",
+    "rtl/top/axi_p_range_top.sv": "4713007acbfd222d23a2967b4b12a3df8bf06b1eaa6cbe3cc96e71d0c8b763e1",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521",
+    "scripts/rtl.f": "7f357322edf8a5a8240467c3f829e1405e7dfb9b84396ad1eaa8eb78425f5fb0",
+    "scripts/run_implementation.py": "bb0a1ef71e4e66ac051a0f5d916a69dcad9f6e958cf9189790f4ba51beafda98",
+    "synth/refresh_clock_reports.tcl": "0aa18717d2cd2ab987ce75f9db4b7dad81e5562f893ffe3ebe6a1e9bfdf2f64c",
+    "synth/run_ace.tcl": "271cbb669adc1466ddd854a318714fe148d1938da95db3a6a54b7152083fa312",
+    "synth/run_ace_impl.tcl": "8c4bd201a4d41477fb6e50060d667640ad8906348242ed56991813433b02a622",
+    "synth/run_b0.tcl": "5a3ff0226c6b4e8ce1e98396c189c9f8fafcf91624ff437eb80ba40b14d66d9b",
+    "synth/run_b1.tcl": "d84dad71a8b4a17075b1e16369e71d0c95d248d06fc8266a0fdf9cc29027acc8",
+    "synth/run_impl.tcl": "28b3ab97bac8f156994f56fd78244350aedba54de89790334082dad9e1fc6b1d",
+    "synth/run_p.tcl": "f4ed85d1885053c8966960e80020cedf0eed618e65c6c27864de8ec75b2245f0"
+  },
+  "config": {
+    "part": "xczu7ev-ffvc1156-2-e",
+    "period_ns": 5.0,
+    "observe_debug": false,
+    "depth": 16,
+    "endpoint_latency": 8
+  },
+  "host": {
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+    "python": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:31:09) [GCC 11.2.0]"
+  },
+  "variants": {
+    "B0": {
+      "LUT": 527,
+      "FF": 1642,
+      "CARRY8": 0,
+      "BRAM": 0.0,
+      "WNS": 2.351,
+      "TNS": 0.0,
+      "setup_fail": 0,
+      "WHS": 0.001,
+      "THS": 0.0,
+      "hold_fail": 0,
+      "WPWS": 2.225,
+      "TPWS": 0.0,
+      "pulse_fail": 0,
+      "hierarchy": {
+        "(synth_register_shell)": {
+          "LUT": 4,
+          "FF": 1164
+        },
+        "dut": {
+          "LUT": 523,
+          "FF": 478
+        }
+      }
+    },
+    "B1": {
+      "LUT": 2533,
+      "FF": 3399,
+      "CARRY8": 96,
+      "BRAM": 0.0,
+      "WNS": 0.698,
+      "TNS": 0.0,
+      "setup_fail": 0,
+      "WHS": 0.001,
+      "THS": 0.0,
+      "hold_fail": 0,
+      "WPWS": 1.968,
+      "TPWS": 0.0,
+      "pulse_fail": 0,
+      "hierarchy": {
+        "(synth_register_shell)": {
+          "LUT": 3,
+          "FF": 1223
+        },
+        "common_endpoint.endpoint": {
+          "LUT": 114,
+          "FF": 93
+        },
+        "dut": {
+          "LUT": 2417,
+          "FF": 2083
+        }
+      }
+    },
+    "P": {
+      "LUT": 3309,
+      "FF": 4003,
+      "CARRY8": 115,
+      "BRAM": 0.0,
+      "WNS": 0.797,
+      "TNS": 0.0,
+      "setup_fail": 0,
+      "WHS": 0.01,
+      "THS": 0.0,
+      "hold_fail": 0,
+      "WPWS": 1.968,
+      "TPWS": 0.0,
+      "pulse_fail": 0,
+      "hierarchy": {
+        "(synth_register_shell)": {
+          "LUT": 4,
+          "FF": 1365
+        },
+        "common_endpoint.endpoint": {
+          "LUT": 106,
+          "FF": 93
+        },
+        "dut": {
+          "LUT": 3199,
+          "FF": 2545
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "B0/command.json": "7897109def0b947e131b614a041281d78ceb7c4700c0836e7b12716479f7fb71",
+    "B0/configuration.txt": "3d2064864ef731a81e6da280016ae19b4d34b3553caecfe538ad1d8de375b0b6",
+    "B0/console.log": "3889659e9cba67f9aedb842567540b692f42ccac58ec696084ba462e4b60f840",
+    "B0/critical_paths.rpt": "017bc7f6f9efdd779775afefbd05aaa1f1faa4d9a5b3a587d0a964e81d5172c6",
+    "B0/drc.rpt": "2691f0b178ea7a6e0635b8923c8c7289555db74343757154d545ecdcc1943ed9",
+    "B0/post_route_hier.rpt": "e45921b47283a10d32561bb5fc425de690204265542295d3fd9b7fd47a59e15b",
+    "B0/post_route_timing_summary.rpt": "9782630ffae2f05a39c5d27d572ae97bec7849ae6462b32308c36cd839fe6ddf",
+    "B0/post_route_utilization.rpt": "a288f68d08de86365fd3e5f92483e3c4293533a44ffb20a890e380be15dd239b",
+    "B0/post_synth_hier.rpt": "b1c96c50cd1938a1de443150e9c12fb881a2c4869520e229a9e62e39cb6b9155",
+    "B0/post_synth_utilization.rpt": "d4c7350124c1d8393e580496ba26cea1df92f4217390a0bbf269ba4ab2dc7999",
+    "B0/route_status.rpt": "9d4d935b66e3ed418aecc72e8c0970b3a8f33110829d3a266b1f372861d5514e",
+    "B0/vivado.log": "c330e5fb84c6f1382ca05fa0a9a19776bc03f797d4b6c0939bb4042bf8cab129",
+    "B1/command.json": "1c78ca1524bf5dae51f33f018e077bd6be1e34bc0b82b0b42f729c206dfc7e1a",
+    "B1/configuration.txt": "d3d4bb5901551914834ae81ed54425dcb240a8161efafefad65de1c1b8c78f7f",
+    "B1/console.log": "8426086be33dbbad5ad202375df945072ddf394ea08b47f9604cd355f5c7e83c",
+    "B1/critical_paths.rpt": "f377b4369ed421668041492c13a49b56aed7f9c9b1d747d57ab16c4ae0cdd9e4",
+    "B1/drc.rpt": "b2795c389fa6010179d15775df8de40f85c288bae006046ca68160123bbaaec4",
+    "B1/post_route_hier.rpt": "61dea33b3860774853f42f91c8da328368a7c845635c5565a91d7848467756c5",
+    "B1/post_route_timing_summary.rpt": "f020a1dc858a10f3b4ad8a2cb77b2d895f4a92218940127d9f81a1b246d8772b",
+    "B1/post_route_utilization.rpt": "ab0cd76ca42c2e627921520510403c5843f4e97ac83291e0b070b972af6be870",
+    "B1/post_synth_hier.rpt": "beb3be1ca7d15ae1f188b4237f62c6e0e4dfe61a0877e917ec4dcc058999c0e0",
+    "B1/post_synth_utilization.rpt": "5c571b3ee27361d54b63296ba32e1f50c6b6b65bd2aa2837c71eb9334eb42d5f",
+    "B1/route_status.rpt": "98e20c399647101d71d48d7269d7840e43323cd8a78d2d09d4d491d8f2ecb024",
+    "B1/vivado.log": "a6e2e7d5f0713c3b97719bce2e25ac8b5b585fec124a478cb095aa1598acdad4",
+    "P/command.json": "8dfec111d1f85e907f71482f33b1f87e701b5b7df31f78d7f47aac3f98944006",
+    "P/configuration.txt": "e14f7cf2f6faae4ccff93d20d930485f711cd7c20b4331e3c7154e87fcbf7da0",
+    "P/console.log": "f274730059d9a07add7092d028e6bc690dcd97b3590ba6edfb8f5bf0d4cfdf31",
+    "P/critical_paths.rpt": "0b59c9ed2ab60804b60f268cf2df48d1786a0501a404867515b69d20e4e35634",
+    "P/drc.rpt": "97bbc12795797f2aa203a91c6aa51d9bbe9d6522add35250fcd921c9bfe14919",
+    "P/post_route_hier.rpt": "d985e176811d6ea971ac78431e708d2bba980040fe7f9091a8490516fcd50b34",
+    "P/post_route_timing_summary.rpt": "e4b6a144d60facd73e263ef970509fc7583d970b9a3a550db0e1ba7ede67c9d6",
+    "P/post_route_utilization.rpt": "5663a6ba819cde0316fc9f21e5960b9e7d02f89094a5fd3dcd6e5102bcf032e0",
+    "P/post_synth_hier.rpt": "e72ba217daeec4c3058ae5bf7c93202d7747eb0a2dff0f9c37df49f17cb16af6",
+    "P/post_synth_utilization.rpt": "7f468b93769546126670a0943e277595f33297484dd694746c23956496030241",
+    "P/route_status.rpt": "8b4cb5c45b59aaff6da51091b83a87a4190a46deca48f2a829b2fa4ddc2ea67b",
+    "P/vivado.log": "ea1c62a0a243bcf148cfc9bfbe2cc30d10b25e09ef9182108599c725bd90e9e5"
+  }
+}

@@ -1,0 +1,12 @@
+PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16
+PASS conventional actual-B lifetime, AR/AW hazards, high-page alias
+PASS reset after first W beat and queued writes
+PASS reset during stalled W and held B
+PASS reset with held R then fresh M1 read
+METRIC mode=0 trackers=16 fifo=16 peak_tracker=8 tracker_stall=0 ingress_stall=0 copy_cycles=106 accepted_per_cycle=0.075472 peak_ingress=8
+PASS tb_cci_integration USE_RANGE=0 TRACKERS=16 FIFO=16
+- tb/tb_cci_integration.sv:1041: Verilog $finish
+CROSS_COVERAGE mode=0 trackers=16 p01=5 p02=0 p03=0 p04=0 p05=16 p06=0 p07=0 p12=7 p13=10 p14=8 p15=16 p16=0 p17=0 p23=0 p24=0 p25=5 p26=0 p27=0 p34=24 p35=3 p36=0 p37=0 p45=2 p46=0 p47=0 p56=0 p57=0 p67=0
+- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+- Verilator: $finish at 13us; walltime 0.063 s; speed 308.040 us/s
+- Verilator: cpu 0.042 s on 1 threads; allocated 18 MB

@@ -1,0 +1,11 @@
+--- rtl/common/coh_write_ingress.sv
++++ temporary_review_copy/coh_write_ingress_no_page_match.sv
+@@ -161,7 +161,7 @@
+         assign admission_freeze = pending || setup_fire;
+         assign activate = pending && ingress_count == 0 && tracker_count == 0 &&
+                           ac_count == 0 && !ac_hold && axi_idle && snoop_idle;
+-        assign classify_range = range_ctx.valid && aw_addr[63:12] == range_ctx.base_page &&
++        assign classify_range = range_ctx.valid && /* REVIEW MUTANT: page match removed */
+                                 range_ctx.line_mask[aw_addr[11:6]] &&
+                                 !range_ctx.wr_issued_mask[aw_addr[11:6]];
+         always_ff @(posedge clk or negedge rst_n) begin

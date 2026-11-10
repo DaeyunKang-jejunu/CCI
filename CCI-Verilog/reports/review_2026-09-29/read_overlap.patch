@@ -1,0 +1,28 @@
+--- tb/tb_cci_integration.sv
++++ temporary_review_copy/tb_review_read_overlap.sv
+@@ -1,5 +1,5 @@
+ `timescale 1ns/1ps
+-module tb_cci_integration #(
++module tb_review_read_overlap #(
+     parameter bit USE_RANGE=1,
+     parameter int LINE_TRACKER_ENTRIES=16, CONV_AC_FIFO_DEPTH=LINE_TRACKER_ENTRIES
+ );
+@@ -315,6 +315,18 @@
+         setup_source='0;
+         setup_source=1;
+         reset_case();
++        M0_RREADY=0;
++        @(negedge ACLK); M0_ARADDR=64'h3_0000_0440; M0_ARLEN=3; M0_ARID=9; M0_ARVALID=1;
++        do @(posedge ACLK); while (!M0_ARREADY);
++        @(negedge ACLK); M0_ARVALID=0;
++        wait(M0_RVALID);
++        send_aw(64'h3_0000_0440);
++        wait(completed==1);
++        ticks(2);
++        assert(M0_RVALID && !M0_RREADY && dut.bus.rd_count==1 && ac_total==1 && cr_total==1)
++            else $fatal(1,"overlap scenario not reproduced");
++        $display("OBSERVED: M0 read still outstanding after same-line M1 AC/CR and actual B completion; endpoint does not coordinate pending fills");
++        $finish;
+         // Multiple outstanding snoops and reduced-depth FIFO full gate.
+         permit_cr=0;
+         for(int i=0;i<16;i++) send_aw(64'h1_0000_4000+64'(i*64));

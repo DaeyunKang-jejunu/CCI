@@ -1,0 +1,27 @@
+--- tb/tb_cci_integration.sv
++++ temporary_review_copy/tb_review_cr_error.sv
+@@ -1,5 +1,5 @@
+ `timescale 1ns/1ps
+-module tb_cci_integration #(
++module tb_review_cr_error #(
+     parameter bit USE_RANGE=1,
+     parameter int LINE_TRACKER_ENTRIES=16, CONV_AC_FIFO_DEPTH=LINE_TRACKER_ENTRIES
+ );
+@@ -108,6 +108,8 @@
+     logic  admission_freeze;
+     axi_cci_top #(.USE_RANGE(USE_RANGE), .LINE_TRACKER_ENTRIES(LINE_TRACKER_ENTRIES),
+         .CONV_AC_FIFO_DEPTH(CONV_AC_FIFO_DEPTH), .RANGE_MAX_ACTIVE_CYCLES(2000)) dut (.*);
++    logic [1:0] endpoint_crresp;
++    assign CRRESP = dut.coherent.control.invalidating ? 2'b10 : endpoint_crresp;
+     logic slave_awready, slave_arready, slave_wready, slave_werror;
+     logic permit_cr=1, permit_ac=1, endpoint_acready, endpoint_crvalid, endpoint_idle;
+     logic aw_enable=1, ar_enable=1, w_enable=1, random_stalls=1;
+@@ -130,7 +132,7 @@
+     m0_snoop_endpoint #(.DEPTH(16), .LATENCY(12)) endpoint (
+         .clk(ACLK), .rst_n(ARESETn), .ac_valid(ACVALID && permit_ac), .ac_ready(endpoint_acready),
+         .ac_addr(ACADDR), .ac_snoop(ACSNOOP), .cr_valid(endpoint_crvalid),
+-        .cr_ready(CRREADY && permit_cr), .cr_resp(CRRESP), .idle(endpoint_idle)
++        .cr_ready(CRREADY && permit_cr), .cr_resp(endpoint_crresp), .idle(endpoint_idle)
+     );
+     assign ACREADY=endpoint_acready && permit_ac;
+     assign CRVALID=endpoint_crvalid && permit_cr;

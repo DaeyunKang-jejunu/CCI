@@ -1,0 +1,27 @@
+PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16
+PASS conventional actual-B lifetime, AR/AW hazards, high-page alias
+PASS bounded range hazard acceptance: non_target/other_page/done_target AR+AW limit=8
+PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe
+PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe
+PASS independent range page-alias/membership/duplicate oracle
+PASS range start-line, duplicate fallback, HOL, B masks, dual hazards, drain
+PASS one-line/page-end and sparse-mask context reuse
+PASS 64-line full page and ingress wrap
+PASS setup drain preserves stalled AW/AR grants
+PASS reset during stalled invalidation and restart
+PASS reset after first W beat and queued writes
+PASS setup source/alignment/zero-count/mask-priority/busy boundaries
+PASS reset during stalled W and held B
+PASS M1 AR/R pending and locked-read setup drain
+PASS reset with held R then fresh M1 read
+METRIC mode=1 trackers=16 fifo=16 peak_tracker=0 tracker_stall=0 ingress_stall=0 copy_cycles=241 accepted_per_cycle=0.033195 peak_ingress=8
+PASS tb_cci_integration USE_RANGE=1 TRACKERS=16 FIFO=16
+- tb/tb_cci_integration.sv:1041: Verilog $finish
+CROSS_COVERAGE mode=1 trackers=16 p01=0 p02=0 p03=0 p04=22 p05=30 p06=0 p07=0 p12=0 p13=14 p14=7 p15=12 p16=0 p17=0 p23=0 p24=0 p25=0 p26=0 p27=0 p34=18 p35=0 p36=0 p37=0 p45=45 p46=0 p47=0 p56=0 p57=0 p67=0
+- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+- Verilator: $finish at 68us; walltime 0.008 s; speed 8.065 ms/s
+- Verilator: cpu 0.008 s on 1 threads; allocated 7 MB

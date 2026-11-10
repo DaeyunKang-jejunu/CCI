@@ -1,0 +1,852 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Aug 31 11:06:36 2026
+# Process ID: 30352
+# Current directory: C:/Users/user/Desktop/CCI_patents/CCI_P/CCI-simulation
+# Command line: vivado.exe -mode batch -source C:\users\user\desktop\cci_patents\cci_p\hw_overhead_sv\full_cci\synth\run_synth.tcl -tclargs 1 5.0
+# Log file: C:/Users/user/Desktop/CCI_patents/CCI_P/CCI-simulation/vivado.log
+# Journal file: C:/Users/user/Desktop/CCI_patents/CCI_P/CCI-simulation\vivado.jou
+# Running On        :DESKTOP-SOHK4NB
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34067 MB
+# Swap memory       :2147 MB
+# Total Virtual     :36215 MB
+# Available Virtual :9947 MB
+#-----------------------------------------------------------
+source {C:\users\user\desktop\cci_patents\cci_p\hw_overhead_sv\full_cci\synth\run_synth.tcl}
+# set use_range [expr {$argc > 0 ? [lindex $argv 0] : 1}]
+# set period    [expr {$argc > 1 ? [lindex $argv 1] : 5.0}]
+# set part      xczu7ev-ffvc1156-2-e
+# set here    [file dirname [info script]]
+# set rtl_dir [file normalize [file join $here .. rtl]]
+# set ru_dir  [file normalize [file join $here .. .. rtl]]   
+# set out_dir [file normalize [file join $here .. syn_result cci_soc_top_ur${use_range}]]
+# file mkdir $out_dir
+# read_verilog -sv [glob $rtl_dir/*.sv]
+read_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 629.773 ; gain = 199.984
+# foreach f {cci_pkg cci_range_req_decoder cci_ac_range_gen cci_snoop_resp_tracker \
+#            cci_write_completion_tracker cci_range_hazard_checker cci_range_rim_tracker \
+#            cci_memcpy_classifier cci_memcpy_range_unit} {
+#   read_verilog -sv [file join $ru_dir ${f}.sv]
+# }
+# synth_design -top cci_soc_top -part $part -mode out_of_context \
+#              -include_dirs [list $rtl_dir $ru_dir] \
+#              -generic USE_RANGE=$use_range
+Command: synth_design -top cci_soc_top -part xczu7ev-ffvc1156-2-e -mode out_of_context -include_dirs {C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl} -generic USE_RANGE=1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9192
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1086.484 ; gain = 453.770
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11067] parameter 'N_MST' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:11]
+WARNING: [Synth 8-11067] parameter 'ADDR_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:12]
+WARNING: [Synth 8-11067] parameter 'ID_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:13]
+WARNING: [Synth 8-11067] parameter 'LEN_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:14]
+WARNING: [Synth 8-11067] parameter 'DATA_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:15]
+WARNING: [Synth 8-11067] parameter 'SNOOP_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:16]
+WARNING: [Synth 8-11067] parameter 'RESP_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:17]
+WARNING: [Synth 8-11067] parameter 'BANK_NUM' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:18]
+WARNING: [Synth 8-11067] parameter 'FIFO_DEPTH' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:19]
+WARNING: [Synth 8-11067] parameter 'MEM_LAT' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:20]
+WARNING: [Synth 8-11067] parameter 'SNOOP_LAT' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:22]
+WARNING: [Synth 8-11067] parameter 'ARSNOOP_READSHARED' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:25]
+WARNING: [Synth 8-11067] parameter 'AWSNOOP_WRITEUNIQUE' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:26]
+WARNING: [Synth 8-11067] parameter 'ACSNOOP_MAKEINVALID' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:28]
+WARNING: [Synth 8-11067] parameter 'MST_IDX_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:80]
+WARNING: [Synth 8-11067] parameter 'BANK_IDX_W' declared inside package 'cci_if_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_if_pkg.sv:81]
+WARNING: [Synth 8-6901] identifier 'ac_addr_q' is used before its declaration [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:119]
+WARNING: [Synth 8-11067] parameter 'LINES_PER_PAGE' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:11]
+WARNING: [Synth 8-11067] parameter 'ADDR_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:12]
+WARNING: [Synth 8-11067] parameter 'SRC_ID_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:13]
+WARNING: [Synth 8-11067] parameter 'LINE_CNT_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:14]
+WARNING: [Synth 8-11067] parameter 'REQ_TYPE_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:15]
+WARNING: [Synth 8-11067] parameter 'PAGE_OFF_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:16]
+WARNING: [Synth 8-11067] parameter 'LINE_OFF_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:17]
+WARNING: [Synth 8-11067] parameter 'LINE_IDX_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:18]
+WARNING: [Synth 8-11067] parameter 'BASE_PAGE_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:19]
+WARNING: [Synth 8-11067] parameter 'ACSNOOP_MAKEINVALID' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:37]
+WARNING: [Synth 8-11067] parameter 'CTX_BITS' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_pkg.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'cci_soc_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_soc_top.sv:7]
+	Parameter USE_RANGE bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'cci_mst' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+	Parameter MST_ID bound to: 32'b00000000000000000000000000000000 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:83]
+INFO: [Synth 8-6155] done synthesizing module 'cci_mst' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_mst__parameterized0' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+	Parameter MST_ID bound to: 32'b00000000000000000000000000000001 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:83]
+INFO: [Synth 8-6155] done synthesizing module 'cci_mst__parameterized0' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_mst__parameterized1' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+	Parameter MST_ID bound to: 32'b00000000000000000000000000000010 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:83]
+INFO: [Synth 8-6155] done synthesizing module 'cci_mst__parameterized1' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_mst__parameterized2' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+	Parameter MST_ID bound to: 32'b00000000000000000000000000000011 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:83]
+INFO: [Synth 8-6155] done synthesizing module 'cci_mst__parameterized2' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_bus' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bus.sv:12]
+	Parameter USE_RANGE bound to: 1'b1 
+	Parameter NUM_CONTEXTS bound to: 32'b00000000000000000000000000000001 
+INFO: [Synth 8-6157] synthesizing module 'cci_memcpy_range_unit' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_memcpy_range_unit.sv:11]
+	Parameter NUM_CONTEXTS bound to: 32'b00000000000000000000000000000001 
+INFO: [Synth 8-6157] synthesizing module 'cci_range_rim_tracker' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_rim_tracker.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_ac_range_gen' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_ac_range_gen.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_ac_range_gen' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_ac_range_gen.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'cci_snoop_resp_tracker' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_snoop_resp_tracker.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_snoop_resp_tracker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_snoop_resp_tracker.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'cci_write_completion_tracker' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_write_completion_tracker.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_write_completion_tracker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_write_completion_tracker.sv:8]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_rim_tracker.sv:105]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_rim_tracker.sv:105]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_rim_tracker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_rim_tracker.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_memcpy_classifier' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_memcpy_classifier.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'cci_memcpy_classifier' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_memcpy_classifier.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_req_decoder' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_req_decoder.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_req_decoder' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_req_decoder.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'cci_range_hazard_checker' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_hazard_checker.sv:10]
+	Parameter NUM_CONTEXTS bound to: 32'b00000000000000000000000000000001 
+INFO: [Synth 8-6155] done synthesizing module 'cci_range_hazard_checker' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_range_hazard_checker.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'cci_memcpy_range_unit' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/rtl/cci_memcpy_range_unit.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'cci_rr_arbiter' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_rr_arbiter.sv:5]
+	Parameter N bound to: 32'b00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'cci_rr_arbiter' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_rr_arbiter.sv:5]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bus.sv:109]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bus.sv:109]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bus.sv:239]
+INFO: [Synth 8-6155] done synthesizing module 'cci_bus' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bus.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'cci_slv_mc' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:11]
+	Parameter MEM_LATENCY bound to: 32'b00000000000000000000000000001010 
+INFO: [Synth 8-6157] synthesizing module 'cci_bank' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bank.sv:8]
+	Parameter DEPTH bound to: 32'b00000000000000000000000100000000 
+INFO: [Synth 8-6155] done synthesizing module 'cci_bank' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_bank.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'cci_fifo' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_fifo.sv:5]
+	Parameter WIDTH bound to: 32'b00000000000000000000000001010100 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000010000 
+INFO: [Synth 8-6155] done synthesizing module 'cci_fifo' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_fifo.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'cci_fifo__parameterized0' [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_fifo.sv:5]
+	Parameter WIDTH bound to: 32'b00000000000000000000001000001001 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000010000 
+INFO: [Synth 8-6155] done synthesizing module 'cci_fifo__parameterized0' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_fifo.sv:5]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:142]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:142]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:185]
+INFO: [Synth 8-6155] done synthesizing module 'cci_slv_mc' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:11]
+INFO: [Synth 8-6155] done synthesizing module 'cci_soc_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_soc_top.sv:7]
+WARNING: [Synth 8-6014] Unused sequential element cur_ax_reg[snoop] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:61]
+WARNING: [Synth 8-6014] Unused sequential element cur_ax_reg[snoop] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:61]
+WARNING: [Synth 8-6014] Unused sequential element cur_ax_reg[snoop] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:61]
+WARNING: [Synth 8-6014] Unused sequential element cur_ax_reg[snoop] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_mst.sv:61]
+WARNING: [Synth 8-7137] Register mem_reg in module cci_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register mem_reg in module cci_fifo__parameterized0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element wreq_reg[len] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:167]
+WARNING: [Synth 8-6014] Unused sequential element wreq_reg[snoop] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:167]
+WARNING: [Synth 8-7137] Register bk_raddr_reg in module cci_slv_mc has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/rtl/cci_slv_mc.sv:77]
+WARNING: [Synth 8-7129] Port ctx[0][state][1] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ctx[0][state][0] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[5] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[4] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[3] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[2] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[1] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_addr[0] in module cci_range_hazard_checker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[11] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[10] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[9] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[8] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[7] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[6] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[5] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[4] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[3] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[2] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[1] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_base_addr[0] in module cci_range_req_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[1] in module cci_snoop_resp_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr_resp[0] in module cci_snoop_resp_tracker is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_fire in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[5] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[4] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[3] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[2] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[1] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aw_line_idx[0] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[7] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[6] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[5] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[4] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[3] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[2] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[1] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_num_contexts[0] in module cci_memcpy_range_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[0][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[0][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[1][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[1][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[2][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[2][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[3][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_w[3][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][5] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][4] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][3] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][2] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][id][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][resp][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[0][resp][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][5] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][4] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][3] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][2] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][id][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][resp][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[1][resp][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][5] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][4] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][3] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][2] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][id][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][resp][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[2][resp][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][7] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][6] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][5] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][4] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][3] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][2] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][id][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][resp][1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cr[3][resp][0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd_valid[3] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd_valid[2] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd_valid[1] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd_valid[0] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][511] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][510] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][509] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][508] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][507] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][506] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][505] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][504] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][503] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][502] in module cci_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_cd[0][data][501] in module cci_bus is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1232.871 ; gain = 600.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1232.871 ; gain = 600.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1232.871 ; gain = 600.156
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'jst_reg' in module 'cci_mst'
+INFO: [Synth 8-802] inferred FSM for state register 'jst_reg' in module 'cci_mst__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'jst_reg' in module 'cci_mst__parameterized1'
+INFO: [Synth 8-802] inferred FSM for state register 'jst_reg' in module 'cci_mst__parameterized2'
+INFO: [Synth 8-802] inferred FSM for state register 'ctx_q_reg[state]' in module 'cci_range_rim_tracker'
+INFO: [Synth 8-802] inferred FSM for state register 'rs_reg' in module 'cci_bus'
+INFO: [Synth 8-802] inferred FSM for state register 'ws_reg' in module 'cci_bus'
+INFO: [Synth 8-802] inferred FSM for state register 'est_reg' in module 'cci_slv_mc'
+INFO: [Synth 8-802] inferred FSM for state register 'wst_reg' in module 'cci_slv_mc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  J_IDLE |                           000001 |                              000
+                    J_AW |                           001000 |                              011
+                    J_WR |                           000100 |                              100
+                 J_BWAIT |                           000010 |                              101
+                    J_AR |                           100000 |                              001
+                    J_RD |                           010000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'jst_reg' using encoding 'one-hot' in module 'cci_mst'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  J_IDLE |                           000001 |                              000
+                    J_AW |                           001000 |                              011
+                    J_WR |                           000100 |                              100
+                 J_BWAIT |                           000010 |                              101
+                    J_AR |                           100000 |                              001
+                    J_RD |                           010000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'jst_reg' using encoding 'one-hot' in module 'cci_mst__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  J_IDLE |                           000001 |                              000
+                    J_AW |                           001000 |                              011
+                    J_WR |                           000100 |                              100
+                 J_BWAIT |                           000010 |                              101
+                    J_AR |                           100000 |                              001
+                    J_RD |                           010000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'jst_reg' using encoding 'one-hot' in module 'cci_mst__parameterized1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  J_IDLE |                           000001 |                              000
+                    J_AW |                           001000 |                              011
+                    J_WR |                           000100 |                              100
+                 J_BWAIT |                           000010 |                              101
+                    J_AR |                           100000 |                              001
+                    J_RD |                           010000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'jst_reg' using encoding 'one-hot' in module 'cci_mst__parameterized2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                               01 |                               00
+         ST_INVALIDATING |                               11 |                               01
+             ST_TRACKING |                               10 |                               10
+                 ST_DONE |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ctx_q_reg[state]' using encoding 'sequential' in module 'cci_range_rim_tracker'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 RS_IDLE |                               01 |                               00
+                RS_DELAY |                               11 |                               01
+                RS_SNOOP |                               10 |                               10
+                  RS_FWD |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rs_reg' using encoding 'sequential' in module 'cci_bus'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 WS_IDLE |                            00001 |                              000
+                  WS_REQ |                            10000 |                              001
+                  WS_INV |                            01000 |                              010
+                WS_AWFWD |                            00100 |                              011
+                WS_WDATA |                            00010 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ws_reg' using encoding 'one-hot' in module 'cci_bus'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  E_IDLE |                             0001 |                               00
+                   E_RD1 |                             0010 |                               01
+                   E_RD2 |                             0100 |                               10
+                   E_OUT |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'est_reg' using encoding 'one-hot' in module 'cci_slv_mc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                              001 |                              000
+                  W_DATA |                              100 |                              001
+                  W_RESP |                              010 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wst_reg' using encoding 'one-hot' in module 'cci_slv_mc'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1266.484 ; gain = 633.770
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   4 Input   32 Bit       Adders := 9     
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 7     
+	  64 Input    7 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 3     
+	   3 Input    2 Bit       Adders := 3     
++---XORs : 
+	   3 Input     32 Bit         XORs := 4     
+	  17 Input     32 Bit         XORs := 1     
++---Registers : 
+	              521 Bit    Registers := 16    
+	              512 Bit    Registers := 17    
+	               84 Bit    Registers := 32    
+	               64 Bit    Registers := 15    
+	               52 Bit    Registers := 1     
+	               32 Bit    Registers := 14    
+	               20 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 52    
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 22    
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 11    
++---RAMs : 
+	             128K Bit	(256 X 512 bit)          RAMs := 16    
++---Muxes : 
+	   4 Input  512 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 6     
+	   4 Input   64 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 2     
+	   3 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
+	   6 Input    8 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 5     
+	   5 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 4     
+	   2 Input    6 Bit        Muxes := 4     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 16    
+	   4 Input    4 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 13    
+	   3 Input    2 Bit        Muxes := 3     
+	   6 Input    1 Bit        Muxes := 12    
+	   2 Input    1 Bit        Muxes := 66    
+	   4 Input    1 Bit        Muxes := 18    
+	   5 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+RAM ("u_slv/g_bank[0].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[1].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[2].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[3].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[4].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[5].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[6].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[7].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[8].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[9].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[10].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[11].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[12].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[13].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[14].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM ("u_slv/g_bank[15].u_bank/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_slv       | g_bank[0].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[1].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[2].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[3].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[4].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[5].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[6].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[7].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[8].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[9].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[10].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[11].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[12].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[13].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[14].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[15].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_slv       | g_bank[0].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[1].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[2].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[3].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[4].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[5].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[6].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[7].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[8].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[9].u_bank/mem_reg  | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[10].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[11].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[12].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[13].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[14].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
+|u_slv       | g_bank[15].u_bank/mem_reg | 256 x 512(READ_FIRST)  | W |   | 256 x 512(WRITE_FIRST) |   | R | Port A and B     | 1      | 7      |                 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[0].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[0].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[0].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[0].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[0].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[0].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[1].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[1].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[1].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[1].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[1].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[1].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[2].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[2].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[2].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[2].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[2].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[2].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[3].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[3].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[3].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[3].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[3].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[3].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[4].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[4].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[4].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[4].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[4].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[4].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[5].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[5].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[5].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[5].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[5].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[5].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[6].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[6].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[6].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[6].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[6].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[6].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[7].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[7].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[7].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[7].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[7].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[7].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[8].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[8].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[8].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[8].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[8].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[8].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[9].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[9].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[9].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[9].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[9].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[9].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[10].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[10].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[10].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[10].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[10].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[10].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[11].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[11].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[11].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[11].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[11].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[11].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[12].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[12].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[12].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[12].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[12].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[12].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[13].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[13].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[13].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[13].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[13].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[13].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[14].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[14].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[14].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[14].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[14].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[14].u_bank/mem_reg_2'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[15].u_bank/mem_reg_4' (RAMB36E2) to 'u_slv/g_bank[15].u_bank/mem_reg_0'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[15].u_bank/mem_reg_5' (RAMB36E2) to 'u_slv/g_bank[15].u_bank/mem_reg_1'
+INFO: [Synth 8-223] decloning instance 'u_slv/g_bank[15].u_bank/mem_reg_6' (RAMB36E2) to 'u_slv/g_bank[15].u_bank/mem_reg_2'
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[0].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[0].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[0].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[0].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[0].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[1].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[1].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[1].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[1].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[1].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[2].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[2].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[2].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[2].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[2].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[3].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[3].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[3].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[3].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[3].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[4].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[4].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[4].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[4].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[4].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[5].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[5].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[5].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[5].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[5].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[6].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[6].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[6].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[6].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[6].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[7].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[7].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[7].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[7].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[7].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[8].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[8].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[8].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[8].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[8].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[9].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[9].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[9].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[9].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[9].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[10].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[10].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[10].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[10].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[10].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[11].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[11].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[11].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[11].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[11].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[12].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[12].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[12].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[12].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[12].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[13].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[13].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[13].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[13].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[13].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[14].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[14].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[14].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[14].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[14].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[15].u_bank/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[15].u_bank/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[15].u_bank/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[15].u_bank/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_slv/g_bank[15].u_bank/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|cci_soc_top | u_bus/g_range.ru_ac_pipe_reg[19] | 20     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|cci_soc_top | g_mst[0].u_mst/ac_pipe_reg[19]   | 20     | 4     | YES          | NO                 | YES               | 0      | 4       | 
+|cci_soc_top | u_slv/p_vld_reg[9]               | 10     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|cci_soc_top | u_slv/p_len_reg[9][7]            | 10     | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|cci_soc_top | u_slv/p_id_reg[9][7]             | 10     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|cci_soc_top | u_slv/p_bank_reg[9][3]           | 10     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|cci_soc_top | u_slv/p_row_reg[9][7]            | 10     | 8     | YES          | NO                 | YES               | 8      | 0       | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY8   |    62|
+|2     |LUT1     |    77|
+|3     |LUT2     |   595|
+|4     |LUT3     |   162|
+|5     |LUT4     |    69|
+|6     |LUT5     |   306|
+|7     |LUT6     |  2967|
+|8     |MUXF7    |  1163|
+|9     |MUXF8    |   581|
+|10    |RAMB18E2 |    16|
+|11    |RAMB36E2 |    64|
+|12    |SRL16E   |    23|
+|13    |SRLC32E  |     5|
+|14    |FDCE     |  1566|
+|15    |FDPE     |     9|
+|16    |FDRE     |  1172|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------+-----------------------------+------+
+|      |Instance                |Module                       |Cells |
++------+------------------------+-----------------------------+------+
+|1     |top                     |                             |  8837|
+|2     |  \g_mst[0].u_mst       |cci_mst                      |   197|
+|3     |  \g_mst[1].u_mst       |cci_mst__parameterized0      |   197|
+|4     |  \g_mst[2].u_mst       |cci_mst__parameterized1      |   197|
+|5     |  \g_mst[3].u_mst       |cci_mst__parameterized2      |   199|
+|6     |  u_bus                 |cci_bus                      |  1473|
+|7     |    \g_range.u_ru       |cci_memcpy_range_unit        |   968|
+|8     |      \g_ctx[0].u_rim   |cci_range_rim_tracker        |   768|
+|9     |        u_ac_gen        |cci_ac_range_gen             |   284|
+|10    |        u_snoop         |cci_snoop_resp_tracker       |    81|
+|11    |        u_wc            |cci_write_completion_tracker |   165|
+|12    |      u_dec             |cci_range_req_decoder        |   200|
+|13    |    u_ar_arb            |cci_rr_arbiter               |    38|
+|14    |    u_aw_arb            |cci_rr_arbiter_16            |    30|
+|15    |  u_slv                 |cci_slv_mc                   |  6542|
+|16    |    \g_bank[0].u_bank   |cci_bank                     |     5|
+|17    |    \g_bank[10].u_bank  |cci_bank_0                   |     5|
+|18    |    \g_bank[11].u_bank  |cci_bank_1                   |     5|
+|19    |    \g_bank[12].u_bank  |cci_bank_2                   |     5|
+|20    |    \g_bank[13].u_bank  |cci_bank_3                   |     5|
+|21    |    \g_bank[14].u_bank  |cci_bank_4                   |     5|
+|22    |    \g_bank[15].u_bank  |cci_bank_5                   |     5|
+|23    |    \g_bank[1].u_bank   |cci_bank_6                   |     5|
+|24    |    \g_bank[2].u_bank   |cci_bank_7                   |     5|
+|25    |    \g_bank[3].u_bank   |cci_bank_8                   |     5|
+|26    |    \g_bank[4].u_bank   |cci_bank_9                   |     5|
+|27    |    \g_bank[5].u_bank   |cci_bank_10                  |     5|
+|28    |    \g_bank[6].u_bank   |cci_bank_11                  |     5|
+|29    |    \g_bank[7].u_bank   |cci_bank_12                  |     5|
+|30    |    \g_bank[8].u_bank   |cci_bank_13                  |     5|
+|31    |    \g_bank[9].u_bank   |cci_bank_14                  |     5|
+|32    |    u_arq               |cci_fifo                     |   553|
+|33    |    u_awq               |cci_fifo_15                  |   369|
+|34    |    u_wq                |cci_fifo__parameterized0     |   827|
++------+------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6464 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2258.504 ; gain = 1625.789
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 2258.504 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1806 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2268.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e39732aa
+INFO: [Common 17-83] Releasing license: Synthesis
+210 Infos, 140 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2268.879 ; gain = 1639.105
+# create_clock -name clk -period $period [get_ports clk]
+# report_utilization    -file $out_dir/utilization.rpt
+# report_timing_summary -file $out_dir/timing_summary.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:35 ; elapsed = 00:00:33 . Memory (MB): peak = 4020.043 ; gain = 1751.164
+# puts "DONE: cci_soc_top USE_RANGE=$use_range period=$period -> $out_dir"
+DONE: cci_soc_top USE_RANGE=1 period=5.0 -> C:/Users/user/Desktop/CCI_patents/CCI_P/hw_overhead_sv/full_cci/syn_result/cci_soc_top_ur1
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 31 11:07:55 2026...

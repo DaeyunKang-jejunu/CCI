@@ -1,0 +1,26 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Tue Oct  6 11:17:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/cci_mode1_d3/xsim_script.tcl
+# xsim {cci_mode1_d3} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS setup source/alignment/zero-count/mask-priority/busy boundaries
+PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe
+PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe
+PASS reset after first W beat and queued writes
+PASS parameter directed hazards/duplicate/drain/reset; queued HOL requires depth>=3
+PASS parameter_boundary depth=3 trackers=2 fifo=1
+$finish called at time : 15970 ns : File "C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/tb/tb_cci_integration.sv" Line 639
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct  6 11:17:03 2026...

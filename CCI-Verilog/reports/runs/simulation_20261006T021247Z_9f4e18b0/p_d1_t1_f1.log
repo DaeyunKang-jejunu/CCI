@@ -1,0 +1,14 @@
+PASS setup source/alignment/zero-count/mask-priority/busy boundaries
+PASS range-only block/release phase=INVALIDATING channel=AW different-address opposite probe
+PASS range-only block/release phase=INVALIDATING channel=AR different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AW different-address opposite probe
+PASS range-only block/release phase=TRACKING_NO_WRITE channel=AR different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AW different-address opposite probe
+PASS range-only block/release phase=B_PENDING channel=AR different-address opposite probe
+PASS reset after first W beat and queued writes
+PASS parameter directed hazards/duplicate/drain/reset; queued HOL requires depth>=3
+PASS parameter_boundary depth=1 trackers=1 fifo=1
+- tb/tb_cci_integration.sv:639: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+- Verilator: $finish at 20us; walltime 0.002 s; speed 8.435 ms/s
+- Verilator: cpu 0.002 s on 1 threads; allocated 7 MB

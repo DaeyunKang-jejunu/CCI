@@ -1,0 +1,322 @@
+{
+  "generated_at_utc": "2026-11-10T02:25:09.220445+00:00",
+  "run_id": "rcci_cost_20261110T021539Z_64ca93d4",
+  "top": [
+    {
+      "config": "B1-T16",
+      "design": "B1",
+      "read_E": 16,
+      "read_nfly": 16,
+      "write_E": 16,
+      "write_line_entries": 16,
+      "write_trackers": 16,
+      "tokens_T": 16,
+      "ace_manager_ctx": 4,
+      "snoop_ctx_S": 4,
+      "LUT": 58058,
+      "FF": 21569,
+      "LUT_increase": 0,
+      "FF_increase": 0,
+      "LUT_vs_B1_pct": 0.0,
+      "FF_vs_B1_pct": 0.0
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "design": "rCCI",
+      "read_E": 16,
+      "read_nfly": 16,
+      "write_E": 16,
+      "write_line_entries": 16,
+      "write_trackers": 16,
+      "tokens_T": 16,
+      "ace_manager_ctx": 4,
+      "snoop_ctx_S": 4,
+      "LUT": 63374,
+      "FF": 22872,
+      "LUT_increase": 5316,
+      "FF_increase": 1303,
+      "LUT_vs_B1_pct": 9.16,
+      "FF_vs_B1_pct": 6.04
+    },
+    {
+      "config": "B1-T8",
+      "design": "B1",
+      "read_E": 8,
+      "read_nfly": 8,
+      "write_E": 8,
+      "write_line_entries": 8,
+      "write_trackers": 8,
+      "tokens_T": 16,
+      "ace_manager_ctx": 4,
+      "snoop_ctx_S": 4,
+      "LUT": 40056,
+      "FF": 15235,
+      "LUT_increase": 0,
+      "FF_increase": 0,
+      "LUT_vs_B1_pct": 0.0,
+      "FF_vs_B1_pct": 0.0
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "design": "rCCI",
+      "read_E": 8,
+      "read_nfly": 8,
+      "write_E": 8,
+      "write_line_entries": 8,
+      "write_trackers": 8,
+      "tokens_T": 16,
+      "ace_manager_ctx": 4,
+      "snoop_ctx_S": 4,
+      "LUT": 41647,
+      "FF": 15863,
+      "LUT_increase": 1591,
+      "FF_increase": 628,
+      "LUT_vs_B1_pct": 3.97,
+      "FF_vs_B1_pct": 4.12
+    }
+  ],
+  "modules": [
+    {
+      "config": "B1-T16",
+      "block": "read ingress (contexts + line trackers + hazard)",
+      "LUT": 27856,
+      "FF": 9965
+    },
+    {
+      "config": "B1-T16",
+      "block": "write range adapter (contexts + interval CAM)",
+      "LUT": 1837,
+      "FF": 1306
+    },
+    {
+      "config": "B1-T16",
+      "block": "write line ingress (line CAM)",
+      "LUT": 5970,
+      "FF": 1435
+    },
+    {
+      "config": "B1-T16",
+      "block": "core (bus + write line ingress)",
+      "LUT": 6799,
+      "FF": 1988
+    },
+    {
+      "config": "B1-T16",
+      "block": "admission pool",
+      "LUT": 1490,
+      "FF": 52
+    },
+    {
+      "config": "B1-T16",
+      "block": "read service response adapter (512-bit hit data)",
+      "LUT": 4419,
+      "FF": 540
+    },
+    {
+      "config": "B1-T16",
+      "block": "snoop service",
+      "LUT": 4633,
+      "FF": 2627
+    },
+    {
+      "config": "B1-T16",
+      "block": "ACE manager",
+      "LUT": 10993,
+      "FF": 3641
+    },
+    {
+      "config": "B1-T16",
+      "block": "M1 issue arbiter",
+      "LUT": 2,
+      "FF": 1
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "read ingress (contexts + line trackers + hazard)",
+      "LUT": 30756,
+      "FF": 10600
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "write range adapter (contexts + interval CAM)",
+      "LUT": 6062,
+      "FF": 1982
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "write line ingress (line CAM)",
+      "LUT": 6051,
+      "FF": 1435
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "core (bus + write line ingress)",
+      "LUT": 6887,
+      "FF": 1988
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "admission pool",
+      "LUT": 932,
+      "FF": 52
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "read service response adapter (512-bit hit data)",
+      "LUT": 2932,
+      "FF": 532
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "snoop service",
+      "LUT": 4598,
+      "FF": 2623
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "ACE manager",
+      "LUT": 10903,
+      "FF": 3641
+    },
+    {
+      "config": "R-E16-RW16-WE16-WW16",
+      "block": "M1 issue arbiter",
+      "LUT": 0,
+      "FF": 1
+    },
+    {
+      "config": "B1-T8",
+      "block": "read ingress (contexts + line trackers + hazard)",
+      "LUT": 13016,
+      "FF": 4925
+    },
+    {
+      "config": "B1-T8",
+      "block": "write range adapter (contexts + interval CAM)",
+      "LUT": 1372,
+      "FF": 695
+    },
+    {
+      "config": "B1-T8",
+      "block": "write line ingress (line CAM)",
+      "LUT": 2982,
+      "FF": 736
+    },
+    {
+      "config": "B1-T8",
+      "block": "core (bus + write line ingress)",
+      "LUT": 3761,
+      "FF": 1272
+    },
+    {
+      "config": "B1-T8",
+      "block": "admission pool",
+      "LUT": 1165,
+      "FF": 52
+    },
+    {
+      "config": "B1-T8",
+      "block": "read service response adapter (512-bit hit data)",
+      "LUT": 4742,
+      "FF": 565
+    },
+    {
+      "config": "B1-T8",
+      "block": "snoop service",
+      "LUT": 4908,
+      "FF": 2627
+    },
+    {
+      "config": "B1-T8",
+      "block": "ACE manager",
+      "LUT": 10965,
+      "FF": 3641
+    },
+    {
+      "config": "B1-T8",
+      "block": "M1 issue arbiter",
+      "LUT": 1,
+      "FF": 1
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "read ingress (contexts + line trackers + hazard)",
+      "LUT": 14885,
+      "FF": 5257
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "write range adapter (contexts + interval CAM)",
+      "LUT": 3129,
+      "FF": 1035
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "write line ingress (line CAM)",
+      "LUT": 2971,
+      "FF": 736
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "core (bus + write line ingress)",
+      "LUT": 3751,
+      "FF": 1272
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "admission pool",
+      "LUT": 1037,
+      "FF": 52
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "read service response adapter (512-bit hit data)",
+      "LUT": 3047,
+      "FF": 537
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "snoop service",
+      "LUT": 4602,
+      "FF": 2627
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "ACE manager",
+      "LUT": 11232,
+      "FF": 3641
+    },
+    {
+      "config": "R-E8-RW8-WE8-WW8",
+      "block": "M1 issue arbiter",
+      "LUT": 1,
+      "FF": 1
+    }
+  ],
+  "cam": [
+    {
+      "config": "LINE-T16",
+      "entries": 16,
+      "LUT": 3568,
+      "FF": 1442
+    },
+    {
+      "config": "LINE-T8",
+      "entries": 8,
+      "LUT": 1785,
+      "FF": 962
+    },
+    {
+      "config": "INTERVAL-E16",
+      "entries": 16,
+      "LUT": 2243,
+      "FF": 1390
+    },
+    {
+      "config": "INTERVAL-E8",
+      "entries": 8,
+      "LUT": 1119,
+      "FF": 854
+    }
+  ]
+}

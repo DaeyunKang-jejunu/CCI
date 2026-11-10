@@ -1,0 +1,1247 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Sep 28 18:25:07 2026
+# Process ID: 24704
+# Current directory: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW
+# Command line: vivado.exe -mode batch -source synth/run_b1.tcl -log reports/B1_vivado.log -journal reports/B1_vivado.jou
+# Log file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/B1_vivado.log
+# Journal file: C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW\reports/B1_vivado.jou
+# Running On        :DESKTOP-SOHK4NB
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34067 MB
+# Swap memory       :2147 MB
+# Total Virtual     :36215 MB
+# Available Virtual :5736 MB
+#-----------------------------------------------------------
+source synth/run_b1.tcl
+# set argv [list B1 5.0]
+# set argc 2
+# source [file join [file dirname [info script]] run_impl.tcl]
+## set variant [expr {$argc>0 ? [lindex $argv 0] : "P"}]
+## set period [expr {$argc>1 ? [lindex $argv 1] : 5.0}]
+## set part [expr {$argc>2 ? [lindex $argv 2] : "xczu7ev-ffvc1156-2-e"}]
+## if {$variant ni {B0 B1 P}} {error "variant must be B0, B1 or P"}
+## set mode [dict get {B0 0 B1 1 P 2} $variant]
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set out [file join $root reports $variant]
+## file mkdir $out
+## set fd [open [file join $root scripts rtl.f] r]
+## foreach line [split [read $fd] \n] {
+##     set line [string trim $line]
+##     if {$line eq "" || [string match "+incdir+*" $line]} {continue}
+##     read_verilog -sv [file join $root $line]
+## }
+read_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 628.516 ; gain = 197.637
+## close $fd
+## synth_design -top synth_register_shell -part $part -mode out_of_context \
+##     -include_dirs [list [file join $root rtl common]] \
+##     -generic [list MODE=$mode ID_WIDTH=4 ADDR_WIDTH=64 DATA_WIDTH=128 \
+##         MAX_OUTSTANDING_TRANSACTIONS=16 M1_INGRESS_DEPTH=16 LINE_TRACKER_ENTRIES=16 CONV_AC_FIFO_DEPTH=16]
+Command: synth_design -top synth_register_shell -part xczu7ev-ffvc1156-2-e -mode out_of_context -include_dirs C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common -generic {MODE=1 ID_WIDTH=4 ADDR_WIDTH=64 DATA_WIDTH=128 MAX_OUTSTANDING_TRANSACTIONS=16 M1_INGRESS_DEPTH=16 LINE_TRACKER_ENTRIES=16 CONV_AC_FIFO_DEPTH=16}
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20196
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1086.371 ; gain = 454.867
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11067] parameter 'LINES_PER_PAGE' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:11]
+WARNING: [Synth 8-11067] parameter 'ADDR_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:12]
+WARNING: [Synth 8-11067] parameter 'SRC_ID_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:13]
+WARNING: [Synth 8-11067] parameter 'LINE_CNT_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:14]
+WARNING: [Synth 8-11067] parameter 'REQ_TYPE_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:15]
+WARNING: [Synth 8-11067] parameter 'PAGE_OFF_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:16]
+WARNING: [Synth 8-11067] parameter 'LINE_OFF_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:17]
+WARNING: [Synth 8-11067] parameter 'LINE_IDX_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:18]
+WARNING: [Synth 8-11067] parameter 'BASE_PAGE_W' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:19]
+WARNING: [Synth 8-11067] parameter 'ACSNOOP_MAKEINVALID' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:37]
+WARNING: [Synth 8-11067] parameter 'CTX_BITS' declared inside package 'cci_pkg' shall be treated as localparam [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/cci_pkg.sv:54]
+INFO: [Synth 8-6157] synthesizing module 'synth_register_shell' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:1]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter M1_INGRESS_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter LINE_TRACKER_ENTRIES bound to: 32'sb00000000000000000000000000010000 
+	Parameter CONV_AC_FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter MODE bound to: 32'sb00000000000000000000000000000001 
+INFO: [Synth 8-6157] synthesizing module 'm0_snoop_endpoint' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/m0_snoop_endpoint.sv:3]
+	Parameter DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter LATENCY bound to: 32'sb00000000000000000000000000001000 
+INFO: [Synth 8-6155] done synthesizing module 'm0_snoop_endpoint' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/m0_snoop_endpoint.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'axi_cci_top' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter M1_INGRESS_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter LINE_TRACKER_ENTRIES bound to: 32'sb00000000000000000000000000010000 
+	Parameter CONV_AC_FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+	Parameter COHERENT bound to: 1'b1 
+	Parameter USE_RANGE bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'coh_write_ingress' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+	Parameter USE_RANGE bound to: 1'b0 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter TRACKERS bound to: 32'sb00000000000000000000000000010000 
+	Parameter AC_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter RANGE_MAX_ACTIVE_CYCLES bound to: 32'sb00000000000000011000011010100000 
+INFO: [Synth 8-6155] done synthesizing module 'coh_write_ingress' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'axi4_simple_2to1_bus_arbiter' [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010000000 
+	Parameter MAX_OUTSTANDING_TRANSACTIONS bound to: 32'sb00000000000000000000000000010000 
+	Parameter INGRESS_IDX_WIDTH bound to: 32'sb00000000000000000000000000000100 
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:453]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:456]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:456]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:485]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:493]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:500]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:560]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:563]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:566]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:566]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:592]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_simple_2to1_bus_arbiter' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cci_top' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/top/axi_cci_top.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'synth_register_shell' (0#1) [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:1]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[0][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[1][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[2][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[3][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[4][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[5][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[6][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[7][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[8][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[9][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[10][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[11][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[12][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[13][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[14][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-6014] Unused sequential element trackers_reg[15][ingress_idx] was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/coh_write_ingress.sv:203]
+WARNING: [Synth 8-7137] Register ac_fifo_reg in module coh_write_ingress has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'ac_fifo_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "ac_fifo_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register wr_q_reg[0][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[0][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[0][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[0][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[1][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[1][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[1][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[1][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[2][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[2][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[2][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[2][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[3][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[3][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[3][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[3][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[4][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[4][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[4][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[4][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[5][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[5][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[5][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[5][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[6][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[6][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[6][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[6][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[7][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[7][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[7][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[7][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[8][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[8][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[8][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[8][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[9][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[9][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[9][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[9][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[10][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[10][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[10][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[10][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[11][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[11][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[11][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[11][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[12][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[12][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[12][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[12][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[13][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[13][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[13][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[13][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[14][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[14][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[14][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[14][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[15][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[15][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[15][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register wr_q_reg[15][ingress_idx] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:434]
+WARNING: [Synth 8-7137] Register rd_q_reg[0][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[0][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[0][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[1][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[1][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[1][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[2][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[2][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[2][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[3][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[3][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[3][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[4][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[4][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[4][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[5][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[5][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[5][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[6][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[6][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[6][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[7][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[7][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[7][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[8][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[8][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[8][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[9][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[9][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[9][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[10][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[10][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[10][len] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[11][route] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+WARNING: [Synth 8-7137] Register rd_q_reg[11][id] in module axi4_simple_2to1_bus_arbiter has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:255]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element rr_state_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/axi4_simple_2to1_bus_arbiter.sv:538]
+WARNING: [Synth 8-6014] Unused sequential element ACREADY_q_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:329]
+WARNING: [Synth 8-6014] Unused sequential element CRVALID_q_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:332]
+WARNING: [Synth 8-6014] Unused sequential element CRRESP_q_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:334]
+WARNING: [Synth 8-6014] Unused sequential element snoop_idle_q_reg was removed.  [C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/rtl/common/synth_register_shell.sv:335]
+WARNING: [Synth 8-7129] Port m0_araddr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_araddr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m0_awaddr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_valid in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[63] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[62] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[61] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[60] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[59] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[58] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[57] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[56] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[55] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[54] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[53] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[52] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[51] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[50] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[49] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[48] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[47] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[46] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[45] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[44] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[43] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[42] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[41] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[40] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[39] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[38] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[37] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[36] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[35] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[34] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[33] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[32] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[31] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[30] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[29] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[28] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[27] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[26] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[25] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[24] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[23] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[22] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[21] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[20] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[19] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[18] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[17] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[16] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[15] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[14] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[13] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[12] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[11] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[10] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[9] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[8] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[7] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[6] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[5] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[4] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[3] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[2] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[1] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_addr[0] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[63] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[62] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[61] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[60] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[59] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[58] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[57] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[56] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[55] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[54] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[53] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[52] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[51] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[50] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[49] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[48] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[47] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[46] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[45] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[44] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[43] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[42] in module coh_write_ingress is either unconnected or has no load
+WARNING: [Synth 8-7129] Port setup_mask[41] in module coh_write_ingress is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1266.371 ; gain = 634.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1266.371 ; gain = 634.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1266.371 ; gain = 634.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1415.793 ; gain = 784.289
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 7     
+	   2 Input    4 Bit       Adders := 59    
+	   9 Input    4 Bit       Adders := 1     
+	   5 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
+	   3 Input    2 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 6     
+	               64 Bit    Registers := 28    
+	               58 Bit    Registers := 16    
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 56    
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 12    
+	                4 Bit    Registers := 135   
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 191   
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 6     
+	   2 Input    5 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 154   
+	   2 Input    3 Bit        Muxes := 8     
+	   3 Input    2 Bit        Muxes := 6     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 605   
+	   3 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |   192|
+|2     |LUT1   |    33|
+|3     |LUT2   |   186|
+|4     |LUT3   |   227|
+|5     |LUT4   |   199|
+|6     |LUT5   |   209|
+|7     |LUT6   |  4921|
+|8     |MUXF7  |   357|
+|9     |MUXF8  |   100|
+|10    |FDCE   |  2589|
+|11    |FDPE   |     2|
+|12    |FDRE   |  1778|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------+-----------------------------+------+
+|      |Instance                     |Module                       |Cells |
++------+-----------------------------+-----------------------------+------+
+|1     |top                          |                             | 10793|
+|2     |  \common_endpoint.endpoint  |m0_snoop_endpoint            |   249|
+|3     |  dut                        |axi_cci_top                  |  9305|
+|4     |    bus                      |axi4_simple_2to1_bus_arbiter |  1225|
+|5     |    \coherent.control        |coh_write_ingress            |  8079|
++------+-----------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 609 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2449.957 ; gain = 1818.453
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 2449.957 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 649 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2449.957 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e9854124
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 238 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2449.957 ; gain = 1821.441
+## create_clock -name ACLK -period $period [get_ports ACLK]
+## set_false_path -from [get_ports ARESETn]
+## set_false_path -from [get_ports -filter {DIRECTION == IN && NAME != ACLK && NAME != ARESETn}]
+## set_false_path -to [get_ports -filter {DIRECTION == OUT}]
+## write_checkpoint -force [file join $out post_synth.dcp]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2850.898 ; gain = 0.180
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/B1/post_synth.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2855.203 ; gain = 405.246
+## report_utilization -file [file join $out post_synth_utilization.rpt]
+## report_utilization -hierarchical -file [file join $out post_synth_hier.rpt]
+## opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.823 . Memory (MB): peak = 2890.969 ; gain = 35.766
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2890.969 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1efcefcd4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 12 pins
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2591 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 168962183
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Retarget | Checksum: 168962183
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 2 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 168962183
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Constant propagation | Checksum: 168962183
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 1d5c481aa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Sweep | Checksum: 1d5c481aa
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 1d5c481aa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+BUFG optimization | Checksum: 1d5c481aa
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1d5c481aa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Shift Register Optimization | Checksum: 1d5c481aa
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1d5c481aa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Post Processing Netlist | Checksum: 1d5c481aa
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Phase 9 Finalization | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               2  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1d81cd503
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3239.160 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+## place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: ff20ba90
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3239.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3239.160 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1df421635
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1f3515dd8
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1f3515dd8
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 3904.289 ; gain = 665.129
+Phase 1 Placer Initialization | Checksum: 1f3515dd8
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 25dd07723
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3164] Check ILP status : ILP-based clock placer is skipped.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 294107587
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 294107587
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:28 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 2a1880d29
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 2a1880d29
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+Phase 2.1.1 Partition Driven Placement | Checksum: 2a1880d29
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+Phase 2.1 Floorplanning | Checksum: 27e5dc0f9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 27e5dc0f9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 27e5dc0f9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 3904.289 ; gain = 665.129
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 2b6ccfadb
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:36 . Memory (MB): peak = 3975.418 ; gain = 736.258
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 35 LUTNM shape to break, 45 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 18, two critical 17, total 35, new lutff created 3
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 55 nets or LUTs. Breaked 35 LUTs, combined 20 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 11 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 6 nets.  Re-placed 37 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 6 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 37 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 3975.418 ; gain = 0.000
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3975.418 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           35  |             20  |                    55  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     6  |           0  |           1  |  00:00:01  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           35  |             20  |                    61  |           0  |          10  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 246c6f734
+
+Time (s): cpu = 00:02:41 ; elapsed = 00:01:37 . Memory (MB): peak = 3975.418 ; gain = 736.258
+Phase 2.4 Global Placement Core | Checksum: 2abcb2912
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:42 . Memory (MB): peak = 3975.418 ; gain = 736.258
+Phase 2 Global Placement | Checksum: 2abcb2912
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:42 . Memory (MB): peak = 3975.418 ; gain = 736.258
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2343e6c48
+
+Time (s): cpu = 00:02:59 ; elapsed = 00:01:47 . Memory (MB): peak = 3975.418 ; gain = 736.258
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 23c89aeab
+
+Time (s): cpu = 00:03:00 ; elapsed = 00:01:48 . Memory (MB): peak = 3975.418 ; gain = 736.258
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 2a868bfa4
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:04 . Memory (MB): peak = 3997.254 ; gain = 758.094
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 2ba471026
+
+Time (s): cpu = 00:03:35 ; elapsed = 00:02:10 . Memory (MB): peak = 3999.020 ; gain = 759.859
+Phase 3.3.2 Slice Area Swap | Checksum: 2ba471026
+
+Time (s): cpu = 00:03:35 ; elapsed = 00:02:10 . Memory (MB): peak = 4001.605 ; gain = 762.445
+Phase 3.3 Small Shape DP | Checksum: 24f285925
+
+Time (s): cpu = 00:03:54 ; elapsed = 00:02:21 . Memory (MB): peak = 4005.914 ; gain = 766.754
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 1e57547f1
+
+Time (s): cpu = 00:03:54 ; elapsed = 00:02:21 . Memory (MB): peak = 4005.914 ; gain = 766.754
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 214edc89c
+
+Time (s): cpu = 00:03:54 ; elapsed = 00:02:21 . Memory (MB): peak = 4005.914 ; gain = 766.754
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 34b358d29
+
+Time (s): cpu = 00:03:57 ; elapsed = 00:02:23 . Memory (MB): peak = 4005.914 ; gain = 766.754
+Phase 3 Detail Placement | Checksum: 34b358d29
+
+Time (s): cpu = 00:03:57 ; elapsed = 00:02:23 . Memory (MB): peak = 4005.914 ; gain = 766.754
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 23c5cf595
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.016 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1185cf9e1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 4056.406 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 28ecd3cee
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.122 . Memory (MB): peak = 4056.406 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 23c5cf595
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:02:29 . Memory (MB): peak = 4056.406 ; gain = 817.246
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.504. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1904450bb
+
+Time (s): cpu = 00:04:16 ; elapsed = 00:02:37 . Memory (MB): peak = 4056.406 ; gain = 817.246
+
+Time (s): cpu = 00:04:16 ; elapsed = 00:02:37 . Memory (MB): peak = 4056.406 ; gain = 817.246
+Phase 4.1 Post Commit Optimization | Checksum: 1904450bb
+
+Time (s): cpu = 00:04:16 ; elapsed = 00:02:37 . Memory (MB): peak = 4056.406 ; gain = 817.246
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1904450bb
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                4x4|                1x1|                8x8|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       East|                2x2|                1x1|              16x16|
+|___________|___________________|___________________|___________________|
+|       West|                8x8|                1x1|              16x16|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1904450bb
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+Phase 4.3 Placer Reporting | Checksum: 1904450bb
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4074.301 ; gain = 0.000
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 220d9157e
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+Ending Placer Task | Checksum: 1f835d97e
+
+Time (s): cpu = 00:04:28 ; elapsed = 00:02:45 . Memory (MB): peak = 4074.301 ; gain = 835.141
+41 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:31 ; elapsed = 00:02:47 . Memory (MB): peak = 4074.301 ; gain = 835.141
+## phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+Starting Initial Update Timing Task
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ACLK" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.833 . Memory (MB): peak = 4074.301 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.504 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+## route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 3c4984d1 ConstDB: 0 ShapeSum: bf6ce72b RouteDB: fc7f6d82
+Nodegraph reading from file.  Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 4074.301 ; gain = 0.000
+WARNING: [Route 35-197] Clock port "ACLK" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+WARNING: [Route 35-198] Port "S_RDATA[119]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[119]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[116]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[116]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[111]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[111]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[105]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[105]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[101]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[101]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[86]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[86]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[82]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[82]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[122]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[122]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[26]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[26]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[63]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[63]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[53]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[53]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[46]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[46]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[42]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[42]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[124]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[124]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[106]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[106]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[58]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[58]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[34]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[34]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[98]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[98]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[93]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[93]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[66]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[66]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[57]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[57]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[39]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[39]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[33]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[33]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "S_RDATA[115]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "S_RDATA[115]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[70]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[70]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[70]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[70]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[69]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[69]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[44]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[44]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[43]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[43]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[44]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[44]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[43]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[43]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[64]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[64]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[63]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[63]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[64]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[64]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[63]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[63]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[114]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[114]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[40]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[40]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[39]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[39]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[114]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[114]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[113]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[113]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[40]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[40]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[39]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[39]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[54]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[54]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[53]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[53]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[54]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[54]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[53]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[53]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[118]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[118]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[117]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[117]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[68]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[68]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[67]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[67]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[124]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[124]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[123]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[123]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[98]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[98]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[97]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[97]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[124]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[124]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[123]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[123]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[98]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[98]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[97]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[97]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[88]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[88]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[87]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[87]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[88]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[88]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[87]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[87]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[76]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[76]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M1_WDATA[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M1_WDATA[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[112]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[112]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "M0_WDATA[111]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "M0_WDATA[111]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Post Restoration Checksum: NetGraph: fcf1151d | NumContArr: a73574b8 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 329787f0f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4074.301 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 329787f0f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4074.301 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 329787f0f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4074.301 ; gain = 0.000
+
+Phase 2.3 Global Clock Net Routing
+Phase 2.3 Global Clock Net Routing | Checksum: 329787f0f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 4292.289 ; gain = 217.988
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 2e2706ee6
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 4292.289 ; gain = 217.988
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.720  | TNS=0.000  | WHS=0.029  | THS=0.000  |
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 7398
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 4303
+  Number of Partially Routed Nets     = 3095
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2d18fde54
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 4314.559 ; gain = 240.258
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2d18fde54
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 4314.559 ; gain = 240.258
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 2963d4935
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 4314.559 ; gain = 240.258
+Phase 4 Initial Routing | Checksum: 2ad97cb06
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 4314.559 ; gain = 240.258
+
+INFO: [Route 35-449] Initial Estimated Congestion
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+|           |___________________|___________________|___________________|
+| Direction | Size   | % Tiles  | Size   | % Tiles  | Size   | % Tiles  |
+|___________|________|__________|________|__________|________|__________|
+|      NORTH|     8x8|      0.23|     2x2|      0.09|   16x16|      0.53|
+|___________|________|__________|________|__________|________|__________|
+|      SOUTH|     8x8|      0.08|     1x1|      0.01|   16x16|      0.37|
+|___________|________|__________|________|__________|________|__________|
+|       EAST|     4x4|      0.12|     1x1|      0.00|   16x16|      0.47|
+|___________|________|__________|________|__________|________|__________|
+|       WEST|   16x16|      0.52|     8x8|      0.28|   16x16|      0.94|
+|___________|________|__________|________|__________|________|__________|
+Congestion Report
+GLOBAL Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+WEST
+	INT_X56Y252->INT_X67Y271 (CLEL_L_X56Y252->CLEL_R_X67Y271)
+	INT_X56Y256->INT_X63Y263 (CLEL_L_X56Y256->CLEL_R_X63Y263)
+	INT_X56Y255->INT_X63Y262 (CLEL_L_X56Y255->CLEL_R_X63Y262)
+	INT_X56Y262->INT_X63Y269 (CLEL_L_X56Y262->CLEL_R_X63Y269)
+	INT_X56Y254->INT_X63Y261 (CLEL_L_X56Y254->CLEL_R_X63Y261)
+SHORT Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X55Y251->INT_X62Y274 (CLEM_X55Y251->CLEL_R_X62Y274)
+	INT_X56Y264->INT_X63Y271 (CLEL_L_X56Y264->CLEL_R_X63Y271)
+	INT_X56Y256->INT_X63Y263 (CLEL_L_X56Y256->CLEL_R_X63Y263)
+	INT_X56Y263->INT_X63Y270 (CLEL_L_X56Y263->CLEL_R_X63Y270)
+	INT_X56Y255->INT_X63Y262 (CLEL_L_X56Y255->CLEL_R_X63Y262)
+SOUTH
+	INT_X53Y248->INT_X60Y263 (CLEM_X53Y248->CLEL_R_X60Y263)
+	INT_X56Y248->INT_X63Y255 (CLEL_L_X56Y248->CLEL_R_X63Y255)
+	INT_X56Y253->INT_X63Y260 (CLEL_L_X56Y253->CLEL_R_X63Y260)
+	INT_X56Y252->INT_X63Y259 (CLEL_L_X56Y252->CLEL_R_X63Y259)
+	INT_X56Y251->INT_X63Y258 (CLEL_L_X56Y251->CLEL_R_X63Y258)
+EAST
+	INT_X52Y248->INT_X59Y271 (CLEM_X52Y248->CLEL_R_X59Y271)
+	INT_X56Y268->INT_X59Y271 (CLEL_L_X56Y268->CLEL_R_X59Y271)
+	INT_X56Y264->INT_X59Y267 (CLEL_L_X56Y264->CLEL_R_X59Y267)
+	INT_X52Y260->INT_X55Y263 (CLEM_X52Y260->CLEL_R_X55Y263)
+	INT_X56Y260->INT_X59Y263 (CLEL_L_X56Y260->CLEL_R_X59Y263)
+WEST
+	INT_X52Y252->INT_X67Y275 (CLEM_X52Y252->CLEL_R_X67Y275)
+	INT_X50Y255->INT_X65Y270 (CLEM_X50Y255->DSP_X65Y270)
+	INT_X50Y254->INT_X65Y269 (CLEM_X50Y254->DSP_X65Y265)
+	INT_X50Y253->INT_X65Y268 (CLEM_X50Y253->DSP_X65Y265)
+	INT_X50Y252->INT_X65Y267 (CLEM_X50Y252->DSP_X65Y265)
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 8631
+ Number of Nodes with overlaps = 3332
+ Number of Nodes with overlaps = 1784
+ Number of Nodes with overlaps = 1155
+ Number of Nodes with overlaps = 822
+ Number of Nodes with overlaps = 663

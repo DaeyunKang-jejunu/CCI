@@ -1,0 +1,938 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date              : Tue Oct  6 14:50:26 2026
+| Host              : DESKTOP-SOHK4NB running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261006T054606Z_a9d2a1fa/P/critical_paths.rpt
+| Design            : axi_cci_ace_top
+| Device            : xczu7ev-ffvc1156
+| Speed File        : -2  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.530ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][12]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.264ns  (logic 1.391ns (32.624%)  route 2.873ns (67.376%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 6.972 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.628     6.516    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.972     6.972    manager/ACLK
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][12]/C
+                         clock pessimism              0.169     7.141    
+                         clock uncertainty           -0.035     7.106    
+    SLICE_X85Y206        FDRE (Setup_HFF_SLICEL_C_CE)
+                                                     -0.060     7.046    manager/exclusive_line_reg[9][12]
+  -------------------------------------------------------------------
+                         required time                          7.046    
+                         arrival time                          -6.516    
+  -------------------------------------------------------------------
+                         slack                                  0.530    
+
+Slack (MET) :             0.530ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][22]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.264ns  (logic 1.391ns (32.624%)  route 2.873ns (67.376%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 6.972 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.628     6.516    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][22]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.972     6.972    manager/ACLK
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][22]/C
+                         clock pessimism              0.169     7.141    
+                         clock uncertainty           -0.035     7.106    
+    SLICE_X85Y206        FDRE (Setup_GFF_SLICEL_C_CE)
+                                                     -0.060     7.046    manager/exclusive_line_reg[9][22]
+  -------------------------------------------------------------------
+                         required time                          7.046    
+                         arrival time                          -6.516    
+  -------------------------------------------------------------------
+                         slack                                  0.530    
+
+Slack (MET) :             0.530ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][30]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.264ns  (logic 1.391ns (32.624%)  route 2.873ns (67.376%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 6.972 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.628     6.516    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][30]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.972     6.972    manager/ACLK
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][30]/C
+                         clock pessimism              0.169     7.141    
+                         clock uncertainty           -0.035     7.106    
+    SLICE_X85Y206        FDRE (Setup_FFF_SLICEL_C_CE)
+                                                     -0.060     7.046    manager/exclusive_line_reg[9][30]
+  -------------------------------------------------------------------
+                         required time                          7.046    
+                         arrival time                          -6.516    
+  -------------------------------------------------------------------
+                         slack                                  0.530    
+
+Slack (MET) :             0.530ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][45]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.264ns  (logic 1.391ns (32.624%)  route 2.873ns (67.376%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 6.972 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.628     6.516    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][45]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.972     6.972    manager/ACLK
+    SLICE_X85Y206        FDRE                                         r  manager/exclusive_line_reg[9][45]/C
+                         clock pessimism              0.169     7.141    
+                         clock uncertainty           -0.035     7.106    
+    SLICE_X85Y206        FDRE (Setup_EFF_SLICEL_C_CE)
+                                                     -0.060     7.046    manager/exclusive_line_reg[9][45]
+  -------------------------------------------------------------------
+                         required time                          7.046    
+                         arrival time                          -6.516    
+  -------------------------------------------------------------------
+                         slack                                  0.530    
+
+Slack (MET) :             0.549ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][11]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.242ns  (logic 1.391ns (32.792%)  route 2.851ns (67.208%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.113ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.969ns = ( 6.969 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.170ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.606     6.494    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X82Y205        FDRE                                         r  manager/exclusive_line_reg[9][11]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.969     6.969    manager/ACLK
+    SLICE_X82Y205        FDRE                                         r  manager/exclusive_line_reg[9][11]/C
+                         clock pessimism              0.170     7.139    
+                         clock uncertainty           -0.035     7.103    
+    SLICE_X82Y205        FDRE (Setup_DFF_SLICEL_C_CE)
+                                                     -0.060     7.043    manager/exclusive_line_reg[9][11]
+  -------------------------------------------------------------------
+                         required time                          7.043    
+                         arrival time                          -6.494    
+  -------------------------------------------------------------------
+                         slack                                  0.549    
+
+Slack (MET) :             0.550ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[9][42]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.247ns  (logic 1.391ns (32.753%)  route 2.856ns (67.247%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.976ns = ( 6.976 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.223     5.525    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X86Y218        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.088     5.613 r  manager/exclusive_line[9][57]_i_2/O
+                         net (fo=2, routed)           0.108     5.721    manager/exclusive_line[9][57]_i_2_n_0
+    SLICE_X86Y217        LUT2 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.167     5.888 r  manager/exclusive_line[9][57]_i_1/O
+                         net (fo=58, routed)          0.611     6.499    manager/exclusive_line[9][57]_i_1_n_0
+    SLICE_X81Y205        FDRE                                         r  manager/exclusive_line_reg[9][42]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.976     6.976    manager/ACLK
+    SLICE_X81Y205        FDRE                                         r  manager/exclusive_line_reg[9][42]/C
+                         clock pessimism              0.169     7.145    
+                         clock uncertainty           -0.035     7.110    
+    SLICE_X81Y205        FDRE (Setup_DFF_SLICEM_C_CE)
+                                                     -0.061     7.049    manager/exclusive_line_reg[9][42]
+  -------------------------------------------------------------------
+                         required time                          7.049    
+                         arrival time                          -6.499    
+  -------------------------------------------------------------------
+                         slack                                  0.550    
+
+Slack (MET) :             0.564ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[8][15]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.234ns  (logic 1.384ns (32.688%)  route 2.850ns (67.312%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.976ns = ( 6.976 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.238     5.540    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X83Y218        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.125     5.665 r  manager/exclusive_line[8][57]_i_2/O
+                         net (fo=2, routed)           0.173     5.838    manager/exclusive_line[8][57]_i_2_n_0
+    SLICE_X83Y212        LUT2 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.123     5.961 r  manager/exclusive_line[8][57]_i_1/O
+                         net (fo=58, routed)          0.525     6.486    manager/exclusive_line[8][57]_i_1_n_0
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][15]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.976     6.976    manager/ACLK
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][15]/C
+                         clock pessimism              0.169     7.145    
+                         clock uncertainty           -0.035     7.110    
+    SLICE_X82Y201        FDRE (Setup_EFF2_SLICEL_C_CE)
+                                                     -0.060     7.050    manager/exclusive_line_reg[8][15]
+  -------------------------------------------------------------------
+                         required time                          7.050    
+                         arrival time                          -6.486    
+  -------------------------------------------------------------------
+                         slack                                  0.564    
+
+Slack (MET) :             0.564ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[8][21]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.234ns  (logic 1.384ns (32.688%)  route 2.850ns (67.312%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.976ns = ( 6.976 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.238     5.540    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X83Y218        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.125     5.665 r  manager/exclusive_line[8][57]_i_2/O
+                         net (fo=2, routed)           0.173     5.838    manager/exclusive_line[8][57]_i_2_n_0
+    SLICE_X83Y212        LUT2 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.123     5.961 r  manager/exclusive_line[8][57]_i_1/O
+                         net (fo=58, routed)          0.525     6.486    manager/exclusive_line[8][57]_i_1_n_0
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][21]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.976     6.976    manager/ACLK
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][21]/C
+                         clock pessimism              0.169     7.145    
+                         clock uncertainty           -0.035     7.110    
+    SLICE_X82Y201        FDRE (Setup_FFF2_SLICEL_C_CE)
+                                                     -0.060     7.050    manager/exclusive_line_reg[8][21]
+  -------------------------------------------------------------------
+                         required time                          7.050    
+                         arrival time                          -6.486    
+  -------------------------------------------------------------------
+                         slack                                  0.564    
+
+Slack (MET) :             0.566ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[8][14]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.232ns  (logic 1.384ns (32.703%)  route 2.848ns (67.297%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.976ns = ( 6.976 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.238     5.540    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X83Y218        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.125     5.665 r  manager/exclusive_line[8][57]_i_2/O
+                         net (fo=2, routed)           0.173     5.838    manager/exclusive_line[8][57]_i_2_n_0
+    SLICE_X83Y212        LUT2 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.123     5.961 r  manager/exclusive_line[8][57]_i_1/O
+                         net (fo=58, routed)          0.523     6.484    manager/exclusive_line[8][57]_i_1_n_0
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][14]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.976     6.976    manager/ACLK
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][14]/C
+                         clock pessimism              0.169     7.145    
+                         clock uncertainty           -0.035     7.110    
+    SLICE_X82Y201        FDRE (Setup_EFF_SLICEL_C_CE)
+                                                     -0.060     7.050    manager/exclusive_line_reg[8][14]
+  -------------------------------------------------------------------
+                         required time                          7.050    
+                         arrival time                          -6.484    
+  -------------------------------------------------------------------
+                         slack                                  0.566    
+
+Slack (MET) :             0.566ns  (required time - arrival time)
+  Source:                 service/controller/state_reg[1]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/exclusive_line_reg[8][1]/CE
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.232ns  (logic 1.384ns (32.703%)  route 2.848ns (67.297%))
+  Logic Levels:           15  (LUT2=2 LUT3=1 LUT4=2 LUT5=1 LUT6=9)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.976ns = ( 6.976 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.252ns
+    Clock Pessimism Removal (CPR):    0.169ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4763, unset)         2.252     2.252    service/controller/ACLK
+    SLICE_X85Y225        FDCE                                         r  service/controller/state_reg[1]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y225        FDCE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     2.333 f  service/controller/state_reg[1]_rep__2/Q
+                         net (fo=59, routed)          0.216     2.549    service/controller/state_reg[1]_rep__2_n_0
+    SLICE_X85Y225        LUT3 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.157     2.706 f  service/controller/req_ready_INST_0_i_5/O
+                         net (fo=1, routed)           0.159     2.865    service/controller/inner_rsp_valid
+    SLICE_X85Y225        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.090     2.955 f  service/controller/req_ready_INST_0_i_2/O
+                         net (fo=11, routed)          0.109     3.064    manager/fault_0
+    SLICE_X85Y224        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.133     3.197 f  manager/fault_INST_0/O
+                         net (fo=2, routed)           0.228     3.425    manager/fault
+    SLICE_X85Y224        LUT6 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.090     3.515 f  manager/maintenance_busy_INST_0/O
+                         net (fo=18, routed)          0.144     3.659    core/coherent.control/proposed.rim/proposed.setup_error_reg
+    SLICE_X85Y227        LUT4 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     3.725 r  core/coherent.control/proposed.rim/admission_freeze_INST_0/O
+                         net (fo=4, routed)           0.214     3.939    core/coherent.control/proposed.rim/ctx_reg[valid]_2
+    SLICE_X84Y229        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.052     3.991 r  core/coherent.control/proposed.rim/req_ready_INST_0_i_8/O
+                         net (fo=1, routed)           0.048     4.039    core/coherent.control/proposed.rim/req_ready_INST_0_i_8_n_0
+    SLICE_X84Y229        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     4.092 f  core/coherent.control/proposed.rim/req_ready_INST_0_i_6/O
+                         net (fo=2, routed)           0.275     4.367    service/controller/addr[63]_i_6
+    SLICE_X85Y224        LUT5 (Prop_F5LUT_SLICEL_I4_O)
+                                                      0.143     4.510 f  service/controller/req_ready_INST_0_i_4/O
+                         net (fo=4, routed)           0.131     4.641    manager/addr[63]_i_3
+    SLICE_X85Y224        LUT6 (Prop_E6LUT_SLICEL_I5_O)
+                                                      0.099     4.740 r  manager/addr[63]_i_6/O
+                         net (fo=2, routed)           0.044     4.784    manager/protocol_error_reg_0
+    SLICE_X85Y224        LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.035     4.819 r  manager/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=1, routed)           0.044     4.863    manager/accept_enable0
+    SLICE_X85Y223        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.036     4.899 f  manager/ACE_ARREADY_INST_0_i_2/O
+                         net (fo=4, routed)           0.099     4.997    manager/ACE_ARREADY_INST_0_i_2_n_0
+    SLICE_X85Y222        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.051     5.048 r  manager/txn_addr[63]_i_4/O
+                         net (fo=121, routed)         0.204     5.252    manager/state1168_out
+    SLICE_X85Y220        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.302 f  manager/exclusive_line[2][57]_i_2/O
+                         net (fo=19, routed)          0.238     5.540    manager/exclusive_line[2][57]_i_2_n_0
+    SLICE_X83Y218        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.125     5.665 r  manager/exclusive_line[8][57]_i_2/O
+                         net (fo=2, routed)           0.173     5.838    manager/exclusive_line[8][57]_i_2_n_0
+    SLICE_X83Y212        LUT2 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.123     5.961 r  manager/exclusive_line[8][57]_i_1/O
+                         net (fo=58, routed)          0.523     6.484    manager/exclusive_line[8][57]_i_1_n_0
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4763, unset)         1.976     6.976    manager/ACLK
+    SLICE_X82Y201        FDRE                                         r  manager/exclusive_line_reg[8][1]/C
+                         clock pessimism              0.169     7.145    
+                         clock uncertainty           -0.035     7.110    
+    SLICE_X82Y201        FDRE (Setup_FFF_SLICEL_C_CE)
+                                                     -0.060     7.050    manager/exclusive_line_reg[8][1]
+  -------------------------------------------------------------------
+                         required time                          7.050    
+                         arrival time                          -6.484    
+  -------------------------------------------------------------------
+                         slack                                  0.566    
+
+
+
+

@@ -1,0 +1,179 @@
+normal                   case  1 wr_range_vs_writeback            ownership PASS 
+normal                   case  1 wr_range_vs_writeback            data      PASS 
+normal                   case  2 rd_range_vs_readunique           ownership PASS 
+normal                   case  2 rd_range_vs_readunique           data      PASS 
+normal                   case  3 rd_range_vs_writeback            ownership PASS 
+normal                   case  3 rd_range_vs_writeback            data      PASS 
+normal                   case  4 wr_range_vs_readshared           ownership PASS 
+normal                   case  4 wr_range_vs_readshared           data      PASS 
+normal                   case  5 wr_range_vs_ns_read_burst        ownership PASS 
+normal                   case  5 wr_range_vs_ns_read_burst        data      PASS 
+normal                   case  6 rd_range_vs_ns_write             ownership PASS 
+normal                   case  6 rd_range_vs_ns_write             data      PASS 
+normal                   case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+normal                   case  7 b1_rd_vs_ace_ar_same_cycle       data      PASS 
+normal                   case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+normal                   case  8 b1_wr_vs_ace_aw_same_cycle       data      PASS 
+normal                   case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+normal                   case  9 b1_wr_vs_ace_ar_same_cycle       data      PASS 
+normal                   case 10 ace_ns_burst_tail_vs_owned_line  ownership PASS 
+normal                   case 10 ace_ns_burst_tail_vs_owned_line  data      PASS 
+normal                   case 11 wr_hold_late_ace                 ownership PASS 
+normal                   case 11 wr_hold_late_ace                 data      PASS 
+normal                   case 13 wr_hold_reset                    ownership PASS 
+normal                   case 13 wr_hold_reset                    data      PASS 
+normal                   case 14 non_overblock_other_line         ownership PASS 
+normal                   case 14 non_overblock_other_line         data      PASS 
+normal                   case 15 same_cycle_ace_vs_range_issue    ownership PASS 
+normal                   case 15 same_cycle_ace_vs_range_issue    data      PASS 
+normal                   case 16 ace_burst_tail_ahead_of_range    ownership PASS 
+normal                   case 16 ace_burst_tail_ahead_of_range    data      PASS 
+normal                   case 17 top_address_page_interval        ownership PASS 
+normal                   case 17 top_address_page_interval        data      PASS 
+normal                   case 18 range64_read_write_together      ownership PASS 
+normal                   case 18 range64_read_write_together      data      PASS 
+normal                   case 12 wr_hold_late_read                ownership PASS 
+normal                   case 12 wr_hold_late_read                data      PASS 
+normal                   case 19 read_first_write_covers_future   ownership PASS 
+normal                   case 19 read_first_write_covers_future   data      PASS 
+normal                   case 20 write_first_read_covers_future   ownership PASS 
+normal                   case 20 write_first_read_covers_future   data      PASS 
+normal                   case 21 read_write_same_lines_together   ownership PASS 
+normal                   case 21 read_write_same_lines_together   data      PASS 
+normal                   case 22 error_only_write_interval_release ownership PASS 
+normal                   case 22 error_only_write_interval_release data      PASS 
+normal                   case 23 error_only_read_interval_release ownership PASS 
+normal                   case 23 error_only_read_interval_release data      PASS 
+normal                   case 24 reset_lifetime_reuse             ownership PASS 
+normal                   case 24 reset_lifetime_reuse             data      PASS 
+normal                   case 25 fatal_lifetime_no_new_issue      ownership PASS 
+normal                   case 25 fatal_lifetime_no_new_issue      data      PASS 
+normal                   case 26 m0_waits_while_ace_busy_no_phantom ownership PASS REVIEW_M0_
+normal                   case 26 m0_waits_while_ace_busy_no_phantom data      PASS REVIEW_M0_
+normal                   case 27 m0_granted_valid_kept_under_hazard ownership PASS 
+normal                   case 27 m0_granted_valid_kept_under_hazard data      PASS 
+normal                   case 28 ace_waits_for_presented_m0       ownership PASS 
+normal                   case 28 ace_waits_for_presented_m0       data      PASS 
+normal                   case 29 cpu_refill_not_blocked_by_dma_r  ownership PASS 
+normal                   case 29 cpu_refill_not_blocked_by_dma_r  data      PASS 
+normal                   case 30 m0_burst_tail_vs_owned_line      ownership PASS 
+normal                   case 30 m0_burst_tail_vs_owned_line      data      PASS 
+normal                   case 31 evict_owns_no_line               ownership PASS 
+normal                   case 31 evict_owns_no_line               data      PASS 
+gate_busy                case  1 wr_range_vs_writeback            ownership PASS 
+gate_busy                case  3 rd_range_vs_writeback            ownership PASS 
+gate_busy                case  4 wr_range_vs_readshared           ownership PASS 
+gate_busy                case  5 wr_range_vs_ns_read_burst        ownership PASS 
+gate_busy                case  6 rd_range_vs_ns_write             ownership PASS 
+gate_busy                case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+gate_busy                case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+gate_busy                case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+gate_busy                case 10 ace_ns_burst_tail_vs_owned_line  ownership PASS 
+gate_busy                case 11 wr_hold_late_ace                 ownership PASS 
+gate_busy                case 13 wr_hold_reset                    ownership PASS 
+gate_busy                case 14 non_overblock_other_line         ownership FAIL FIX1_OVERBLOCK
+gate_busy                case 15 same_cycle_ace_vs_range_issue    ownership PASS 
+gate_busy                case 16 ace_burst_tail_ahead_of_range    ownership FAIL ACE_INTEGRATION_TIMEOUT
+gate_busy                case 17 top_address_page_interval        ownership PASS 
+gate_busy                case 18 range64_read_write_together      ownership PASS 
+gate_busy                case 12 wr_hold_late_read                ownership PASS 
+gate_busy                case 19 read_first_write_covers_future   ownership PASS 
+gate_busy                case 20 write_first_read_covers_future   ownership PASS 
+gate_busy                case 21 read_write_same_lines_together   ownership PASS 
+gate_busy                case 22 error_only_write_interval_release ownership PASS 
+gate_busy                case 23 error_only_read_interval_release ownership PASS 
+gate_busy                case 24 reset_lifetime_reuse             ownership PASS 
+gate_busy                case 25 fatal_lifetime_no_new_issue      ownership PASS 
+gate_busy                case 26 m0_waits_while_ace_busy_no_phantom ownership PASS REVIEW_M0_
+gate_busy                case 27 m0_granted_valid_kept_under_hazard ownership PASS 
+gate_busy                case 28 ace_waits_for_presented_m0       ownership PASS 
+gate_busy                case 29 cpu_refill_not_blocked_by_dma_r  ownership PASS 
+gate_busy                case 30 m0_burst_tail_vs_owned_line      ownership PASS 
+gate_busy                case 31 evict_owns_no_line               ownership FAIL FIX1_EVICT
+E4_NFLY16 integration_default PASS
+E4_NFLY16                case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+E4_NFLY16                case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+E4_NFLY16                case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+E4_NFLY16                case 17 top_address_page_interval        ownership PASS 
+E4_NFLY16                case 18 range64_read_write_together      ownership PASS 
+E4_NFLY16                case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_B1_T16 integration_default PASS
+MATRIX_B1_T16            case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_B1_T16            case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_B1_T16            case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1 integration_default PASS
+MATRIX_R-E4-RW1-WE4-WW1  case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E4-RW1-WE4-WW1  case 23 error_only_read_interval_release ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4 integration_default PASS
+MATRIX_R-E4-RW4-WE4-WW4  case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E4-RW4-WE4-WW4  case 23 error_only_read_interval_release ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 integration_default PASS
+MATRIX_R-E4-RW16-WE4-WW16 case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E4-RW16-WE4-WW16 case 23 error_only_read_interval_release ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 integration_default PASS
+MATRIX_R-E16-RW1-WE16-WW1 case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E16-RW1-WE16-WW1 case 23 error_only_read_interval_release ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 integration_default PASS
+MATRIX_R-E16-RW4-WE16-WW4 case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E16-RW4-WE16-WW4 case 23 error_only_read_interval_release ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 integration_default PASS
+MATRIX_R-E16-RW16-WE16-WW16 case  7 b1_rd_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case  8 b1_wr_vs_ace_aw_same_cycle       ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case  9 b1_wr_vs_ace_ar_same_cycle       ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case 17 top_address_page_interval        ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case 18 range64_read_write_together      ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case 21 read_write_same_lines_together   ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case 22 error_only_write_interval_release ownership PASS 
+MATRIX_R-E16-RW16-WE16-WW16 case 23 error_only_read_interval_release ownership PASS 
+mut:no_ace_active_compare case  1 wr_range_vs_writeback            ownership EXPECTED_FAILURE_PASS FIX1_OWNERSHIP_OVERLAP
+mut:no_same_cycle_ace    case 15 same_cycle_ace_vs_range_issue    ownership EXPECTED_FAILURE_PASS FIX1_OWNERSHIP_OVERLAP
+mut:own_span_base_line_only case 16 ace_burst_tail_ahead_of_range    ownership EXPECTED_FAILURE_PASS FIX1_OWNERSHIP_OVERLAP
+mut:admit_probe_base_line_only case 10 ace_ns_burst_tail_vs_owned_line  ownership EXPECTED_FAILURE_PASS FIX1_ACE_ADMIT_OVERLAP
+mut:hold_not_in_interval case 11 wr_hold_late_ace                 ownership EXPECTED_FAILURE_PASS HAZARD_INTERVAL_EQUIV
+mut:read_hi_not_incremented case  3 rd_range_vs_writeback            ownership EXPECTED_FAILURE_PASS RANGE_READ_
+mut:write_lo_not_incremented case  1 wr_range_vs_writeback            ownership EXPECTED_FAILURE_PASS RANGE_WRITE_
+mut:span_upper_bound_inclusive case 15 same_cycle_ace_vs_range_issue    ownership EXPECTED_FAILURE_PASS HAZARD_INTERVAL_EQUIV
+mut:no_read_vs_write_owner case 19 read_first_write_covers_future   ownership EXPECTED_FAILURE_PASS RANGE_ISSUE_M1
+mut:no_write_vs_read_owner case 20 write_first_read_covers_future   ownership EXPECTED_FAILURE_PASS RANGE_ISSUE_M1
+mut:no_same_line_arbitration case 21 read_write_same_lines_together   ownership EXPECTED_FAILURE_PASS RANGE_ISSUE_M1
+mut:no_fatal_issue_stop  case 25 fatal_lifetime_no_new_issue      ownership EXPECTED_FAILURE_PASS FIX1_FATAL_
+mut:hold_not_reset       case 24 reset_lifetime_reuse             ownership EXPECTED_FAILURE_PASS FIX1_RESET_
+mut:turn_not_reset       case 24 reset_lifetime_reuse             ownership EXPECTED_FAILURE_PASS FIX1_RESET_
+mut:m0_not_stalled_by_ace case 26 m0_waits_while_ace_busy_no_phantom ownership EXPECTED_FAILURE_PASS REVIEW_M0_
+mut:m0_valid_gated_outside_core case 27 m0_granted_valid_kept_under_hazard ownership EXPECTED_FAILURE_PASS FIX1_M0_
+mut:ace_admit_ignores_presented_m0 case 28 ace_waits_for_presented_m0       ownership EXPECTED_FAILURE_PASS FIX1_ACE_OVER
+mut:memory_r_waits_for_dma case 29 cpu_refill_not_blocked_by_dma_r  ownership EXPECTED_FAILURE_PASS FIX1_CPU_BLOCKED
+mut:m0_probe_base_line_only case 30 m0_burst_tail_vs_owned_line      ownership EXPECTED_FAILURE_PASS HAZARD_INTERVAL_EQUIV
+mut:evict_owns_line      case 31 evict_owns_no_line               ownership EXPECTED_FAILURE_PASS FIX1_EVICT
+mut:interval_6bit_wrap   case 17 top_address_page_interval        ownership EXPECTED_FAILURE_PASS HAZARD_INTERVAL_EQUIV
+ALL AS EXPECTED

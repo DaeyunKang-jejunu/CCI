@@ -1,0 +1,1800 @@
+{
+  "run_id": "ace_20261006T045646Z_f03b0da1",
+  "status": "PASS",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "225c34c8b672217c0eb3be4bdda0238594f8d2ac8683c0cd7b7581eeb0c4aa89",
+    "realistic_axi_master.sv": "396bbb43548c7b9d394fb17ce21d7268a0c79f6309063fb1154387d66af5a45a",
+    "rtl/common/cci_pkg.sv": "5a20be52d953610695e91a5bdc63cf9e154b9c600833a821ad9567c48536dcb8",
+    "rtl/common/coh_write_ingress.sv": "2e5245ba727f5a228ae2e5d675ce56dc6d9aa6cdf65c34d4ab1c10efd185f3b4",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/synth_register_shell.sv": "83897b8367c29ef6cf686359061f876171e304b3783973834df5a0862d2011b6",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_range_rim_tracker.sv": "57e96a34f51e976f0a318918ace0ac7a794505de28005b7082a30c2f57a82a55",
+    "rtl/top/axi_b0_top.sv": "3cfb47cad1c9e2688ce1f4eb76f0b8b0c8b5525cb80f4fe901b6b46a345e4725",
+    "rtl/top/axi_b1_conventional_top.sv": "aa9844512752634f05e095dc0b65c3c4181cd8276ff4d90a61aeba272655904d",
+    "rtl/top/axi_cci_top.sv": "9e6e924d85256ee3280c1e47036cabc211dae09260a93ee3918fe0a6ac730b38",
+    "rtl/top/axi_p_range_top.sv": "4713007acbfd222d23a2967b4b12a3df8bf06b1eaa6cbe3cc96e71d0c8b763e1",
+    "scripts/fixtures/hardware/B0/drc.rpt": "6ac1f7468d175fd7127c9f23ef8197021e1e11d8a12019d946101a9aa001cc1a",
+    "scripts/fixtures/hardware/B0/post_route_hier.rpt": "08504c1fed2de12ade3a978cfb14af4b5aedd4dc4f3e4275bb76b110dbb47d3c",
+    "scripts/fixtures/hardware/B0/post_route_timing_summary.rpt": "38bd576edd675c11911c8099a9a9263266c019509603e2b4e8fc494e7b08baa7",
+    "scripts/fixtures/hardware/B0/post_route_utilization.rpt": "c301d4d99dcfe77c76bfc9b4914d50d85a30af2e6b9b2a994269ac7ce3554ff8",
+    "scripts/fixtures/hardware/B0/route_status.rpt": "9d4d935b66e3ed418aecc72e8c0970b3a8f33110829d3a266b1f372861d5514e",
+    "scripts/fixtures/hardware/B1/drc.rpt": "e9f4e7819fbbb0c787005489b620c123935649238a98e39d53160b8410ffca5f",
+    "scripts/fixtures/hardware/B1/post_route_hier.rpt": "fc33895eb6a0d09128678770c5ffc7550146f66f84c46fde514bcd95181c4337",
+    "scripts/fixtures/hardware/B1/post_route_timing_summary.rpt": "324e9c90f991f66c793658d828e099d1cf837f13fa6d0bbca2405668ba5dc9a6",
+    "scripts/fixtures/hardware/B1/post_route_utilization.rpt": "fd95c4b66b961b6a16affbf40d8b355f91f317500017c6acfe86ee79722ef45d",
+    "scripts/fixtures/hardware/B1/route_status.rpt": "98e20c399647101d71d48d7269d7840e43323cd8a78d2d09d4d491d8f2ecb024",
+    "scripts/fixtures/hardware/P/drc.rpt": "d2e2b50221e6bb581f72d5aa9cc8853e60f6d19ac76d18d3595f388b558409e0",
+    "scripts/fixtures/hardware/P/post_route_hier.rpt": "347b814697bdb7af5f2b60d943ec45d9a4a69bbf3ef26b70b1e632d146b54ec5",
+    "scripts/fixtures/hardware/P/post_route_timing_summary.rpt": "2a4c95f0b436e7ae179b2db160d14cfdee566cd09d543cddcda02b4bfb6f9578",
+    "scripts/fixtures/hardware/P/post_route_utilization.rpt": "4b69806163be3dada42666cdd355765cde2b06780889c3d68c94cd8009e1d493",
+    "scripts/fixtures/hardware/P/route_status.rpt": "c171ef46adc3b60e44911277ca907ed75ba38ff399b1102e9b3a69ab7f3ba09d",
+    "scripts/results_common.py": "3cd0cbbae984e2e3439b89da62feab8f9bcf83255bafd5f771e6a5ed9efa88d6",
+    "scripts/rtl.f": "7f357322edf8a5a8240467c3f829e1405e7dfb9b84396ad1eaa8eb78425f5fb0",
+    "scripts/run_regression.py": "93db3dde41b7a7a60a9480217237b636a56c572f2368ab3aef18b954bf517ae7",
+    "scripts/test_results_common.py": "4e46a13ac284b130f551e0041fb67d4f93e6946af3fff0ccea779ffd635c0b32",
+    "simple_axi_master.sv": "483790268d6f25abee5cb7e60cb44339d30fc9e62200c8434897a6b6810a72ab",
+    "simple_axi_slave.sv": "c8ccf220a302e4abcfbdca78a7cb4ed46543875f038b9838d30a3cc06e70066f",
+    "tb/axi_memory_slave.sv": "a87c21b618690329ec15fb5eac452aaf41432286e80d95ad0d35235f9fb141b3",
+    "tb/formal_decoder.sv": "f49b64ac15d347cfac4ab3dde5a5a8299374e8b30a2add67cd7e778a564741e1",
+    "tb/m0_clean_cache_model.sv": "33727bfb70953c60b9120f3bf701ddbd5846b4bc1fdbb466b080ac5f8d9efaa6",
+    "tb/tb_ace_manager_transactions.sv": "cf60f2aa512d16ff362b24af58f9628502468928e56b179869b5823036917572",
+    "tb/tb_ace_snoop_fabric.sv": "e72b48dbd69e3932f6f6ff6ff403a626229774b1f9583dc0b0f69219dbadcca1",
+    "tb/tb_ace_snoop_service.sv": "d116b331236ba5377180da0603896a23fab8df73ae30a96d8db0a57696944672",
+    "tb/tb_axi_fifo_overlap.sv": "9cd603830dd84a62483bf4970c46d7e5daed8d6b214bb197580472e1b8ef252d",
+    "tb/tb_axi_grant_lock.sv": "a88e83aa4cad8913ba674da1248bfd34a729e8c8721bdb6f6df30303c43c4565",
+    "tb/tb_cache_collision.sv": "68aec9b176134f34dc98b800682c954b9dbdb6e1fceb63079c3c484a15ea4a6f",
+    "tb/tb_cci_ace_integration.sv": "a157c5cfcf440b51fe7be88a53773e5652ebd76e9ab90c1c1a87630b631ae124",
+    "tb/tb_cci_integration.sv": "4d5eb7862ee04f7e086bda806036c4f4073f9e632f611793b7fb1d978cf4ceb9",
+    "tb/tb_cci_memory_cache.sv": "f2b1955c5a142360c6e8d59fa3e9af2261863e2c4c8321468867f4cefc350aba",
+    "tb/tb_decoder.sv": "ca8cc85b88899350182b297d4d14976a940ed43185f5adb5a180ee6edd119f71",
+    "tb/tb_memory_collision.sv": "11b9f1415b7326f2e67540a72268ccf603c72c1aa6dd69823e470cb603df7ff2",
+    "tb/tb_snoop_endpoint.sv": "72a30aeb0c21853235e58067d9e3a89d678b5fee78304cb18e49f66a3c346e6a",
+    "tb_axi_bus_system.sv": "91aea3ae858bb53600261dbae2708116357f3b11540c8f88e8d789b453489d2b",
+    "rtl/ace/ace_snoop_pkg.sv": "f008e5621713cce7768d879667fbb8a72fbc0cd26916f7a05c930da21f8af179",
+    "rtl/ace/ace_cache_snoop_endpoint.sv": "64e4df49e9c3857e3a29d51403d236b54edc3252bf2f27b73bdb6bc45dc7fb49",
+    "rtl/ace/ace_snoop_fabric.sv": "46b173b99c344c36481654dcaf1c9ab2dbaf8de740867b2b7dbafb0a610d8638",
+    "rtl/ace/ace_snoop_controller.sv": "a0a5e0a900160d131428d1e542b524e82ca58d0f96eb17b240f0877766d96bd7",
+    "rtl/ace/cci_ace_snoop_service.sv": "a844aae3ff3d81e5fcbfbb6c3ec7c2ece758b17f9c22b660eeb77fa90cfee20e",
+    "rtl/ace/ace_manager_request_controller.sv": "2f195685cca22e9fbb060340a92dc0a974ce2053f22ffa3831b56a874556ea59",
+    "rtl/ace/axi_cci_ace_top.sv": "28fba4d9c779a1fb5287ba0e4f87fe00e58cd7f973add8334f351feed2f24b76",
+    "scripts/ace.f": "c1aad3dc3ac5f2699cd49de7348eda5a62aea5dd97d04e4ec5c54465138c3469",
+    "scripts/run_ace.py": "b4a14f4887c43a6ecc2a1851823f71daeece6d2e250de55485f847485036eeb9"
+  },
+  "cases": [
+    {
+      "name": "service",
+      "status": "PASS",
+      "log": "service.log",
+      "marker": "PASS ACE snoop state/data/writeback service",
+      "returncode": 0
+    },
+    {
+      "name": "manager_transactions",
+      "status": "PASS",
+      "log": "manager_transactions.log",
+      "marker": "PASS ACE initiating transactions",
+      "returncode": 0
+    },
+    {
+      "name": "multi_snoop_fabric",
+      "status": "PASS",
+      "log": "multi_snoop_fabric.log",
+      "marker": "PASS ACE multi-target snoop fabric",
+      "returncode": 0
+    },
+    {
+      "name": "multi_top_integration",
+      "status": "PASS",
+      "log": "multi_top_integration.log",
+      "marker": "PASS v9 ACE integration mode=0 cached_masters=2",
+      "returncode": 0
+    },
+    {
+      "name": "b1_integration",
+      "status": "PASS",
+      "log": "b1_integration.log",
+      "marker": "PASS v9 ACE integration mode=0",
+      "returncode": 0
+    },
+    {
+      "name": "p_integration",
+      "status": "PASS",
+      "log": "p_integration.log",
+      "marker": "PASS v9 ACE integration mode=1",
+      "returncode": 0
+    },
+    {
+      "name": "cd_waits_cr",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "cd_waits_cr.log",
+      "marker": "CD_BEFORE_CR",
+      "returncode": 1
+    },
+    {
+      "name": "early_b",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "early_b.log",
+      "marker": "COMPLETED_BEFORE_ACTUAL_B",
+      "returncode": 1
+    },
+    {
+      "name": "skip_dirty_wb",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_dirty_wb.log",
+      "marker": "DIRTY_COMPLETED_BEFORE_WB",
+      "returncode": 1
+    },
+    {
+      "name": "skip_drain",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_drain.log",
+      "marker": "ACE_ADMITTED_BEFORE_CORE_B",
+      "returncode": 1
+    },
+    {
+      "name": "bad_read_mapping",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "bad_read_mapping.log",
+      "marker": "AUTO_READ_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "skip_write_unique_snoop",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_write_unique_snoop.log",
+      "marker": "AUTO_WRITE_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "reject_dvm",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "reject_dvm.log",
+      "marker": "SPECIAL_R",
+      "returncode": 1
+    },
+    {
+      "name": "bypass_exclusive_monitor",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "bypass_exclusive_monitor.log",
+      "marker": "SPECIAL_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "drop_barrier_pair_ready",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_barrier_pair_ready.log",
+      "marker": "BARRIER_PAIR_MISSING",
+      "returncode": 1
+    },
+    {
+      "name": "reject_barrier_ignore",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "reject_barrier_ignore.log",
+      "marker": "AXBARRIER_IGNORE_NORMAL",
+      "returncode": 1
+    },
+    {
+      "name": "disable_snoop_filter",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "disable_snoop_filter.log",
+      "marker": "SNOOP_FILTER_TARGETING",
+      "returncode": 1
+    },
+    {
+      "name": "ignore_fabric_conflict",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "ignore_fabric_conflict.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "drop_filter_collision_fallback",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_filter_collision_fallback.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "allow_same_target_filter_replace",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "allow_same_target_filter_replace.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "count_any_aw",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "count_any_aw.log",
+      "marker": "PENDING_SAME_CYCLE_AW",
+      "returncode": 1
+    },
+    {
+      "name": "drop_early_barrier_rack",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_early_barrier_rack.log",
+      "marker": "BARRIER_ONTIME_ACK",
+      "returncode": 1
+    },
+    {
+      "name": "skip_bar2_error_w_drain",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_bar2_error_w_drain.log",
+      "marker": "AXBAR2_ERROR_WRITE_DRAIN",
+      "returncode": 1
+    },
+    {
+      "name": "short_bar2_error_read",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "short_bar2_error_read.log",
+      "marker": "AXBAR2_ERROR_READ_BEATS",
+      "returncode": 1
+    },
+    {
+      "name": "mask_dvm_payload",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "mask_dvm_payload.log",
+      "marker": "DVM_PAYLOAD",
+      "returncode": 1
+    },
+    {
+      "name": "accept_two_part_dvm",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "accept_two_part_dvm.log",
+      "marker": "SPECIAL_R",
+      "returncode": 1
+    },
+    {
+      "name": "manager_error_not_fatal",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "manager_error_not_fatal.log",
+      "marker": "FATAL_FAULT_",
+      "returncode": 1
+    },
+    {
+      "name": "fatal_not_core_block",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fatal_not_core_block.log",
+      "marker": "FATAL_FAULT_ADMISSION",
+      "returncode": 1
+    },
+    {
+      "name": "fatal_manager_reaccept",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fatal_manager_reaccept.log",
+      "marker": "FATAL_FAULT_ADMISSION",
+      "returncode": 1
+    },
+    {
+      "name": "fatal_explicit_req_leak",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fatal_explicit_req_leak.log",
+      "marker": "FATAL_FAULT_ADMISSION",
+      "returncode": 1
+    },
+    {
+      "name": "fatal_req_ready_open",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fatal_req_ready_open.log",
+      "marker": "FATAL_FAULT_ADMISSION",
+      "returncode": 1
+    },
+    {
+      "name": "fixed_ar_priority",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fixed_ar_priority.log",
+      "marker": "AR_AW_ROUND_ROBIN",
+      "returncode": 1
+    },
+    {
+      "name": "accept_ac_during_sf_update",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "accept_ac_during_sf_update.log",
+      "marker": "SF_UPDATE_AC_ORDER",
+      "returncode": 1
+    },
+    {
+      "name": "collapse_dual_reservation_kill",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "collapse_dual_reservation_kill.log",
+      "marker": "DUAL_RESERVATION_KILL",
+      "returncode": 1
+    },
+    {
+      "name": "tb_ace_snoop_service_xsim",
+      "status": "PASS",
+      "log": "tb_ace_snoop_service_xsim.log",
+      "marker": "PASS ACE snoop state/data/writeback service",
+      "returncode": 0
+    },
+    {
+      "name": "tb_ace_manager_transactions_xsim",
+      "status": "PASS",
+      "log": "tb_ace_manager_transactions_xsim.log",
+      "marker": "PASS ACE initiating transactions",
+      "returncode": 0
+    },
+    {
+      "name": "tb_ace_snoop_fabric_xsim",
+      "status": "PASS",
+      "log": "tb_ace_snoop_fabric_xsim.log",
+      "marker": "PASS ACE multi-target snoop fabric",
+      "returncode": 0
+    },
+    {
+      "name": "ace_multi_xsim",
+      "status": "PASS",
+      "log": "ace_multi_xsim.log",
+      "marker": "PASS v9 ACE integration mode=0 cached_masters=2",
+      "returncode": 0
+    },
+    {
+      "name": "ace_b1_xsim",
+      "status": "PASS",
+      "log": "ace_b1_xsim.log",
+      "marker": "PASS v9 ACE integration mode=0",
+      "returncode": 0
+    },
+    {
+      "name": "ace_p_xsim",
+      "status": "PASS",
+      "log": "ace_p_xsim.log",
+      "marker": "PASS v9 ACE integration mode=1",
+      "returncode": 0
+    }
+  ],
+  "commands": [
+    {
+      "name": "service_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/service",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "service",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/service/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "manager_transactions_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/manager_transactions",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "manager_transactions",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/manager_transactions/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "multi_snoop_fabric_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/multi_snoop_fabric",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "multi_snoop_fabric",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/multi_snoop_fabric/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "multi_top_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/multi_top_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GCACHED_MASTERS=2"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "multi_top_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/multi_top_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "b1_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/b1_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "b1_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/b1_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "p_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/p_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=1"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "p_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/p_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "cd_waits_cr_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/cd_waits_cr",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/cd_waits_cr.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "cd_waits_cr",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/cd_waits_cr/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "early_b_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/early_b",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/early_b.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "early_b",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/early_b/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_dirty_wb_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_dirty_wb",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_dirty_wb.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_dirty_wb",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_dirty_wb/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_drain_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_drain",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_drain.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_drain",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_drain/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "bad_read_mapping_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bad_read_mapping",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bad_read_mapping.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "bad_read_mapping",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bad_read_mapping/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_write_unique_snoop_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_write_unique_snoop",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_write_unique_snoop.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_write_unique_snoop",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_write_unique_snoop/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "reject_dvm_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_dvm",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_dvm.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "reject_dvm",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_dvm/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "bypass_exclusive_monitor_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bypass_exclusive_monitor",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bypass_exclusive_monitor.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "bypass_exclusive_monitor",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/bypass_exclusive_monitor/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_barrier_pair_ready_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_barrier_pair_ready",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_barrier_pair_ready.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_barrier_pair_ready",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_barrier_pair_ready/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "reject_barrier_ignore_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_barrier_ignore",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_barrier_ignore.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "reject_barrier_ignore",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/reject_barrier_ignore/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "disable_snoop_filter_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/disable_snoop_filter",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/disable_snoop_filter.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "disable_snoop_filter",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/disable_snoop_filter/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "ignore_fabric_conflict_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/ignore_fabric_conflict",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/ignore_fabric_conflict.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "ignore_fabric_conflict",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/ignore_fabric_conflict/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_filter_collision_fallback_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_filter_collision_fallback",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_filter_collision_fallback.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_filter_collision_fallback",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_filter_collision_fallback/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "allow_same_target_filter_replace_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/allow_same_target_filter_replace",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/allow_same_target_filter_replace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "allow_same_target_filter_replace",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/allow_same_target_filter_replace/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "count_any_aw_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/count_any_aw",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/count_any_aw.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "count_any_aw",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/count_any_aw/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_early_barrier_rack_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_early_barrier_rack",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_early_barrier_rack.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "drop_early_barrier_rack",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/drop_early_barrier_rack/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_bar2_error_w_drain_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_bar2_error_w_drain",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_bar2_error_w_drain.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "skip_bar2_error_w_drain",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/skip_bar2_error_w_drain/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "short_bar2_error_read_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/short_bar2_error_read",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/short_bar2_error_read.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "short_bar2_error_read",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/short_bar2_error_read/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "mask_dvm_payload_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/mask_dvm_payload",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/mask_dvm_payload.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "mask_dvm_payload",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/mask_dvm_payload/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "accept_two_part_dvm_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_two_part_dvm",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_two_part_dvm.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "accept_two_part_dvm",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_two_part_dvm/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "manager_error_not_fatal_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/manager_error_not_fatal",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/manager_error_not_fatal.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "manager_error_not_fatal",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/manager_error_not_fatal/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_not_core_block_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_not_core_block",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_not_core_block.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_not_core_block",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_not_core_block/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_manager_reaccept_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_manager_reaccept",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_manager_reaccept.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_manager_reaccept",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_manager_reaccept/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_explicit_req_leak_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_explicit_req_leak",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_explicit_req_leak.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_explicit_req_leak",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_explicit_req_leak/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_req_ready_open_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_req_ready_open",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_req_ready_open.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fatal_req_ready_open",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fatal_req_ready_open/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fixed_ar_priority_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fixed_ar_priority",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fixed_ar_priority.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "fixed_ar_priority",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/fixed_ar_priority/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "accept_ac_during_sf_update_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_ac_during_sf_update",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_ac_during_sf_update.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "accept_ac_during_sf_update",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/accept_ac_during_sf_update/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "collapse_dual_reservation_kill_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/collapse_dual_reservation_kill",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/collapse_dual_reservation_kill.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "collapse_dual_reservation_kill",
+      "argv": [
+        "/tmp/cci_ace/ace_20261006T045646Z_f03b0da1/collapse_dual_reservation_kill/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW"
+    },
+    {
+      "name": "xvlog",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xvlog.bat",
+        "--sv",
+        "--include",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\common",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\common\\cci_pkg.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\axi4_simple_2to1_bus_arbiter.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\proposed\\cci_ac_range_gen.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\proposed\\cci_range_hazard_checker.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\proposed\\cci_range_req_decoder.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\proposed\\cci_range_rim_tracker.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\common\\coh_write_ingress.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\common\\m0_snoop_endpoint.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\top\\axi_cci_top.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\top\\axi_b0_top.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\top\\axi_b1_conventional_top.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\top\\axi_p_range_top.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\common\\synth_register_shell.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\ace_snoop_pkg.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\ace_cache_snoop_endpoint.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\ace_snoop_fabric.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\ace_snoop_controller.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\cci_ace_snoop_service.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\ace_manager_request_controller.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\rtl\\ace\\axi_cci_ace_top.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\tb\\axi_memory_slave.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\tb\\tb_ace_snoop_service.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\tb\\tb_ace_manager_transactions.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\tb\\tb_ace_snoop_fabric.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\tb\\tb_cci_ace_integration.sv",
+        "C:\\Users\\user\\Desktop\\CCI_patents\\CCI_P\\AXI-bus-Verilog-Modelling-NEW\\reports\\runs\\ace_20261006T045646Z_f03b0da1\\wrappers.sv"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_snoop_service_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "tb_ace_snoop_service",
+        "--snapshot",
+        "tb_ace_snoop_service",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_snoop_service_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "tb_ace_snoop_service",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_manager_transactions_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "tb_ace_manager_transactions",
+        "--snapshot",
+        "tb_ace_manager_transactions",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_manager_transactions_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "tb_ace_manager_transactions",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_snoop_fabric_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "tb_ace_snoop_fabric",
+        "--snapshot",
+        "tb_ace_snoop_fabric",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "tb_ace_snoop_fabric_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "tb_ace_snoop_fabric",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_multi_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "ace_multi",
+        "--snapshot",
+        "ace_multi",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_multi_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "ace_multi",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_b1_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "ace_b1",
+        "--snapshot",
+        "ace_b1",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_b1_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "ace_b1",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_p_xelab",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xelab.bat",
+        "ace_p",
+        "--snapshot",
+        "ace_p",
+        "--debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps",
+        "--override_timeunit",
+        "--override_timeprecision"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    },
+    {
+      "name": "ace_p_xsim",
+      "argv": [
+        "/mnt/c/Windows/System32/cmd.exe",
+        "/c",
+        "D:\\Vivado\\2024.1\\bin\\xsim.bat",
+        "ace_p",
+        "--runall"
+      ],
+      "cwd": "/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_20261006T045646Z_f03b0da1"
+    }
+  ],
+  "config": {
+    "line_bytes": 64,
+    "cd_bits": 128,
+    "outstanding_snoops": 1
+  },
+  "tools": {
+    "verilator": "Verilator 5.048 2026-04-26 rev v5.048\n"
+  },
+  "artifacts": {
+    "accept_ac_during_sf_update.log": "f6ca7bd5df646e5cdadd8361357c97fc8b4ce26dbef1fa8bff8cebd529a0381b",
+    "accept_ac_during_sf_update_build.log": "5401513e9349937dc9ce15c88451291629f938a0fc6914bf487872ca7d4ba8d0",
+    "accept_two_part_dvm.log": "95133b115c6d3ab4f9ce06641d646ef9fef46978ce10b38397318bf5feb25fab",
+    "accept_two_part_dvm_build.log": "3f8dbe2d87c120dd6e22f303f6cb9b2fa6025c8a19b914e52ef0a7a5ed5aa7d1",
+    "ace_b1.wdb": "8e0482a6aa16b8d54f5f67e8cd7337a0db3d70420aba0c43014ba1e9574cd96a",
+    "ace_b1_xelab.log": "061a04c51f8b31493b88ecd26b207afae410289947fb734641466bf901e10e05",
+    "ace_b1_xsim.log": "e9e668a4ecfd80f8998cb80b3b35c042d33f5f7117cf984139f0453fa0b35ba5",
+    "ace_multi.wdb": "56748c721879251d93039387f083465c0e641b461241f17cfc1c64377d807dca",
+    "ace_multi_xelab.log": "36d885a40bddd4cacd80c29ad7518aca12d6af9140d83b372dc02e338f52eb1e",
+    "ace_multi_xsim.log": "b25986e96a1f1d128d81675c50f03a97c121db4dba33eee6c4a3558d9d0ac8fa",
+    "ace_p.wdb": "054b2ca9f8072d7f4fbab4af52555333f4639d04d981f511def037559938ae41",
+    "ace_p_xelab.log": "7de46b00c152795154102d0dfc0d98dd3b363d0e066ba04a1cb4c90154c71f7c",
+    "ace_p_xsim.log": "aaa18fd7c4880fa3771a3176cbbb82b793c29dba5af937748eab351efa34ce10",
+    "allow_same_target_filter_replace.log": "1c695b009428d4cc65029becc880278109ce4afac1a3a2f8ad910eb7c170b3f6",
+    "allow_same_target_filter_replace_build.log": "e3325d805363a72c5daab303cc3955b67af62a088745ef75aaeb9d5530e5a03c",
+    "b1_integration.log": "31468a327cd4cb7f31a12b861cd216d5e100da80670ee6ed7c1d5dc844c315ff",
+    "b1_integration_build.log": "f9a42f3ec5fa4f14e151dfea2113e3fa0b7dccd96ebdb54308093d465e0515ca",
+    "bad_read_mapping.log": "d90059f547aa8f7634df51ad16b31b62cd82708c8cba4534c4bbe32c5c6f5cf3",
+    "bad_read_mapping_build.log": "48fe0197336fcc17ef07ff10bc3d2e0c42bb6e9f49d98df73ab61d28757f496a",
+    "bypass_exclusive_monitor.log": "ffe2b787d8e5887b1f55136ee2e739894c7dc78233bda4b0f72f23ad53671e44",
+    "bypass_exclusive_monitor_build.log": "f3248be5e4f64ffddf70d67cbf39645112840c453124ec3bedc180b9739accfd",
+    "cd_waits_cr.log": "831160b28f66c34c2ccca0bc8b0b825bcb3c3fb37618cabce27402df0222508a",
+    "cd_waits_cr_build.log": "54da98ffb90b0c92e1a0c54a166f0b9daf71047589889f35571867d46d5405b5",
+    "collapse_dual_reservation_kill.log": "a769e141bcf4ac6265b43925de81cc15d23c272b1417e53dae0180a3f133e90d",
+    "collapse_dual_reservation_kill_build.log": "110792ab7c01667df870a13e45d15cce6bed0c7a761e823c5b771f678b42f76a",
+    "count_any_aw.log": "80f20d88ad930f6daf3eaffcb0ff487aa7b07b30379d51deec4acb9bac637574",
+    "count_any_aw_build.log": "f5ca3c365c9a056748b4d4c7be7d168f03bd67a083c97137544f1213026e4c14",
+    "disable_snoop_filter.log": "4394894e11d5aa02291432525eec5ae1a00fbe8f3bd051df7d3ffa83f54844ce",
+    "disable_snoop_filter_build.log": "bc60da2c4988c834e0097a4b8e988ebd58a1c9dd111292d6febbe107987c4719",
+    "drop_barrier_pair_ready.log": "e88e9b72a857fb40b32e300541c0cccf13f86a1378953e78fe754e158d7f35d6",
+    "drop_barrier_pair_ready_build.log": "e0e7da0a997019a0d7e2bca678ffed62f0d3621752af75a5f92aa01fd9764642",
+    "drop_early_barrier_rack.log": "e53c9d6c5691e49dcf354a5e22749c317ebb6ddebe2382d251fc30be29775940",
+    "drop_early_barrier_rack_build.log": "97963c66f36263e88778221b0fd06be2b442557e1584f538a8c56b24747f177d",
+    "drop_filter_collision_fallback.log": "20e16ccc5d1d061392d883fe89b3016239e3e1617e7b9c1a9488444100402bc4",
+    "drop_filter_collision_fallback_build.log": "600fffb49edb0e68c8042da4b80ccea336e27d4777a6f71d55d10dc72d10a841",
+    "early_b.log": "4b0ddeb0b10a02a5eae1d83a20fd320f624682165200d397a0fbf510b820d1fe",
+    "early_b_build.log": "29a6c3f418533dffffeec24ae814258522fbfadb80c89e9c7272cf778213a44c",
+    "fatal_explicit_req_leak.log": "2b7e82235e5fdb876233a604968d2bfa5b397b8725a04d15b91e63ca9b8f7755",
+    "fatal_explicit_req_leak_build.log": "cd207aa6fd2ace352fa8a975b271f0b626891db76b5bcad1b3aa67417dae50c9",
+    "fatal_manager_reaccept.log": "c36d01999b1387276d995a4fba9ed4acead63bdae23101fd71527b53e38342fa",
+    "fatal_manager_reaccept_build.log": "98b44639c24001d15f52e2925f4aecc7a0003339d6e6325d9b5a93a3bf9d460e",
+    "fatal_not_core_block.log": "bb9c5906124e54d6084a05e1236dde8c71d0502b1eeaa6b269b54939e474d540",
+    "fatal_not_core_block_build.log": "e5651c72473009b6e475dc4173c54690117bae3d0b1c5231b0832edc399b824d",
+    "fatal_req_ready_open.log": "1240f199a80f337bd2fce75282053d12836d9e310a74c3b5a33769a99258a7b1",
+    "fatal_req_ready_open_build.log": "412ae93996f2270577c7969a7d3145f4633e81e83569f1f74d4cfc7a0134709f",
+    "fixed_ar_priority.log": "a0b1c95cf50b2e9e7e5722b594c99aa8e9ac1fecb3dce8938c9c95958ec15fbf",
+    "fixed_ar_priority_build.log": "4eacfa301c4ff97fa12a9af17b087c87eaf6653572c86447c9015f7c66250365",
+    "ignore_fabric_conflict.log": "0f3b96926139d5b0cca4b89a7441443884f6eaa6b1634a8e5f03af7ca6656838",
+    "ignore_fabric_conflict_build.log": "709b9c708c1516b57d4c731900bd209497547bba9845032acbc57956f2af643a",
+    "manager_error_not_fatal.log": "ae5ccf40e491f0b2091f80a4fddf9329d548750f332308891b41a115a957e9c2",
+    "manager_error_not_fatal_build.log": "b101028e7f30293e6489c7be230ccbe955c16f8abb7a5c833638902199417e12",
+    "manager_transactions.log": "a90461540e5e2b2661476270561cc7232f1fd66ec10d30e301ed35feab8514ca",
+    "manager_transactions_build.log": "6c28ceee229923eb34c65a5c16c6feb9c23d4ed93c57bdd791405df98ed6078d",
+    "mask_dvm_payload.log": "ede906d27ce03821b4fcc92d9a1181a34c9fa15656952b264d8394191f47f42c",
+    "mask_dvm_payload_build.log": "323fed68aaca569834c99fe4f95783fab3e9de885c5186f6eca125ecce45f7d8",
+    "multi_snoop_fabric.log": "6709bbd1669c748f4c5b088334a046687e968d16f17e11e4951dbe727ab47f7e",
+    "multi_snoop_fabric_build.log": "bf15d2df60fae6aed65670ed92cf5e9c7dab3a3c330ef044632a8885d134258c",
+    "multi_top_integration.log": "1c7f07b36dd980defda19784a46482b7c1ba229656df502f540e62e284d940ee",
+    "multi_top_integration_build.log": "c5607958f650cc496d57d39b2c2bbddded1221d5629cf64d2196a1895b79b2d7",
+    "p_integration.log": "2304d22dd9d3395604018fc87e40e04d7ac00b0cd258651b1cf95afbc50b5cfa",
+    "p_integration_build.log": "70fb5ec8e45e438026927ae7e901977e3fa3c56e780a79f39e217b8876d24e32",
+    "reject_barrier_ignore.log": "8735c6a2d65aa7a90393a36d9eb50f5d63035aedc785079338397f8d16a35c5c",
+    "reject_barrier_ignore_build.log": "6a8676746c173f9ebdf3ac0b55590e993a8bfceeba9c9240cd5dc3578652e654",
+    "reject_dvm.log": "03544d77ad37de8f447d3b9cae5b47aa62a8fedcbbbee97dc9206875c1ada9b5",
+    "reject_dvm_build.log": "ebf197a1d2b4963615749a95d919f1f0dcf33aa79a24f0d11e592bcb1afdfb97",
+    "service.log": "e810d844278494b1f7e6a7bbc5d66a4ed18e6bca7e6775ba69bf5f77f75449a5",
+    "service_build.log": "b8c157457daaaeafc6b24212f58de99c6459c23a05032f19ed431510daaa2849",
+    "short_bar2_error_read.log": "d301c33965ab8a7d56fe4c468000178d1f98ec96670f2b606ec8ff777d698a64",
+    "short_bar2_error_read_build.log": "6774a1b500587afa7d00714afe8c419f00a6b89a92f5b850232e9a5f28f49985",
+    "skip_bar2_error_w_drain.log": "d7115ed1ddd00a8f31239c9d60b12a0cd04d03ad1c555f1661408d1abf4ee54e",
+    "skip_bar2_error_w_drain_build.log": "9c875c0afef86f9c9d2e1eed6386c23f95b3b4a8039e844b0cce5167f5377a5d",
+    "skip_dirty_wb.log": "5ac727162c7f3d35fe020a4f672c6de9af9096f17c425f8ba049d8e5d186a737",
+    "skip_dirty_wb_build.log": "605a0f922a3bba38bf4e4cf1b2cc48536befe65cbbb4fe2557466d3df39dd295",
+    "skip_drain.log": "985bb010040e9505c4c5b89ccc90f64305263ffd68431a22511703cbf443eb68",
+    "skip_drain_build.log": "104cb31091f2195b338c954496fccdc3c0d82d593525c68bf7923c64e323ec0e",
+    "skip_write_unique_snoop.log": "e7b1ddbafe58b4f295099e59f63464ec49826884d8e54d879db0e7f4e5818d4a",
+    "skip_write_unique_snoop_build.log": "d1086ec8ecdfa3bd527bd9084fb3a43bbc616a53250fbffd71c8611c97b588f0",
+    "tb_ace_manager_transactions.wdb": "b71787982fbe13ad435b2e17c2bb174985304cc0c639fc66b44b4165edd53447",
+    "tb_ace_manager_transactions_xelab.log": "fdf1788308f71fd24fafc2f12389076b735593491cd27c15e95cbd5bc26db829",
+    "tb_ace_manager_transactions_xsim.log": "38a8067e25209d0602a0fdc648ce39cc765bcd4688f0121cffabf240350ac7e4",
+    "tb_ace_snoop_fabric.wdb": "276f68f90d3ac13c9cb0beef0a0b5899aed4d591ad97bf9d9d4113d0ba48067b",
+    "tb_ace_snoop_fabric_xelab.log": "30f6a468ba2bd06fd104b90845a01306604ea5e6d1d2e63798fca5606ee40277",
+    "tb_ace_snoop_fabric_xsim.log": "35af6aea8f4eedd2609597e376cb72c8c4c857cc38c388126c4d2b3724405c0c",
+    "tb_ace_snoop_service.wdb": "36ff3540a855286991eeca1f35b8d8e0afad9798efdf66d8fcb2149a0e914875",
+    "tb_ace_snoop_service_xelab.log": "99f9769cdbe186d4dfba73d58958d5a1c6cd672a2caa7a6ff6302a59a00dbe69",
+    "tb_ace_snoop_service_xsim.log": "5e67cb8f4227d8b19d796f7559f9229b23583dc4bf96341923a5bca5fe7663f0",
+    "wrappers.sv": "1a41fdce0500edcb8110708c1eb5f1fe34ec42b3a22bb31db74e1c06f2d94dff",
+    "xelab.log": "50eb594a99a335bf017acec43933adb5ee82f9bf6793ba915d376e1152bf8be8",
+    "xelab.pb": "f293a5d55db498e4ec9a51df03b1d37e5d325ee11d579259c2b527e53328640f",
+    "xsim.log": "4e4752dd1deae29015be071c6a7bac1e2cf7b31446650ad9265977d9a976ca29",
+    "xsim_18836.backup.log": "ed239b450fb8c0e85d86ed36c9089634d835674f3ffd37b5e7adf4e54cdde881",
+    "xsim_22732.backup.log": "0e1c776f517b905a1b9d743f7fa2839ed0fd89df709a5008a3e9949e5c9558c0",
+    "xsim_24376.backup.log": "d00cfdd181ee5fc361cbe858dd2419591d8f99ef060decaf6e4a1a5bd32de889",
+    "xsim_25664.backup.log": "b6f0d95829eb1f410de59a15a1fc9336616d0c066428dff9c41b7c8361c48e85",
+    "xsim_28816.backup.log": "6d420c5ccb10453223ef369bb748066e22032df1a37c65b981660b05c991a952",
+    "xvlog.log": "e3045b61adedcd8747838320a29c7095ef3e8397774cbee6c7102e00258e37a8",
+    "xvlog.pb": "74eb5d13fe51c5e2266a13431e130a2bc960df5bebe989652ed4ca80aa5b19aa",
+    "xsim.dir/ace_b1/Compile_Options.txt": "f45bb098b187e4b993d92c79390ad48a8459e3240f7a172834c5676003467ea0",
+    "xsim.dir/ace_b1/xsim.dbg": "df0dba9bfe0e8a0379f27de07ae6484cc027b4e255315d8745c3bfd9c08ea23c",
+    "xsim.dir/ace_b1/xsim.mem": "e5d602bd4d57cfcbf8339843f925068cdab9b2f78a4819cb9a4125893d10fde6",
+    "xsim.dir/ace_b1/xsim.reloc": "68431c56ac0c7ab4a1567f6a61a52716f74fe721794bb3353379d8d79852263c",
+    "xsim.dir/ace_b1/xsim.rtti": "0bb74771ce757ea2b36a92a09c18ebacfbf2ca2ecefe719ad806f9d4a5c9fd89",
+    "xsim.dir/ace_b1/xsim.svtype": "e1b122bebec651c6c485e7283336e6555263b5c0a10edc0c205ed25347e3bbd9",
+    "xsim.dir/ace_b1/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/ace_b1/xsim.xdbg": "5ccd21cf8f5d5ed3265baafad5e0022f61f8d1d33e2551f7e20bebe301900167",
+    "xsim.dir/ace_b1/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/ace_b1/xsimk.exe": "c912bd1d042af4ac7d9172071ae0a3dffc4eb27c95d5b3feeae9dead20b4f64e",
+    "xsim.dir/ace_b1/xsimkernel.log": "f2e63ee49009f5373ec6e0050b207f74e3df4099e85ab87b29ee2d000b666a2f",
+    "xsim.dir/ace_b1/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/ace_b1/xsim_script.tcl": "2971ed120a7492e8847d90c72a6cd201add7b4d69681555082fdbd3f984f9d49",
+    "xsim.dir/ace_multi/Compile_Options.txt": "2aa081390de7319a2ac5f20f6990dbfc37993300625187ae5017f2414f87c0d1",
+    "xsim.dir/ace_multi/xsim.dbg": "6de19428ad2f5e22c23728f38368337b3cc7400945331fe99be439c0b60f7195",
+    "xsim.dir/ace_multi/xsim.mem": "3766f824b37e3730ed27cae2cf781e8d4c2e67e8b125ce4ed43200430e2d9b57",
+    "xsim.dir/ace_multi/xsim.reloc": "34dbba0e334295b26dafce1d7c3cd04daaea5993b82465e29dc01a778a037f56",
+    "xsim.dir/ace_multi/xsim.rtti": "aad67770695c951af241a5bcd8031a16fe5bac775a4adb423241bdf70df0d2f6",
+    "xsim.dir/ace_multi/xsim.svtype": "9c92d938f73d8ca5ecf606e5516a85024efcb5876c6858c8b1b4bd819c6df2e0",
+    "xsim.dir/ace_multi/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/ace_multi/xsim.xdbg": "932c0d002397732057950ad5e4c5086c3b1c5f042143325ece0865977e702380",
+    "xsim.dir/ace_multi/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/ace_multi/xsimk.exe": "5fc01ca9ffaa8a5edfbcdee4384df47861b5e1b4566e552bb95d5fd9e0b68cb2",
+    "xsim.dir/ace_multi/xsimkernel.log": "d3dfd19005dfebb81f7f66246e65fddf151655319688297b38953fdac518224e",
+    "xsim.dir/ace_multi/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/ace_multi/xsim_script.tcl": "71d13e963090678009f6dbe38c8d4a0839ef46d0d58bd2c448fb01c23adb2fa5",
+    "xsim.dir/ace_p/Compile_Options.txt": "a3c2e80f8ec3cb3e4e46f76e7aef616e6d3794904cf9227eef2271629c18e78d",
+    "xsim.dir/ace_p/xsim.dbg": "54c989d80f35246019091886c97cb91b44a3a3d0d50db29bc4c5f878c08c213a",
+    "xsim.dir/ace_p/xsim.mem": "1ca9b10e3379af113f4be48d65c1058f4a6b0a534f5507f1c34d7dbe24fc6497",
+    "xsim.dir/ace_p/xsim.reloc": "e123fb571e61706223f73b1991c121926cbe528d4f4966ef9691317cd4196077",
+    "xsim.dir/ace_p/xsim.rtti": "84e73c8198d77d96d95a0e2fd3114a426f55ba4f5208c3b733423ef2f8afb72c",
+    "xsim.dir/ace_p/xsim.svtype": "5d49b2577c786c691441a083458afe6df67175c72c47795a7060ca9ab54501c0",
+    "xsim.dir/ace_p/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/ace_p/xsim.xdbg": "6b3b6807cc765bbbc8da288088423ecf7eaf2b4980421335aecdc7b9c622e1b6",
+    "xsim.dir/ace_p/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/ace_p/xsimk.exe": "0859dab0dce04230107f51967d4961b6e651307887c1ac90c371cc5bd6b370df",
+    "xsim.dir/ace_p/xsimkernel.log": "910fbbba76b045c7a6bb9172143c264dbb210e0d8880dc66955c6cb87505cf31",
+    "xsim.dir/ace_p/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/ace_p/xsim_script.tcl": "1589aeff23b670d11665e13358c59cfb6ce6e46726df22cff2aafdc66bf375e2",
+    "xsim.dir/tb_ace_manager_transactions/Compile_Options.txt": "e24c1a5f7f02de69fe10d79bc22662fa23d184775a567193269d7f87e89e7080",
+    "xsim.dir/tb_ace_manager_transactions/xsim.dbg": "3c5639622f7219fc24497caeabf8b2a3552709bc13a9fd642c877d5a23cad6f7",
+    "xsim.dir/tb_ace_manager_transactions/xsim.mem": "1384d2e2998e6860717ca536ef3f234fbd65edd30f0b7f8c32d7d4b1e6a7a4f6",
+    "xsim.dir/tb_ace_manager_transactions/xsim.reloc": "8058437a105cce46fc0b215657643f60110e2d4943651055aad09aca6a5bdb79",
+    "xsim.dir/tb_ace_manager_transactions/xsim.rtti": "b5560c7ec99b64b14fa148c160e588eae83e0a9a9c29e187955f87fc9c111223",
+    "xsim.dir/tb_ace_manager_transactions/xsim.svtype": "443cbb081312b584b75fef0d7063e9ec28f3ff85dea37ae61a0308f17f7a11a1",
+    "xsim.dir/tb_ace_manager_transactions/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/tb_ace_manager_transactions/xsim.xdbg": "aa6e690dc72e63e95643fa86b1d228305dd066e9334170e486a3412cf8db74d3",
+    "xsim.dir/tb_ace_manager_transactions/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/tb_ace_manager_transactions/xsimk.exe": "459fae1c0ebf60f5cf9575e75cf9e52d10130d5fe79de9af0369e85d7847914c",
+    "xsim.dir/tb_ace_manager_transactions/xsimkernel.log": "12cc310a606b437f13d0fa21dfa61bac3d9175960ff362892d5725b01a01d56d",
+    "xsim.dir/tb_ace_manager_transactions/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/tb_ace_manager_transactions/xsim_script.tcl": "df8a7e957af71c3ada24a19cb51e17cd31340653dc8e59419a278721f83894d5",
+    "xsim.dir/tb_ace_snoop_fabric/Compile_Options.txt": "405ee0e24a11ab3780f1410141ba0092d6177abff2ac3b2937e4aae40eb13823",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.dbg": "855793d2eb2b1dcace7a3c839b47537fd9f11ef3d1b46c216d1c8e45ad81d480",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.mem": "e2fc06257f95b126a807b71e325a1924fa641a85bfff853d561d136f5e6de499",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.reloc": "d4c0e1063473a71476b5df8db5a0598dfdd007df8d7f436ecf3b5593b39d434d",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.rtti": "3ccc16597d29b04f534f220385a11b648bfcab0fe501cb30ad6989d74e4040fa",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.svtype": "f0e20ca6d546b0716b4314b2c783dbfa2cbb12dd1d2c7c10abc2486630696d7c",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/tb_ace_snoop_fabric/xsim.xdbg": "5655a9e6cc5b89d9f722299bdc48c920a00bce34d333fd9b1df82b7a397e2677",
+    "xsim.dir/tb_ace_snoop_fabric/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/tb_ace_snoop_fabric/xsimk.exe": "116fbf025478dd8b33a481db64bfcd56be90fd1c89075ab6898b6f6e17ce9306",
+    "xsim.dir/tb_ace_snoop_fabric/xsimkernel.log": "f55025c6c8107da50df864eff01fc04ecdb97054659bf6760aa130aa33f88797",
+    "xsim.dir/tb_ace_snoop_fabric/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/tb_ace_snoop_fabric/xsim_script.tcl": "2dcbfe63aba9116f2b602b178e97e4200421e42fc976c49f9017178377f5b994",
+    "xsim.dir/tb_ace_snoop_service/Compile_Options.txt": "8312922da79b18b48b698ab9964780b0b5314640e105d17918782f1d3911e442",
+    "xsim.dir/tb_ace_snoop_service/xsim.dbg": "f3038057cde10779d62fc646c6d0f02a1563443836a7686ed5821ff5e279756f",
+    "xsim.dir/tb_ace_snoop_service/xsim.mem": "6490849c6c1ecc258d821659b9e48737256f10600452d09164c0529e75fe2047",
+    "xsim.dir/tb_ace_snoop_service/xsim.reloc": "9b6762dc822b09be55d6409ac2375d239482a39f069815b43f9ba4b4fbddfb3f",
+    "xsim.dir/tb_ace_snoop_service/xsim.rtti": "8bc55403e119c8616ea12644debc6087688127e7ff5c12a3855b647e4c0d398e",
+    "xsim.dir/tb_ace_snoop_service/xsim.svtype": "df1860f3accd8b68511d6917b85a782be576a6bdbedf0f05ada49d452fff7a32",
+    "xsim.dir/tb_ace_snoop_service/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/tb_ace_snoop_service/xsim.xdbg": "f2e264b1bfa51c21878b301987f3c07b9c9bcdf3508f7d9ce1e7fdd9bb1bd8d8",
+    "xsim.dir/tb_ace_snoop_service/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "xsim.dir/tb_ace_snoop_service/xsimk.exe": "ce563e837643b83bfb20db92d9dbbeeb52500cd4352b5e7f7de365149e29d4b1",
+    "xsim.dir/tb_ace_snoop_service/xsimkernel.log": "f63aac37f9f18518e4d60ce257db96310214c6ab390dd5a72d19e035de17bad6",
+    "xsim.dir/tb_ace_snoop_service/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "xsim.dir/tb_ace_snoop_service/xsim_script.tcl": "32e3f3ee8b338b1ec3e8f3a62c0bcf1cf4f493830d8ba66144a87bb348013ccb",
+    "xsim.dir/work/ace_b1.sdb": "cef8b475513812c9c1d69d2a52721b39b36053c918a3f8bba4fc66680b7a7727",
+    "xsim.dir/work/ace_cache_snoop_endpoint.sdb": "eb8ca8624e425089202928691a4d77e4a7b4ba0e2b4bde823cbce41eb1e84f9f",
+    "xsim.dir/work/ace_manager_request_controller.sdb": "f5bd7494927f3bf260541e1abc7bce78ed27f9a549f7a63ab45459cff7df6262",
+    "xsim.dir/work/ace_multi.sdb": "acf8d19a64b74239916adc30b752fb661831aee886b666a66d3fe42dce5e5d19",
+    "xsim.dir/work/ace_p.sdb": "c4de546c826074ac15b70db7f4b5e1ae27ff14f35b46f7a861003956d9e42ca1",
+    "xsim.dir/work/ace_snoop_controller.sdb": "7938df95bea86292fce3746cb9a5e036e019cd05492ac404529d7cd429ede353",
+    "xsim.dir/work/ace_snoop_fabric.sdb": "683cb5210a2aae816ce3790e0a62155b93ffff46ccfa56f2551f680173f222a7",
+    "xsim.dir/work/ace_snoop_pkg.sdb": "057150ec905f30fe0ba00e607e1dfbe6d66bd599dbdb3193a2dfd1935fdfd460",
+    "xsim.dir/work/axi4_simple_2to1_bus_arbiter.sdb": "6d3f98bdc19e545bc44e49e5dbeec06813e3124b46d0a3b879a3467b9b2cd793",
+    "xsim.dir/work/axi_b0_top.sdb": "33f832fd0a59c6b3585931943549642bc29e945886c7239d7575a055318ed78d",
+    "xsim.dir/work/axi_b1_conventional_top.sdb": "a032d2a8f94932e7c282a9b8f31e75bb321d9f57cb418eaff49e0ac39bb3d7a2",
+    "xsim.dir/work/axi_cci_ace_top.sdb": "f788ab776a46518c55891efbcd488f52e0608d9d3084fba61776cc69f784d249",
+    "xsim.dir/work/axi_cci_top.sdb": "1a225a8b9160d00eac866690c60aa3489569b25fe43b4ed903463006e4b2b791",
+    "xsim.dir/work/axi_memory_slave.sdb": "ffc3e7efb56ca8061eb667c27c2d0c58e4c726976e26b26f8df388cfd7eb3327",
+    "xsim.dir/work/axi_p_range_top.sdb": "94860e829e4e75079dee8ee974f4f7a04191e82399ada743a11e4bfea27dbf61",
+    "xsim.dir/work/cci_ace_snoop_service.sdb": "2f17f3fc1627bf78122a6c7f411cbe92dbe13838abcbcf7f59d6f9a59e57e6b7",
+    "xsim.dir/work/cci_ac_range_gen.sdb": "bc67c60108c1bbe2ef9e9b250b455fd7c567350fcb75ee39f6aa39270c4f5d57",
+    "xsim.dir/work/cci_pkg.sdb": "3f0a72d0a6659e2de95ebb7c0331785f62692f6d83649882238fbe8b4ee7d1e1",
+    "xsim.dir/work/cci_range_hazard_checker.sdb": "73ac082ee8286c0b48f10dd23296b207d05cd1e9f71e636570eec6d7a22b89c7",
+    "xsim.dir/work/cci_range_req_decoder.sdb": "0f2a609610aedab08092a31288e42f730ab9fbe9af30d5e0db354134d77a3c5d",
+    "xsim.dir/work/cci_range_rim_tracker.sdb": "2e37bb25e835935e8e61c6db037c7f8b3f52b2567d6f3d13c7699b59ca159057",
+    "xsim.dir/work/coh_write_ingress.sdb": "39a66c02b75ef32c5e87f5f445d02c04f805e9cce9210453ef4f131529f3a49f",
+    "xsim.dir/work/m0_snoop_endpoint.sdb": "aaaea10a38b654330b5e56895eca5aa70d43753dec8a6391ec65fc408bdd690b",
+    "xsim.dir/work/synth_register_shell.sdb": "12673f4e4972846820ecdeaf20d52d6b4b4ad78b6a1c99ba5dceb4fd40ed82ba",
+    "xsim.dir/work/tb_ace_manager_transactions.sdb": "fe025375ee833ead0e87f85d02545d11d527cb5eee350fdda0c70164861d199e",
+    "xsim.dir/work/tb_ace_snoop_fabric.sdb": "f6551b332cf55c2115ece47c24b1321660711d2d867922e44bc0666996dfd5d9",
+    "xsim.dir/work/tb_ace_snoop_service.sdb": "808cc90b329df32cceb44cbd25dcda893b80a5fb3c4a82ae8e1c526ea757f5d2",
+    "xsim.dir/work/tb_cci_ace_integration.sdb": "1848b02085a62ce4ff3461e32a9ce8b898bfc89b96472b0516d986255854aa09",
+    "xsim.dir/work/work.rlx": "2333d7003499d651a3b5aef09529db3d9eae27154e7497f6aeb50840ddcd7695"
+  }
+}

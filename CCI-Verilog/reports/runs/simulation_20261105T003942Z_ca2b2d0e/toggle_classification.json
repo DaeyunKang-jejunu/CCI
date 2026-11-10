@@ -1,0 +1,518 @@
+{
+  "rules": {
+    "range_path_tied_off_in_B1": "B1 only: USE_RANGE=0 ties the range setup/context/AC path to constants",
+    "error_flag_negative_only": "error flags; raised only by negative/protocol-error runs that are not instrumented",
+    "response_okay_only": "RESP bits; instrumented runs return OKAY only (error responses are negative runs)",
+    "payload_data": "data payload bits; coherence control never inspects data",
+    "fixed_protocol_field": "LEN/LAST/ID/SNOOP/source fields fixed by the supported transaction subset",
+    "address_outside_window": "address/page/line bits above or outside the exercised address window",
+    "line_mask_unused_lines": "line-mask bits of lines never covered by a range in instrumented runs",
+    "occupancy_parameter_dependent": "full/count/index MSBs only reached with smaller depths or larger bursts than the D16/T16/F16 instrumented build",
+    "reset_single_assertion": "reset is asserted once per run, so only one edge after release is seen",
+    "focused_tb_scope": "isolated FIFO TB: arbitration lock/state paths belong to other benches",
+    "tb_constant_handshake": "handshake inputs the TB holds constant (always-ready, always-probing)"
+  },
+  "groups": {
+    "axi_fifo_overlap_d1": {
+      "total": 2113,
+      "categories": {
+        "payload_data": 1148,
+        "fixed_protocol_field": 133,
+        "tb_constant_handshake": 7,
+        "response_okay_only": 24,
+        "address_outside_window": 684,
+        "focused_tb_scope": 10,
+        "occupancy_parameter_dependent": 48,
+        "error_flag_negative_only": 10,
+        "reset_single_assertion": 1
+      },
+      "top_signals": {
+        "payload_data": {
+          "M1_WDATA[]": 212,
+          "M0_WDATA[]": 212,
+          "S_WDATA[]": 208,
+          "M1_RDATA[]": 172,
+          "S_RDATA[]": 172,
+          "M0_RDATA[]": 172
+        },
+        "fixed_protocol_field": {
+          "M1_ARLEN[]": 16,
+          "S_AWLEN[]": 16,
+          "S_ARLEN[]": 16,
+          "wr_q[].len[]": 16,
+          "rd_q[].len[]": 16,
+          "M0_AWLEN[]": 16,
+          "M0_ARLEN[]": 16,
+          "M1_AWLEN[]": 16
+        },
+        "tb_constant_handshake": {
+          "M1_BREADY": 1,
+          "M1_RREADY": 1,
+          "S_AWREADY": 1,
+          "S_WREADY": 1,
+          "S_ARREADY": 1,
+          "M0_BREADY": 1,
+          "M0_RREADY": 1
+        },
+        "response_okay_only": {
+          "M1_BRESP[]": 4,
+          "M1_RRESP[]": 4,
+          "S_BRESP[]": 4,
+          "S_RRESP[]": 4,
+          "M0_BRESP[]": 4,
+          "M0_RRESP[]": 4
+        },
+        "address_outside_window": {
+          "M1_ARADDR[]": 115,
+          "M0_AWADDR[]": 115,
+          "M0_ARADDR[]": 115,
+          "M1_AWADDR[]": 115,
+          "S_AWADDR[]": 112,
+          "S_ARADDR[]": 112
+        },
+        "focused_tb_scope": {
+          "aw_grant_locked": 2,
+          "ar_grant_locked": 2,
+          "wf_state": 2,
+          "rr_state": 2,
+          "wr_both": 2
+        },
+        "occupancy_parameter_dependent": {
+          "wr_beat_count[]": 16,
+          "rd_beat_count[]": 16,
+          "aw_locked_route": 2,
+          "ar_locked_route": 2,
+          "wr_w_head[]": 2,
+          "wr_b_head[]": 2,
+          "wr_tail[]": 2,
+          "rd_head[]": 2
+        },
+        "error_flag_negative_only": {
+          "protocol_error_wlast": 2,
+          "protocol_error_rlast": 2,
+          "protocol_error_bid_order": 2,
+          "protocol_error_rid_order": 2,
+          "protocol_error_outstanding_overflow": 2
+        },
+        "reset_single_assertion": {
+          "ARESETn": 1
+        }
+      },
+      "unclassified": {
+        "M1_WSTRB[]": 24,
+        "M0_WSTRB[]": 24
+      }
+    },
+    "axi_fifo_overlap_d3": {
+      "total": 2169,
+      "categories": {
+        "payload_data": 1148,
+        "fixed_protocol_field": 197,
+        "tb_constant_handshake": 7,
+        "response_okay_only": 24,
+        "address_outside_window": 684,
+        "focused_tb_scope": 10,
+        "occupancy_parameter_dependent": 40,
+        "error_flag_negative_only": 10,
+        "reset_single_assertion": 1
+      },
+      "top_signals": {
+        "payload_data": {
+          "M1_WDATA[]": 212,
+          "M0_WDATA[]": 212,
+          "S_WDATA[]": 208,
+          "M1_RDATA[]": 172,
+          "S_RDATA[]": 172,
+          "M0_RDATA[]": 172
+        },
+        "fixed_protocol_field": {
+          "wr_q[].len[]": 48,
+          "rd_q[].len[]": 48,
+          "M1_ARLEN[]": 16,
+          "S_AWLEN[]": 16,
+          "S_ARLEN[]": 16,
+          "M0_AWLEN[]": 16,
+          "M0_ARLEN[]": 16,
+          "M1_AWLEN[]": 16
+        },
+        "tb_constant_handshake": {
+          "M1_BREADY": 1,
+          "M1_RREADY": 1,
+          "S_AWREADY": 1,
+          "S_WREADY": 1,
+          "S_ARREADY": 1,
+          "M0_BREADY": 1,
+          "M0_RREADY": 1
+        },
+        "response_okay_only": {
+          "M1_BRESP[]": 4,
+          "M1_RRESP[]": 4,
+          "S_BRESP[]": 4,
+          "S_RRESP[]": 4,
+          "M0_BRESP[]": 4,
+          "M0_RRESP[]": 4
+        },
+        "address_outside_window": {
+          "M1_ARADDR[]": 115,
+          "M0_AWADDR[]": 115,
+          "M0_ARADDR[]": 115,
+          "M1_AWADDR[]": 115,
+          "S_AWADDR[]": 112,
+          "S_ARADDR[]": 112
+        },
+        "focused_tb_scope": {
+          "aw_grant_locked": 2,
+          "ar_grant_locked": 2,
+          "wf_state": 2,
+          "rr_state": 2,
+          "wr_both": 2
+        },
+        "occupancy_parameter_dependent": {
+          "wr_beat_count[]": 16,
+          "rd_beat_count[]": 16,
+          "aw_locked_route": 2,
+          "ar_locked_route": 2,
+          "wr_w_count[]": 2,
+          "rd_both": 2
+        },
+        "error_flag_negative_only": {
+          "protocol_error_wlast": 2,
+          "protocol_error_rlast": 2,
+          "protocol_error_bid_order": 2,
+          "protocol_error_rid_order": 2,
+          "protocol_error_outstanding_overflow": 2
+        },
+        "reset_single_assertion": {
+          "ARESETn": 1
+        }
+      },
+      "unclassified": {
+        "M1_WSTRB[]": 24,
+        "M0_WSTRB[]": 24
+      }
+    },
+    "axi_fifo_overlap_d5": {
+      "total": 2235,
+      "categories": {
+        "payload_data": 1148,
+        "fixed_protocol_field": 261,
+        "tb_constant_handshake": 7,
+        "response_okay_only": 24,
+        "address_outside_window": 684,
+        "focused_tb_scope": 10,
+        "occupancy_parameter_dependent": 42,
+        "error_flag_negative_only": 10,
+        "reset_single_assertion": 1
+      },
+      "top_signals": {
+        "payload_data": {
+          "M1_WDATA[]": 212,
+          "M0_WDATA[]": 212,
+          "S_WDATA[]": 208,
+          "M1_RDATA[]": 172,
+          "S_RDATA[]": 172,
+          "M0_RDATA[]": 172
+        },
+        "fixed_protocol_field": {
+          "wr_q[].len[]": 80,
+          "rd_q[].len[]": 80,
+          "M1_ARLEN[]": 16,
+          "S_AWLEN[]": 16,
+          "S_ARLEN[]": 16,
+          "M0_AWLEN[]": 16,
+          "M0_ARLEN[]": 16,
+          "M1_AWLEN[]": 16
+        },
+        "tb_constant_handshake": {
+          "M1_BREADY": 1,
+          "M1_RREADY": 1,
+          "S_AWREADY": 1,
+          "S_WREADY": 1,
+          "S_ARREADY": 1,
+          "M0_BREADY": 1,
+          "M0_RREADY": 1
+        },
+        "response_okay_only": {
+          "M1_BRESP[]": 4,
+          "M1_RRESP[]": 4,
+          "S_BRESP[]": 4,
+          "S_RRESP[]": 4,
+          "M0_BRESP[]": 4,
+          "M0_RRESP[]": 4
+        },
+        "address_outside_window": {
+          "M1_ARADDR[]": 115,
+          "M0_AWADDR[]": 115,
+          "M0_ARADDR[]": 115,
+          "M1_AWADDR[]": 115,
+          "S_AWADDR[]": 112,
+          "S_ARADDR[]": 112
+        },
+        "focused_tb_scope": {
+          "aw_grant_locked": 2,
+          "ar_grant_locked": 2,
+          "wf_state": 2,
+          "rr_state": 2,
+          "wr_both": 2
+        },
+        "occupancy_parameter_dependent": {
+          "wr_beat_count[]": 16,
+          "rd_beat_count[]": 16,
+          "wr_w_count[]": 4,
+          "aw_locked_route": 2,
+          "ar_locked_route": 2,
+          "rd_both": 2
+        },
+        "error_flag_negative_only": {
+          "protocol_error_wlast": 2,
+          "protocol_error_rlast": 2,
+          "protocol_error_bid_order": 2,
+          "protocol_error_rid_order": 2,
+          "protocol_error_outstanding_overflow": 2
+        },
+        "reset_single_assertion": {
+          "ARESETn": 1
+        }
+      },
+      "unclassified": {
+        "M1_WSTRB[]": 24,
+        "M0_WSTRB[]": 24
+      }
+    },
+    "b1_d16_t16_f16": {
+      "total": 6240,
+      "categories": {
+        "payload_data": 1172,
+        "response_okay_only": 80,
+        "fixed_protocol_field": 519,
+        "address_outside_window": 1310,
+        "error_flag_negative_only": 20,
+        "occupancy_parameter_dependent": 70,
+        "tb_constant_handshake": 4,
+        "range_path_tied_off_in_B1": 2933
+      },
+      "top_signals": {
+        "payload_data": {
+          "M0_WDATA[]": 480,
+          "M1_WDATA[]": 260,
+          "M1_RDATA[]": 112,
+          "S_RDATA[]": 112,
+          "M0_RDATA[]": 112,
+          "S_WDATA[]": 96
+        },
+        "response_okay_only": {
+          "nq_rsp_resp[]": 10,
+          "write_nq_rsp_resp[]": 10,
+          "M1_BRESP[]": 8,
+          "M1_RRESP[]": 8,
+          "S_BRESP[]": 8,
+          "S_RRESP[]": 8,
+          "M0_BRESP[]": 8,
+          "M0_RRESP[]": 8
+        },
+        "fixed_protocol_field": {
+          "rd_q[].len[]": 224,
+          "rd_q[].id[]": 50,
+          "M1_ARLEN[]": 28,
+          "M0_AWLEN[]": 28,
+          "M0_ARLEN[]": 28,
+          "M1_AWLEN[]": 26,
+          "S_AWLEN[]": 24,
+          "S_ARLEN[]": 24
+        },
+        "address_outside_window": {
+          "M1_ARADDR[]": 128,
+          "read_prep_addr[]": 128,
+          "M0_AWADDR[]": 122,
+          "M0_ARADDR[]": 114,
+          "S_ARADDR[]": 96,
+          "M1_AWADDR[]": 95,
+          "S_AWADDR[]": 92,
+          "ac_addr[]": 92
+        },
+        "error_flag_negative_only": {
+          "protocol_error_wlast": 4,
+          "protocol_error_rlast": 4,
+          "protocol_error_bid_order": 4,
+          "protocol_error_rid_order": 4,
+          "protocol_error_outstanding_overflow": 4
+        },
+        "occupancy_parameter_dependent": {
+          "rd_q[].route": 16,
+          "wr_beat_count[]": 12,
+          "rd_beat_count[]": 12,
+          "trackers[].ingress_idx[]": 10,
+          "rd_count[]": 8,
+          "tracker_full_stall": 4,
+          "wr_w_count[]": 2,
+          "rd_q_full": 2
+        },
+        "tb_constant_handshake": {
+          "M0_BREADY": 2,
+          "M0_RREADY": 2
+        },
+        "range_path_tied_off_in_B1": {
+          "setup_addr[]": 256,
+          "setup_mask[]": 256,
+          "range_acaddr[]": 128,
+          "range_ctx.done_mask[]": 128,
+          "range_ctx.line_mask[]": 128,
+          "range_ctx.wr_issued_mask[]": 128,
+          "pending_mask[]": 128,
+          "decoded_mask[]": 128
+        }
+      },
+      "unclassified": {
+        "M1_WSTRB[]": 32,
+        "M0_WSTRB[]": 16,
+        "write_preparing": 2,
+        "nq_valid": 2,
+        "nq_ready": 2,
+        "nq_rsp_valid": 2,
+        "nq_rsp_ready": 2,
+        "nq_rsp_tracker[]": 8,
+        "read_reserve_fire": 2,
+        "read_reserve_idx[]": 12,
+        "read_done_fire": 2,
+        "read_done_idx[]": 12,
+        "read_prep_valid": 2,
+        "read_prep_ready": 2,
+        "read_prep_rsp_valid": 2,
+        "read_prep_rsp_ready": 2,
+        "read_prep_rsp[]": 10,
+        "read_release": 4,
+        "write_nq_valid": 2,
+        "write_nq_ready": 2,
+        "write_nq_rsp_valid": 2,
+        "write_nq_rsp_ready": 2,
+        "write_nq_rsp_tracker[]": 8
+      }
+    },
+    "p_d16_t16_f16": {
+      "total": 3942,
+      "categories": {
+        "payload_data": 1172,
+        "response_okay_only": 84,
+        "fixed_protocol_field": 591,
+        "address_outside_window": 1672,
+        "error_flag_negative_only": 20,
+        "occupancy_parameter_dependent": 76,
+        "tb_constant_handshake": 5,
+        "line_mask_unused_lines": 90
+      },
+      "top_signals": {
+        "payload_data": {
+          "M0_WDATA[]": 480,
+          "M1_WDATA[]": 260,
+          "M1_RDATA[]": 112,
+          "S_RDATA[]": 112,
+          "M0_RDATA[]": 112,
+          "S_WDATA[]": 96
+        },
+        "response_okay_only": {
+          "cr_resp[]": 12,
+          "nq_rsp_resp[]": 10,
+          "write_nq_rsp_resp[]": 10,
+          "M1_BRESP[]": 8,
+          "M1_RRESP[]": 8,
+          "S_BRESP[]": 8,
+          "S_RRESP[]": 8,
+          "M0_BRESP[]": 8
+        },
+        "fixed_protocol_field": {
+          "rd_q[].len[]": 224,
+          "rd_q[].id[]": 52,
+          "M1_ARLEN[]": 28,
+          "M0_AWLEN[]": 28,
+          "M0_ARLEN[]": 28,
+          "M1_AWLEN[]": 26,
+          "S_AWLEN[]": 24,
+          "S_ARLEN[]": 24
+        },
+        "address_outside_window": {
+          "ac_addr[]": 130,
+          "M1_ARADDR[]": 128,
+          "M0_AWADDR[]": 118,
+          "M0_ARADDR[]": 112,
+          "S_ARADDR[]": 96,
+          "M1_AWADDR[]": 67,
+          "S_AWADDR[]": 64,
+          "setup_addr[]": 64
+        },
+        "error_flag_negative_only": {
+          "protocol_error_wlast": 4,
+          "protocol_error_rlast": 4,
+          "protocol_error_bid_order": 4,
+          "protocol_error_rid_order": 4,
+          "protocol_error_outstanding_overflow": 4
+        },
+        "occupancy_parameter_dependent": {
+          "ac_fifo[][]": 19,
+          "rd_q[].route": 17,
+          "wr_beat_count[]": 12,
+          "rd_beat_count[]": 12,
+          "rd_count[]": 8,
+          "tracker_full_stall": 4,
+          "rd_q_full": 2,
+          "rd_both": 2
+        },
+        "tb_constant_handshake": {
+          "M0_BREADY": 2,
+          "M0_RREADY": 2,
+          "probe_valid": 1
+        },
+        "line_mask_unused_lines": {
+          "setup_mask[]": 60,
+          "req_line_mask[]": 30
+        }
+      },
+      "unclassified": {
+        "M1_WSTRB[]": 32,
+        "M0_WSTRB[]": 16,
+        "pending_op[]": 4,
+        "nq_valid": 2,
+        "nq_ready": 2,
+        "nq_rsp_valid": 2,
+        "nq_rsp_ready": 2,
+        "nq_rsp_tracker[]": 8,
+        "read_reserve_fire": 2,
+        "read_reserve_idx[]": 12,
+        "read_done_fire": 2,
+        "read_done_idx[]": 12,
+        "read_prep_valid": 2,
+        "read_prep_ready": 2,
+        "read_prep_rsp_valid": 2,
+        "read_prep_rsp_ready": 2,
+        "read_prep_rsp[]": 10,
+        "range_ctx.op[]": 4,
+        "read_release": 6,
+        "range_fault": 6,
+        "ctx[].op[]": 4,
+        "d_op[]": 4,
+        "rd_prep_valid": 2,
+        "rd_prep_ready": 2,
+        "rd_prep_rsp_valid": 2,
+        "rd_prep_rsp_ready": 2,
+        "rd_prep_rsp[]": 10,
+        "ctx.op[]": 4,
+        "read_preparing": 2,
+        "write_nq_valid": 2,
+        "write_nq_ready": 2,
+        "write_nq_rsp_valid": 2,
+        "write_nq_rsp_ready": 2,
+        "write_nq_rsp_tracker[]": 8,
+        "range_op[]": 4,
+        "range_read_reserve_fire": 2,
+        "range_read_reserve_idx[]": 12,
+        "range_read_done_fire": 2,
+        "range_read_done_idx[]": 12,
+        "range_read_prep_valid": 2,
+        "range_read_prep_ready": 2,
+        "range_read_prep_rsp_valid": 2,
+        "range_read_prep_rsp_ready": 2,
+        "range_read_prep_rsp[]": 10,
+        "coherent.ctx.op[]": 4
+      }
+    }
+  }
+}

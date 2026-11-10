@@ -1,0 +1,358 @@
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'M1_AWINGRESS_IDX'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:162:40: ... Location of port declaration
+  162 |     input wire [INGRESS_IDX_WIDTH-1:0] M1_AWINGRESS_IDX,
+      |                                        ^~~~~~~~~~~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.048
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'M1_BINGRESS_IDX'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:163:41: ... Location of port declaration
+  163 |     output wire [INGRESS_IDX_WIDTH-1:0] M1_BINGRESS_IDX,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'M1_BFIRE'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:164:17: ... Location of port declaration
+  164 |     output wire M1_BFIRE,
+      |                 ^~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'axi_idle'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:165:17: ... Location of port declaration
+  165 |     output wire axi_idle,
+      |                 ^~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'aw_grant_locked'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:166:18: ... Location of port declaration
+  166 |     output logic aw_grant_locked, ar_grant_locked,
+      |                  ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'ar_grant_locked'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:166:35: ... Location of port declaration
+  166 |     output logic aw_grant_locked, ar_grant_locked,
+      |                                   ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'aw_locked_route'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:167:18: ... Location of port declaration
+  167 |     output logic aw_locked_route, ar_locked_route,
+      |                  ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'ar_locked_route'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:167:35: ... Location of port declaration
+  167 |     output logic aw_locked_route, ar_locked_route,
+      |                                   ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: tb_axi_bus_system.sv:242:7: Instance has missing pin: 'protocol_error_outstanding_overflow'
+  242 |     ) arbiter (
+      |       ^~~~~~~
+                     axi4_simple_2to1_bus_arbiter.sv:174:41: ... Location of port declaration
+  174 |     output reg                          protocol_error_outstanding_overflow
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: axi4_simple_2to1_bus_arbiter.sv:45:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   45 | module axi4_simple_2to1_bus_arbiter #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       tb_axi_bus_system.sv:64:8: ... Location of module with timescale
+   64 | module tb_axi_bus_system #(parameter int MAX_OUTSTANDING_TRANSACTIONS=16);
+      |        ^~~~~~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.048
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-TIMESCALEMOD: simple_axi_master.sv:57:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   57 | module simple_axi_master #(
+      |        ^~~~~~~~~~~~~~~~~
+                       tb_axi_bus_system.sv:64:8: ... Location of module with timescale
+   64 | module tb_axi_bus_system #(parameter int MAX_OUTSTANDING_TRANSACTIONS=16);
+      |        ^~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: realistic_axi_master.sv:91:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   91 | module realistic_axi_master #(
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       tb_axi_bus_system.sv:64:8: ... Location of module with timescale
+   64 | module tb_axi_bus_system #(parameter int MAX_OUTSTANDING_TRANSACTIONS=16);
+      |        ^~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: simple_axi_slave.sv:49:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   49 | module simple_axi_slave #(
+      |        ^~~~~~~~~~~~~~~~
+                       tb_axi_bus_system.sv:64:8: ... Location of module with timescale
+   64 | module tb_axi_bus_system #(parameter int MAX_OUTSTANDING_TRANSACTIONS=16);
+      |        ^~~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:202:17: Operator ASSIGN expects 128 bits on the Assign RHS, but Assign RHS's VARREF 'MASTER_ID' generates 32 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  202 |             tag = MASTER_ID;
+      |                 ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.048
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:203:57: Operator SHIFTL expects 128 bits on the LHS, but LHS's VARREF 'txn' generates 32 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  203 |             make_wdata = (tag << (DATA_WIDTH-8)) | (txn << 8) | beat;
+      |                                                         ^~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:203:63: Operator OR expects 128 bits on the RHS, but RHS's VARREF 'beat' generates 32 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  203 |             make_wdata = (tag << (DATA_WIDTH-8)) | (txn << 8) | beat;
+      |                                                               ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:229:33: Operator MODDIV expects 32 bits on the LHS, but LHS's VARREF 's' generates 16 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  229 |         rand_gap = GAP_MIN + (s % (GAP_MAX - GAP_MIN + 1));
+      |                                 ^
+%Warning-WIDTHTRUNC: realistic_axi_master.sv:229:18: Operator ASSIGN expects 16 bits on the Assign RHS, but Assign RHS's ADD generates 32 bits.
+                                                   : ... note: In instance 'tb_axi_bus_system.master1'
+  229 |         rand_gap = GAP_MIN + (s % (GAP_MAX - GAP_MIN + 1));
+      |                  ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.048
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:259:27: Operator MODDIV expects 32 bits on the LHS, but LHS's VARREF 'lfsr_w' generates 16 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  259 |     wire w_gate = (lfsr_w % 100) < WVALID_PROB;
+      |                           ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:260:27: Operator MODDIV expects 32 bits on the LHS, but LHS's VARREF 'lfsr_b' generates 16 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  260 |     wire b_gate = (lfsr_b % 100) < BREADY_PROB;
+      |                           ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:276:31: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'wd_count' generates 7 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  276 |     wire wd_full  = (wd_count == WDATA_DEPTH);
+      |                               ^~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:280:15: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'p' generates 4 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  280 |         if (p == WCMD_DEPTH-1) wq_inc = '0;
+      |               ^~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:285:15: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'p' generates 6 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  285 |         if (p == WDATA_DEPTH-1) wd_inc = '0;
+      |               ^~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:332:60: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'wgen_count' generates 5 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  332 |             wgen_push = (wgen_gap == 16'd0) && (wgen_count < NUM_TRANSACTIONS)
+      |                                                            ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:333:36: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'wq_occ' generates 6 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  333 |                         && (wq_occ < WCMD_DEPTH);
+      |                                    ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:381:40: Operator FUNCREF 'make_wdata' expects 32 bits on the Function Argument, but Function Argument's SEL generates 4 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  381 |                 wdata[wd_tail].data <= make_wdata(wcmd[wq_dprod_head].id, wd_prod_beat);
+      |                                        ^~~~~~~~~~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:381:40: Operator FUNCREF 'make_wdata' expects 32 bits on the Function Argument, but Function Argument's VARREF 'wd_prod_beat' generates 8 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  381 |                 wdata[wd_tail].data <= make_wdata(wcmd[wq_dprod_head].id, wd_prod_beat);
+      |                                        ^~~~~~~~~~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:486:27: Operator MODDIV expects 32 bits on the LHS, but LHS's VARREF 'lfsr_r' generates 16 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  486 |     wire r_gate = (lfsr_r % 100) < RREADY_PROB;
+      |                           ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:489:15: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'p' generates 4 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  489 |         if (p == RCMD_DEPTH-1) rq_inc = '0;
+      |               ^~
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:519:60: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'rgen_count' generates 5 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  519 |             rgen_push = (rgen_gap == 16'd0) && (rgen_count < NUM_TRANSACTIONS)
+      |                                                            ^
+%Warning-WIDTHEXPAND: realistic_axi_master.sv:520:36: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'rq_occ' generates 6 bits.
+                                                    : ... note: In instance 'tb_axi_bus_system.master1'
+  520 |                         && (rq_occ < RCMD_DEPTH);
+      |                                    ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:138:28: Operator ASSIGN expects 4 bits on the Assign RHS, but Assign RHS's VARREF 'i' generates 32 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  138 |             wr_req[i].id   = i;
+      |                            ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:139:28: Operator ASSIGN expects 4 bits on the Assign RHS, but Assign RHS's VARREF 'i' generates 32 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  139 |             rd_req[i].id   = i;
+      |                            ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:144:48: Operator ADD expects 64 bits on the LHS, but LHS's CONST '32'h1000' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  144 |                 wr_req[i].addr = 32'h0000_1000 + (i * 32'h0000_0100);
+      |                                                ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:145:48: Operator ADD expects 64 bits on the LHS, but LHS's CONST '32'h3000' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  145 |                 rd_req[i].addr = 32'h0000_3000 + (i * 32'h0000_0100);
+      |                                                ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:147:48: Operator ADD expects 64 bits on the LHS, but LHS's CONST '32'h4000' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  147 |                 wr_req[i].addr = 32'h0000_4000 + (i * 32'h0000_0100);
+      |                                                ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:148:48: Operator ADD expects 64 bits on the LHS, but LHS's CONST '32'h2000' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  148 |                 rd_req[i].addr = 32'h0000_2000 + (i * 32'h0000_0100);
+      |                                                ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:158:38: Operator SHIFTL expects 128 bits on the LHS, but LHS's VARREF 'txn' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  158 |             make_wdata = base | (txn << 8) | beat;
+      |                                      ^~
+%Warning-WIDTHEXPAND: simple_axi_master.sv:158:44: Operator OR expects 128 bits on the RHS, but RHS's VARREF 'beat' generates 32 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  158 |             make_wdata = base | (txn << 8) | beat;
+      |                                            ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:197:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  197 |                 AWID    <= wr_req[aw_issue_idx].id;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:198:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  198 |                 AWADDR  <= wr_req[aw_issue_idx].addr;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:199:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  199 |                 AWLEN   <= wr_req[aw_issue_idx].len;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:205:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  205 |                     AWID    <= wr_req[aw_issue_idx + 1'b1].id;
+      |                                      ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:206:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  206 |                     AWADDR  <= wr_req[aw_issue_idx + 1'b1].addr;
+      |                                      ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:207:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  207 |                     AWLEN   <= wr_req[aw_issue_idx + 1'b1].len;
+      |                                      ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:203:35: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'aw_issue_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  203 |                 if ((aw_issue_idx + 1'b1) < NUM_TRANSACTIONS && ISSUE_GAP == 0) begin
+      |                                   ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:196:51: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'aw_issue_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  196 |             end else if (!AWVALID && aw_issue_idx < NUM_TRANSACTIONS) begin
+      |                                                   ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:247:27: Operator FUNCREF 'make_wdata' expects 32 bits on the Function Argument, but Function Argument's VARREF 'w_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  247 |                 WDATA  <= make_wdata(w_txn_idx, 0);
+      |                           ^~~~~~~~~~
+%Warning-WIDTHTRUNC: simple_axi_master.sv:248:42: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  248 |                 WLAST  <= (8'd0 == wr_req[w_txn_idx].len);
+      |                                          ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:258:56: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'w_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  258 |                         WDATA  <= make_wdata(w_txn_idx + 1'b1, 0);
+      |                                                        ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:259:50: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  259 |                         WLAST  <= (8'd0 == wr_req[w_txn_idx + 1'b1].len);
+      |                                                  ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:256:36: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'w_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  256 |                     if ((w_txn_idx + 1'b1) < NUM_TRANSACTIONS) begin
+      |                                    ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:266:30: Operator FUNCREF 'make_wdata' expects 32 bits on the Function Argument, but Function Argument's VARREF 'w_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  266 |                     WDATA <= make_wdata(w_txn_idx, w_beat_idx + 8'd1);
+      |                              ^~~~~~~~~~
+%Warning-WIDTHEXPAND: simple_axi_master.sv:266:63: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'w_beat_idx' generates 8 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  266 |                     WDATA <= make_wdata(w_txn_idx, w_beat_idx + 8'd1);
+      |                                                               ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:266:63: Operator ADD expects 32 bits on the RHS, but RHS's CONST '8'h1' generates 8 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  266 |                     WDATA <= make_wdata(w_txn_idx, w_beat_idx + 8'd1);
+      |                                                               ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:267:60: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  267 |                     WLAST <= ((w_beat_idx + 8'd1) == wr_req[w_txn_idx].len);
+      |                                                            ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:252:41: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  252 |                 if (w_beat_idx == wr_req[w_txn_idx].len) begin
+      |                                         ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:244:38: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'w_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  244 |             if (!WVALID && w_txn_idx < NUM_TRANSACTIONS) begin 
+      |                                      ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:294:32: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'b_recv_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  294 |                 if (b_recv_idx >= NUM_TRANSACTIONS || BID !== wr_req[b_recv_idx].id) begin
+      |                                ^~
+%Warning-WIDTHTRUNC: simple_axi_master.sv:294:69: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  294 |                 if (b_recv_idx >= NUM_TRANSACTIONS || BID !== wr_req[b_recv_idx].id) begin
+      |                                                                     ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:305:40: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'b_recv_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  305 |                 MASTER_ID, (b_recv_idx < NUM_TRANSACTIONS) ? wr_req[b_recv_idx].id : 'x,
+      |                                        ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:305:68: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  305 |                 MASTER_ID, (b_recv_idx < NUM_TRANSACTIONS) ? wr_req[b_recv_idx].id : 'x,
+      |                                                                    ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:308:35: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'b_recv_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  308 |                 tag_if(b_recv_idx >= NUM_TRANSACTIONS || BID !== wr_req[b_recv_idx].id, " <-- ID MISMATCH"));
+      |                                   ^~
+%Warning-WIDTHTRUNC: simple_axi_master.sv:308:72: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  308 |                 tag_if(b_recv_idx >= NUM_TRANSACTIONS || BID !== wr_req[b_recv_idx].id, " <-- ID MISMATCH"));
+      |                                                                        ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:330:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  330 |                 ARID    <= rd_req[ar_issue_idx].id;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:331:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  331 |                 ARADDR  <= rd_req[ar_issue_idx].addr;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:332:34: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  332 |                 ARLEN   <= rd_req[ar_issue_idx].len;
+      |                                  ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:338:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  338 |                     ARID    <= rd_req[ar_issue_idx + 1'b1].id;
+      |                                      ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:339:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  339 |                     ARADDR  <= rd_req[ar_issue_idx + 1'b1].addr;
+      |                                      ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:340:38: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  340 |                     ARLEN   <= rd_req[ar_issue_idx + 1'b1].len;
+      |                                      ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:336:35: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'ar_issue_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  336 |                 if ((ar_issue_idx + 1'b1) < NUM_TRANSACTIONS && ISSUE_GAP == 0) begin
+      |                                   ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:329:51: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'ar_issue_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  329 |             end else if (!ARVALID && ar_issue_idx < NUM_TRANSACTIONS) begin
+      |                                                   ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:380:31: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'r_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  380 |                 if (r_txn_idx >= NUM_TRANSACTIONS || RID !== rd_req[r_txn_idx].id) begin
+      |                               ^~
+%Warning-WIDTHTRUNC: simple_axi_master.sv:380:68: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  380 |                 if (r_txn_idx >= NUM_TRANSACTIONS || RID !== rd_req[r_txn_idx].id) begin
+      |                                                                    ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:383:52: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  383 |                 if (RLAST !== (r_beat_idx == rd_req[r_txn_idx].len)) begin
+      |                                                    ^
+%Warning-WIDTHTRUNC: simple_axi_master.sv:387:41: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  387 |                 if (r_beat_idx == rd_req[r_txn_idx].len) begin
+      |                                         ^
+%Warning-WIDTHEXPAND: simple_axi_master.sv:402:34: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'r_txn_idx' generates 5 bits.
+                                                 : ... note: In instance 'tb_axi_bus_system.master0'
+  402 |                 tag_if(r_txn_idx >= NUM_TRANSACTIONS || RID !== rd_req[r_txn_idx].id, " <-- ID MISMATCH"));
+      |                                  ^~
+%Warning-WIDTHTRUNC: simple_axi_master.sv:402:71: Bit extraction of array[15:0] requires 4 bit index, not 5 bits.
+                                                : ... note: In instance 'tb_axi_bus_system.master0'
+  402 |                 tag_if(r_txn_idx >= NUM_TRANSACTIONS || RID !== rd_req[r_txn_idx].id, " <-- ID MISMATCH"));
+      |                                                                       ^
+make: Entering directory '/tmp/cci_axi_v9/simulation_20261105T003942Z_ca2b2d0e/b0'
+g++-10 -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+g++-10 -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+g++-10 -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_axi_bus_system.cpp Vtb_axi_bus_system___024root__0.cpp Vtb_axi_bus_system__main.cpp Vtb_axi_bus_system___024root__Slow.cpp Vtb_axi_bus_system___024root__0__Slow.cpp Vtb_axi_bus_system__Syms__Slow.cpp > Vtb_axi_bus_system__ALL.cpp
+g++-10 -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_axi_bus_system__ALL.o Vtb_axi_bus_system__ALL.cpp
+g++-10    verilated.o verilated_timing.o verilated_threads.o Vtb_axi_bus_system__ALL.a    -pthread -lpthread -latomic   -o Vtb_axi_bus_system
+rm Vtb_axi_bus_system__ALL.verilator_deplist.tmp
+make: Leaving directory '/tmp/cci_axi_v9/simulation_20261105T003942Z_ca2b2d0e/b0'
+- V e r i l a t i o n   R e p o r t: Verilator 5.048 2026-04-26 rev v5.048
+- Verilator: Built from 0.351 MB sources in 6 modules, into 0.408 MB in 6 C++ files needing 0.001 MB
+- Verilator: Walltime 1.944 s (elab=0.014, cvt=0.030, bld=1.864); cpu 0.056 s on 4 threads; allocated 226.117 MB

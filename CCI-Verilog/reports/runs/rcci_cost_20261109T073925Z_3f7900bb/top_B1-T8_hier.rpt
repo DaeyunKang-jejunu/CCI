@@ -1,0 +1,55 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Mon Nov  9 16:48:46 2026
+| Host         : DESKTOP-SOHK4NB running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 3 -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/rcci_cost_20261109T073925Z_3f7900bb/top_B1-T8_hier.rpt
+| Design       : axi_cci_ace_top
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------------+-----------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+|           Instance           |                  Module                 | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++------------------------------+-----------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+| axi_cci_ace_top              |                                   (top) |      42595 |      42595 |       0 |    0 | 16627 |      0 |      0 |    0 |          0 |
+|   (axi_cci_ace_top)          |                                   (top) |         14 |         14 |       0 |    0 |   378 |      0 |      0 |    0 |          0 |
+|   G_COH_READ.read_ingress    |                        coh_read_ingress |      14135 |      14135 |       0 |    0 |  5136 |      0 |      0 |    0 |          0 |
+|   admission_pool             |                      cci_admission_pool |       1313 |       1313 |       0 |    0 |    52 |      0 |      0 |    0 |          0 |
+|   auto_adapter               |                 cci_service_rsp_adapter |        270 |        270 |       0 |    0 |   523 |      0 |      0 |    0 |          0 |
+|   core                       |                             axi_cci_top |       3755 |       3755 |       0 |    0 |  1272 |      0 |      0 |    0 |          0 |
+|     (core)                   |                             axi_cci_top |          1 |          1 |       0 |    0 |    10 |      0 |      0 |    0 |          0 |
+|     bus                      |            axi4_simple_2to1_bus_arbiter |        773 |        773 |       0 |    0 |   526 |      0 |      0 |    0 |          0 |
+|     coherent.control         |                       coh_write_ingress |       2981 |       2981 |       0 |    0 |   736 |      0 |      0 |    0 |          0 |
+|   explicit_adapter           | cci_service_rsp_adapter__parameterized0 |        136 |        136 |       0 |    0 |   525 |      0 |      0 |    0 |          0 |
+|   m1_issue_arbiter           |                   rcci_m1_issue_arbiter |          4 |          4 |       0 |    0 |     1 |      0 |      0 |    0 |          0 |
+|   manager                    |                ace_manager_request_bank |      10736 |      10736 |       0 |    0 |  3641 |      0 |      0 |    0 |          0 |
+|     (manager)                |                ace_manager_request_bank |       2345 |       2345 |       0 |    0 |  1045 |      0 |      0 |    0 |          0 |
+|     G_CONTEXT[0].u_context   |          ace_manager_request_controller |       1563 |       1563 |       0 |    0 |   649 |      0 |      0 |    0 |          0 |
+|     G_CONTEXT[1].u_context   |        ace_manager_request_controller_3 |       1818 |       1818 |       0 |    0 |   649 |      0 |      0 |    0 |          0 |
+|     G_CONTEXT[2].u_context   |        ace_manager_request_controller_4 |       2132 |       2132 |       0 |    0 |   649 |      0 |      0 |    0 |          0 |
+|     G_CONTEXT[3].u_context   |        ace_manager_request_controller_5 |       2878 |       2878 |       0 |    0 |   649 |      0 |      0 |    0 |          0 |
+|   nq_read_adapter            | cci_service_rsp_adapter__parameterized1 |       4582 |       4582 |       0 |    0 |   563 |      0 |      0 |    0 |          0 |
+|   nq_write_adapter           | cci_service_rsp_adapter__parameterized2 |         53 |         53 |       0 |    0 |    11 |      0 |      0 |    0 |          0 |
+|   service                    |            cci_ace_tagged_snoop_service |       4671 |       4671 |       0 |    0 |  2627 |      0 |      0 |    0 |          0 |
+|     (service)                |            cci_ace_tagged_snoop_service |          1 |          1 |       0 |    0 |     3 |      0 |      0 |    0 |          0 |
+|     bank                     |           ace_snoop_controller_tag_bank |       4670 |       4670 |       0 |    0 |  2624 |      0 |      0 |    0 |          0 |
+|       (bank)                 |           ace_snoop_controller_tag_bank |        134 |        134 |       0 |    0 |   196 |      0 |      0 |    0 |          0 |
+|       G_CTRL[0].u_controller |                    ace_snoop_controller |        636 |        636 |       0 |    0 |   607 |      0 |      0 |    0 |          0 |
+|       G_CTRL[1].u_controller |                  ace_snoop_controller_0 |        833 |        833 |       0 |    0 |   607 |      0 |      0 |    0 |          0 |
+|       G_CTRL[2].u_controller |                  ace_snoop_controller_1 |       2454 |       2454 |       0 |    0 |   607 |      0 |      0 |    0 |          0 |
+|       G_CTRL[3].u_controller |                  ace_snoop_controller_2 |        613 |        613 |       0 |    0 |   607 |      0 |      0 |    0 |          0 |
+|   write_range_adapter        |                 coh_write_range_adapter |       3274 |       3274 |       0 |    0 |  1898 |      0 |      0 |    0 |          0 |
++------------------------------+-----------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+
+

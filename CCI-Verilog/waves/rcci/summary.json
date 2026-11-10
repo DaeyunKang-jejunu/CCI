@@ -1,0 +1,692 @@
+[
+  {
+    "case": "b1-rd-8l",
+    "title": "B1-T4, 8-line read, 50% dirty",
+    "tb": {
+      "USE_RANGE": 0,
+      "LINE_TRACKER_ENTRIES": 4,
+      "M1_READ_CONTEXTS": 4,
+      "M1_WRITE_CONTEXTS": 4,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=0",
+      "+perf_lines=8",
+      "+perf_dirty=50"
+    ],
+    "fst": "waves/rcci/b1-rd-8l/b1-rd-8l.fst",
+    "gtkw": "waves/rcci/b1-rd-8l/b1-rd-8l.gtkw",
+    "events": {
+      "M1_AR": 8,
+      "M1_R": 32,
+      "M1_RLAST": 8,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 8,
+      "CR": 8,
+      "CD_LAST": 4,
+      "S_AR": 4,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 4,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      145000,
+      745000
+    ]
+  },
+  {
+    "case": "rcci-rd-8l",
+    "title": "rCCI E16/N_fly4, one 8-line ReadRange, 50% dirty",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=0",
+      "+perf_lines=8",
+      "+perf_dirty=50"
+    ],
+    "fst": "waves/rcci/rcci-rd-8l/rcci-rd-8l.fst",
+    "gtkw": "waves/rcci/rcci-rd-8l/rcci-rd-8l.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 32,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 8,
+      "CR": 8,
+      "CD_LAST": 4,
+      "S_AR": 4,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      145000,
+      725000
+    ]
+  },
+  {
+    "case": "b1-wr-8l",
+    "title": "B1-T4, 8-line write",
+    "tb": {
+      "USE_RANGE": 0,
+      "LINE_TRACKER_ENTRIES": 4,
+      "M1_READ_CONTEXTS": 4,
+      "M1_WRITE_CONTEXTS": 4,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=1",
+      "+perf_lines=8",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/b1-wr-8l/b1-wr-8l.fst",
+    "gtkw": "waves/rcci/b1-wr-8l/b1-wr-8l.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 8,
+      "M1_W": 32,
+      "M1_WLAST": 8,
+      "M1_B": 8,
+      "AC": 8,
+      "CR": 8,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 8,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 4,
+      "dut.write_line_outstanding": 4
+    },
+    "active_ps": [
+      65000,
+      665000
+    ]
+  },
+  {
+    "case": "rcci-wr-8l",
+    "title": "rCCI E16/N_fly4, one 8-line WriteRange",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=1",
+      "+perf_lines=8",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-wr-8l/rcci-wr-8l.fst",
+    "gtkw": "waves/rcci/rcci-wr-8l/rcci-wr-8l.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 1,
+      "M1_W": 32,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 8,
+      "CR": 8,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 8,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 4
+    },
+    "active_ps": [
+      65000,
+      645000
+    ]
+  },
+  {
+    "case": "rcci-rd-w1",
+    "title": "rCCI 32-line ReadRange, N_fly=1",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 1,
+      "RANGE_WRITE_WINDOW": 1
+    },
+    "plusargs": [
+      "+perf_op=0",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-rd-w1/rcci-rd-w1.fst",
+    "gtkw": "waves/rcci/rcci-rd-w1/rcci-rd-w1.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 128,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 32,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 1,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      65000,
+      6785000
+    ]
+  },
+  {
+    "case": "rcci-rd-w4",
+    "title": "rCCI 32-line ReadRange, N_fly=4",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=0",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-rd-w4/rcci-rd-w4.fst",
+    "gtkw": "waves/rcci/rcci-rd-w4/rcci-rd-w4.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 128,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 32,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      65000,
+      2755000
+    ]
+  },
+  {
+    "case": "rcci-rd-w16",
+    "title": "rCCI 32-line ReadRange, N_fly=16",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 16,
+      "RANGE_WRITE_WINDOW": 16
+    },
+    "plusargs": [
+      "+perf_op=0",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-rd-w16/rcci-rd-w16.fst",
+    "gtkw": "waves/rcci/rcci-rd-w16/rcci-rd-w16.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 128,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 32,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 16,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      65000,
+      2755000
+    ]
+  },
+  {
+    "case": "rcci-wr-w1",
+    "title": "rCCI 32-line WriteRange, N_fly=1",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 1,
+      "RANGE_WRITE_WINDOW": 1
+    },
+    "plusargs": [
+      "+perf_op=1",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-wr-w1/rcci-wr-w1.fst",
+    "gtkw": "waves/rcci/rcci-wr-w1/rcci-wr-w1.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 1,
+      "M1_W": 128,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 32,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 1
+    },
+    "active_ps": [
+      65000,
+      6795000
+    ]
+  },
+  {
+    "case": "rcci-wr-w4",
+    "title": "rCCI 32-line WriteRange, N_fly=4",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 4,
+      "RANGE_WRITE_WINDOW": 4
+    },
+    "plusargs": [
+      "+perf_op=1",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-wr-w4/rcci-wr-w4.fst",
+    "gtkw": "waves/rcci/rcci-wr-w4/rcci-wr-w4.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 1,
+      "M1_W": 128,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 32,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 4
+    },
+    "active_ps": [
+      65000,
+      1905000
+    ]
+  },
+  {
+    "case": "rcci-wr-w16",
+    "title": "rCCI 32-line WriteRange, N_fly=16",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 16,
+      "M1_READ_CONTEXTS": 16,
+      "M1_WRITE_CONTEXTS": 16,
+      "CACHE_LINES": 256,
+      "MEM_OUTSTANDING": 16,
+      "SNOOP_CONTEXTS": 4,
+      "COMMON_ADMISSION_TOKENS": 16,
+      "RANGE_READ_WINDOW": 16,
+      "RANGE_WRITE_WINDOW": 16
+    },
+    "plusargs": [
+      "+perf_op=1",
+      "+perf_lines=32",
+      "+perf_dirty=0"
+    ],
+    "fst": "waves/rcci/rcci-wr-w16/rcci-wr-w16.fst",
+    "gtkw": "waves/rcci/rcci-wr-w16/rcci-wr-w16.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 1,
+      "M1_W": 128,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 32,
+      "CR": 32,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 32,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 16
+    },
+    "active_ps": [
+      65000,
+      1835000
+    ]
+  },
+  {
+    "case": "conflict-writeback",
+    "title": "ReadRange waits at line 5 for a CPU WriteBack with late W",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 4
+    },
+    "plusargs": [
+      "+fix1_case=3",
+      "+fix1_monitor"
+    ],
+    "fst": "waves/rcci/conflict-writeback/conflict-writeback.fst",
+    "gtkw": "waves/rcci/conflict-writeback/conflict-writeback.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 32,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 8,
+      "CR": 8,
+      "CD_LAST": 0,
+      "S_AR": 8,
+      "S_AW": 0,
+      "ACE_AR": 0,
+      "ACE_AW": 1
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      55000,
+      2085000
+    ]
+  },
+  {
+    "case": "noconflict-ace",
+    "title": "ACE on another line does not stall the range",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 4
+    },
+    "plusargs": [
+      "+fix1_case=14",
+      "+fix1_monitor"
+    ],
+    "fst": "waves/rcci/noconflict-ace/noconflict-ace.fst",
+    "gtkw": "waves/rcci/noconflict-ace/noconflict-ace.gtkw",
+    "events": {
+      "M1_AR": 0,
+      "M1_R": 0,
+      "M1_RLAST": 0,
+      "M1_AW": 1,
+      "M1_W": 32,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 9,
+      "CR": 9,
+      "CD_LAST": 0,
+      "S_AR": 0,
+      "S_AW": 8,
+      "ACE_AR": 1,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 0,
+      "read_tracker_count": 0,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 4
+    },
+    "active_ps": [
+      55000,
+      775000
+    ]
+  },
+  {
+    "case": "rw-range-64l",
+    "title": "64-line ReadRange and WriteRange in flight together",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 4
+    },
+    "plusargs": [
+      "+fix1_case=18",
+      "+fix1_monitor"
+    ],
+    "fst": "waves/rcci/rw-range-64l/rw-range-64l.fst",
+    "gtkw": "waves/rcci/rw-range-64l/rw-range-64l.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 256,
+      "M1_RLAST": 1,
+      "M1_AW": 1,
+      "M1_W": 256,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 128,
+      "CR": 128,
+      "CD_LAST": 0,
+      "S_AR": 64,
+      "S_AW": 64,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 4
+    },
+    "active_ps": [
+      55000,
+      5305000
+    ]
+  },
+  {
+    "case": "rw-same-lines",
+    "title": "ReadRange and WriteRange of the same 8 lines presented together",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 4
+    },
+    "plusargs": [
+      "+fix1_case=21",
+      "+fix1_monitor"
+    ],
+    "fst": "waves/rcci/rw-same-lines/rw-same-lines.fst",
+    "gtkw": "waves/rcci/rw-same-lines/rw-same-lines.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 32,
+      "M1_RLAST": 1,
+      "M1_AW": 1,
+      "M1_W": 32,
+      "M1_WLAST": 1,
+      "M1_B": 1,
+      "AC": 16,
+      "CR": 16,
+      "CD_LAST": 0,
+      "S_AR": 8,
+      "S_AW": 8,
+      "ACE_AR": 0,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 1,
+      "dut.write_line_outstanding": 3
+    },
+    "active_ps": [
+      55000,
+      1045000
+    ]
+  },
+  {
+    "case": "r-buffer-cpu-refill",
+    "title": "DMA withholds R while a CPU refill completes",
+    "tb": {
+      "USE_RANGE": 1,
+      "LINE_TRACKER_ENTRIES": 4
+    },
+    "plusargs": [
+      "+fix1_case=29",
+      "+fix1_monitor"
+    ],
+    "fst": "waves/rcci/r-buffer-cpu-refill/r-buffer-cpu-refill.fst",
+    "gtkw": "waves/rcci/r-buffer-cpu-refill/r-buffer-cpu-refill.gtkw",
+    "events": {
+      "M1_AR": 1,
+      "M1_R": 32,
+      "M1_RLAST": 1,
+      "M1_AW": 0,
+      "M1_W": 0,
+      "M1_WLAST": 0,
+      "M1_B": 0,
+      "AC": 9,
+      "CR": 9,
+      "CD_LAST": 0,
+      "S_AR": 8,
+      "S_AW": 0,
+      "ACE_AR": 1,
+      "ACE_AW": 0
+    },
+    "peak": {
+      "read_ingress_count": 1,
+      "read_tracker_count": 4,
+      "dut.write_context_count": 0,
+      "dut.write_line_outstanding": 0
+    },
+    "active_ps": [
+      55000,
+      1265000
+    ]
+  }
+]

@@ -1,0 +1,908 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date              : Thu Oct  8 10:42:45 2026
+| Host              : DESKTOP-SOHK4NB running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/ace_implementation_20261008T012531Z_43d6eb18/B1/critical_paths.rpt
+| Design            : axi_cci_ace_top
+| Device            : xczu7ev-ffvc1156
+| Speed File        : -2  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.444ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][24]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.360ns  (logic 1.244ns (28.533%)  route 3.116ns (71.467%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.525     5.547    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][24]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][24]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_EFF2_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][24]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.547    
+  -------------------------------------------------------------------
+                         slack                                  0.444    
+
+Slack (MET) :             0.444ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][30]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.360ns  (logic 1.244ns (28.533%)  route 3.116ns (71.467%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.525     5.547    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][30]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][30]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_FFF2_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][30]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.547    
+  -------------------------------------------------------------------
+                         slack                                  0.444    
+
+Slack (MET) :             0.444ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][4]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.360ns  (logic 1.244ns (28.533%)  route 3.116ns (71.467%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.525     5.547    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][4]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][4]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_GFF2_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][4]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.547    
+  -------------------------------------------------------------------
+                         slack                                  0.444    
+
+Slack (MET) :             0.445ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][16]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.359ns  (logic 1.244ns (28.539%)  route 3.115ns (71.461%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.524     5.546    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][16]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][16]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_EFF_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][16]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.546    
+  -------------------------------------------------------------------
+                         slack                                  0.445    
+
+Slack (MET) :             0.445ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][2]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.359ns  (logic 1.244ns (28.539%)  route 3.115ns (71.461%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.524     5.546    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][2]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_FFF_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][2]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.546    
+  -------------------------------------------------------------------
+                         slack                                  0.445    
+
+Slack (MET) :             0.445ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][34]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.359ns  (logic 1.244ns (28.539%)  route 3.115ns (71.461%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.000ns = ( 6.000 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.524     5.546    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][34]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.000     6.000    manager/ACLK
+    SLICE_X31Y330        FDCE                                         r  manager/ex_line_reg[13][34]/C
+                         clock pessimism              0.087     6.087    
+                         clock uncertainty           -0.035     6.052    
+    SLICE_X31Y330        FDCE (Setup_GFF_SLICEM_C_CE)
+                                                     -0.061     5.991    manager/ex_line_reg[13][34]
+  -------------------------------------------------------------------
+                         required time                          5.991    
+                         arrival time                          -5.546    
+  -------------------------------------------------------------------
+                         slack                                  0.445    
+
+Slack (MET) :             0.447ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][25]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.354ns  (logic 1.244ns (28.572%)  route 3.110ns (71.428%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.104ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.996ns = ( 5.996 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.519     5.541    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][25]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         0.996     5.996    manager/ACLK
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][25]/C
+                         clock pessimism              0.087     6.083    
+                         clock uncertainty           -0.035     6.048    
+    SLICE_X32Y330        FDCE (Setup_HFF_SLICEL_C_CE)
+                                                     -0.060     5.988    manager/ex_line_reg[13][25]
+  -------------------------------------------------------------------
+                         required time                          5.988    
+                         arrival time                          -5.541    
+  -------------------------------------------------------------------
+                         slack                                  0.447    
+
+Slack (MET) :             0.476ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][13]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.323ns  (logic 1.244ns (28.776%)  route 3.079ns (71.224%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.994ns = ( 5.994 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.488     5.510    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][13]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         0.994     5.994    manager/ACLK
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][13]/C
+                         clock pessimism              0.087     6.081    
+                         clock uncertainty           -0.035     6.046    
+    SLICE_X32Y330        FDCE (Setup_AFF_SLICEL_C_CE)
+                                                     -0.060     5.986    manager/ex_line_reg[13][13]
+  -------------------------------------------------------------------
+                         required time                          5.986    
+                         arrival time                          -5.510    
+  -------------------------------------------------------------------
+                         slack                                  0.476    
+
+Slack (MET) :             0.476ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[13][36]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.324ns  (logic 1.244ns (28.769%)  route 3.080ns (71.231%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.994ns = ( 5.994 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.162     3.051    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y321        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.052     3.103 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_17/O
+                         net (fo=3, routed)           0.186     3.290    manager/G_CONTEXT[1].u_context/c_aw_valid[1]
+    SLICE_X24Y324        LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.036     3.326 f  manager/G_CONTEXT[1].u_context/is_read_i_3__0/O
+                         net (fo=1, routed)           0.144     3.470    manager/G_CONTEXT[1].u_context/is_read_i_3__0_n_0
+    SLICE_X24Y323        LUT2 (Prop_H5LUT_SLICEL_I1_O)
+                                                      0.065     3.535 r  manager/G_CONTEXT[1].u_context/is_read_i_1__0/O
+                         net (fo=118, routed)         0.131     3.666    manager/G_CONTEXT[1].u_context/state174_out_3
+    SLICE_X24Y324        LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.716 f  manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0/O
+                         net (fo=2, routed)           0.288     4.004    manager/G_CONTEXT[1].u_context/exclusive_txn_i_3__0_n_0
+    SLICE_X25Y330        LUT2 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.152     4.156 r  manager/G_CONTEXT[1].u_context/exclusive_txn_i_2__0/O
+                         net (fo=17, routed)          0.428     4.584    manager/G_CONTEXT[1].u_context/p_54_in
+    SLICE_X28Y337        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     4.674 r  manager/G_CONTEXT[1].u_context/ex_line[13][57]_i_2/O
+                         net (fo=2, routed)           0.247     4.921    manager/G_CONTEXT[3].u_context/ex_line_reg[13][0]
+    SLICE_X29Y338        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.101     5.022 r  manager/G_CONTEXT[3].u_context/ex_line[13][57]_i_1/O
+                         net (fo=59, routed)          0.489     5.511    manager/G_CONTEXT[3].u_context_n_224
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][36]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         0.994     5.994    manager/ACLK
+    SLICE_X32Y330        FDCE                                         r  manager/ex_line_reg[13][36]/C
+                         clock pessimism              0.087     6.081    
+                         clock uncertainty           -0.035     6.046    
+    SLICE_X32Y330        FDCE (Setup_AFF2_SLICEL_C_CE)
+                                                     -0.059     5.987    manager/ex_line_reg[13][36]
+  -------------------------------------------------------------------
+                         required time                          5.987    
+                         arrival time                          -5.511    
+  -------------------------------------------------------------------
+                         slack                                  0.476    
+
+Slack (MET) :             0.496ns  (required time - arrival time)
+  Source:                 service/controller/req_order_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            manager/ex_line_reg[7][49]/CE
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.318ns  (logic 1.203ns (27.858%)  route 3.115ns (72.142%))
+  Logic Levels:           14  (LUT2=3 LUT4=4 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.090ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.010ns = ( 6.010 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.187ns
+    Clock Pessimism Removal (CPR):    0.087ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.187     1.187    service/controller/ACLK
+    SLICE_X18Y312        FDRE                                         r  service/controller/req_order_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y312        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.268 r  service/controller/req_order_reg[0][1]/Q
+                         net (fo=6, routed)           0.243     1.511    service/controller/req_order_reg[0]_24[1]
+    SLICE_X18Y312        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.035     1.546 r  service/controller/rsp_resp[4]_INST_0_i_6/O
+                         net (fo=136, routed)         0.132     1.678    service/controller/c_rsp_ready1[1]
+    SLICE_X18Y314        LUT2 (Prop_F5LUT_SLICEL_I0_O)
+                                                      0.143     1.821 r  service/controller/rsp_resp[4]_INST_0_i_4/O
+                         net (fo=129, routed)         0.224     2.045    service/controller/G_CTRL[1].u_controller/fault_data_reg[97]_0
+    SLICE_X20Y314        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     2.194 r  service/controller/G_CTRL[1].u_controller/rsp_resp[2]_INST_0/O
+                         net (fo=2, routed)           0.048     2.242    service/controller/G_CTRL[1].u_controller/rsp_resp[2]
+    SLICE_X20Y314        LUT4 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.097     2.339 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5/O
+                         net (fo=3, routed)           0.156     2.495    service/controller/G_CTRL[1].u_controller/fault_INST_0_i_5_n_0
+    SLICE_X22Y315        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     2.618 r  service/controller/G_CTRL[1].u_controller/fault_INST_0_i_1/O
+                         net (fo=11, routed)          0.043     2.661    manager/G_CONTEXT[1].u_context/service_fault
+    SLICE_X22Y315        LUT4 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.035     2.696 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_3/O
+                         net (fo=4, routed)           0.158     2.854    manager/G_CONTEXT[1].u_context/accept_enable0
+    SLICE_X22Y320        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.035     2.889 f  manager/G_CONTEXT[1].u_context/ACE_AWREADY_INST_0_i_1/O
+                         net (fo=7, routed)           0.222     3.111    manager/G_CONTEXT[1].u_context/c_aw_valid1
+    SLICE_X23Y322        LUT4 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.100     3.211 f  manager/G_CONTEXT[1].u_context/ACE_ARREADY_INST_0_i_15/O
+                         net (fo=3, routed)           0.095     3.306    manager/G_CONTEXT[2].u_context/ar_priority_reg_2[0]
+    SLICE_X23Y323        LUT6 (Prop_F6LUT_SLICEM_I1_O)
+                                                      0.037     3.343 f  manager/G_CONTEXT[2].u_context/is_read_i_3__1/O
+                         net (fo=1, routed)           0.087     3.430    manager/G_CONTEXT[1].u_context/is_read_reg_1
+    SLICE_X22Y323        LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     3.481 r  manager/G_CONTEXT[1].u_context/is_read_i_1__1/O
+                         net (fo=118, routed)         0.292     3.773    manager/G_CONTEXT[2].u_context/state174_out
+    SLICE_X24Y326        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     3.870 f  manager/G_CONTEXT[2].u_context/exclusive_txn_i_3__1/O
+                         net (fo=2, routed)           0.183     4.053    manager/G_CONTEXT[2].u_context/exclusive_txn_i_3__1_n_0
+    SLICE_X24Y331        LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.035     4.088 r  manager/G_CONTEXT[2].u_context/exclusive_txn_i_2__1/O
+                         net (fo=17, routed)          0.493     4.581    manager/G_CONTEXT[1].u_context/p_55_in
+    SLICE_X26Y350        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.150     4.731 r  manager/G_CONTEXT[1].u_context/ex_line[7][57]_i_2/O
+                         net (fo=2, routed)           0.319     5.050    manager/G_CONTEXT[3].u_context/ex_line_reg[7][0]
+    SLICE_X26Y350        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.035     5.085 r  manager/G_CONTEXT[3].u_context/ex_line[7][57]_i_1/O
+                         net (fo=59, routed)          0.421     5.505    manager/G_CONTEXT[3].u_context_n_236
+    SLICE_X24Y349        FDCE                                         r  manager/ex_line_reg[7][49]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=8730, unset)         1.010     6.010    manager/ACLK
+    SLICE_X24Y349        FDCE                                         r  manager/ex_line_reg[7][49]/C
+                         clock pessimism              0.087     6.097    
+                         clock uncertainty           -0.035     6.061    
+    SLICE_X24Y349        FDCE (Setup_EFF2_SLICEL_C_CE)
+                                                     -0.060     6.001    manager/ex_line_reg[7][49]
+  -------------------------------------------------------------------
+                         required time                          6.001    
+                         arrival time                          -5.505    
+  -------------------------------------------------------------------
+                         slack                                  0.496    
+
+
+
+

@@ -1,0 +1,14 @@
++incdir+rtl/common
+rtl/common/cci_pkg.sv
+axi4_simple_2to1_bus_arbiter.sv
+rtl/proposed/cci_ac_range_gen.sv
+rtl/proposed/cci_range_hazard_checker.sv
+rtl/proposed/cci_range_req_decoder.sv
+rtl/proposed/cci_range_rim_tracker.sv
+rtl/common/coh_write_ingress.sv
+rtl/common/m0_snoop_endpoint.sv
+rtl/top/axi_cci_top.sv
+rtl/top/axi_b0_top.sv
+rtl/top/axi_b1_conventional_top.sv
+rtl/top/axi_p_range_top.sv
+rtl/common/synth_register_shell.sv

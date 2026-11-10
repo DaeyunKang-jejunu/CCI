@@ -1,0 +1,881 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date              : Wed Oct  7 18:43:21 2026
+| Host              : DESKTOP-SOHK4NB running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/implementation_20261007T093606Z_1bc5647a/P/critical_paths.rpt
+| Design            : synth_register_shell
+| Device            : xczu7ev-ffvc1156
+| Speed File        : -2  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.797ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[30]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.150ns  (logic 1.327ns (31.973%)  route 2.823ns (68.027%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.277ns = ( 7.277 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.386     5.486    dut/coherent.control/sched_idx[0]
+    SLICE_X87Y317        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.035     5.521 r  dut/coherent.control/ac_payload[63]_i_20/O
+                         net (fo=2, routed)           0.102     5.623    dut/coherent.control/ac_payload[63]_i_20_n_0
+    SLICE_X88Y317        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.125     5.748 r  dut/coherent.control/ac_payload[31]_i_8/O
+                         net (fo=104, routed)         0.699     6.447    dut/coherent.control/ac_payload[31]_i_8_n_0
+    SLICE_X99Y328        LUT6 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.088     6.535 r  dut/coherent.control/ac_payload[30]_i_5/O
+                         net (fo=1, routed)           0.010     6.545    dut/coherent.control/ac_payload[30]_i_5_n_0
+    SLICE_X99Y328        MUXF7 (Prop_F7MUX_CD_SLICEL_I1_O)
+                                                      0.057     6.602 r  dut/coherent.control/ac_payload_reg[30]_i_2/O
+                         net (fo=1, routed)           0.000     6.602    dut/coherent.control/ac_payload_reg[30]_i_2_n_0
+    SLICE_X99Y328        MUXF8 (Prop_F8MUX_BOT_SLICEL_I0_O)
+                                                      0.026     6.628 r  dut/coherent.control/ac_payload_reg[30]_i_1/O
+                         net (fo=1, routed)           0.034     6.662    dut/coherent.control/p_16_out[30]
+    SLICE_X99Y328        FDCE                                         r  dut/coherent.control/ac_payload_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.277     7.277    dut/coherent.control/ACLK
+    SLICE_X99Y328        FDCE                                         r  dut/coherent.control/ac_payload_reg[30]/C
+                         clock pessimism              0.193     7.470    
+                         clock uncertainty           -0.035     7.435    
+    SLICE_X99Y328        FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     7.460    dut/coherent.control/ac_payload_reg[30]
+  -------------------------------------------------------------------
+                         required time                          7.460    
+                         arrival time                          -6.662    
+  -------------------------------------------------------------------
+                         slack                                  0.797    
+
+Slack (MET) :             0.816ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[23]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.131ns  (logic 1.329ns (32.171%)  route 2.802ns (67.829%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.043ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.276ns = ( 7.276 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.386     5.486    dut/coherent.control/sched_idx[0]
+    SLICE_X87Y317        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.035     5.521 r  dut/coherent.control/ac_payload[63]_i_20/O
+                         net (fo=2, routed)           0.102     5.623    dut/coherent.control/ac_payload[63]_i_20_n_0
+    SLICE_X88Y317        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.125     5.748 r  dut/coherent.control/ac_payload[31]_i_8/O
+                         net (fo=104, routed)         0.678     6.427    dut/coherent.control/ac_payload[31]_i_8_n_0
+    SLICE_X98Y326        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.090     6.517 r  dut/coherent.control/ac_payload[23]_i_7/O
+                         net (fo=1, routed)           0.009     6.526    dut/coherent.control/ac_payload[23]_i_7_n_0
+    SLICE_X98Y326        MUXF7 (Prop_F7MUX_AB_SLICEL_I1_O)
+                                                      0.057     6.583 r  dut/coherent.control/ac_payload_reg[23]_i_3/O
+                         net (fo=1, routed)           0.000     6.583    dut/coherent.control/ac_payload_reg[23]_i_3_n_0
+    SLICE_X98Y326        MUXF8 (Prop_F8MUX_BOT_SLICEL_I1_O)
+                                                      0.026     6.609 r  dut/coherent.control/ac_payload_reg[23]_i_1/O
+                         net (fo=1, routed)           0.034     6.643    dut/coherent.control/p_16_out[23]
+    SLICE_X98Y326        FDCE                                         r  dut/coherent.control/ac_payload_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.276     7.276    dut/coherent.control/ACLK
+    SLICE_X98Y326        FDCE                                         r  dut/coherent.control/ac_payload_reg[23]/C
+                         clock pessimism              0.193     7.469    
+                         clock uncertainty           -0.035     7.434    
+    SLICE_X98Y326        FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     7.459    dut/coherent.control/ac_payload_reg[23]
+  -------------------------------------------------------------------
+                         required time                          7.459    
+                         arrival time                          -6.643    
+  -------------------------------------------------------------------
+                         slack                                  0.816    
+
+Slack (MET) :             0.839ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.089ns  (logic 1.376ns (33.651%)  route 2.713ns (66.349%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.062ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.257ns = ( 7.257 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.401     5.501    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y317        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     5.601 r  dut/coherent.control/ac_payload[63]_i_26/O
+                         net (fo=2, routed)           0.095     5.697    dut/coherent.control/ac_payload[63]_i_26_n_0
+    SLICE_X87Y317        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.099     5.796 r  dut/coherent.control/ac_payload[31]_i_9/O
+                         net (fo=104, routed)         0.583     6.379    dut/coherent.control/ac_payload[31]_i_9_n_0
+    SLICE_X92Y334        LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.099     6.478 r  dut/coherent.control/ac_payload[12]_i_7/O
+                         net (fo=1, routed)           0.007     6.485    dut/coherent.control/ac_payload[12]_i_7_n_0
+    SLICE_X92Y334        MUXF7 (Prop_F7MUX_EF_SLICEL_I1_O)
+                                                      0.056     6.541 r  dut/coherent.control/ac_payload_reg[12]_i_3/O
+                         net (fo=1, routed)           0.000     6.541    dut/coherent.control/ac_payload_reg[12]_i_3_n_0
+    SLICE_X92Y334        MUXF8 (Prop_F8MUX_TOP_SLICEL_I1_O)
+                                                      0.026     6.567 r  dut/coherent.control/ac_payload_reg[12]_i_1/O
+                         net (fo=1, routed)           0.034     6.601    dut/coherent.control/p_16_out[12]
+    SLICE_X92Y334        FDCE                                         r  dut/coherent.control/ac_payload_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.257     7.257    dut/coherent.control/ACLK
+    SLICE_X92Y334        FDCE                                         r  dut/coherent.control/ac_payload_reg[12]/C
+                         clock pessimism              0.193     7.450    
+                         clock uncertainty           -0.035     7.415    
+    SLICE_X92Y334        FDCE (Setup_GFF_SLICEL_C_D)
+                                                      0.025     7.440    dut/coherent.control/ac_payload_reg[12]
+  -------------------------------------------------------------------
+                         required time                          7.440    
+                         arrival time                          -6.601    
+  -------------------------------------------------------------------
+                         slack                                  0.839    
+
+Slack (MET) :             0.843ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[13]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.094ns  (logic 1.373ns (33.538%)  route 2.721ns (66.462%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.053ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.266ns = ( 7.266 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.401     5.501    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y317        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     5.601 r  dut/coherent.control/ac_payload[63]_i_26/O
+                         net (fo=2, routed)           0.095     5.697    dut/coherent.control/ac_payload[63]_i_26_n_0
+    SLICE_X87Y317        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.099     5.796 r  dut/coherent.control/ac_payload[31]_i_9/O
+                         net (fo=104, routed)         0.575     6.371    dut/coherent.control/ac_payload[31]_i_9_n_0
+    SLICE_X93Y326        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.090     6.461 r  dut/coherent.control/ac_payload[13]_i_5/O
+                         net (fo=1, routed)           0.017     6.478    dut/coherent.control/ac_payload[13]_i_5_n_0
+    SLICE_X93Y326        MUXF7 (Prop_F7MUX_GH_SLICEM_I1_O)
+                                                      0.060     6.538 r  dut/coherent.control/ac_payload_reg[13]_i_2/O
+                         net (fo=1, routed)           0.000     6.538    dut/coherent.control/ac_payload_reg[13]_i_2_n_0
+    SLICE_X93Y326        MUXF8 (Prop_F8MUX_TOP_SLICEM_I0_O)
+                                                      0.028     6.566 r  dut/coherent.control/ac_payload_reg[13]_i_1/O
+                         net (fo=1, routed)           0.040     6.606    dut/coherent.control/p_16_out[13]
+    SLICE_X93Y326        FDCE                                         r  dut/coherent.control/ac_payload_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.266     7.266    dut/coherent.control/ACLK
+    SLICE_X93Y326        FDCE                                         r  dut/coherent.control/ac_payload_reg[13]/C
+                         clock pessimism              0.193     7.459    
+                         clock uncertainty           -0.035     7.424    
+    SLICE_X93Y326        FDCE (Setup_GFF_SLICEM_C_D)
+                                                      0.025     7.449    dut/coherent.control/ac_payload_reg[13]
+  -------------------------------------------------------------------
+                         required time                          7.449    
+                         arrival time                          -6.606    
+  -------------------------------------------------------------------
+                         slack                                  0.843    
+
+Slack (MET) :             0.854ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[57]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.010ns  (logic 1.381ns (34.438%)  route 2.629ns (65.562%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.195ns = ( 7.195 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.191ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.401     5.501    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y317        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     5.601 r  dut/coherent.control/ac_payload[63]_i_26/O
+                         net (fo=2, routed)           0.093     5.695    dut/coherent.control/ac_payload[63]_i_26_n_0
+    SLICE_X87Y317        LUT6 (Prop_G6LUT_SLICEL_I3_O)
+                                                      0.097     5.792 r  dut/coherent.control/ac_payload[63]_i_19/O
+                         net (fo=128, routed)         0.485     6.277    dut/coherent.control/ac_payload[63]_i_19_n_0
+    SLICE_X88Y330        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     6.377 r  dut/coherent.control/ac_payload[57]_i_5/O
+                         net (fo=1, routed)           0.017     6.394    dut/coherent.control/ac_payload[57]_i_5_n_0
+    SLICE_X88Y330        MUXF7 (Prop_F7MUX_GH_SLICEM_I1_O)
+                                                      0.060     6.454 r  dut/coherent.control/ac_payload_reg[57]_i_2/O
+                         net (fo=1, routed)           0.000     6.454    dut/coherent.control/ac_payload_reg[57]_i_2_n_0
+    SLICE_X88Y330        MUXF8 (Prop_F8MUX_TOP_SLICEM_I0_O)
+                                                      0.028     6.482 r  dut/coherent.control/ac_payload_reg[57]_i_1/O
+                         net (fo=1, routed)           0.040     6.522    dut/coherent.control/p_16_out[57]
+    SLICE_X88Y330        FDCE                                         r  dut/coherent.control/ac_payload_reg[57]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.195     7.195    dut/coherent.control/ACLK
+    SLICE_X88Y330        FDCE                                         r  dut/coherent.control/ac_payload_reg[57]/C
+                         clock pessimism              0.191     7.386    
+                         clock uncertainty           -0.035     7.351    
+    SLICE_X88Y330        FDCE (Setup_GFF_SLICEM_C_D)
+                                                      0.025     7.376    dut/coherent.control/ac_payload_reg[57]
+  -------------------------------------------------------------------
+                         required time                          7.376    
+                         arrival time                          -6.522    
+  -------------------------------------------------------------------
+                         slack                                  0.854    
+
+Slack (MET) :             0.859ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[49]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.074ns  (logic 1.379ns (33.850%)  route 2.695ns (66.150%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.057ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.262ns = ( 7.262 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.401     5.501    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y317        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     5.601 r  dut/coherent.control/ac_payload[63]_i_26/O
+                         net (fo=2, routed)           0.093     5.695    dut/coherent.control/ac_payload[63]_i_26_n_0
+    SLICE_X87Y317        LUT6 (Prop_G6LUT_SLICEL_I3_O)
+                                                      0.097     5.792 r  dut/coherent.control/ac_payload[63]_i_19/O
+                         net (fo=128, routed)         0.558     6.350    dut/coherent.control/ac_payload[63]_i_19_n_0
+    SLICE_X89Y336        LUT6 (Prop_A6LUT_SLICEM_I4_O)
+                                                      0.100     6.450 r  dut/coherent.control/ac_payload[49]_i_7/O
+                         net (fo=1, routed)           0.011     6.461    dut/coherent.control/ac_payload[49]_i_7_n_0
+    SLICE_X89Y336        MUXF7 (Prop_F7MUX_AB_SLICEM_I1_O)
+                                                      0.058     6.519 r  dut/coherent.control/ac_payload_reg[49]_i_3/O
+                         net (fo=1, routed)           0.000     6.519    dut/coherent.control/ac_payload_reg[49]_i_3_n_0
+    SLICE_X89Y336        MUXF8 (Prop_F8MUX_BOT_SLICEM_I1_O)
+                                                      0.028     6.547 r  dut/coherent.control/ac_payload_reg[49]_i_1/O
+                         net (fo=1, routed)           0.039     6.586    dut/coherent.control/p_16_out[49]
+    SLICE_X89Y336        FDCE                                         r  dut/coherent.control/ac_payload_reg[49]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.262     7.262    dut/coherent.control/ACLK
+    SLICE_X89Y336        FDCE                                         r  dut/coherent.control/ac_payload_reg[49]/C
+                         clock pessimism              0.193     7.455    
+                         clock uncertainty           -0.035     7.420    
+    SLICE_X89Y336        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.025     7.445    dut/coherent.control/ac_payload_reg[49]
+  -------------------------------------------------------------------
+                         required time                          7.445    
+                         arrival time                          -6.586    
+  -------------------------------------------------------------------
+                         slack                                  0.859    
+
+Slack (MET) :             0.868ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[37]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.068ns  (logic 1.406ns (34.564%)  route 2.662ns (65.436%))
+  Logic Levels:           14  (LUT2=1 LUT4=2 LUT6=9 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.054ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.265ns = ( 7.265 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.401     5.501    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y317        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.100     5.601 r  dut/coherent.control/ac_payload[63]_i_26/O
+                         net (fo=2, routed)           0.093     5.695    dut/coherent.control/ac_payload[63]_i_26_n_0
+    SLICE_X87Y317        LUT6 (Prop_G6LUT_SLICEL_I3_O)
+                                                      0.097     5.792 r  dut/coherent.control/ac_payload[63]_i_19/O
+                         net (fo=128, routed)         0.519     6.311    dut/coherent.control/ac_payload[63]_i_19_n_0
+    SLICE_X89Y338        LUT6 (Prop_B6LUT_SLICEM_I4_O)
+                                                      0.125     6.436 r  dut/coherent.control/ac_payload[37]_i_6/O
+                         net (fo=1, routed)           0.017     6.453    dut/coherent.control/ac_payload[37]_i_6_n_0
+    SLICE_X89Y338        MUXF7 (Prop_F7MUX_AB_SLICEM_I0_O)
+                                                      0.060     6.513 r  dut/coherent.control/ac_payload_reg[37]_i_3/O
+                         net (fo=1, routed)           0.000     6.513    dut/coherent.control/ac_payload_reg[37]_i_3_n_0
+    SLICE_X89Y338        MUXF8 (Prop_F8MUX_BOT_SLICEM_I1_O)
+                                                      0.028     6.541 r  dut/coherent.control/ac_payload_reg[37]_i_1/O
+                         net (fo=1, routed)           0.039     6.580    dut/coherent.control/p_16_out[37]
+    SLICE_X89Y338        FDCE                                         r  dut/coherent.control/ac_payload_reg[37]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.265     7.265    dut/coherent.control/ACLK
+    SLICE_X89Y338        FDCE                                         r  dut/coherent.control/ac_payload_reg[37]/C
+                         clock pessimism              0.193     7.458    
+                         clock uncertainty           -0.035     7.423    
+    SLICE_X89Y338        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.025     7.448    dut/coherent.control/ac_payload_reg[37]
+  -------------------------------------------------------------------
+                         required time                          7.448    
+                         arrival time                          -6.580    
+  -------------------------------------------------------------------
+                         slack                                  0.868    
+
+Slack (MET) :             0.877ns  (required time - arrival time)
+  Source:                 dut/coherent.control/trackers_reg[7][ac_issued]/C
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/coherent.control/ac_payload_reg[44]/D
+                            (rising edge-triggered cell FDCE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        4.069ns  (logic 1.224ns (30.084%)  route 2.845ns (69.916%))
+  Logic Levels:           13  (LUT2=1 LUT4=2 LUT6=8 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.044ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.275ns = ( 7.275 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.512ns
+    Clock Pessimism Removal (CPR):    0.193ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.512     2.512    dut/coherent.control/ACLK
+    SLICE_X83Y309        FDCE                                         r  dut/coherent.control/trackers_reg[7][ac_issued]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y309        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     2.590 f  dut/coherent.control/trackers_reg[7][ac_issued]/Q
+                         net (fo=17, routed)          0.473     3.063    dut/coherent.control/trackers_reg[7][ac_issued]__1
+    SLICE_X84Y302        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.051     3.114 f  dut/coherent.control/ac_selected[3]_i_156/O
+                         net (fo=2, routed)           0.166     3.280    dut/coherent.control/ac_selected[3]_i_156_n_0
+    SLICE_X84Y302        LUT4 (Prop_E6LUT_SLICEM_I3_O)
+                                                      0.124     3.404 r  dut/coherent.control/ac_selected[3]_i_103/O
+                         net (fo=1, routed)           0.115     3.519    dut/coherent.control/ac_selected[3]_i_103_n_0
+    SLICE_X84Y304        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.667 r  dut/coherent.control/ac_selected[3]_i_48/O
+                         net (fo=4, routed)           0.143     3.810    dut/coherent.control/ac_selected[3]_i_48_n_0
+    SLICE_X85Y305        LUT2 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.110     3.920 f  dut/coherent.control/ac_selected[3]_i_17/O
+                         net (fo=2, routed)           0.218     4.138    dut/coherent.control/ac_selected[3]_i_17_n_0
+    SLICE_X85Y305        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.147     4.285 r  dut/coherent.control/ac_selected[0]_i_24/O
+                         net (fo=1, routed)           0.189     4.474    dut/coherent.control/ac_selected[0]_i_24_n_0
+    SLICE_X86Y306        LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.100     4.574 f  dut/coherent.control/ac_selected[0]_i_19/O
+                         net (fo=1, routed)           0.091     4.665    dut/coherent.control/ac_selected[0]_i_19_n_0
+    SLICE_X86Y306        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.039     4.704 f  dut/coherent.control/ac_selected[0]_i_11/O
+                         net (fo=1, routed)           0.061     4.765    dut/coherent.control/ac_selected[0]_i_11_n_0
+    SLICE_X86Y306        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     4.914 f  dut/coherent.control/ac_selected[0]_i_5/O
+                         net (fo=1, routed)           0.136     5.050    dut/coherent.control/ac_selected[0]_i_5_n_0
+    SLICE_X87Y306        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     5.100 r  dut/coherent.control/ac_selected[0]_i_2/O
+                         net (fo=17, routed)          0.379     5.479    dut/coherent.control/sched_idx[0]
+    SLICE_X86Y316        LUT6 (Prop_H6LUT_SLICEM_I4_O)
+                                                      0.039     5.518 f  dut/coherent.control/ac_payload[63]_i_16/O
+                         net (fo=1, routed)           0.101     5.619    dut/coherent.control/ac_payload[63]_i_16_n_0
+    SLICE_X88Y316        LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.098     5.717 r  dut/coherent.control/ac_payload[63]_i_9/O
+                         net (fo=116, routed)         0.739     6.456    dut/coherent.control/ac_payload[63]_i_9_n_0
+    SLICE_X99Y329        MUXF7 (Prop_F7MUX_AB_SLICEL_S_O)
+                                                      0.065     6.521 r  dut/coherent.control/ac_payload_reg[44]_i_3/O
+                         net (fo=1, routed)           0.000     6.521    dut/coherent.control/ac_payload_reg[44]_i_3_n_0
+    SLICE_X99Y329        MUXF8 (Prop_F8MUX_BOT_SLICEL_I1_O)
+                                                      0.026     6.547 r  dut/coherent.control/ac_payload_reg[44]_i_1/O
+                         net (fo=1, routed)           0.034     6.581    dut/coherent.control/p_16_out[44]
+    SLICE_X99Y329        FDCE                                         r  dut/coherent.control/ac_payload_reg[44]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.275     7.275    dut/coherent.control/ACLK
+    SLICE_X99Y329        FDCE                                         r  dut/coherent.control/ac_payload_reg[44]/C
+                         clock pessimism              0.193     7.468    
+                         clock uncertainty           -0.035     7.433    
+    SLICE_X99Y329        FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     7.458    dut/coherent.control/ac_payload_reg[44]
+  -------------------------------------------------------------------
+                         required time                          7.458    
+                         arrival time                          -6.581    
+  -------------------------------------------------------------------
+                         slack                                  0.877    
+
+Slack (MET) :             0.884ns  (required time - arrival time)
+  Source:                 M0_AWADDR_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/wr_q_reg[6][id][0]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        3.882ns  (logic 0.979ns (25.217%)  route 2.903ns (74.783%))
+  Logic Levels:           10  (CARRY8=3 LUT6=7)
+  Clock Path Skew:        -0.124ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.182ns = ( 7.182 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.498ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.498     2.498    ACLK
+    SLICE_X87Y321        FDRE                                         r  M0_AWADDR_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X87Y321        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     2.579 r  M0_AWADDR_q_reg[7]/Q
+                         net (fo=49, routed)          1.020     3.599    dut/coherent.control/M0_AWADDR_q[5]
+    SLICE_X95Y326        LUT6 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.124     3.723 r  dut/coherent.control/S_AWVALID_i_332/O
+                         net (fo=1, routed)           0.009     3.732    dut/coherent.control/S_AWVALID_i_332_n_0
+    SLICE_X95Y326        CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
+                                                      0.190     3.922 f  dut/coherent.control/S_AWVALID_reg_i_174/CO[7]
+                         net (fo=1, routed)           0.026     3.948    dut/coherent.control/S_AWVALID_reg_i_174_n_0
+    SLICE_X95Y327        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     3.963 f  dut/coherent.control/S_AWVALID_reg_i_91/CO[7]
+                         net (fo=1, routed)           0.026     3.989    dut/coherent.control/S_AWVALID_reg_i_91_n_0
+    SLICE_X95Y328        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[3])
+                                                      0.060     4.049 f  dut/coherent.control/S_AWVALID_reg_i_56/CO[3]
+                         net (fo=1, routed)           0.345     4.394    dut/coherent.control/aw_hazard19_out
+    SLICE_X87Y324        LUT6 (Prop_F6LUT_SLICEL_I2_O)
+                                                      0.123     4.517 f  dut/coherent.control/S_AWVALID_i_30/O
+                         net (fo=1, routed)           0.086     4.603    dut/coherent.control/S_AWVALID_i_30_n_0
+    SLICE_X87Y324        LUT6 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.050     4.653 f  dut/coherent.control/S_AWVALID_i_10/O
+                         net (fo=1, routed)           0.095     4.748    dut/coherent.control/proposed.rim/wr_tail_reg[3]
+    SLICE_X87Y323        LUT6 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.123     4.871 r  dut/coherent.control/proposed.rim/S_AWVALID_i_3/O
+                         net (fo=5, routed)           0.151     5.021    dut/bus/wr_tail_reg[3]_0
+    SLICE_X84Y323        LUT6 (Prop_F6LUT_SLICEM_I4_O)
+                                                      0.123     5.144 r  dut/bus/wr_tail[3]_i_1/O
+                         net (fo=31, routed)          0.425     5.570    dut/bus/wr_last_winner
+    SLICE_X79Y332        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.053     5.623 r  dut/bus/wr_q[6][len][7]_i_2/O
+                         net (fo=19, routed)          0.398     6.020    dut/bus/wr_q70_out
+    SLICE_X74Y329        LUT6 (Prop_G6LUT_SLICEM_I5_O)
+                                                      0.037     6.057 r  dut/bus/wr_q[6][len][7]_i_1/O
+                         net (fo=12, routed)          0.323     6.380    dut/bus/wr_q[6][len][7]_i_1_n_0
+    SLICE_X75Y331        FDRE                                         r  dut/bus/wr_q_reg[6][id][0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.182     7.182    dut/bus/ACLK
+    SLICE_X75Y331        FDRE                                         r  dut/bus/wr_q_reg[6][id][0]/C
+                         clock pessimism              0.192     7.374    
+                         clock uncertainty           -0.035     7.338    
+    SLICE_X75Y331        FDRE (Setup_AFF_SLICEL_C_R)
+                                                     -0.074     7.264    dut/bus/wr_q_reg[6][id][0]
+  -------------------------------------------------------------------
+                         required time                          7.264    
+                         arrival time                          -6.380    
+  -------------------------------------------------------------------
+                         slack                                  0.884    
+
+Slack (MET) :             0.884ns  (required time - arrival time)
+  Source:                 M0_AWADDR_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            dut/bus/wr_q_reg[6][id][1]/R
+                            (rising edge-triggered cell FDRE clocked by ACLK  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ACLK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ACLK rise@5.000ns - ACLK rise@0.000ns)
+  Data Path Delay:        3.882ns  (logic 0.979ns (25.217%)  route 2.903ns (74.783%))
+  Logic Levels:           10  (CARRY8=3 LUT6=7)
+  Clock Path Skew:        -0.124ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.182ns = ( 7.182 - 5.000 ) 
+    Source Clock Delay      (SCD):    2.498ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ACLK rise edge)       0.000     0.000 r  
+                                                      0.000     0.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.498     2.498    ACLK
+    SLICE_X87Y321        FDRE                                         r  M0_AWADDR_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X87Y321        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     2.579 r  M0_AWADDR_q_reg[7]/Q
+                         net (fo=49, routed)          1.020     3.599    dut/coherent.control/M0_AWADDR_q[5]
+    SLICE_X95Y326        LUT6 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.124     3.723 r  dut/coherent.control/S_AWVALID_i_332/O
+                         net (fo=1, routed)           0.009     3.732    dut/coherent.control/S_AWVALID_i_332_n_0
+    SLICE_X95Y326        CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
+                                                      0.190     3.922 f  dut/coherent.control/S_AWVALID_reg_i_174/CO[7]
+                         net (fo=1, routed)           0.026     3.948    dut/coherent.control/S_AWVALID_reg_i_174_n_0
+    SLICE_X95Y327        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     3.963 f  dut/coherent.control/S_AWVALID_reg_i_91/CO[7]
+                         net (fo=1, routed)           0.026     3.989    dut/coherent.control/S_AWVALID_reg_i_91_n_0
+    SLICE_X95Y328        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[3])
+                                                      0.060     4.049 f  dut/coherent.control/S_AWVALID_reg_i_56/CO[3]
+                         net (fo=1, routed)           0.345     4.394    dut/coherent.control/aw_hazard19_out
+    SLICE_X87Y324        LUT6 (Prop_F6LUT_SLICEL_I2_O)
+                                                      0.123     4.517 f  dut/coherent.control/S_AWVALID_i_30/O
+                         net (fo=1, routed)           0.086     4.603    dut/coherent.control/S_AWVALID_i_30_n_0
+    SLICE_X87Y324        LUT6 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.050     4.653 f  dut/coherent.control/S_AWVALID_i_10/O
+                         net (fo=1, routed)           0.095     4.748    dut/coherent.control/proposed.rim/wr_tail_reg[3]
+    SLICE_X87Y323        LUT6 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.123     4.871 r  dut/coherent.control/proposed.rim/S_AWVALID_i_3/O
+                         net (fo=5, routed)           0.151     5.021    dut/bus/wr_tail_reg[3]_0
+    SLICE_X84Y323        LUT6 (Prop_F6LUT_SLICEM_I4_O)
+                                                      0.123     5.144 r  dut/bus/wr_tail[3]_i_1/O
+                         net (fo=31, routed)          0.425     5.570    dut/bus/wr_last_winner
+    SLICE_X79Y332        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.053     5.623 r  dut/bus/wr_q[6][len][7]_i_2/O
+                         net (fo=19, routed)          0.398     6.020    dut/bus/wr_q70_out
+    SLICE_X74Y329        LUT6 (Prop_G6LUT_SLICEM_I5_O)
+                                                      0.037     6.057 r  dut/bus/wr_q[6][len][7]_i_1/O
+                         net (fo=12, routed)          0.323     6.380    dut/bus/wr_q[6][len][7]_i_1_n_0
+    SLICE_X75Y331        FDRE                                         r  dut/bus/wr_q_reg[6][id][1]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ACLK rise edge)       5.000     5.000 r  
+                                                      0.000     5.000 r  ACLK (IN)
+                         net (fo=4010, unset)         2.182     7.182    dut/bus/ACLK
+    SLICE_X75Y331        FDRE                                         r  dut/bus/wr_q_reg[6][id][1]/C
+                         clock pessimism              0.192     7.374    
+                         clock uncertainty           -0.035     7.338    
+    SLICE_X75Y331        FDRE (Setup_AFF2_SLICEL_C_R)
+                                                     -0.074     7.264    dut/bus/wr_q_reg[6][id][1]
+  -------------------------------------------------------------------
+                         required time                          7.264    
+                         arrival time                          -6.380    
+  -------------------------------------------------------------------
+                         slack                                  0.884    
+
+
+
+

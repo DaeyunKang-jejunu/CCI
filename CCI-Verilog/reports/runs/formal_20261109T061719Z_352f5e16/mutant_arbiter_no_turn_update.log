@@ -1,0 +1,784 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Running command `read_verilog -sv -formal /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv; chparam -set OWNED 1 formal_issue_arbiter; chparam -set L_OWNER 3 formal_issue_arbiter; chparam -set BOUND 4 formal_issue_arbiter; prep -top formal_issue_arbiter; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -seq 24 -prove-asserts -set-assumes' --
+
+1. Executing Verilog-2005 frontend: /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v
+Parsing formal SystemVerilog input from `/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v' to AST representation.
+Generating RTLIL representation for module `\rcci_m1_issue_arbiter'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv
+Parsing formal SystemVerilog input from `/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv' to AST representation.
+Generating RTLIL representation for module `\formal_issue_arbiter'.
+Successfully finished Verilog frontend.
+Parameter \OWNED = 1
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_issue_arbiter'.
+Parameter \OWNED = 1
+Generating RTLIL representation for module `$paramod\formal_issue_arbiter\OWNED=s32'00000000000000000000000000000001'.
+Parameter \L_OWNER = 3
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_issue_arbiter'.
+Parameter \L_OWNER = 3
+Generating RTLIL representation for module `$paramod\formal_issue_arbiter\L_OWNER=s32'00000000000000000000000000000011'.
+Parameter \BOUND = 4
+
+5. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_issue_arbiter'.
+Parameter \BOUND = 4
+Generating RTLIL representation for module `$paramod\formal_issue_arbiter\BOUND=s32'00000000000000000000000000000100'.
+
+6. Executing PREP pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Analyzing design hierarchy..
+Top module:  \formal_issue_arbiter
+Used module:     \rcci_m1_issue_arbiter
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \formal_issue_arbiter
+Used module:     \rcci_m1_issue_arbiter
+Removed 0 unused modules.
+Module formal_issue_arbiter directly or indirectly contains formal properties -> setting "keep" attribute.
+Module rcci_m1_issue_arbiter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+Cleaned up 4 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138 in module formal_issue_arbiter.
+Marked 1 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6 in module rcci_m1_issue_arbiter.
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 2 assignments to connections.
+
+6.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:14$157'.
+  Set init value: \init = 1'1
+
+6.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6'.
+
+6.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+6.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+     1/7: $0\wr_wait[5:0]
+     2/7: $0\rd_wait[5:0]
+     3/7: $0\own_cnt[3:0]
+     4/7: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:40$153_EN
+     5/7: $assume$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:27$141_EN
+     6/7: $assume$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:27$139_EN
+     7/7: $0\owner[1:0]
+Creating decoders for process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:14$157'.
+Creating decoders for process `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:31$9'.
+     1/2: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:34$14_EN
+     2/2: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:33$10_EN
+Creating decoders for process `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6'.
+     1/1: $0\turn[0:0]
+
+6.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\formal_issue_arbiter.\init' using process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+  created $dff cell `$procdff$202' with positive edge clock.
+Creating register for signal `\formal_issue_arbiter.\owner' using process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+  created $dff cell `$procdff$203' with positive edge clock.
+Creating register for signal `\formal_issue_arbiter.\own_cnt' using process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+  created $dff cell `$procdff$204' with positive edge clock.
+Creating register for signal `\formal_issue_arbiter.\rd_wait' using process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+  created $dff cell `$procdff$205' with positive edge clock.
+Creating register for signal `\formal_issue_arbiter.\wr_wait' using process `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+  created $dff cell `$procdff$206' with positive edge clock.
+Creating register for signal `\rcci_m1_issue_arbiter.\turn' using process `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6'.
+  created $adff cell `$procdff$211' with positive edge clock and positive level reset.
+
+6.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 6 empty switches in `\formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+Removing empty process `formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:26$138'.
+Removing empty process `formal_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:14$157'.
+Found and cleaned up 1 empty switch in `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:31$9'.
+Removing empty process `rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:31$9'.
+Found and cleaned up 1 empty switch in `\rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6'.
+Removing empty process `rcci_m1_issue_arbiter.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261109T061719Z_352f5e16/arbiter_no_turn_update.v:26$6'.
+Cleaned up 8 empty switches.
+
+6.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+<suppressed ~4 debug messages>
+Optimizing module rcci_m1_issue_arbiter.
+<suppressed ~2 debug messages>
+
+6.3. Executing FUTURE pass.
+
+6.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+6.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+Removed 4 unused cells and 43 unused wires.
+<suppressed ~7 debug messages>
+
+6.6. Executing CHECK pass (checking for obvious problems).
+Checking module formal_issue_arbiter...
+Checking module rcci_m1_issue_arbiter...
+Found and reported 0 problems.
+
+6.7. Executing OPT pass (performing simple optimizations).
+
+6.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+6.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 50 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Computing hashes of 48 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 20 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 3 cells.
+
+6.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rcci_m1_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~28 debug messages>
+
+6.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_issue_arbiter.
+  Optimizing cells in module \rcci_m1_issue_arbiter.
+Performed a total of 0 changes.
+
+6.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 20 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Computing hashes of 19 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+6.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~2 debug messages>
+
+6.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+6.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rcci_m1_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~26 debug messages>
+
+6.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_issue_arbiter.
+  Optimizing cells in module \rcci_m1_issue_arbiter.
+Performed a total of 0 changes.
+
+6.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 19 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 0 cells.
+
+6.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+
+6.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+6.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+6.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell formal_issue_arbiter.$eq$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:18$123 ($eq).
+Removed top 31 bits (of 32) from port B of cell formal_issue_arbiter.$gt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:33$143 ($gt).
+Removed top 29 bits (of 32) from port B of cell formal_issue_arbiter.$le$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:40$154 ($le).
+Removed top 29 bits (of 32) from port B of cell formal_issue_arbiter.$le$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:40$155 ($le).
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing OPT pass (performing simple optimizations).
+
+6.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+6.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 19 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 0 cells.
+
+6.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+
+6.11.4. Finished fast OPT passes.
+
+6.12. Executing SORT pass.
+
+6.13. Printing statistics.
+
+=== formal_issue_arbiter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       49 wires
+      112 wire bits
+       16 public wires
+       30 public wire bits
+        2 ports
+        2 port bits
+       46 cells
+        2   $add
+        3   $check
+        5   $dff
+        2   $eq
+        1   $gt
+        2   $le
+        7   $logic_and
+        6   $logic_not
+        2   $logic_or
+       15   $mux
+        1   $sub
+        1 submodules
+        1   rcci_m1_issue_arbiter
+
+=== rcci_m1_issue_arbiter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       24 wires
+       24 wire bits
+       11 public wires
+       11 public wire bits
+       10 ports
+       10 port bits
+       19 cells
+        1   $adff
+        2   $check
+       10   $logic_and
+        4   $logic_not
+        2   $mux
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       65 formal_issue_arbiter
+       19 rcci_m1_issue_arbiter
+
+        +----------Count including submodules.
+        | 
+       73 wires
+      136 wire bits
+       27 public wires
+       41 public wire bits
+       12 ports
+       12 port bits
+        - memories
+        - memory bits
+        - processes
+       65 cells
+        2   $add
+        1   $adff
+        5   $check
+        5   $dff
+        2   $eq
+        1   $gt
+        2   $le
+       17   $logic_and
+       10   $logic_not
+        2   $logic_or
+       17   $mux
+        1   $sub
+        1 submodules
+        1   rcci_m1_issue_arbiter
+
+6.14. Executing CHECK pass (checking for obvious problems).
+Checking module formal_issue_arbiter...
+Checking module rcci_m1_issue_arbiter...
+Found and reported 0 problems.
+
+7. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 19 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rcci_m1_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~26 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_issue_arbiter.
+  Optimizing cells in module \rcci_m1_issue_arbiter.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 47 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 19 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$206 ($dff) from module formal_issue_arbiter (D = $add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:37$149_Y, Q = \wr_wait, rval = 6'000000).
+Adding SRST signal on $procdff$205 ($dff) from module formal_issue_arbiter (D = $add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:36$146_Y, Q = \rd_wait, rval = 6'000000).
+Adding SRST signal on $procdff$204 ($dff) from module formal_issue_arbiter (D = $procmux$171_Y [1:0], Q = \own_cnt [1:0], rval = 2'00).
+Adding SRST signal on $procdff$204 ($dff) from module formal_issue_arbiter (D = $sub$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_issue_arbiter.sv:33$144_Y [3:2], Q = \own_cnt [3:2], rval = 2'00).
+Adding SRST signal on $procdff$203 ($dff) from module formal_issue_arbiter (D = $procmux$191_Y [0], Q = \owner [0], rval = 1'0).
+Adding SRST signal on $procdff$203 ($dff) from module formal_issue_arbiter (D = $procmux$188_Y [1], Q = \owner [1], rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$231 ($sdff) from module formal_issue_arbiter (D = $procmux$188_Y [1], Q = \owner [1]).
+Adding EN signal on $auto$ff.cc:337:slice$230 ($sdff) from module formal_issue_arbiter (D = $procmux$191_Y [0], Q = \owner [0]).
+Adding EN signal on $procdff$211 ($adff) from module rcci_m1_issue_arbiter (D = 1'0, Q = \turn).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$242 ($adffe) from module rcci_m1_issue_arbiter.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+Removed 8 unused cells and 8 unused wires.
+<suppressed ~10 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+<suppressed ~6 debug messages>
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rcci_m1_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_issue_arbiter.
+  Optimizing cells in module \rcci_m1_issue_arbiter.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 54 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Computing hashes of 51 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 10 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 3 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~2 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rcci_m1_issue_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_issue_arbiter.
+  Optimizing cells in module \rcci_m1_issue_arbiter.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_issue_arbiter'.
+Computing hashes of 51 cells of `\formal_issue_arbiter'.
+Finding duplicate cells in `\formal_issue_arbiter'.
+Finding identical cells in module `\rcci_m1_issue_arbiter'.
+Computing hashes of 10 cells of `\rcci_m1_issue_arbiter'.
+Finding duplicate cells in `\rcci_m1_issue_arbiter'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Finding unused cells or wires in module \rcci_m1_issue_arbiter..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_issue_arbiter.
+Optimizing module rcci_m1_issue_arbiter.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing FLATTEN pass (flatten design).
+Deleting now unused module rcci_m1_issue_arbiter.
+<suppressed ~1 debug messages>
+
+10. Executing ASYNC2SYNC pass.
+
+11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_issue_arbiter..
+Removed 15 unused cells and 15 unused wires.
+<suppressed ~16 debug messages>
+3 objects.
+
+12. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$263 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$261 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$269 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$257 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$255 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$267 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$251 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$249 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$273 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$245 = 1'0
+Import set-constraint from init attribute: \init = 1'1
+Final init constraint equation: { \init $auto$async2sync.cc:107:execute$245 $auto$async2sync.cc:116:execute$273 $auto$async2sync.cc:116:execute$249 $auto$async2sync.cc:107:execute$251 $auto$async2sync.cc:116:execute$267 $auto$async2sync.cc:116:execute$255 $auto$async2sync.cc:107:execute$257 $auto$async2sync.cc:107:execute$269 $auto$async2sync.cc:116:execute$261 $auto$async2sync.cc:107:execute$263 } = 11'10110110010
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 17:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 18:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 19:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 20:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 21:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 22:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 23:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Setting up time step 24:
+Final constraint equation: { } = { }
+Imported 71 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$267 when $auto$async2sync.cc:107:execute$263.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$273 when $auto$async2sync.cc:107:execute$269.
+Import proof for assert: $auto$async2sync.cc:116:execute$249 when $auto$async2sync.cc:107:execute$245.
+Import proof for assert: $auto$async2sync.cc:116:execute$255 when $auto$async2sync.cc:107:execute$251.
+Import proof for assert: $auto$async2sync.cc:116:execute$261 when $auto$async2sync.cc:107:execute$257.
+
+Solving problem with 16069 variables and 43408 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                      Dec       Hex           Bin
+  ---- ---------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:107:execute$245                0         0             0
+  init $auto$async2sync.cc:107:execute$251                0         0             0
+  init $auto$async2sync.cc:107:execute$257                0         0             0
+  init $auto$async2sync.cc:107:execute$263                0         0             0
+  init $auto$async2sync.cc:107:execute$269                0         0             0
+  init $auto$async2sync.cc:116:execute$249                1         1             1
+  init $auto$async2sync.cc:116:execute$255                1         1             1
+  init $auto$async2sync.cc:116:execute$261                1         1             1
+  init $auto$async2sync.cc:116:execute$267                1         1             1
+  init $auto$async2sync.cc:116:execute$273                1         1             1
+  init \init                                              1         1             1
+  init \own_cnt [1:0]                                     1         1            01
+  init \own_cnt [3:2]                                     0         0            00
+  init \owner [0]                                         0         0             0
+  init \owner [1]                                         0         0             0
+  init \rd_wait                                           6         6        000110
+  init \wr_wait                                           6         6        000110
+
+End of script. Logfile hash: e14f09f70b, time: 0.08s, user: 0.08s, system: 0.00s
+Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 54% 1x sat (0 sec), 25% 3x read_verilog (0 sec), ...

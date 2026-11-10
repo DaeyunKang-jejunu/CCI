@@ -1,0 +1,892 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Running command `read_verilog -sv -formal /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv; chparam -set DEPTH 2 formal_endpoint; chparam -set LATENCY 0 formal_endpoint; prep -top formal_endpoint; memory_map; opt; flatten; async2sync; opt_clean; select -count t:$assert; sat -tempinduct -prove-asserts -set-assumes -seq 1 -maxsteps 25' --
+
+1. Executing Verilog-2005 frontend: /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v
+Parsing formal SystemVerilog input from `/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v' to AST representation.
+Generating RTLIL representation for module `\m0_snoop_endpoint'.
+Warning: Replacing memory \delay_q with list of registers. See /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:64
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv
+Parsing formal SystemVerilog input from `/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv' to AST representation.
+Generating RTLIL representation for module `\formal_endpoint'.
+Successfully finished Verilog frontend.
+Parameter \DEPTH = 2
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_endpoint'.
+Parameter \DEPTH = 2
+Generating RTLIL representation for module `$paramod\formal_endpoint\DEPTH=s32'00000000000000000000000000000010'.
+Parameter \LATENCY = 0
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_endpoint'.
+Parameter \LATENCY = 0
+Generating RTLIL representation for module `$paramod\formal_endpoint\LATENCY=s32'00000000000000000000000000000000'.
+
+5. Executing PREP pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \formal_endpoint
+Used module:     \m0_snoop_endpoint
+Parameter \DEPTH = 2
+Parameter \LATENCY = 0
+
+5.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\m0_snoop_endpoint'.
+Parameter \DEPTH = 2
+Parameter \LATENCY = 0
+Generating RTLIL representation for module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Warning: Replacing memory \delay_q with list of registers. See /mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:64
+
+5.1.3. Analyzing design hierarchy..
+Top module:  \formal_endpoint
+Used module:     $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint
+
+5.1.4. Analyzing design hierarchy..
+Top module:  \formal_endpoint
+Used module:     $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint
+Removing unused module `\m0_snoop_endpoint'.
+Removed 1 unused modules.
+Module formal_endpoint directly or indirectly contains formal properties -> setting "keep" attribute.
+Module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:6$674 in module formal_endpoint.
+Removed 1 dead cases from process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826 in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Marked 1 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826 in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Removed 2 dead cases from process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768 in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Marked 4 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768 in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Marked 4 switch rules as full_case in process $proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704 in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Removed a total of 3 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 26 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:5$680'.
+  Set init value: \init = 1'1
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+
+5.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~13 debug messages>
+
+5.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:6$674'.
+     1/2: $assume$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:8$677_EN
+     2/2: $assume$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:7$675_EN
+Creating decoders for process `\formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:5$680'.
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:90$829'.
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826'.
+     1/1: $1$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$690_DATA[0:0]$828
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$822'.
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+     1/21: $3$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_DATA[0:0]$811
+     2/21: $3$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_DATA[0:0]$808
+     3/21: $2$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_DATA[0:0]$804
+     4/21: $2$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_ADDR[0:0]$803
+     5/21: $2$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_DATA[0:0]$802
+     6/21: $2$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_ADDR[0:0]$801
+     7/21: $1\fi[31:0]
+     8/21: $1\fk[31:0]
+     9/21: $1$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_DATA[0:0]$776
+    10/21: $1$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_ADDR[0:0]$775
+    11/21: $1$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_DATA[0:0]$774
+    12/21: $1$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_ADDR[0:0]$773
+    13/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:111$818_EN
+    14/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:111$814_EN
+    15/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$812_EN
+    16/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$795_EN
+    17/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$790_EN
+    18/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:104$786_EN
+    19/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:103$782_EN
+    20/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:102$779_EN
+    21/21: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:101$777_EN
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:91$762'.
+     1/1: $assert$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:93$764_EN
+Creating decoders for process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+     1/26: $2\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.$result[0:0]$745
+     2/26: $2\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.p[0:0]$746
+     3/26: $3$lookahead\valid_q$703[1:0]$749
+     4/26: $2$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$686[0:0]$744
+     5/26: $2$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_ADDR[0:0]$747
+     6/26: $2$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_DATA[0:0]$748
+     7/26: $2\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.$result[0:0]$731
+     8/26: $2\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.p[0:0]$732
+     9/26: $2$lookahead\valid_q$703[1:0]$733
+    10/26: $2$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$682[0:0]$730
+    11/26: $1$lookahead\valid_q$703[1:0]$723
+    12/26: $1$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_DATA[0:0]$722
+    13/26: $1$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_ADDR[0:0]$721
+    14/26: $1\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.p[0:0]$720
+    15/26: $1\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.$result[0:0]$719
+    16/26: $1$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$686[0:0]$718
+    17/26: $1\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.p[0:0]$717
+    18/26: $1\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.$result[0:0]$716
+    19/26: $1$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$682[0:0]$715
+    20/26: $1\sv2v_autoblock_2.i[31:0]
+    21/26: $1\sv2v_autoblock_1.i[31:0]
+    22/26: $0\delay_q[1][0:0]
+    23/26: $0\delay_q[0][0:0]
+    24/26: $0\count[1:0]
+    25/26: $0\tail[0:0]
+    26/26: $0\head[0:0]
+
+5.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$690_DATA' from process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826'.
+No latch inferred for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\sv2v_cast_32_signed$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$681.$result' from process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$822'.
+
+5.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\formal_endpoint.\init' using process `\formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:6$674'.
+  created $dff cell `$procdff$986' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\fi' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$987' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\fk' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$988' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_ADDR' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$989' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$692_DATA' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$990' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_ADDR' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$991' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_rd$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$693_DATA' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+  created $dff cell `$procdff$992' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\valid_q' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$997' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\head' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1002' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\tail' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1007' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\count' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1012' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\sv2v_autoblock_1.i' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1017' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\sv2v_autoblock_2.i' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $dff cell `$procdff$1024' with positive edge clock.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\delay_q[0]' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1029' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\delay_q[1]' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1034' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$682' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1039' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.$result' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1044' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:76$683.p' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1049' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$bitselwrite$pos$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$686' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1054' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.$result' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1059' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.\next_ptr$func$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:81$687.p' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1064' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_ADDR' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1069' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mem2reg_wr$\delay_q$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:79$691_DATA' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1074' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lookahead\valid_q$703' using process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+  created $adff cell `$procdff$1079' with positive edge clock and positive level reset.
+
+5.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:6$674'.
+Removing empty process `formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:6$674'.
+Removing empty process `formal_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/formal/formal_endpoint.sv:5$680'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:90$829'.
+Found and cleaned up 1 empty switch in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:48$826'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$822'.
+Found and cleaned up 4 empty switches in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:100$768'.
+Found and cleaned up 1 empty switch in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:91$762'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:91$762'.
+Found and cleaned up 6 empty switches in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+Removing empty process `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$proc$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:55$704'.
+Cleaned up 13 empty switches.
+
+5.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+<suppressed ~1 debug messages>
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+<suppressed ~48 debug messages>
+
+5.3. Executing FUTURE pass.
+
+5.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+
+5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Removed 59 unused cells and 217 unused wires.
+<suppressed ~67 debug messages>
+
+5.6. Executing CHECK pass (checking for obvious problems).
+Checking module formal_endpoint...
+Checking module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint...
+Found and reported 0 problems.
+
+5.7. Executing OPT pass (performing simple optimizations).
+
+5.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+
+5.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 118 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 114 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 113 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~61 debug messages>
+
+5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_endpoint.
+  Optimizing cells in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Performed a total of 0 changes.
+
+5.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 113 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 106 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+5.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+
+5.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \formal_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~47 debug messages>
+
+5.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \formal_endpoint.
+  Optimizing cells in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Performed a total of 0 changes.
+
+5.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 106 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Removed a total of 0 cells.
+
+5.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+
+5.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+
+5.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+5.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mod$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$810 ($mod).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mod$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$807 ($mod).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mod$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$797 ($mod).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mod$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$792 ($mod).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$mod$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:104$788 ($mod).
+Removed top 29 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$696 ($lt).
+Removed top 29 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$696 ($lt).
+Converting cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$696 ($lt) from signed to unsigned.
+Removed top 1 bits (of 3) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$696 ($lt).
+Removed top 1 bits (of 3) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:47$696 ($lt).
+Converting cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$neg$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$738 ($neg) from signed to unsigned.
+Removed top 1 bits (of 2) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$neg$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$738 ($neg).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$740 ($or).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$740 ($or).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$740 ($or).
+Converting cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$neg$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$754 ($neg) from signed to unsigned.
+Removed top 1 bits (of 2) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$neg$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$754 ($neg).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$756 ($or).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$756 ($or).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$756 ($or).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$le$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:101$778 ($le).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:102$780 ($lt).
+Removed top 29 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:104$787 ($add).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$sub$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$791 ($sub).
+Removed top 29 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$sub$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$791 ($sub).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$sub$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$796 ($sub).
+Removed top 29 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$sub$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:106$796 ($sub).
+Removed top 31 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$lt$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:108$800 ($lt).
+Removed top 31 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$806 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$809 ($add).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$809 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$le$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:111$816 ($le).
+Removed top 31 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$le$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:111$820 ($le).
+Removed top 1 bits (of 2) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$procmux$978_CMP0 ($eq).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$737 ($and).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$737 ($and).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$739 ($shift).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$753 ($and).
+Removed top 30 bits (of 32) from port B of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$753 ($and).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$736 ($not).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$736 ($not).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$752 ($not).
+Removed top 30 bits (of 32) from port A of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$752 ($not).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$735 ($shift).
+Removed top 30 bits (of 32) from port Y of cell $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$755 ($shift).
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$751_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$740_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$739_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$752_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$737_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$not$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$736_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$shift$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:75$735_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:109$805_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$and$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$753_Y.
+Removed top 29 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$add$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:104$787_Y.
+Removed top 30 bits (of 32) from wire $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.$or$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:80$756_Y.
+
+5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+5.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.11. Executing OPT pass (performing simple optimizations).
+
+5.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module formal_endpoint.
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+
+5.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 106 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 105 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.11.4. Finished fast OPT passes.
+
+5.12. Executing SORT pass.
+
+5.13. Printing statistics.
+
+=== $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      102 wires
+      679 wire bits
+       19 public wires
+      119 public wire bits
+       10 ports
+       77 port bits
+      105 cells
+        6   $add
+        6   $adff
+        2   $and
+       11   $check
+        7   $eq
+        1   $ge
+        3   $le
+        8   $logic_and
+        6   $logic_not
+        3   $logic_or
+        4   $lt
+        5   $mod
+       20   $mux
+        2   $neg
+        6   $not
+        2   $or
+        4   $pmux
+        1   $reduce_bool
+        3   $shift
+        5   $sub
+
+=== formal_endpoint ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       14 wires
+       78 wire bits
+       10 public wires
+       74 public wire bits
+        5 ports
+       68 port bits
+        8 cells
+        3   $check
+        1   $dff
+        2   $logic_not
+        2   $mux
+        1 submodules
+        1   $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      113 formal_endpoint
+      105 $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint
+
+        +----------Count including submodules.
+        | 
+      116 wires
+      757 wire bits
+       29 public wires
+      193 public wire bits
+       15 ports
+      145 port bits
+        - memories
+        - memory bits
+        - processes
+      113 cells
+        6   $add
+        6   $adff
+        2   $and
+       14   $check
+        1   $dff
+        7   $eq
+        1   $ge
+        3   $le
+        8   $logic_and
+        8   $logic_not
+        3   $logic_or
+        4   $lt
+        5   $mod
+       22   $mux
+        2   $neg
+        6   $not
+        2   $or
+        4   $pmux
+        1   $reduce_bool
+        3   $shift
+        5   $sub
+        1 submodules
+        1   $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint
+
+5.14. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint...
+Checking module formal_endpoint...
+Found and reported 0 problems.
+
+6. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+<suppressed ~12 debug messages>
+Optimizing module formal_endpoint.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 99 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~47 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+  Optimizing cells in module \formal_endpoint.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 99 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1012 ($adff) from module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint (D = $0\count[1:0], Q = \count).
+Adding EN signal on $procdff$1007 ($adff) from module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint (D = $ternary$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:41$759_Y, Q = \tail).
+Adding EN signal on $procdff$1002 ($adff) from module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint (D = $ternary$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:41$743_Y, Q = \head).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Finding unused cells or wires in module \formal_endpoint..
+Removed 2 unused cells and 7 unused wires.
+<suppressed ~4 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+<suppressed ~1 debug messages>
+Optimizing module formal_endpoint.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+  Optimizing cells in module \formal_endpoint.
+Performed a total of 0 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 97 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 96 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 95 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Removed a total of 2 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Finding unused cells or wires in module \formal_endpoint..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Optimizing module formal_endpoint.
+
+7.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_endpoint..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~44 debug messages>
+
+7.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+  Optimizing cells in module \formal_endpoint.
+Performed a total of 0 changes.
+
+7.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Computing hashes of 95 cells of `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding duplicate cells in `$paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint'.
+Finding identical cells in module `\formal_endpoint'.
+Computing hashes of 9 cells of `\formal_endpoint'.
+Finding duplicate cells in `\formal_endpoint'.
+Removed a total of 0 cells.
+
+7.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint..
+Finding unused cells or wires in module \formal_endpoint..
+
+7.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+Optimizing module formal_endpoint.
+
+7.23. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$caf3b4b19403083d55618cfe8dd1114eb6bec2e4\m0_snoop_endpoint.
+<suppressed ~1 debug messages>
+
+9. Executing ASYNC2SYNC pass.
+Replacing formal_endpoint.$flatten\dut.$procdff$997 ($adff): ARST=\dut.rst_n, D=$flatten\dut.$0$lookahead\valid_q$703[1:0]$713, Q=\dut.valid_q
+Replacing formal_endpoint.$flatten\dut.$procdff$1034 ($adff): ARST=\dut.rst_n, D=$flatten\dut.$0\delay_q[1][0:0], Q=\dut.delay_q[1]
+Replacing formal_endpoint.$flatten\dut.$procdff$1029 ($adff): ARST=\dut.rst_n, D=$flatten\dut.$0\delay_q[0][0:0], Q=\dut.delay_q[0]
+Replacing formal_endpoint.$flatten\dut.$auto$ff.cc:337:slice$1091 ($adffe): ARST=\dut.rst_n, D=$flatten\dut.$0\count[1:0], Q=\dut.count
+Replacing formal_endpoint.$flatten\dut.$auto$ff.cc:337:slice$1094 ($adffe): ARST=\dut.rst_n, D=$flatten\dut.$ternary$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:41$759_Y, Q=\dut.tail
+Replacing formal_endpoint.$flatten\dut.$auto$ff.cc:337:slice$1095 ($adffe): ARST=\dut.rst_n, D=$flatten\dut.$ternary$/mnt/c/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/reports/runs/formal_20261108T082320Z_49827c1e/endpoint.v:41$743_Y, Q=\dut.head
+
+10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \formal_endpoint..
+Removed 44 unused cells and 45 unused wires.
+<suppressed ~47 debug messages>
+11 objects.
+
+11. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1155 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1153 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1177 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1149 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1147 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1185 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1143 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1141 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1173 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1137 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1135 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1171 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1131 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1125 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1183 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1121 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1107 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1167 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1103 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1101 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1165 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1097 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1189 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1161 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:116:execute$1159 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:107:execute$1179 = 1'0
+Import set-constraint from init attribute: \init = 1'1
+Final init constraint equation: { \init $auto$async2sync.cc:107:execute$1179 $auto$async2sync.cc:116:execute$1159 $auto$async2sync.cc:107:execute$1161 $auto$async2sync.cc:116:execute$1189 $auto$async2sync.cc:107:execute$1097 $auto$async2sync.cc:116:execute$1165 $auto$async2sync.cc:116:execute$1101 $auto$async2sync.cc:107:execute$1103 $auto$async2sync.cc:107:execute$1167 $auto$async2sync.cc:116:execute$1107 $auto$async2sync.cc:107:execute$1121 $auto$async2sync.cc:116:execute$1183 $auto$async2sync.cc:116:execute$1125 $auto$async2sync.cc:107:execute$1131 $auto$async2sync.cc:116:execute$1171 $auto$async2sync.cc:116:execute$1135 $auto$async2sync.cc:107:execute$1137 $auto$async2sync.cc:107:execute$1173 $auto$async2sync.cc:116:execute$1141 $auto$async2sync.cc:107:execute$1143 $auto$async2sync.cc:107:execute$1185 $auto$async2sync.cc:116:execute$1147 $auto$async2sync.cc:107:execute$1149 $auto$async2sync.cc:116:execute$1177 $auto$async2sync.cc:116:execute$1153 $auto$async2sync.cc:107:execute$1155 } = 27'101010110010110110010010110
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import proof for assert: $auto$async2sync.cc:116:execute$1101 when $auto$async2sync.cc:107:execute$1097.
+Import proof for assert: $auto$async2sync.cc:116:execute$1107 when $auto$async2sync.cc:107:execute$1103.
+Import proof for assert: $auto$async2sync.cc:116:execute$1125 when $auto$async2sync.cc:107:execute$1121.
+Import proof for assert: 1'1 when $auto$rtlil.cc:3298:And$1130.
+Import proof for assert: $auto$async2sync.cc:116:execute$1135 when $auto$async2sync.cc:107:execute$1131.
+Import proof for assert: $auto$async2sync.cc:116:execute$1141 when $auto$async2sync.cc:107:execute$1137.
+Import proof for assert: $auto$async2sync.cc:116:execute$1147 when $auto$async2sync.cc:107:execute$1143.
+Import proof for assert: $auto$async2sync.cc:116:execute$1153 when $auto$async2sync.cc:107:execute$1149.
+Import proof for assert: $auto$async2sync.cc:116:execute$1159 when $auto$async2sync.cc:107:execute$1155.
+Import proof for assert: $auto$async2sync.cc:116:execute$1165 when $auto$async2sync.cc:107:execute$1161.
+Import proof for assert: $auto$async2sync.cc:116:execute$1171 when $auto$async2sync.cc:107:execute$1167.
+
+** Trying induction with length 1 **
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import proof for assert: $auto$async2sync.cc:116:execute$1101 when $auto$async2sync.cc:107:execute$1097.
+Import proof for assert: $auto$async2sync.cc:116:execute$1107 when $auto$async2sync.cc:107:execute$1103.
+Import proof for assert: $auto$async2sync.cc:116:execute$1125 when $auto$async2sync.cc:107:execute$1121.
+Import proof for assert: 1'1 when $auto$rtlil.cc:3298:And$1130.
+Import proof for assert: $auto$async2sync.cc:116:execute$1135 when $auto$async2sync.cc:107:execute$1131.
+Import proof for assert: $auto$async2sync.cc:116:execute$1141 when $auto$async2sync.cc:107:execute$1137.
+Import proof for assert: $auto$async2sync.cc:116:execute$1147 when $auto$async2sync.cc:107:execute$1143.
+Import proof for assert: $auto$async2sync.cc:116:execute$1153 when $auto$async2sync.cc:107:execute$1149.
+Import proof for assert: $auto$async2sync.cc:116:execute$1159 when $auto$async2sync.cc:107:execute$1155.
+Import proof for assert: $auto$async2sync.cc:116:execute$1165 when $auto$async2sync.cc:107:execute$1161.
+Import proof for assert: $auto$async2sync.cc:116:execute$1171 when $auto$async2sync.cc:107:execute$1167.
+
+[base case 1] Solving problem with 1964 variables and 5134 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import proof for assert: $auto$async2sync.cc:116:execute$1101 when $auto$async2sync.cc:107:execute$1097.
+Import proof for assert: $auto$async2sync.cc:116:execute$1107 when $auto$async2sync.cc:107:execute$1103.
+Import proof for assert: $auto$async2sync.cc:116:execute$1125 when $auto$async2sync.cc:107:execute$1121.
+Import proof for assert: 1'1 when $auto$rtlil.cc:3298:And$1130.
+Import proof for assert: $auto$async2sync.cc:116:execute$1135 when $auto$async2sync.cc:107:execute$1131.
+Import proof for assert: $auto$async2sync.cc:116:execute$1141 when $auto$async2sync.cc:107:execute$1137.
+Import proof for assert: $auto$async2sync.cc:116:execute$1147 when $auto$async2sync.cc:107:execute$1143.
+Import proof for assert: $auto$async2sync.cc:116:execute$1153 when $auto$async2sync.cc:107:execute$1149.
+Import proof for assert: $auto$async2sync.cc:116:execute$1159 when $auto$async2sync.cc:107:execute$1155.
+Import proof for assert: $auto$async2sync.cc:116:execute$1165 when $auto$async2sync.cc:107:execute$1161.
+Import proof for assert: $auto$async2sync.cc:116:execute$1171 when $auto$async2sync.cc:107:execute$1167.
+
+[induction step 1] Solving problem with 1923 variables and 4995 clauses..
+Induction step failed. Incrementing induction length.
+
+  Time Signal Name                                       Dec       Hex           Bin
+  ---- ----------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:107:execute$1097                0         0             0
+  init $auto$async2sync.cc:107:execute$1103                0         0             0
+  init $auto$async2sync.cc:107:execute$1121                0         0             0
+  init $auto$async2sync.cc:107:execute$1131                0         0             0
+  init $auto$async2sync.cc:107:execute$1137                0         0             0
+  init $auto$async2sync.cc:107:execute$1143                0         0             0
+  init $auto$async2sync.cc:107:execute$1149                0         0             0
+  init $auto$async2sync.cc:107:execute$1155                0         0             0
+  init $auto$async2sync.cc:107:execute$1161                0         0             0
+  init $auto$async2sync.cc:107:execute$1167                0         0             0
+  init $auto$async2sync.cc:107:execute$1173                0         0             0
+  init $auto$async2sync.cc:107:execute$1179                0         0             0
+  init $auto$async2sync.cc:107:execute$1185                0         0             0
+  init $auto$async2sync.cc:116:execute$1101                0         0             0
+  init $auto$async2sync.cc:116:execute$1107                0         0             0
+  init $auto$async2sync.cc:116:execute$1125                0         0             0
+  init $auto$async2sync.cc:116:execute$1135                0         0             0
+  init $auto$async2sync.cc:116:execute$1141                0         0             0
+  init $auto$async2sync.cc:116:execute$1147                0         0             0
+  init $auto$async2sync.cc:116:execute$1153                0         0             0
+  init $auto$async2sync.cc:116:execute$1159                0         0             0
+  init $auto$async2sync.cc:116:execute$1165                0         0             0
+  init $auto$async2sync.cc:116:execute$1171                0         0             0
+  init $auto$async2sync.cc:116:execute$1177                0         0             0
+  init $auto$async2sync.cc:116:execute$1183                0         0             0
+  init $auto$async2sync.cc:116:execute$1189                0         0             0
+  init $auto$async2sync.cc:253:execute$1109                3         3            11
+  init $auto$async2sync.cc:253:execute$1111                1         1             1
+  init $auto$async2sync.cc:253:execute$1113                1         1             1
+  init $auto$async2sync.cc:253:execute$1115                3         3            11
+  init $auto$async2sync.cc:253:execute$1117                1         1             1
+  init $auto$async2sync.cc:253:execute$1119                1         1             1
+  init \init                                               0         0             0
+
+** Trying induction with length 2 **
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import proof for assert: $auto$async2sync.cc:116:execute$1101 when $auto$async2sync.cc:107:execute$1097.
+Import proof for assert: $auto$async2sync.cc:116:execute$1107 when $auto$async2sync.cc:107:execute$1103.
+Import proof for assert: $auto$async2sync.cc:116:execute$1125 when $auto$async2sync.cc:107:execute$1121.
+Import proof for assert: 1'1 when $auto$rtlil.cc:3298:And$1130.
+Import proof for assert: $auto$async2sync.cc:116:execute$1135 when $auto$async2sync.cc:107:execute$1131.
+Import proof for assert: $auto$async2sync.cc:116:execute$1141 when $auto$async2sync.cc:107:execute$1137.
+Import proof for assert: $auto$async2sync.cc:116:execute$1147 when $auto$async2sync.cc:107:execute$1143.
+Import proof for assert: $auto$async2sync.cc:116:execute$1153 when $auto$async2sync.cc:107:execute$1149.
+Import proof for assert: $auto$async2sync.cc:116:execute$1159 when $auto$async2sync.cc:107:execute$1155.
+Import proof for assert: $auto$async2sync.cc:116:execute$1165 when $auto$async2sync.cc:107:execute$1161.
+Import proof for assert: $auto$async2sync.cc:116:execute$1171 when $auto$async2sync.cc:107:execute$1167.
+
+[base case 2] Solving problem with 3101 variables and 8216 clauses..
+Base case for induction length 2 proven.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 135 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1177 when $auto$async2sync.cc:107:execute$1173.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1183 when $auto$async2sync.cc:107:execute$1179.
+Import constraint from assume cell: $auto$async2sync.cc:116:execute$1189 when $auto$async2sync.cc:107:execute$1185.
+Import proof for assert: $auto$async2sync.cc:116:execute$1101 when $auto$async2sync.cc:107:execute$1097.
+Import proof for assert: $auto$async2sync.cc:116:execute$1107 when $auto$async2sync.cc:107:execute$1103.
+Import proof for assert: $auto$async2sync.cc:116:execute$1125 when $auto$async2sync.cc:107:execute$1121.
+Import proof for assert: 1'1 when $auto$rtlil.cc:3298:And$1130.
+Import proof for assert: $auto$async2sync.cc:116:execute$1135 when $auto$async2sync.cc:107:execute$1131.
+Import proof for assert: $auto$async2sync.cc:116:execute$1141 when $auto$async2sync.cc:107:execute$1137.
+Import proof for assert: $auto$async2sync.cc:116:execute$1147 when $auto$async2sync.cc:107:execute$1143.
+Import proof for assert: $auto$async2sync.cc:116:execute$1153 when $auto$async2sync.cc:107:execute$1149.
+Import proof for assert: $auto$async2sync.cc:116:execute$1159 when $auto$async2sync.cc:107:execute$1155.
+Import proof for assert: $auto$async2sync.cc:116:execute$1165 when $auto$async2sync.cc:107:execute$1161.
+Import proof for assert: $auto$async2sync.cc:116:execute$1171 when $auto$async2sync.cc:107:execute$1167.
+
+[induction step 2] Solving problem with 3166 variables and 8429 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+Warnings: 1 unique messages, 2 total
+End of script. Logfile hash: 981985498a, time: 0.14s, user: 0.14s, system: 0.00s
+Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 62% 3x read_verilog (0 sec), 12% 1x sat (0 sec), ...

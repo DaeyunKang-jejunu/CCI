@@ -1,0 +1,12 @@
+== IDA=1 IDB=2
+load A resp=0001
+load B resp=0001
+store B resp=0001 (EXOKAY=01)
+store A resp=0001 (must be 00 after B succeeded)
+RESULT: BOTH_EXCLUSIVE_STORES_PASSED
+== IDA=1 IDB=5
+load A resp=0001
+load B resp=0001
+store B resp=0001 (EXOKAY=01)
+store A resp=0000 (must be 00 after B succeeded)
+RESULT: SECOND_STORE_FAILED_CORRECTLY

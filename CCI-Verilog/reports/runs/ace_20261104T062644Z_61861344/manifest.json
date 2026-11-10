@@ -1,0 +1,1899 @@
+{
+  "run_id": "ace_20261104T062644Z_61861344",
+  "status": "FAIL",
+  "sources": {
+    "axi4_simple_2to1_bus_arbiter.sv": "6a4dce3e6496acd82ca61cdbee9c0deef9305d045250cc2d304a83b86d98c012",
+    "realistic_axi_master.sv": "396bbb43548c7b9d394fb17ce21d7268a0c79f6309063fb1154387d66af5a45a",
+    "rtl/common/cci_admission_pool.sv": "b59811af1e6b02e6effa9a8f6edb6d57302b456a7d91152b02411cf7ab04e713",
+    "rtl/common/cci_pkg.sv": "083a05eca725e96a4cc8a92d2e2f9d9b6bf60d6641621cd281da344c999e1e86",
+    "rtl/common/coh_write_ingress.sv": "e32bc5fe2e7578484da20e5ff768c3f65ee190722ccb37c18143d5b66eacc72d",
+    "rtl/common/m0_snoop_endpoint.sv": "621b25a9e0e2a9da851c9035fe1960673f1aa89e47e4a23831b3bb95d2c08bc6",
+    "rtl/common/synth_register_shell.sv": "29ded760a274df3d97ba0b5cbcfac7ac37f6e0f29d3b7615a6e3726dedd33197",
+    "rtl/proposed/cci_ac_range_gen.sv": "50451464e4d87419874ed2c133b06b3a3e1e8b76731e536463bf06a8faf80905",
+    "rtl/proposed/cci_range_hazard_checker.sv": "997da4ef00efbd1f1ab26410aedc59e79ff78fa80d08f4b2eb7c1031ea1c087c",
+    "rtl/proposed/cci_range_req_decoder.sv": "1b3109b02f840e15e7da469bca6116bc03cf29e8a2f0f7a5a507bd5b39d49204",
+    "rtl/proposed/cci_range_rim_tracker.sv": "909234e62e5c915ff4c9716200f293a366d28596bfe56d1b5ca5f2d7ef655e8a",
+    "rtl/top/axi_b0_top.sv": "c09091a205799a824d03d3fe4846aacbb2101357a1dd45ae4c7962f892ba6101",
+    "rtl/top/axi_b1_conventional_top.sv": "1ad785cec39195921a3f1d3f62596e30aa9a6ba7893e85e6637d0329b414d110",
+    "rtl/top/axi_cci_top.sv": "5aadffb7388cc49c8e81abb04ba9b4763aed42b157517738b1985b245c88694c",
+    "rtl/top/axi_p_range_top.sv": "4d26cd0c11c3eeaebc5674d3ca071e92392080215633fb272128ba1d498ba2bd",
+    "scripts/fixtures/hardware/B0/drc.rpt": "6ac1f7468d175fd7127c9f23ef8197021e1e11d8a12019d946101a9aa001cc1a",
+    "scripts/fixtures/hardware/B0/post_route_hier.rpt": "08504c1fed2de12ade3a978cfb14af4b5aedd4dc4f3e4275bb76b110dbb47d3c",
+    "scripts/fixtures/hardware/B0/post_route_timing_summary.rpt": "38bd576edd675c11911c8099a9a9263266c019509603e2b4e8fc494e7b08baa7",
+    "scripts/fixtures/hardware/B0/post_route_utilization.rpt": "c301d4d99dcfe77c76bfc9b4914d50d85a30af2e6b9b2a994269ac7ce3554ff8",
+    "scripts/fixtures/hardware/B0/route_status.rpt": "9d4d935b66e3ed418aecc72e8c0970b3a8f33110829d3a266b1f372861d5514e",
+    "scripts/fixtures/hardware/B1/drc.rpt": "e9f4e7819fbbb0c787005489b620c123935649238a98e39d53160b8410ffca5f",
+    "scripts/fixtures/hardware/B1/post_route_hier.rpt": "fc33895eb6a0d09128678770c5ffc7550146f66f84c46fde514bcd95181c4337",
+    "scripts/fixtures/hardware/B1/post_route_timing_summary.rpt": "324e9c90f991f66c793658d828e099d1cf837f13fa6d0bbca2405668ba5dc9a6",
+    "scripts/fixtures/hardware/B1/post_route_utilization.rpt": "fd95c4b66b961b6a16affbf40d8b355f91f317500017c6acfe86ee79722ef45d",
+    "scripts/fixtures/hardware/B1/route_status.rpt": "98e20c399647101d71d48d7269d7840e43323cd8a78d2d09d4d491d8f2ecb024",
+    "scripts/fixtures/hardware/P/drc.rpt": "d2e2b50221e6bb581f72d5aa9cc8853e60f6d19ac76d18d3595f388b558409e0",
+    "scripts/fixtures/hardware/P/post_route_hier.rpt": "347b814697bdb7af5f2b60d943ec45d9a4a69bbf3ef26b70b1e632d146b54ec5",
+    "scripts/fixtures/hardware/P/post_route_timing_summary.rpt": "2a4c95f0b436e7ae179b2db160d14cfdee566cd09d543cddcda02b4bfb6f9578",
+    "scripts/fixtures/hardware/P/post_route_utilization.rpt": "4b69806163be3dada42666cdd355765cde2b06780889c3d68c94cd8009e1d493",
+    "scripts/fixtures/hardware/P/route_status.rpt": "c171ef46adc3b60e44911277ca907ed75ba38ff399b1102e9b3a69ab7f3ba09d",
+    "scripts/results_common.py": "053368ea982ff9526a8df38fe26b2864099204a84e168bd8e1e71ff7143c3521",
+    "scripts/rtl.f": "1f9c8646edccd533127f3e7189f05bcc546c21a5c7246121c65be03f6ddd557d",
+    "scripts/run_regression.py": "56fbe5a8cb035ff55f44cce98840bca08aa82c15d33d32e4303723e6920761b7",
+    "scripts/test_results_common.py": "4e46a13ac284b130f551e0041fb67d4f93e6946af3fff0ccea779ffd635c0b32",
+    "simple_axi_master.sv": "483790268d6f25abee5cb7e60cb44339d30fc9e62200c8434897a6b6810a72ab",
+    "simple_axi_slave.sv": "c8ccf220a302e4abcfbdca78a7cb4ed46543875f038b9838d30a3cc06e70066f",
+    "tb/axi_memory_slave.sv": "df23fa6f00962d9e0438e5358f7f579bd7577895f3af8cc57433ebeb1321cfbb",
+    "tb/formal_decoder.sv": "f49b64ac15d347cfac4ab3dde5a5a8299374e8b30a2add67cd7e778a564741e1",
+    "tb/m0_clean_cache_model.sv": "33727bfb70953c60b9120f3bf701ddbd5846b4bc1fdbb466b080ac5f8d9efaa6",
+    "tb/tb_ace_fabric_review10.sv": "20cba793f2d28f6b0b7dffd7a0f9c0ec402c4f637f73a2e76a360b7446a556fa",
+    "tb/tb_ace_manager_outstanding.sv": "02f09abbd54a29c8a048ae2634d4535715b81a49b90315c336e4b8324373bfdf",
+    "tb/tb_ace_manager_review10.sv": "7b9f8407f5951c5241c9903b596aceec61bd76cad8793cf74c3316a7c66b21d6",
+    "tb/tb_ace_manager_transactions.sv": "a26cce29bac374df6e65e38f34c41a454522b59eef7e73cb5301bf512e7a0a6e",
+    "tb/tb_ace_snoop_bank_review10.sv": "8d31fd8f3968d1ef937810d18027fed6f333b715ffe2d2071b742bdae8cd43e2",
+    "tb/tb_ace_snoop_fabric.sv": "e72b48dbd69e3932f6f6ff6ff403a626229774b1f9583dc0b0f69219dbadcca1",
+    "tb/tb_ace_snoop_outstanding.sv": "0a906d47db67f4a5f76fae36c06f33eb77c613846780aff1e421ddd4821d6f63",
+    "tb/tb_ace_snoop_pipeline.sv": "12b7715c18050a6e986917538cc568001f11714089debabd4ad466e5b41dd4b1",
+    "tb/tb_ace_snoop_service.sv": "0c941483514ad88f0c86f64e1c1f2b20e9ced294f0cbb53b0497ea644ada9953",
+    "tb/tb_ace_snoop_service_outstanding.sv": "c1a3953398d964497796eff689ec0c93242787e7cb4d7592fdad7516069b715a",
+    "tb/tb_ace_tagged_service.sv": "220a5128ca2426a682be151465309c4817b39ddc26d0990cec545409f9a98e0d",
+    "tb/tb_axi_fifo_overlap.sv": "51006dbf879ef29fd7a83fc14385aa78c4d00dc4bca55dbf754a8a8d404ffbf0",
+    "tb/tb_axi_grant_lock.sv": "13918396bf49b38614fe2a71e3ae332709a23374e80310a5a375614e2bcaae2c",
+    "tb/tb_axi_memory_wstrb.sv": "3dd780f030d45afb49faed1f9b669b3fda51f362c0139a88a6eb473de0d3361c",
+    "tb/tb_axi_protocol_errors.sv": "d9620bd9f20973f23881f693dfce259c9e6cf541f2d6f08b6fb36e385051ff84",
+    "tb/tb_cache_collision.sv": "68aec9b176134f34dc98b800682c954b9dbdb6e1fceb63079c3c484a15ea4a6f",
+    "tb/tb_cci_ace_integration.sv": "c2dffb7f7a3a8c8e03109a17f2b252ce4d6d19b259a20abdb66483ed36c99479",
+    "tb/tb_cci_admission_pool.sv": "9e6c22e7f1493897753965d883c8a431c229564c7a2c928e0e7894d1fd85c1d9",
+    "tb/tb_cci_integration.sv": "4c62880ffd5c3fd46f69615e8c8f8818d70250a8a3af02c6afec06bb36cac6e5",
+    "tb/tb_cci_memory_cache.sv": "3a77c8fb50eeb7adc81a435463ea1c3288ad967df85873815ade86c07e9d9f5c",
+    "tb/tb_coh_read_ingress.sv": "24dff8e9d6b24e9b8f7af61b8d5e8df4d0ec93ff41a779efb7e96cfd9096255e",
+    "tb/tb_decoder.sv": "ca8cc85b88899350182b297d4d14976a940ed43185f5adb5a180ee6edd119f71",
+    "tb/tb_memory_collision.sv": "4116227a827d3fe53a2b89e69f18fb1558d2e31ed3f8799da9582d91ef31761c",
+    "tb/tb_rcci_stage1_latency.sv": "881c9ba67322c86272fef226ffc2203c7a583c9fad600f94e422b44598f1a4f8",
+    "tb/tb_snoop_endpoint.sv": "72a30aeb0c21853235e58067d9e3a89d678b5fee78304cb18e49f66a3c346e6a",
+    "tb_axi_bus_system.sv": "3684da44c420c64040cfaf853bad09452bc9153170bd1d744bf3243516422f5b",
+    "rtl/ace/ace_snoop_pkg.sv": "3f3f0d67311720b8b7ba63cf23d4b15c6386fdee280eefe1100195c520e7350a",
+    "rtl/ace/ace_cache_snoop_endpoint.sv": "109d3266a4f1ac3eb3547f6f620300a4835f1cbd9e0ff6183aa8a51fae93dfb6",
+    "rtl/ace/ace_snoop_fabric.sv": "d6f4b3cb4d12331bb796638656e6b27d43f2e02e8b7f49c7be7e480e6af413d6",
+    "rtl/ace/ace_snoop_controller.sv": "a0a5e0a900160d131428d1e542b524e82ca58d0f96eb17b240f0877766d96bd7",
+    "rtl/ace/ace_snoop_controller_bank.sv": "271a249640b5a1244f41f29b8f199cbad84e419cfb357748a579a3f77f9568ce",
+    "rtl/ace/ace_snoop_controller_tag_bank.sv": "6d3f09a3314cf2e1b594a198d9e1e06ae16b6e570cd5378b63a36d738b461837",
+    "rtl/ace/cci_ace_snoop_service.sv": "e3bbde41ef5b2640c9b1aeecc997dcf9dcabd52022e762ec60994af4ab49a444",
+    "rtl/ace/cci_ace_tagged_snoop_service.sv": "5f4848f43acf1a3c8ab1af797792daff296480174b762f5e01b58ac96640c6b9",
+    "rtl/ace/cci_service_rsp_adapter.sv": "f41bb48d4f0a55e27fbb3d6638b148c076c8d5df0d7fdee1ec7b53bdf90fb894",
+    "rtl/ace/ace_manager_request_controller.sv": "a6aa67478ad6780a734dfd8b14b8fbf5d47b19c0a9156a04e4d6d50e0029cb69",
+    "rtl/ace/ace_manager_request_bank.sv": "57fc56175d591b5c4ccb66e5bd84832be37326f77be366de82c05430ab9089ba",
+    "rtl/common/coh_read_ingress.sv": "363d15489a9d9d705313edb5f501a0d8d5d3e93143c2a3abe215dece5abdd659",
+    "rtl/ace/axi_cci_ace_top.sv": "a89bdaa3b488217efed548979bd8cdb7e176c8d966f24e0e754251d9c9079165",
+    "scripts/ace.f": "f3fee425826fc6f2e2e5cfd226a19f243a04a936d58b7b34e1ca4df7d4b59752",
+    "scripts/run_ace.py": "15f5cad664070265ecb61543d95cd5d867b32222dfa459123996b4af872154ec"
+  },
+  "cases": [
+    {
+      "name": "coherent_read_ingress",
+      "status": "PASS",
+      "log": "coherent_read_ingress.log",
+      "marker": "PASS coherent read ingress outstanding/tracker/hazard/RLAST association",
+      "returncode": 0
+    },
+    {
+      "name": "service",
+      "status": "PASS",
+      "log": "service.log",
+      "marker": "PASS ACE snoop state/data/writeback service",
+      "returncode": 0
+    },
+    {
+      "name": "endpoint_outstanding",
+      "status": "PASS",
+      "log": "endpoint_outstanding.log",
+      "marker": "PASS ACE endpoint multiple outstanding snoops",
+      "returncode": 0
+    },
+    {
+      "name": "snoop_pipeline",
+      "status": "PASS",
+      "log": "snoop_pipeline.log",
+      "marker": "PASS ACE fabric and endpoints multiple outstanding snoops",
+      "returncode": 0
+    },
+    {
+      "name": "service_outstanding",
+      "status": "PASS",
+      "log": "service_outstanding.log",
+      "marker": "PASS ACE snoop service multiple outstanding transactions",
+      "returncode": 0
+    },
+    {
+      "name": "manager_transactions",
+      "status": "PASS",
+      "log": "manager_transactions.log",
+      "marker": "PASS ACE initiating transactions",
+      "returncode": 0
+    },
+    {
+      "name": "manager_outstanding",
+      "status": "PASS",
+      "log": "manager_outstanding.log",
+      "marker": "PASS ACE manager multiple outstanding and cross-ID out-of-order response",
+      "returncode": 0
+    },
+    {
+      "name": "multi_snoop_fabric",
+      "status": "PASS",
+      "log": "multi_snoop_fabric.log",
+      "marker": "PASS ACE multi-target snoop fabric",
+      "returncode": 0
+    },
+    {
+      "name": "multi_top_integration",
+      "status": "PASS",
+      "log": "multi_top_integration.log",
+      "marker": "PASS v9 ACE integration mode=0 cached_masters=2",
+      "returncode": 0
+    },
+    {
+      "name": "b1_integration",
+      "status": "PASS",
+      "log": "b1_integration.log",
+      "marker": "PASS v9 ACE integration mode=0",
+      "returncode": 0
+    },
+    {
+      "name": "p_integration",
+      "status": "PASS",
+      "log": "p_integration.log",
+      "marker": "PASS v9 ACE integration mode=1",
+      "returncode": 0
+    },
+    {
+      "name": "b1_multiline",
+      "status": "PASS",
+      "log": "b1_multiline.log",
+      "marker": "PASS ACE multiline stress mode=0",
+      "returncode": 0
+    },
+    {
+      "name": "p_multiline",
+      "status": "PASS",
+      "log": "p_multiline.log",
+      "marker": "PASS ACE multiline stress mode=1",
+      "returncode": 0
+    },
+    {
+      "name": "manager_review10",
+      "status": "PASS",
+      "log": "manager_review10.log",
+      "marker": "PASS ACE manager review10",
+      "returncode": 0
+    },
+    {
+      "name": "snoop_bank_review10",
+      "status": "PASS",
+      "log": "snoop_bank_review10.log",
+      "marker": "PASS ACE snoop bank review10",
+      "returncode": 0
+    },
+    {
+      "name": "fabric_review10",
+      "status": "PASS",
+      "log": "fabric_review10.log",
+      "marker": "PASS ACE fabric review10",
+      "returncode": 0
+    },
+    {
+      "name": "b1_wb_contention",
+      "status": "PASS",
+      "log": "b1_wb_contention.log",
+      "marker": "PASS ACE WB contention mode=0",
+      "returncode": 0
+    },
+    {
+      "name": "p_wb_contention",
+      "status": "PASS",
+      "log": "p_wb_contention.log",
+      "marker": "PASS ACE WB contention mode=1",
+      "returncode": 0
+    },
+    {
+      "name": "bypass_coherent_read_snoop",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "bypass_coherent_read_snoop.log",
+      "marker": "READ_SNOOP_OOO_BYPASS",
+      "returncode": 1
+    },
+    {
+      "name": "drop_coherent_read_hazard",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_coherent_read_hazard.log",
+      "marker": "READ_HAZARD_CAM",
+      "returncode": 1
+    },
+    {
+      "name": "drop_range_read_classification",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_range_read_classification.log",
+      "marker": "RANGE_READ_CLASSIFICATION",
+      "returncode": 1
+    },
+    {
+      "name": "drop_range_read_hazard",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_range_read_hazard.log",
+      "marker": "RANGE_READ_HAZARD",
+      "returncode": 1
+    },
+    {
+      "name": "accept_reserved_range_op",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "accept_reserved_range_op.log",
+      "marker": "RANGE_READ_RESERVED_OP",
+      "returncode": 1
+    },
+    {
+      "name": "cd_waits_cr",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "cd_waits_cr.log",
+      "marker": "CD_BEFORE_CR",
+      "returncode": 1
+    },
+    {
+      "name": "early_b",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "early_b.log",
+      "marker": "COMPLETED_BEFORE_ACTUAL_B",
+      "returncode": 1
+    },
+    {
+      "name": "skip_dirty_wb",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_dirty_wb.log",
+      "marker": "DIRTY_COMPLETED_BEFORE_WB",
+      "returncode": 1
+    },
+    {
+      "name": "skip_drain",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_drain.log",
+      "marker": "ACE_ADMITTED_BEFORE_CORE_B",
+      "returncode": 1
+    },
+    {
+      "name": "bad_read_mapping",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "bad_read_mapping.log",
+      "marker": "AUTO_READ_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "skip_write_unique_snoop",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_write_unique_snoop.log",
+      "marker": "AUTO_WRITE_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "reject_dvm",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "reject_dvm.log",
+      "marker": "SPECIAL_R",
+      "returncode": 1
+    },
+    {
+      "name": "bypass_exclusive_monitor",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "bypass_exclusive_monitor.log",
+      "marker": "SPECIAL_SNOOP",
+      "returncode": 1
+    },
+    {
+      "name": "drop_barrier_pair_ready",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_barrier_pair_ready.log",
+      "marker": "BARRIER_PAIR_MISSING",
+      "returncode": 1
+    },
+    {
+      "name": "reject_barrier_ignore",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "reject_barrier_ignore.log",
+      "marker": "AXBARRIER_IGNORE_NORMAL",
+      "returncode": 1
+    },
+    {
+      "name": "disable_snoop_filter",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "disable_snoop_filter.log",
+      "marker": "SNOOP_FILTER_TARGETING",
+      "returncode": 1
+    },
+    {
+      "name": "ignore_fabric_conflict",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "ignore_fabric_conflict.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "drop_filter_collision_fallback",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_filter_collision_fallback.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "allow_same_target_filter_replace",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "allow_same_target_filter_replace.log",
+      "marker": "FABRIC_CR",
+      "returncode": 1
+    },
+    {
+      "name": "count_any_aw",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "count_any_aw.log",
+      "marker": "PENDING_SAME_CYCLE_AW",
+      "returncode": 1
+    },
+    {
+      "name": "drop_early_barrier_rack",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "drop_early_barrier_rack.log",
+      "marker": "BARRIER_ONTIME_ACK",
+      "returncode": 1
+    },
+    {
+      "name": "skip_bar2_error_w_drain",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "skip_bar2_error_w_drain.log",
+      "marker": "AXBAR2_ERROR_WRITE_DRAIN",
+      "returncode": 1
+    },
+    {
+      "name": "short_bar2_error_read",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "short_bar2_error_read.log",
+      "marker": "AXBAR2_ERROR_READ_BEATS",
+      "returncode": 1
+    },
+    {
+      "name": "mask_dvm_payload",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "mask_dvm_payload.log",
+      "marker": "DVM_PAYLOAD",
+      "returncode": 1
+    },
+    {
+      "name": "accept_two_part_dvm",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "accept_two_part_dvm.log",
+      "marker": "SPECIAL_R",
+      "returncode": 1
+    },
+    {
+      "name": "manager_error_not_fatal",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "manager_error_not_fatal.log",
+      "marker": "FATAL_FAULT_",
+      "returncode": 1
+    },
+    {
+      "name": "fatal_not_core_block",
+      "status": "EXPECTED_FAILURE_PASS",
+      "log": "fatal_not_core_block.log",
+      "marker": "FATAL_FAULT_ADMISSION",
+      "returncode": 1
+    }
+  ],
+  "commands": [
+    {
+      "name": "coherent_read_ingress_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_coh_read_ingress",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/coherent_read_ingress",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_coh_read_ingress.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "coherent_read_ingress",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/coherent_read_ingress/Vtb_coh_read_ingress"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "service_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/service",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "service",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/service/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "endpoint_outstanding_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_outstanding",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/endpoint_outstanding",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_outstanding.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "endpoint_outstanding",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/endpoint_outstanding/Vtb_ace_snoop_outstanding"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "snoop_pipeline_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_pipeline",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/snoop_pipeline",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_pipeline.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "snoop_pipeline",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/snoop_pipeline/Vtb_ace_snoop_pipeline"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "service_outstanding_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service_outstanding",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/service_outstanding",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service_outstanding.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "service_outstanding",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/service_outstanding/Vtb_ace_snoop_service_outstanding"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_transactions_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_transactions",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_transactions",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_transactions/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_outstanding_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_outstanding",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_outstanding",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_outstanding.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_outstanding",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_outstanding/Vtb_ace_manager_outstanding"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "multi_snoop_fabric_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/multi_snoop_fabric",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "multi_snoop_fabric",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/multi_snoop_fabric/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "multi_top_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/multi_top_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GCACHED_MASTERS=2"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "multi_top_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/multi_top_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_integration_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_integration",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=1"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_integration",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_integration/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_multiline_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_multiline",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GLONG_STRESS=1"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_multiline",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_multiline/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_multiline_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_multiline",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GLONG_STRESS=1"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_multiline",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_multiline/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_review10_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_review10",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_review10",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_review10.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_review10",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_review10/Vtb_ace_manager_review10"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "snoop_bank_review10_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_bank_review10",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/snoop_bank_review10",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_bank_review10.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "snoop_bank_review10",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/snoop_bank_review10/Vtb_ace_snoop_bank_review10"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fabric_review10_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_fabric_review10",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fabric_review10",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_fabric_review10.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fabric_review10",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fabric_review10/Vtb_ace_fabric_review10"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_wb_contention_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_wb_contention",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=0",
+        "-GWB_CONTENTION=1"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "b1_wb_contention",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/b1_wb_contention/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_wb_contention_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_wb_contention",
+        "-f",
+        "scripts/rtl.f",
+        "-f",
+        "scripts/ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv",
+        "-GUSE_RANGE=1",
+        "-GWB_CONTENTION=1"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "p_wb_contention",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/p_wb_contention/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bypass_coherent_read_snoop_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_coh_read_ingress",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_coherent_read_snoop",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_coherent_read_snoop.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_coherent_read_snoop.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_coh_read_ingress.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bypass_coherent_read_snoop",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_coherent_read_snoop/Vtb_coh_read_ingress"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_coherent_read_hazard_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_coh_read_ingress",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_coherent_read_hazard",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_coherent_read_hazard.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_coherent_read_hazard.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_coh_read_ingress.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_coherent_read_hazard",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_coherent_read_hazard/Vtb_coh_read_ingress"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_range_read_classification_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_classification",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_classification.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_classification.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_range_read_classification",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_classification/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_range_read_hazard_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_hazard",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_hazard.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_hazard.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_range_read_hazard",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_range_read_hazard/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "accept_reserved_range_op_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_reserved_range_op",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_reserved_range_op.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_reserved_range_op.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "accept_reserved_range_op",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_reserved_range_op/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "cd_waits_cr_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/cd_waits_cr",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/cd_waits_cr.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/cd_waits_cr.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "cd_waits_cr",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/cd_waits_cr/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "early_b_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/early_b",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/early_b.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/early_b.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "early_b",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/early_b/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_dirty_wb_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_service",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_dirty_wb",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_dirty_wb.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_dirty_wb.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_service.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_dirty_wb",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_dirty_wb/Vtb_ace_snoop_service"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_drain_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_drain",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_drain.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_drain.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_drain",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_drain/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bad_read_mapping_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bad_read_mapping",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bad_read_mapping.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bad_read_mapping.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bad_read_mapping",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bad_read_mapping/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_write_unique_snoop_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_write_unique_snoop",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_write_unique_snoop.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_write_unique_snoop.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_write_unique_snoop",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_write_unique_snoop/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "reject_dvm_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_dvm",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_dvm.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_dvm.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "reject_dvm",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_dvm/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bypass_exclusive_monitor_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_exclusive_monitor",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_exclusive_monitor.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_exclusive_monitor.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "bypass_exclusive_monitor",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/bypass_exclusive_monitor/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_barrier_pair_ready_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_barrier_pair_ready",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_barrier_pair_ready.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_barrier_pair_ready.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_barrier_pair_ready",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_barrier_pair_ready/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "reject_barrier_ignore_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_barrier_ignore",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_barrier_ignore.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_barrier_ignore.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "reject_barrier_ignore",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/reject_barrier_ignore/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "disable_snoop_filter_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/disable_snoop_filter",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/disable_snoop_filter.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/disable_snoop_filter.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "disable_snoop_filter",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/disable_snoop_filter/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "ignore_fabric_conflict_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/ignore_fabric_conflict",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/ignore_fabric_conflict.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/ignore_fabric_conflict.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "ignore_fabric_conflict",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/ignore_fabric_conflict/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_filter_collision_fallback_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_filter_collision_fallback",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_filter_collision_fallback.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_filter_collision_fallback.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_filter_collision_fallback",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_filter_collision_fallback/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "allow_same_target_filter_replace_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_snoop_fabric",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/allow_same_target_filter_replace",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/allow_same_target_filter_replace.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/allow_same_target_filter_replace.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_snoop_fabric.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "allow_same_target_filter_replace",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/allow_same_target_filter_replace/Vtb_ace_snoop_fabric"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "count_any_aw_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/count_any_aw",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/count_any_aw.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/count_any_aw.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "count_any_aw",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/count_any_aw/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_early_barrier_rack_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_early_barrier_rack",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_early_barrier_rack.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_early_barrier_rack.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "drop_early_barrier_rack",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/drop_early_barrier_rack/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_bar2_error_w_drain_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_bar2_error_w_drain",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_bar2_error_w_drain.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_bar2_error_w_drain.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "skip_bar2_error_w_drain",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/skip_bar2_error_w_drain/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "short_bar2_error_read_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/short_bar2_error_read",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/short_bar2_error_read.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/short_bar2_error_read.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "short_bar2_error_read",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/short_bar2_error_read/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "mask_dvm_payload_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/mask_dvm_payload",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/mask_dvm_payload.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/mask_dvm_payload.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "mask_dvm_payload",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/mask_dvm_payload/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "accept_two_part_dvm_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_ace_manager_transactions",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_two_part_dvm",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_two_part_dvm.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_two_part_dvm.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_ace_manager_transactions.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "accept_two_part_dvm",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/accept_two_part_dvm/Vtb_ace_manager_transactions"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_error_not_fatal_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_error_not_fatal",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_error_not_fatal.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_error_not_fatal.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "manager_error_not_fatal",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/manager_error_not_fatal/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fatal_not_core_block_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_not_core_block",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_not_core_block.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_not_core_block.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fatal_not_core_block",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_not_core_block/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fatal_manager_reaccept_build",
+      "argv": [
+        "verilator",
+        "--binary",
+        "--timing",
+        "--assert",
+        "-Wno-fatal",
+        "--output-split",
+        "0",
+        "-j",
+        "4",
+        "--top-module",
+        "tb_cci_ace_integration",
+        "--Mdir",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_manager_reaccept",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_manager_reaccept.rtl.f",
+        "-f",
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_manager_reaccept.ace.f",
+        "tb/axi_memory_slave.sv",
+        "tb/tb_cci_ace_integration.sv"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    },
+    {
+      "name": "fatal_manager_reaccept",
+      "argv": [
+        "/tmp/cci_ace/ace_20261104T062644Z_61861344/fatal_manager_reaccept/Vtb_cci_ace_integration"
+      ],
+      "cwd": "/mnt/c/users/user/desktop/cci_patents/cci_p/axi-bus-verilog-modelling-new"
+    }
+  ],
+  "config": {
+    "line_bytes": 64,
+    "cd_bits": 128,
+    "manager_contexts": 4,
+    "outstanding_snoops": 4
+  },
+  "tools": {
+    "verilator": "Verilator 5.048 2026-04-26 rev v5.048\n"
+  },
+  "error": "fatal_manager_reaccept failed: PASS v9 ACE integration mode=1 cached_masters=1 legacy/drain/CD/writeback/initiating-manager ARSNOOP/AWSNOOP/resume\n- tb/tb_cci_ace_integration.sv:1105: Verilog $finish\n- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26\n- Verilator: $finish at 5us; walltime 0.002 s; speed 2.607 ms/s\n- Verilator: cpu 0.002 s on 1 threads; allocated 7 MB\n"
+}

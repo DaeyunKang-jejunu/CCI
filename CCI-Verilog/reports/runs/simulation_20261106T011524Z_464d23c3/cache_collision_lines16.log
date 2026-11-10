@@ -1,0 +1,10 @@
+PASS cache final-beat matching AC prevents installation
+PASS cache same-edge load AC invalidates hit
+PASS cache stalled AR AC poisons refill
+PASS cache different-tag same-index AC preserves line
+COVERAGE cache_collision final_match=1 load_match=1 stalled_ar_match=1 final_other_tag=1 resident_other_tag=1 replace_old_tag=1
+PASS cache collision LINES=16
+- tb/tb_cache_collision.sv:81: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+- Verilator: $finish at 630ns; walltime 0.000 s; speed 11.932 ms/s
+- Verilator: cpu 0.000 s on 1 threads; allocated 6 MB

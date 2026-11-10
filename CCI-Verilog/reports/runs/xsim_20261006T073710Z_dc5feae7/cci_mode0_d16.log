@@ -1,0 +1,23 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Tue Oct  6 16:37:16 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/cci_mode0_d16/xsim_script.tcl
+# xsim {cci_mode0_d16} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS ordered allocation/multiple AC/FIFO: trackers=16 fifo=16
+PASS conventional actual-B lifetime, AR/AW hazards, high-page alias
+PASS reset after first W beat and queued writes
+PASS reset during stalled W and held B
+PASS reset with held R then fresh M1 read
+METRIC mode=0 trackers=16 fifo=16 peak_tracker=8 tracker_stall=0 ingress_stall=0 copy_cycles=83 accepted_per_cycle=0.096386 peak_ingress=8
+PASS tb_cci_integration USE_RANGE=0 TRACKERS=16 FIFO=16
+$finish called at time : 10690 ns : File "C:/Users/user/Desktop/CCI_patents/CCI_P/AXI-bus-Verilog-Modelling-NEW/tb/tb_cci_integration.sv" Line 893
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct  6 16:37:18 2026...
