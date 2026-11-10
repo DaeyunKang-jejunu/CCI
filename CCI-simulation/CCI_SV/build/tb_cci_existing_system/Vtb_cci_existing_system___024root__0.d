@@ -1,2 +1,0 @@
-Vtb_cci_existing_system___024root__0.o: \
- Vtb_cci_existing_system___024root__0.cpp Vtb_cci_existing_system__pch.h

@@ -1,3 +1,0 @@
-Vtb_cci_augmented_system___024root__0__Slow.o: \
- Vtb_cci_augmented_system___024root__0__Slow.cpp \
- Vtb_cci_augmented_system__pch.h
